@@ -1,0 +1,74 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">英汉小词典</view>
+    <view class="page__desc">英汉小词典，词源来自21世纪英语</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="在此输入要翻译的单词" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="翻译" bindconfirm="translating" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">在此输入要翻译的单词</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{SearchKeyList != undefined && SearchKeyList.length > 0}}">
+
+      <view bindtap="KeyListTap" data-SKey="{{item.SKey}}" class="weui-cell" hover-class="weui-cell_active" wx:for-items="{{SearchKeyList}}" wx:key="item.id">
+        <view class="weui-cell__bd">
+          <view>{{item.SKey}}</view>
+        </view>
+      </view>
+      
+    </view>
+    <view class="weui-article" wx:if="{{articleList.length > 0}}">
+      <view class="weui-article__section" wx:for-items="{{articleList}}" wx:key="item.id">
+        <view class="weui-article__section">
+          <view class="weui-article__h3">{{item.Key}}</view>
+          <text class="weui-article__p">
+            {{item.Value}}
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list__item">
+          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+            <view class="weui-flex__item">{{item.name}}</view>            
+            <view class="icon {{item.icon}}"></view>
+          </view>
+          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+            <view class="weui-cells weui-cells-CustomForList {{item.open ? 'weui-cells_show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <navigator url="{{page.url}}/{{page.url}}?id={{page.displayName}}" class="weui-cell weui-cell_access">
+                  <view class="weui-cell__bd">{{page.displayName}}</view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="page__ft"> 
+  
+    <view class="icon icon-phone" style="color : gray">  0351-6561111</view>
+    <view class="icon icon-mobile-phone" style="color : gray">  15035142567</view>     
+    <view class="weui-footer__text">Copyright © 米高家长帮科技有限公司</view>
+
+    
+  </view>
+</view>

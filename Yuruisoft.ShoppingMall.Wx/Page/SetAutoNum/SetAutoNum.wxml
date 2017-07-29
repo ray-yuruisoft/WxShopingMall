@@ -1,0 +1,10 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">智能提示设置</view>
+        <view class="page__desc">请使用滑块来设置自动提示列表的数目</view>
+    </view>
+
+    <view class="page__bd page__bd_spacing">
+        <slider bindchange="saveValue" min="5" max="100" show-value value="{{autodisplayNum}}"/>
+    </view>
+</view>

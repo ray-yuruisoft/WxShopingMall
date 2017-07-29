@@ -1,0 +1,2721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WxDicModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="WxDicModelStoreContainer">
+    <EntitySet Name="WxDic_CnToEn_a" EntityType="WxDicModel.Store.WxDic_CnToEn_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_b" EntityType="WxDicModel.Store.WxDic_CnToEn_b" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_c" EntityType="WxDicModel.Store.WxDic_CnToEn_c" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_d" EntityType="WxDicModel.Store.WxDic_CnToEn_d" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_e" EntityType="WxDicModel.Store.WxDic_CnToEn_e" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_f" EntityType="WxDicModel.Store.WxDic_CnToEn_f" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_g" EntityType="WxDicModel.Store.WxDic_CnToEn_g" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_h" EntityType="WxDicModel.Store.WxDic_CnToEn_h" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_i" EntityType="WxDicModel.Store.WxDic_CnToEn_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_j" EntityType="WxDicModel.Store.WxDic_CnToEn_j" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_k" EntityType="WxDicModel.Store.WxDic_CnToEn_k" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_l" EntityType="WxDicModel.Store.WxDic_CnToEn_l" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_m" EntityType="WxDicModel.Store.WxDic_CnToEn_m" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_n" EntityType="WxDicModel.Store.WxDic_CnToEn_n" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_o" EntityType="WxDicModel.Store.WxDic_CnToEn_o" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_p" EntityType="WxDicModel.Store.WxDic_CnToEn_p" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_q" EntityType="WxDicModel.Store.WxDic_CnToEn_q" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_r" EntityType="WxDicModel.Store.WxDic_CnToEn_r" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_s" EntityType="WxDicModel.Store.WxDic_CnToEn_s" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_t" EntityType="WxDicModel.Store.WxDic_CnToEn_t" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_w" EntityType="WxDicModel.Store.WxDic_CnToEn_w" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_x" EntityType="WxDicModel.Store.WxDic_CnToEn_x" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_y" EntityType="WxDicModel.Store.WxDic_CnToEn_y" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_CnToEn_z" EntityType="WxDicModel.Store.WxDic_CnToEn_z" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_Dictionary" EntityType="WxDicModel.Store.WxDic_Dictionary" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_b" EntityType="WxDicModel.Store.WxDic_EnToCn_A_b" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_c" EntityType="WxDicModel.Store.WxDic_EnToCn_A_c" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_d" EntityType="WxDicModel.Store.WxDic_EnToCn_A_d" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_e" EntityType="WxDicModel.Store.WxDic_EnToCn_A_e" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_f" EntityType="WxDicModel.Store.WxDic_EnToCn_A_f" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_g" EntityType="WxDicModel.Store.WxDic_EnToCn_A_g" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_h" EntityType="WxDicModel.Store.WxDic_EnToCn_A_h" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_ijk" EntityType="WxDicModel.Store.WxDic_EnToCn_A_ijk" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_l" EntityType="WxDicModel.Store.WxDic_EnToCn_A_l" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_m" EntityType="WxDicModel.Store.WxDic_EnToCn_A_m" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_n" EntityType="WxDicModel.Store.WxDic_EnToCn_A_n" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_op" EntityType="WxDicModel.Store.WxDic_EnToCn_A_op" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_qr" EntityType="WxDicModel.Store.WxDic_EnToCn_A_qr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_s" EntityType="WxDicModel.Store.WxDic_EnToCn_A_s" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_t" EntityType="WxDicModel.Store.WxDic_EnToCn_A_t" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_A_uvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_A_uvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_B_a" EntityType="WxDicModel.Store.WxDic_EnToCn_B_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_B_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_B_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_B_fghi" EntityType="WxDicModel.Store.WxDic_EnToCn_B_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_B_jklmn" EntityType="WxDicModel.Store.WxDic_EnToCn_B_jklmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_B_o" EntityType="WxDicModel.Store.WxDic_EnToCn_B_o" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_B_pqr" EntityType="WxDicModel.Store.WxDic_EnToCn_B_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_B_stu" EntityType="WxDicModel.Store.WxDic_EnToCn_B_stu" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_B_stuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_B_stuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_B_vwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_B_vwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_C_a" EntityType="WxDicModel.Store.WxDic_EnToCn_C_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_C_bcdefg" EntityType="WxDicModel.Store.WxDic_EnToCn_C_bcdefg" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_C_h" EntityType="WxDicModel.Store.WxDic_EnToCn_C_h" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_C_ijk" EntityType="WxDicModel.Store.WxDic_EnToCn_C_ijk" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_C_lmn" EntityType="WxDicModel.Store.WxDic_EnToCn_C_lmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_C_o" EntityType="WxDicModel.Store.WxDic_EnToCn_C_o" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_C_pqr" EntityType="WxDicModel.Store.WxDic_EnToCn_C_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_C_stuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_C_stuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_D_a" EntityType="WxDicModel.Store.WxDic_EnToCn_D_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_D_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_D_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_D_i" EntityType="WxDicModel.Store.WxDic_EnToCn_D_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_D_jklmno" EntityType="WxDicModel.Store.WxDic_EnToCn_D_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_D_pqr" EntityType="WxDicModel.Store.WxDic_EnToCn_D_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_D_stuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_D_stuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_a" EntityType="WxDicModel.Store.WxDic_EnToCn_E_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_bc" EntityType="WxDicModel.Store.WxDic_EnToCn_E_bc" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_defg" EntityType="WxDicModel.Store.WxDic_EnToCn_E_defg" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_hijkl" EntityType="WxDicModel.Store.WxDic_EnToCn_E_hijkl" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_m" EntityType="WxDicModel.Store.WxDic_EnToCn_E_m" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_n" EntityType="WxDicModel.Store.WxDic_EnToCn_E_n" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_opq" EntityType="WxDicModel.Store.WxDic_EnToCn_E_opq" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_rs" EntityType="WxDicModel.Store.WxDic_EnToCn_E_rs" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_tuvw" EntityType="WxDicModel.Store.WxDic_EnToCn_E_tuvw" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_E_xyz" EntityType="WxDicModel.Store.WxDic_EnToCn_E_xyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_F_a" EntityType="WxDicModel.Store.WxDic_EnToCn_F_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_F_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_F_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_F_fghi" EntityType="WxDicModel.Store.WxDic_EnToCn_F_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_F_jkl" EntityType="WxDicModel.Store.WxDic_EnToCn_F_jkl" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_F_mno" EntityType="WxDicModel.Store.WxDic_EnToCn_F_mno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_F_pqr" EntityType="WxDicModel.Store.WxDic_EnToCn_F_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_F_stuvwvxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_F_stuvwvxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_G_a" EntityType="WxDicModel.Store.WxDic_EnToCn_G_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_G_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_G_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_G_fghi" EntityType="WxDicModel.Store.WxDic_EnToCn_G_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_G_jkl" EntityType="WxDicModel.Store.WxDic_EnToCn_G_jkl" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_G_mno" EntityType="WxDicModel.Store.WxDic_EnToCn_G_mno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_G_pqr" EntityType="WxDicModel.Store.WxDic_EnToCn_G_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_G_stuvwvxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_G_stuvwvxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_H_a" EntityType="WxDicModel.Store.WxDic_EnToCn_H_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_H_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_H_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_H_fghi" EntityType="WxDicModel.Store.WxDic_EnToCn_H_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_H_jklmno" EntityType="WxDicModel.Store.WxDic_EnToCn_H_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_H_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_H_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_I_abcd" EntityType="WxDicModel.Store.WxDic_EnToCn_I_abcd" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_I_efghijklm" EntityType="WxDicModel.Store.WxDic_EnToCn_I_efghijklm" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_I_n" EntityType="WxDicModel.Store.WxDic_EnToCn_I_n" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_I_opqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_I_opqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_J" EntityType="WxDicModel.Store.WxDic_EnToCn_J" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_K" EntityType="WxDicModel.Store.WxDic_EnToCn_K" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_L_a" EntityType="WxDicModel.Store.WxDic_EnToCn_L_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_L_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_L_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_L_fghi" EntityType="WxDicModel.Store.WxDic_EnToCn_L_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_L_jklmno" EntityType="WxDicModel.Store.WxDic_EnToCn_L_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_L_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_L_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_M_a" EntityType="WxDicModel.Store.WxDic_EnToCn_M_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_M_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_M_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_M_fghi" EntityType="WxDicModel.Store.WxDic_EnToCn_M_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_M_jklmno" EntityType="WxDicModel.Store.WxDic_EnToCn_M_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_M_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_M_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_N_a" EntityType="WxDicModel.Store.WxDic_EnToCn_N_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_N_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_N_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_N_fghi" EntityType="WxDicModel.Store.WxDic_EnToCn_N_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_N_jklmno" EntityType="WxDicModel.Store.WxDic_EnToCn_N_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_N_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_N_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_O_ab" EntityType="WxDicModel.Store.WxDic_EnToCn_O_ab" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_O_cdef" EntityType="WxDicModel.Store.WxDic_EnToCn_O_cdef" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_O_ghijklmn" EntityType="WxDicModel.Store.WxDic_EnToCn_O_ghijklmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_O_op" EntityType="WxDicModel.Store.WxDic_EnToCn_O_op" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_O_qr" EntityType="WxDicModel.Store.WxDic_EnToCn_O_qr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_O_stu" EntityType="WxDicModel.Store.WxDic_EnToCn_O_stu" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_O_vwvxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_O_vwvxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_P_a" EntityType="WxDicModel.Store.WxDic_EnToCn_P_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_P_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_P_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_P_fgh" EntityType="WxDicModel.Store.WxDic_EnToCn_P_fgh" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_P_i" EntityType="WxDicModel.Store.WxDic_EnToCn_P_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_P_jkl" EntityType="WxDicModel.Store.WxDic_EnToCn_P_jkl" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_P_mno" EntityType="WxDicModel.Store.WxDic_EnToCn_P_mno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_P_pqr" EntityType="WxDicModel.Store.WxDic_EnToCn_P_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_P_stuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_P_stuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_Q" EntityType="WxDicModel.Store.WxDic_EnToCn_Q" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_R_a" EntityType="WxDicModel.Store.WxDic_EnToCn_R_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_R_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_R_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_R_fghi" EntityType="WxDicModel.Store.WxDic_EnToCn_R_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_R_jklmno" EntityType="WxDicModel.Store.WxDic_EnToCn_R_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_R_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_R_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_a" EntityType="WxDicModel.Store.WxDic_EnToCn_S_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_bc" EntityType="WxDicModel.Store.WxDic_EnToCn_S_bc" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_de" EntityType="WxDicModel.Store.WxDic_EnToCn_S_de" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_fgh" EntityType="WxDicModel.Store.WxDic_EnToCn_S_fgh" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_i" EntityType="WxDicModel.Store.WxDic_EnToCn_S_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_jk" EntityType="WxDicModel.Store.WxDic_EnToCn_S_jk" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_l" EntityType="WxDicModel.Store.WxDic_EnToCn_S_l" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_mn" EntityType="WxDicModel.Store.WxDic_EnToCn_S_mn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_o" EntityType="WxDicModel.Store.WxDic_EnToCn_S_o" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_p" EntityType="WxDicModel.Store.WxDic_EnToCn_S_p" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_qst" EntityType="WxDicModel.Store.WxDic_EnToCn_S_qst" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_u" EntityType="WxDicModel.Store.WxDic_EnToCn_S_u" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_S_vwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_S_vwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_T_a" EntityType="WxDicModel.Store.WxDic_EnToCn_T_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_T_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_T_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_T_fgh" EntityType="WxDicModel.Store.WxDic_EnToCn_T_fgh" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_T_i" EntityType="WxDicModel.Store.WxDic_EnToCn_T_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_T_jklmn" EntityType="WxDicModel.Store.WxDic_EnToCn_T_jklmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_T_o" EntityType="WxDicModel.Store.WxDic_EnToCn_T_o" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_T_pqr" EntityType="WxDicModel.Store.WxDic_EnToCn_T_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_T_stu" EntityType="WxDicModel.Store.WxDic_EnToCn_T_stu" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_T_vwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_T_vwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_U_abcdefghijklmn" EntityType="WxDicModel.Store.WxDic_EnToCn_U_abcdefghijklmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_U_opqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_U_opqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_V_a" EntityType="WxDicModel.Store.WxDic_EnToCn_V_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_V_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_V_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_V_fghi" EntityType="WxDicModel.Store.WxDic_EnToCn_V_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_V_jklmnopqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_V_jklmnopqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_W_a" EntityType="WxDicModel.Store.WxDic_EnToCn_W_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_W_bcde" EntityType="WxDicModel.Store.WxDic_EnToCn_W_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_W_fgh" EntityType="WxDicModel.Store.WxDic_EnToCn_W_fgh" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_W_i" EntityType="WxDicModel.Store.WxDic_EnToCn_W_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_W_jklmno" EntityType="WxDicModel.Store.WxDic_EnToCn_W_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_W_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_EnToCn_W_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_X" EntityType="WxDicModel.Store.WxDic_EnToCn_X" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_Y" EntityType="WxDicModel.Store.WxDic_EnToCn_Y" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_EnToCn_Z" EntityType="WxDicModel.Store.WxDic_EnToCn_Z" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_b" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_b" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_c" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_c" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_d" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_d" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_e" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_e" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_f" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_f" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_g" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_g" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_h" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_h" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_ijk" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_ijk" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_l" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_l" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_m" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_m" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_n" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_n" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_op" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_op" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_qr" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_qr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_s" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_s" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_t" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_t" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_uvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_A_uvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_B_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_B_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_fghi" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_B_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_jklmn" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_B_jklmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_o" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_B_o" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_pqr" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_B_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_stu" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_B_stu" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_vwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_B_vwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_C_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_bcdefg" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_C_bcdefg" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_h" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_C_h" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_ijk" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_C_ijk" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_lmn" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_C_lmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_o" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_C_o" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_pqr" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_C_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_stuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_C_stuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_D_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_D_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_i" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_D_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_jklmno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_D_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_pqr" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_D_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_stuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_D_stuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_bc" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_bc" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_defg" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_defg" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_hijkl" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_hijkl" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_m" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_m" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_n" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_n" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_opq" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_opq" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_rs" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_rs" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_tuvw" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_tuvw" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_xyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_E_xyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_F_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_F_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_fghi" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_F_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_jkl" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_F_jkl" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_mno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_F_mno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_pqr" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_F_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_stuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_F_stuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_G_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_G_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_fghi" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_G_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_jkl" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_G_jkl" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_mno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_G_mno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_pqr" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_G_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_stuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_G_stuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_H_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_H_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_fghi" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_H_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_jklmno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_H_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_H_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_I_abcd" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_I_abcd" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_I_efghijklm" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_I_efghijklm" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_I_n" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_I_n" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_I_opqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_I_opqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_J" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_J" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_K" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_K" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_L_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_L_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_fghi" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_L_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_jklmno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_L_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_L_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_M_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_M_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_fghi" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_M_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_jklmno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_M_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_M_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_N_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_N_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_fghi" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_N_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_jklmno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_N_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_N_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_ab" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_O_ab" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_cdef" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_O_cdef" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_ghijklmn" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_O_ghijklmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_op" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_O_op" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_qr" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_O_qr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_stu" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_O_stu" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_vwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_O_vwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_P_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_P_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_fgh" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_P_fgh" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_i" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_P_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_jkl" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_P_jkl" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_mno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_P_mno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_pqr" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_P_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_stuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_P_stuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_Q" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_Q" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_R_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_R_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_fghi" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_R_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_jklmno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_R_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_R_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_bc" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_bc" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_de" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_de" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_fgh" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_fgh" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_i" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_jk" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_jk" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_l" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_l" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_mn" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_mn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_o" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_o" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_p" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_p" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_qst" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_qst" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_u" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_u" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_vwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_S_vwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_T_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_T_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_fgh" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_T_fgh" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_i" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_T_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_jklmn" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_T_jklmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_o" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_T_o" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_pqr" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_T_pqr" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_stu" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_T_stu" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_vwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_T_vwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_U_abcdefghijklmn" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_U_abcdefghijklmn" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_U_opqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_U_opqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_V_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_V_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_V_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_V_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_V_fghi" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_V_fghi" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_V_jklmnopqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_V_jklmnopqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_a" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_W_a" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_bcde" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_W_bcde" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_fgh" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_W_fgh" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_i" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_W_i" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_jklmno" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_W_jklmno" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_pqrstuvwxyz" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_W_pqrstuvwxyz" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_X" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_X" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_Y" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_Y" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_Z" EntityType="WxDicModel.Store.WxDic_SearchKey_EnToCn_Z" store:Type="Tables" Schema="rayyewang01" />
+  </EntityContainer>
+  <EntityType Name="WxDic_CnToEn_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_b">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_c">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_d">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_e">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_f">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_g">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_j">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_k">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_p">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_q">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_r">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_s">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_t">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_w">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_x">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_y">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_z">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_Dictionary">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_b">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_c">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_d">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_e">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_f">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_g">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_ijk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_op">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_qr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_s">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_t">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_uvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_jklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_bcdefg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_ijk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_lmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_bc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_defg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_hijkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_opq">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_rs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_tuvw">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_xyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_stuvwvxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_stuvwvxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_I_abcd">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_I_efghijklm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_I_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_I_opqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_J">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_K">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_ab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_cdef">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_ghijklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_op">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_qr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_vwvxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_Q">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_bc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_de">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_jk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_mn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_p">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_qst">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_u">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_jklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_U_abcdefghijklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_U_opqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_V_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_V_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_V_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_V_jklmnopqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_X">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_Y">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_Z">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="WValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_b">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_c">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_d">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_e">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_f">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_g">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_ijk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_op">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_qr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_s">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_t">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_uvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_jklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_bcdefg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_ijk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_lmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_bc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_defg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_hijkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_opq">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_rs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_tuvw">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_xyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_I_abcd">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_I_efghijklm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_I_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_I_opqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_J">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_K">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_ab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_cdef">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_ghijklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_op">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_qr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_Q">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_bc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_de">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_jk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_mn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_p">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_qst">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_u">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_jklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_U_abcdefghijklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_U_opqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_V_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_V_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_V_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_V_jklmnopqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_X">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_Y">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_Z">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

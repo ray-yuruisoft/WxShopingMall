@@ -1,0 +1,2721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WxDicModelStoreContainer" CdmEntityContainer="WxDicEntities">
+    <EntitySetMapping Name="WxDic_Dictionary">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_Dictionary">
+        <MappingFragment StoreEntitySet="WxDic_Dictionary">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_b">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_b">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_b">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_b">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_b">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_b">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_c">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_c">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_c">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_c">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_c">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_c">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_d">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_d">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_d">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_d">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_d">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_d">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_e">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_e">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_e">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_f">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_f">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_f">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_g">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_g">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_g">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_h">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_h">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_h">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_ijk">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_ijk">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_ijk">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_l">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_l">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_l">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_m">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_m">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_m">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_n">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_n">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_n">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_op">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_op">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_op">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_qr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_qr">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_qr">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_s">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_s">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_s">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_t">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_t">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_t">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_A_uvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_A_uvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_A_uvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_e">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_e">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_e">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_f">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_f">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_f">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_g">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_g">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_g">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_h">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_h">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_h">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_ijk">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_ijk">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_ijk">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_l">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_l">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_l">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_m">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_m">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_m">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_n">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_n">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_n">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_op">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_op">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_op">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_qr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_qr">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_qr">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_s">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_s">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_s">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_t">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_t">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_t">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_A_uvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_A_uvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_A_uvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_B_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_B_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_B_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_B_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_B_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_B_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_B_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_B_fghi">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_B_fghi">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_B_jklmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_B_jklmn">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_B_jklmn">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_B_o">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_B_o">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_B_o">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_B_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_B_pqr">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_B_pqr">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_B_stu">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_B_stu">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_B_stu">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_B_vwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_B_vwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_B_vwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_B_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_B_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_B_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_B_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_B_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_B_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_B_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_B_fghi">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_B_fghi">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_B_jklmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_B_jklmn">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_B_jklmn">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_B_o">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_B_o">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_B_o">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_B_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_B_pqr">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_B_pqr">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_B_stu">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_B_stu">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_B_stu">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_B_vwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_B_vwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_B_vwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_B_stuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_B_stuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_B_stuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_C_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_C_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_C_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_C_bcdefg">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_C_bcdefg">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_C_bcdefg">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_C_h">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_C_h">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_C_h">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_C_ijk">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_C_ijk">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_C_ijk">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_C_lmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_C_lmn">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_C_lmn">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_C_o">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_C_o">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_C_o">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_C_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_C_pqr">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_C_pqr">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_D_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_D_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_D_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_D_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_D_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_D_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_D_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_D_i">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_D_i">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_D_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_D_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_D_jklmno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_D_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_D_pqr">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_D_pqr">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_D_stuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_D_stuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_D_stuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_bc">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_bc">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_bc">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_defg">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_defg">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_defg">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_hijkl">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_hijkl">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_hijkl">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_m">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_m">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_m">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_n">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_n">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_n">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_opq">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_opq">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_opq">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_rs">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_rs">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_rs">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_tuvw">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_tuvw">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_tuvw">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_E_xyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_E_xyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_E_xyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_F_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_F_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_F_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_F_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_F_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_F_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_F_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_F_fghi">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_F_fghi">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_F_jkl">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_F_jkl">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_F_jkl">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_F_mno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_F_mno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_F_mno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_F_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_F_pqr">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_F_pqr">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_F_stuvwvxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_F_stuvwvxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_F_stuvwvxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_G_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_G_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_G_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_G_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_G_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_G_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_G_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_G_fghi">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_G_fghi">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_G_jkl">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_G_jkl">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_G_jkl">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_G_mno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_G_mno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_G_mno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_G_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_G_pqr">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_G_pqr">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_G_stuvwvxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_G_stuvwvxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_G_stuvwvxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_H_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_H_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_H_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_H_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_H_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_H_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_H_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_H_fghi">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_H_fghi">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_H_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_H_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_H_jklmno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_H_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_H_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_H_pqrstuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_I_abcd">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_I_abcd">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_I_abcd">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_I_efghijklm">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_I_efghijklm">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_I_efghijklm">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_I_n">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_I_n">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_I_n">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_I_opqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_I_opqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_I_opqrstuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_J">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_J">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_J">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_K">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_K">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_K">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_L_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_L_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_L_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_L_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_L_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_L_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_L_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_L_fghi">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_L_fghi">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_L_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_L_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_L_jklmno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_L_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_L_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_L_pqrstuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_M_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_M_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_M_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_M_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_M_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_M_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_M_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_M_fghi">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_M_fghi">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_M_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_M_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_M_jklmno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_M_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_M_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_M_pqrstuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_N_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_N_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_N_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_N_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_N_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_N_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_N_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_N_fghi">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_N_fghi">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_N_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_N_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_N_jklmno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_N_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_N_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_N_pqrstuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_O_ab">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_O_ab">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_O_ab">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_O_cdef">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_O_cdef">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_O_cdef">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_O_ghijklmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_O_ghijklmn">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_O_ghijklmn">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_O_op">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_O_op">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_O_op">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_O_qr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_O_qr">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_O_qr">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_O_stu">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_O_stu">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_O_stu">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_O_vwvxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_O_vwvxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_O_vwvxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_P_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_P_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_P_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_P_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_P_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_P_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_P_fgh">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_P_fgh">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_P_fgh">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_P_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_P_i">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_P_i">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_P_jkl">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_P_jkl">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_P_jkl">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_P_mno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_P_mno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_P_mno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_P_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_P_pqr">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_P_pqr">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_P_stuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_P_stuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_P_stuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_Q">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_Q">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_Q">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_R_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_R_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_R_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_R_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_R_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_R_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_R_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_R_fghi">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_R_fghi">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_R_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_R_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_R_jklmno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_R_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_R_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_R_pqrstuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_bc">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_bc">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_bc">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_de">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_de">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_de">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_fgh">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_fgh">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_fgh">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_i">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_i">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_jk">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_jk">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_jk">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_l">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_l">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_l">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_mn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_mn">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_mn">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_o">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_o">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_o">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_p">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_p">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_p">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_qst">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_qst">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_qst">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_u">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_u">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_u">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_S_vwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_S_vwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_S_vwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_T_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_T_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_T_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_T_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_T_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_T_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_T_fgh">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_T_fgh">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_T_fgh">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_T_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_T_i">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_T_i">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_T_o">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_T_o">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_T_o">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_T_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_T_pqr">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_T_pqr">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_T_stu">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_T_stu">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_T_stu">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_T_vwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_T_vwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_T_vwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_U_abcdefghijklmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_U_abcdefghijklmn">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_U_abcdefghijklmn">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_U_opqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_U_opqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_U_opqrstuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_V_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_V_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_V_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_V_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_V_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_V_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_V_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_V_fghi">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_V_fghi">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_V_jklmnopqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_V_jklmnopqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_V_jklmnopqrstuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_W_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_W_a">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_W_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_W_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_W_bcde">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_W_bcde">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_W_fgh">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_W_fgh">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_W_fgh">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_W_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_W_i">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_W_i">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_W_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_W_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_W_jklmno">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_W_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_W_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_W_pqrstuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_X">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_X">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_X">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_Y">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_Y">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_Y">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_Z">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_Z">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_Z">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_C_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_C_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_C_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_C_bcdefg">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_C_bcdefg">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_C_bcdefg">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_C_h">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_C_h">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_C_h">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_C_ijk">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_C_ijk">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_C_ijk">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_C_lmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_C_lmn">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_C_lmn">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_C_o">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_C_o">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_C_o">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_C_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_C_pqr">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_C_pqr">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_C_stuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_C_stuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_C_stuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_D_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_D_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_D_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_D_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_D_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_D_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_D_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_D_i">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_D_i">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_D_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_D_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_D_jklmno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_D_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_D_pqr">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_D_pqr">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_D_stuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_D_stuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_D_stuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_bc">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_bc">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_bc">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_defg">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_defg">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_defg">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_hijkl">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_hijkl">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_hijkl">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_m">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_m">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_m">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_n">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_n">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_n">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_opq">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_opq">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_opq">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_rs">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_rs">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_rs">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_tuvw">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_tuvw">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_tuvw">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_E_xyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_E_xyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_E_xyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_F_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_F_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_F_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_F_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_F_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_F_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_F_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_F_fghi">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_F_fghi">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_F_jkl">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_F_jkl">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_F_jkl">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_F_mno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_F_mno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_F_mno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_F_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_F_pqr">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_F_pqr">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_F_stuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_F_stuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_F_stuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_G_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_G_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_G_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_G_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_G_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_G_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_G_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_G_fghi">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_G_fghi">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_G_jkl">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_G_jkl">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_G_jkl">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_G_mno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_G_mno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_G_mno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_G_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_G_pqr">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_G_pqr">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_G_stuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_G_stuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_G_stuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_H_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_H_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_H_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_H_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_H_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_H_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_H_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_H_fghi">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_H_fghi">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_H_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_H_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_H_jklmno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_H_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_H_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_H_pqrstuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_I_abcd">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_I_abcd">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_I_abcd">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_I_efghijklm">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_I_efghijklm">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_I_efghijklm">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_I_n">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_I_n">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_I_n">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_I_opqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_I_opqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_I_opqrstuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_J">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_J">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_J">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_K">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_K">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_K">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_L_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_L_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_L_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_L_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_L_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_L_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_L_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_L_fghi">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_L_fghi">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_L_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_L_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_L_jklmno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_L_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_L_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_L_pqrstuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_M_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_M_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_M_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_M_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_M_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_M_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_M_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_M_fghi">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_M_fghi">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_M_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_M_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_M_jklmno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_M_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_M_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_M_pqrstuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_N_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_N_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_N_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_N_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_N_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_N_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_N_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_N_fghi">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_N_fghi">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_N_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_N_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_N_jklmno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_N_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_N_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_N_pqrstuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_O_ab">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_O_ab">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_O_ab">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_O_cdef">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_O_cdef">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_O_cdef">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_O_ghijklmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_O_ghijklmn">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_O_ghijklmn">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_O_op">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_O_op">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_O_op">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_O_qr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_O_qr">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_O_qr">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_O_stu">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_O_stu">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_O_stu">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_O_vwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_O_vwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_O_vwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_P_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_P_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_P_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_P_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_P_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_P_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_P_fgh">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_P_fgh">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_P_fgh">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_P_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_P_i">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_P_i">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_P_jkl">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_P_jkl">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_P_jkl">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_P_mno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_P_mno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_P_mno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_P_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_P_pqr">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_P_pqr">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_P_stuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_P_stuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_P_stuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_Q">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_Q">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_Q">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_R_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_R_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_R_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_R_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_R_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_R_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_R_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_R_fghi">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_R_fghi">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_R_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_R_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_R_jklmno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_R_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_R_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_R_pqrstuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_bc">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_bc">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_bc">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_de">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_de">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_de">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_fgh">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_fgh">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_fgh">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_i">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_i">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_jk">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_jk">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_jk">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_l">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_l">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_l">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_mn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_mn">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_mn">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_o">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_o">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_o">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_p">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_p">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_p">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_qst">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_qst">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_qst">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_u">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_u">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_u">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_S_vwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_S_vwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_S_vwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_T_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_T_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_T_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_T_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_T_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_T_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_T_fgh">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_T_fgh">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_T_fgh">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_T_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_T_i">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_T_i">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_T_o">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_T_o">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_T_o">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_T_pqr">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_T_pqr">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_T_pqr">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_T_stu">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_T_stu">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_T_stu">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_T_vwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_T_vwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_T_vwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_U_abcdefghijklmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_U_abcdefghijklmn">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_U_abcdefghijklmn">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_U_opqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_U_opqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_U_opqrstuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_V_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_V_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_V_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_V_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_V_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_V_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_V_fghi">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_V_fghi">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_V_fghi">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_V_jklmnopqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_V_jklmnopqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_V_jklmnopqrstuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_W_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_W_a">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_W_a">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_W_bcde">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_W_bcde">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_W_bcde">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_W_fgh">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_W_fgh">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_W_fgh">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_W_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_W_i">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_W_i">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_W_jklmno">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_W_jklmno">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_W_jklmno">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_W_pqrstuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_W_pqrstuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_W_pqrstuvwxyz">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_X">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_X">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_X">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_Y">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_Y">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_Y">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_Z">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_Z">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_Z">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_C_stuvwxyz">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_C_stuvwxyz">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_C_stuvwxyz">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_EnToCn_T_jklmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_EnToCn_T_jklmn">
+        <MappingFragment StoreEntitySet="WxDic_EnToCn_T_jklmn">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_SearchKey_EnToCn_T_jklmn">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_SearchKey_EnToCn_T_jklmn">
+        <MappingFragment StoreEntitySet="WxDic_SearchKey_EnToCn_T_jklmn">
+          <ScalarProperty Name="SKey" ColumnName="SKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_a">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_a">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_a">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_b">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_b">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_b">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_c">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_c">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_c">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_d">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_d">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_d">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_e">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_e">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_e">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_f">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_f">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_f">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_g">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_g">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_g">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_h">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_h">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_h">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_i">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_i">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_i">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_j">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_j">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_j">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_k">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_k">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_k">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_l">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_l">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_l">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_m">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_m">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_m">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_n">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_n">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_n">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_o">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_o">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_o">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_p">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_p">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_p">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_q">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_q">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_q">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_r">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_r">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_r">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_s">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_s">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_s">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_t">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_t">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_t">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_w">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_w">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_w">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_x">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_x">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_x">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_y">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_y">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_y">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WxDic_CnToEn_z">
+      <EntityTypeMapping TypeName="WxDicModel.WxDic_CnToEn_z">
+        <MappingFragment StoreEntitySet="WxDic_CnToEn_z">
+          <ScalarProperty Name="WValue" ColumnName="WValue" />
+          <ScalarProperty Name="WKey" ColumnName="WKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

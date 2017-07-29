@@ -1,0 +1,14 @@
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\microstore\bin\Debug\microstore.dll
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\microstore\bin\Debug\microstore.pdb
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\microstore\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\microstore\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\microstore\obj\Debug\microstore.dll
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\microstore\obj\Debug\microstore.pdb
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\microstore\obj\Debug\microstore.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\microstore\bin\Debug\microstore.dll
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\microstore\bin\Debug\microstore.pdb
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\microstore\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\microstore\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\microstore\obj\Debug\microstore.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\microstore\obj\Debug\microstore.dll
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\microstore\obj\Debug\microstore.pdb

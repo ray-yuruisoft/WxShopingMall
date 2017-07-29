@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+@using Yuruisoft.RS.Model
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>为用户分配角色</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        function subSetRoleForm() {
+            $("#form1").submit();
+        }
+        function afterSet() {
+            //子窗体怎样调用父窗体的方法.
+            window.parent.afterSet();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        为用户
+        @{
+            UserInfo userInfo = (UserInfo)ViewBag.UserInfo;
+            <span style="font-size: 18px; color: red">@userInfo.UName</span>
+        }分配角色
+        @{
+            using (Ajax.BeginForm("SetUserRoleInfo", new { }, new AjaxOptions() { OnSuccess = "afterSet", HttpMethod = "post" }, new { id = "form1" }))
+            {
+            <input type="hidden" name="userId" value="@userInfo.ID" />
+                List<RoleInfo> roleInfoList = (List<RoleInfo>)ViewBag.AllRoles;//所有的角色
+                List<int> ExtRoleIdList = (List<int>)ViewBag.ExtAllRoleIds;//用户已经有的角色编号
+                foreach (var roleInfo in roleInfoList)
+                {
+                    string roleName = "cba_" + roleInfo.ID;
+                    if (ExtRoleIdList.Contains(roleInfo.ID))//判断当前用户是否已经有了角色
+                    {
+                        <input type="checkbox" name="@roleName" value="@roleInfo.ID" checked="checked" /> @roleInfo.RoleName
+                    }
+                    else
+                    {
+                         <input type="checkbox" name="@roleName" value="@roleInfo.ID"  /> @roleInfo.RoleName
+                    }
+                }
+            }
+        }
+    </div>
+</body>
+</html>

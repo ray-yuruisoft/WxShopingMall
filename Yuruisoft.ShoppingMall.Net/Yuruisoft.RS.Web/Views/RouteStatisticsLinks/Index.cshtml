@@ -1,0 +1,99 @@
+﻿@model Yuruisoft.RS.Model.RouteStatisticsLinks
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/datapattern.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/Yuruisoft.RS.Js/Yuruisoft.RouteStatisticsLinks.Index.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#addDiv").css("display", "none");
+            $("#editDiv").css("display", "none");
+            loadData();
+        });
+    </script>
+</head>
+<body>
+    <!-------------------------------------------------------------数据表插入位置DataGrid-------开始------------------------------------------------------>
+    <div>
+        <table id="tt_roleinfo">
+        </table>
+    </div>
+    <!-------------------------------------------------------------数据表插入位置DataGrid-------结束------------------------------------------------------>
+
+
+
+    <!------------------------添加信息开始----------对话框元素-------------------------------------------->
+    <div id="addDiv">
+        @using (Ajax.BeginForm("AddLinksInfo", new {}, new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterAdd" }, new { id = "addForm" }))
+        {
+            @Html.ValidationSummary(true)
+            <table style="margin: 20px">
+                <tr>
+                    <td>@Html.LabelFor(m => m.LName)：</td>
+                    <td>
+                        @Html.EditorFor(m => m.LName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp</td>
+                    <td>
+                        @Html.ValidationMessageFor(m => m.LName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.Url)：</td>
+                    <td>
+                        @Html.EditorFor(m => m.Url)
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp</td>
+                    <td>
+                        @Html.ValidationMessageFor(m => m.Url)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.Remark)：</td>
+                    <td>
+                        @Html.EditorFor(m => m.Remark)
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp</td>
+                    <td>
+                        @Html.ValidationMessageFor(m => m.Remark)
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+    <!------------------------添加信息结束----------对话框元素-------------------------------------------->
+
+
+
+    <!------------------------修改信息开始----------对话框元素-------------------------------------------->
+    <div id="editDiv">
+        <iframe id="editFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+    </div>
+    <!------------------------修改信息结束----------对话框元素-------------------------------------------->
+
+
+
+</body>
+</html>

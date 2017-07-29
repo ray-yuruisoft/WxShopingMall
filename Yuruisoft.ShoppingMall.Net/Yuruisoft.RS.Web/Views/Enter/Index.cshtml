@@ -1,0 +1,286 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="www.yuruisoft.com">
+    <meta name="author" content="Yuruisoft">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Theme CSS -->
+    <link href="~/Theme/css/freelancer.min.css" rel="stylesheet" />
+    <!-- Custom Fonts 只对英文有效-->
+    <link href="~/Theme/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+            font-family: Microsoft YaHei,'宋体', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+            /*font-size:200%;*/
+        }
+    </style>
+
+</head>
+
+<body id="page-top" class="index">
+    <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> @ViewBag.MenuNameForPhoneSize <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">@ViewBag.EnterNoticName</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll" style="font-size: 120%;">
+                        <a href="#portfolio">@ViewBag.FirstNav</a>
+                    </li>
+                    <li class="page-scroll" style="font-size: 120%;">
+                        <a href="#SecondNav">@ViewBag.SecondNav</a>
+                    </li>
+                    <li class="page-scroll" style="font-size: 120%;">
+                        <a href="#EnterForm">@ViewBag.ThirdNav</a>
+                    </li>
+                    <li class="page-scroll" style="font-size: 120%;">
+                        <a href="#Contact">@ViewBag.FourthNav</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container" id="maincontent" tabindex="-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="../Theme/img/profile.png" alt="">
+                    <div class="intro-text">
+                        <h1 class="name">@ViewBag.EnterNoticContentTitle</h1>
+                        <hr class="star-light">
+                        <span class="skills">@Html.Raw(Html.Encode(@ViewBag.EnterNoticContent).Replace("\r\n", "<br/>"))</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>@ViewBag.FirstNav_Title</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in ViewBag.portfolios)
+                {
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="#@item.Name" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="@item.ImgSrc" class="img-responsive" alt="DynamicImage">
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- SecondNav Section -->
+    <section class="success" id="SecondNav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>@ViewBag.SecondNav_Title</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>@Html.Raw(Html.Encode(@ViewBag.TableDownloadContent_left).Replace("\r\n", "<br/>"))</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>@Html.Raw(Html.Encode(@ViewBag.TableDownloadContent_right).Replace("\r\n", "<br/>"))</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="@ViewBag.TableDownloadLink" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i>@ViewBag.TableDownloadFileName
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EnterForm Section -->
+    <section id="EnterForm">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>@ViewBag.ThirdNav_Title</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    @using (Ajax.BeginForm("GetEnterInfo", new { }, new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterSend" }, new { id = "EnterForm", novalidate = "novalidate" }))
+                    {
+                        foreach (var item in ViewBag.EnterFormFields)
+                        {
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label for="@item.LabelName">@item.DisplayName</label>
+                                    <input type="@item.TypeName" class="form-control" placeholder="@item.PlaceholderString" id="@item.LabelName" @Html.Raw(@item.Attribute)>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                        }
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">发送</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="Contact" class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>@ViewBag.FooterFirstTitle</h3>
+                        <p>
+                            @Html.Raw(Html.Encode(@ViewBag.FooterFirstContent).Replace("\r\n", "<br/>"))
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>网络联系方式：</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-qq"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Google Plus</span><i class="fa fa-fw fa-weibo"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-tencent-weibo"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-weixin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-renren"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>举办者单位介绍：</h3>
+                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        由 <a href="https://yuruisoft.com">Yuruisoft</a> 提供技术支持 &copy; The Yuruisoft.RS 2017.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+    @foreach (var item in ViewBag.portfolios)
+    {
+        <div class="portfolio-modal modal fade" id="@item.Name" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <h2>@item.TitleInside</h2>
+                                <hr class="star-primary">
+                                <img src="@item.ImgSrcInside" class="img-responsive img-centered" alt="DymanicImage">
+                                <p>@item.paragraphInside</p>
+                                <ul class="list-inline item-details">
+                                    <li>@item.LinkNameInside
+                                        <strong><a href="@item.LinkInside">@item.LinkContentInside</a>
+                                        </strong>
+                                    </li>
+                                </ul>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- jQuery -->
+    <script src="~/Theme/vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Theme/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Enter Form JavaScript -->
+    @*<script src="~/Theme/js/jqBootstrapValidation.js"></script>*@
+    <script src="https://cdn.bootcss.com/jqBootstrapValidation/1.3.7/jqBootstrapValidation.min.js"></script>
+    <script src="~/Theme/js/contact_me.js"></script>
+    <!-- Theme JavaScript -->
+    <script src="~/Theme/js/freelancer.min.js"></script>
+
+</body>
+
+</html>

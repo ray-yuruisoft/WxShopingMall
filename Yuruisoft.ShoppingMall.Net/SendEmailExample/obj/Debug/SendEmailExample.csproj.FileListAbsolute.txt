@@ -1,0 +1,8 @@
+C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\SendEmailExample\bin\Debug\SendEmailExample.exe.config
+C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\SendEmailExample\bin\Debug\SendEmailExample.exe
+C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\SendEmailExample\bin\Debug\SendEmailExample.pdb
+C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\SendEmailExample\bin\Debug\Yuruisoft.RS.Common.dll
+C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\SendEmailExample\bin\Debug\Yuruisoft.RS.Common.pdb
+C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\SendEmailExample\obj\Debug\SendEmailExample.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\SendEmailExample\obj\Debug\SendEmailExample.exe
+C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\SendEmailExample\obj\Debug\SendEmailExample.pdb

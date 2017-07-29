@@ -1,0 +1,32 @@
+﻿[
+  {
+    "Name": "p1",
+    "ImgSrc": "../Theme/img/portfolio/cabin.png",
+    "TitleInside": "商品1",
+    "ImgSrcInside": "../Theme/img/portfolio/cabin.png",
+    "paragraphInside": "请填写如下邮箱地址用于接收源代码及说明文档",
+    "LinkNameInside": "Demo演示",
+    "LinkInside": "http://www.baidu.com",
+    "LinkContentInside": "点我进行Demo演示"
+  },
+  {
+    "Name": "p2",
+    "ImgSrc": "../Theme/img/portfolio/cabin.png",
+    "TitleInside": "商品2",
+    "ImgSrcInside": "../Theme/img/portfolio/cabin.png",
+    "paragraphInside": "段落好",
+    "LinkNameInside": "链接名字",
+    "LinkInside": "www.baidu.com",
+    "LinkContentInside": "内容"
+  },
+  {
+    "Name": "p3",
+    "ImgSrc": "../Theme/img/portfolio/cabin.png",
+    "TitleInside": "商品3",
+    "ImgSrcInside": "../Theme/img/portfolio/cabin.png",
+    "paragraphInside": "段落好",
+    "LinkNameInside": "链接名字",
+    "LinkInside": "www.baidu.com",
+    "LinkContentInside": "内容"
+  }
+]

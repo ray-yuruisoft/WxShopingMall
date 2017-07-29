@@ -1,0 +1,61 @@
+﻿.icon_Yurui {
+    padding-left: 18px;
+    display: inline-block;
+    line-height: 18px;
+}
+.icon-users_Yurui {
+     background: url('Yuruisoft.RS.Images/users.png') no-repeat;
+}
+.icon-application_add {
+     background: url('Yuruisoft.RS.Images/application_osx_add.png') no-repeat;
+}
+.icon-application_delete {
+     background: url('Yuruisoft.RS.Images/application_osx_delete.png') no-repeat;
+}
+.icon-application_home {
+     background: url('Yuruisoft.RS.Images/application_osx_home.png') no-repeat;
+}
+.icon-arrow_refresh {
+     background: url('Yuruisoft.RS.Images/arrow_refresh.png') no-repeat;
+}
+.icon-configure {
+    background:url('Yuruisoft.RS.Images/configure.png') no-repeat center center;
+}
+.icon-up_toolbar {
+    background:url('Yuruisoft.RS.Images/application_get.png') no-repeat center center;
+}
+.icon-down_toolbar {
+    background:url('Yuruisoft.RS.Images/application_put.png') no-repeat center center;
+}
+.icon-user {
+    background:url('Yuruisoft.RS.Images/user.png') no-repeat center center;
+}
+.icon-user_go {
+    background:url('Yuruisoft.RS.Images/user_go.png') no-repeat center center;
+}
+
+.textbox_YuR {
+    height: 20px;
+    margin: 0;
+    padding: 0 2px;
+    box-sizing: content-box;
+}
+.txt_title_YuR {
+    font-size:36px;
+    font-weight:bolder;
+    float:left;
+    margin-left:200px;
+    margin-top:20px;
+    font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.image_title_YuR {
+    float:left;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}

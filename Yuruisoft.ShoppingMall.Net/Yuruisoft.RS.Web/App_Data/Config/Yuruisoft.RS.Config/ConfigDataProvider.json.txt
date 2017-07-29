@@ -1,0 +1,337 @@
+{
+  "ConfigDatas": [
+    {
+      "DataId": 1,
+      "TypeName": "Title",
+      "DataString": "裕睿网上报名系统Demo - 报名系统首页"
+    },
+    {
+      "DataId": 2,
+      "TypeName": "MenuNameForPhoneSize",
+      "DataString": "导航栏"
+    },
+    {
+      "DataId": 3,
+      "TypeName": "EnterNoticName",
+      "DataString": "报名须知"
+    },
+    {
+      "DataId": 4,
+      "TypeName": "FirstNav",
+      "DataString": "成果展示"
+    },
+    {
+      "DataId": 5,
+      "TypeName": "SecondNav",
+      "DataString": "报名表下载"
+    },
+    {
+      "DataId": 6,
+      "TypeName": "ThirdNav",
+      "DataString": "点我报名吧"
+    },
+    {
+      "DataId": 7,
+      "TypeName": "EnterNoticContentTitle",
+      "DataString": "这里是报名须知"
+    },
+    {
+      "DataId": 8,
+      "TypeName": "EnterNoticContent",
+      "DataString": "这里是报名流程-1、请下载报名表 2、填好表格后，注册
+					  ..."
+    },
+    {
+      "DataId": 9,
+      "TypeName": "FooterFirstTitle",
+      "DataString": "报名单位地址"
+    },
+    {
+      "DataId": 10,
+      "TypeName": "FooterFirstContent",
+      "DataString": "四川省成都市郫都区
+	                 万树森林2期11栋2单元"
+    },
+    {
+      "DataId": 11,
+      "TypeName": "TableDownloadContent_left",
+      "DataString": "四川省成都市郫都区万树森林2期11栋2单元"
+    },
+    {
+      "DataId": 12,
+      "TypeName": "FirstNav_Title",
+      "DataString": "成果展示标题"
+    },
+    {
+      "DataId": 13,
+      "TypeName": "SecondNav_Title",
+      "DataString": "报名表下载相关"
+    },
+    {
+      "DataId": 14,
+      "TypeName": "ThirdNav_Title",
+      "DataString": "报名在这里"
+    },
+    {
+      "DataId": 15,
+      "TypeName": "TableDownloadContent_right",
+      "DataString": "四川省成都市郫都区这里是右边不好意思万树森林2期11栋2单元"
+    },
+    {
+      "DataId": 16,
+      "TypeName": "TableDownloadFileName",
+      "DataString": "成都市公务员报名表"
+    },
+    {
+      "DataId": 17,
+      "TypeName": "TableDownloadLink",
+      "DataString": "https://www.baidu.com/"
+    },
+    {
+      "DataId": 18,
+      "TypeName": "FourthNav",
+      "DataString": "怎么联系我们"
+    },
+    {
+      "DataId": 19,
+      "TypeName": "portfolioModalSum",
+      "DataString": "6"
+    },
+    {
+      "DataId": 20,
+      "TypeName": "portfolioImgSrc1",
+      "DataString": "../Theme/img/portfolio/cabin.png"
+    },
+    {
+      "DataId": 21,
+      "TypeName": "portfolioImgSrc2",
+      "DataString": "../Theme/img/portfolio/cake.png"
+    },
+    {
+      "DataId": 22,
+      "TypeName": "portfolioImgSrc3",
+      "DataString": "../Theme/img/portfolio/circus.png"
+    },
+    {
+      "DataId": 23,
+      "TypeName": "portfolioImgSrc4",
+      "DataString": "../Theme/img/portfolio/game.png"
+    },
+    {
+      "DataId": 24,
+      "TypeName": "portfolioImgSrc5",
+      "DataString": "../Theme/img/portfolio/safe.png"
+    },
+    {
+      "DataId": 25,
+      "TypeName": "portfolioImgSrc6",
+      "DataString": "../Theme/img/portfolio/submarine.png"
+    },
+    {
+      "DataId": 26,
+      "TypeName": "portfolioTitleInside1",
+      "DataString": "里面第1个"
+    },
+    {
+      "DataId": 27,
+      "TypeName": "portfolioTitleInside2",
+      "DataString": "里面第2个"
+    },
+    {
+      "DataId": 28,
+      "TypeName": "portfolioTitleInside3",
+      "DataString": "里面第3个"
+    },
+    {
+      "DataId": 29,
+      "TypeName": "portfolioTitleInside4",
+      "DataString": "里面第4个"
+    },
+    {
+      "DataId": 30,
+      "TypeName": "portfolioTitleInside5",
+      "DataString": "里面第5个"
+    },
+    {
+      "DataId": 31,
+      "TypeName": "portfolioTitleInside6",
+      "DataString": "里面第6个"
+    },
+    {
+      "DataId": 32,
+      "TypeName": "portfolioImgSrcInside1",
+      "DataString": "../Theme/img/portfolio/cabin.png"
+    },
+    {
+      "DataId": 33,
+      "TypeName": "portfolioImgSrcInside2",
+      "DataString": "../Theme/img/portfolio/cabin.png"
+    },
+    {
+      "DataId": 34,
+      "TypeName": "portfolioImgSrcInside3",
+      "DataString": "../Theme/img/portfolio/cabin.png"
+    },
+    {
+      "DataId": 35,
+      "TypeName": "portfolioImgSrcInside4",
+      "DataString": "../Theme/img/portfolio/cabin.png"
+    },
+    {
+      "DataId": 36,
+      "TypeName": "portfolioImgSrcInside5",
+      "DataString": "../Theme/img/portfolio/cabin.png"
+    },
+    {
+      "DataId": 37,
+      "TypeName": "portfolioImgSrcInside6",
+      "DataString": "../Theme/img/portfolio/cabin.png"
+    },
+    {
+      "DataId": 38,
+      "TypeName": "portfolioparagraphInside1",
+      "DataString": "这里是段落1"
+    },
+    {
+      "DataId": 39,
+      "TypeName": "portfolioparagraphInside2",
+      "DataString": "这里是段落2"
+    },
+    {
+      "DataId": 40,
+      "TypeName": "portfolioparagraphInside3",
+      "DataString": "这里是段落3"
+    },
+    {
+      "DataId": 41,
+      "TypeName": "portfolioparagraphInside4",
+      "DataString": "这里是段落4"
+    },
+    {
+      "DataId": 42,
+      "TypeName": "portfolioparagraphInside5",
+      "DataString": "这里是段落5"
+    },
+    {
+      "DataId": 43,
+      "TypeName": "portfolioparagraphInside6",
+      "DataString": "这里是段落6"
+    },
+    {
+      "DataId": 44,
+      "TypeName": "portfolioLinkNameInside1",
+      "DataString": "这里是连接名字1"
+    },
+    {
+      "DataId": 45,
+      "TypeName": "portfolioLinkNameInside2",
+      "DataString": "这里是连接名字2"
+    },
+    {
+      "DataId": 46,
+      "TypeName": "portfolioLinkNameInside3",
+      "DataString": "这里是连接名字3"
+    },
+    {
+      "DataId": 47,
+      "TypeName": "portfolioLinkNameInside4",
+      "DataString": "这里是连接名字4"
+    },
+    {
+      "DataId": 48,
+      "TypeName": "portfolioLinkNameInside5",
+      "DataString": "这里是连接名字5"
+    },
+    {
+      "DataId": 49,
+      "TypeName": "portfolioLinkNameInside6",
+      "DataString": "这里是连接名字6"
+    },
+    {
+      "DataId": 50,
+      "TypeName": "portfolioLinkContentInside1",
+      "DataString": "这里是连接内容1"
+    },
+    {
+      "DataId": 51,
+      "TypeName": "portfolioLinkContentInside2",
+      "DataString": "这里是连接内容2"
+    },
+    {
+      "DataId": 52,
+      "TypeName": "portfolioLinkContentInside3",
+      "DataString": "这里是连接内容3"
+    },
+    {
+      "DataId": 53,
+      "TypeName": "portfolioLinkContentInside4",
+      "DataString": "这里是连接内容4"
+    },
+    {
+      "DataId": 54,
+      "TypeName": "portfolioLinkContentInside5",
+      "DataString": "这里是连接内容5"
+    },
+    {
+      "DataId": 55,
+      "TypeName": "portfolioLinkContentInside6",
+      "DataString": "这里是连接内容6"
+    },
+    {
+      "DataId": 56,
+      "TypeName": "portfolioLinkInside1",
+      "DataString": "https://www.baidu.com/"
+    },
+    {
+      "DataId": 57,
+      "TypeName": "portfolioLinkInside2",
+      "DataString": "https://www.baidu.com/"
+    },
+    {
+      "DataId": 58,
+      "TypeName": "portfolioLinkInside3",
+      "DataString": "https://www.baidu.com/"
+    },
+    {
+      "DataId": 59,
+      "TypeName": "portfolioLinkInside4",
+      "DataString": "https://www.baidu.com/"
+    },
+    {
+      "DataId": 60,
+      "TypeName": "portfolioLinkInside5",
+      "DataString": "https://www.baidu.com/"
+    },
+    {
+      "DataId": 61,
+      "TypeName": "portfolioLinkInside6",
+      "DataString": "https://www.baidu.com/"
+    },
+    {
+      "DataId": 62,
+      "TypeName": "EnterFormFieldSum",
+      "DataString": "1"
+    },
+    {
+      "DataId": 63,
+      "TypeName": "EnterFormFieldTypeName1",
+      "DataString": "email"
+    },
+    {
+      "DataId": 64,
+      "TypeName": "EnterFormFieldPlaceholderString1",
+      "DataString": "请输入您的邮箱地址"
+    },
+    {
+      "DataId": 65,
+      "TypeName": "EnterFormAttribute1",
+      "DataString": "required data-validation-required-message='请输入你的邮箱地址' data-validation-email-message='你输入的邮箱地址不正确!'"
+    },
+    {
+      "DataId": 66,
+      "TypeName": "EnterFormDisplayName1",
+      "DataString": "电子邮箱"
+    }
+  ],
+  "IsEditFlag": false
+}

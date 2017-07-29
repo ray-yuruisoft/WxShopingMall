@@ -1,0 +1,25 @@
+﻿<#+
+// <copyright file="T4AutoCreateManager.tt" company="Sky123.Org">
+//  Copyright © Sky123.Org. All Rights Reserved.
+// </copyright>
+
+public class T4AutoCreateManager : CSharpTemplate
+{
+	public override string TransformText()
+	{
+		base.TransformText();
+#>
+namespace <#= DefaultNamespace #>
+{
+	public class <#= Identifier("Sample Class") #>
+	{
+		private string <#= FieldName("Sample Field") #>;
+
+		public string <#= PropertyName("Sample Property") #> { get; set; }
+	}
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MathtoolDBEntitiesModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MathtoolDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="math_key_and_level" EntityType="MathtoolDBEntitiesModel.math_key_and_level" />
+    <EntitySet Name="math_level_data" EntityType="MathtoolDBEntitiesModel.math_level_data" />
+    <EntitySet Name="math_search_key" EntityType="MathtoolDBEntitiesModel.math_search_key" />
+    <EntitySet Name="math_user_info" EntityType="MathtoolDBEntitiesModel.math_user_info" />
+    <EntitySet Name="math_AbilityContent" EntityType="MathtoolDBEntitiesModel.math_AbilityContent" />
+    <EntitySet Name="math_FeedBackInfo" EntityType="MathtoolDBEntitiesModel.math_FeedBackInfo" />
+    <EntitySet Name="math_SourceBuy" EntityType="MathtoolDBEntitiesModel.math_SourceBuy" />
+    <EntitySet Name="math_SourceBuyOrderstatus" EntityType="MathtoolDBEntitiesModel.math_SourceBuyOrderstatus" />
+  </EntityContainer>
+  <EntityType Name="math_key_and_level">
+    <Key>
+      <PropertyRef Name="keys" />
+    </Key>
+    <Property Name="keys" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="level" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="math_level_data">
+    <Key>
+      <PropertyRef Name="url" />
+    </Key>
+    <Property Name="order_all" Type="Int32" />
+    <Property Name="url" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="order_in" Type="Int32" Nullable="false" />
+    <Property Name="first_level" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="second_level" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="third_level" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fourth_level" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fifth_level" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="full_key" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="math_search_key">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Search_key" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="math_user_info">
+    <Key>
+      <PropertyRef Name="openId" />
+    </Key>
+    <Property Name="openId" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="session_key" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nickName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="gender" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="language" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="city" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="province" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="country" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="avatarUrl" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="watermark_timestamp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="appid" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="unionId" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="math_score" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="yuruisoft_session_key" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Sort" />
+    <Property Type="DateTime" Name="SubTime" Precision="3" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <Property Type="String" Name="Remark" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="math_AbilityContent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="AbContent" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="math_FeedBackInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="nickName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="openId" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FeedBackWords" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="phoneNum" />
+    <Property Type="Int64" Name="qq" />
+    <Property Type="String" Name="Email" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="SubTime" Precision="3" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="math_SourceBuy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SBContent" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SBContentImage" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SBTitle" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SBTitleImage" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="SubTime" Precision="3" />
+    <Property Type="DateTime" Name="ModiyTime" Precision="3" />
+    <Property Type="Int32" Name="Sort" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TotalFee" />
+    <Property Type="String" Name="WxBody" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SurportTitle" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="SurportDetail" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SourceUrl" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="math_SourceBuyOrderstatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="sourceBuyId" Nullable="false" />
+    <Property Type="Int32" Name="orderStatus" Nullable="false" />
+    <Property Type="String" Name="orderName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

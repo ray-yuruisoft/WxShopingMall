@@ -1,0 +1,123 @@
+﻿@model Yuruisoft.RS.Model.ExtensionAgents
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>推广员管理界面</title>
+    <link href="~/Content/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/datapattern.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/Yuruisoft.RS.Js/Yuruisoft.RouteStatistics.ExtensionAgents.Index.js"></script>
+    <link href="~/Content/Yuruisoft.RS.CSS.Custom.css" rel="stylesheet" />
+    <link href="~/Content/Yuruisoft.RS.CSS.Button.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $("#addDiv").css("display", "none");
+            $("#editDiv").css("display", "none");
+            loadData();
+        });
+    </script>
+</head>
+<body>
+    <!-------------------------------------------------------------数据表插入位置DataGrid-------开始------------------------------------------------------>
+    <table id="tt"></table>
+    <div id="toolbar_Admin" style="padding: 5px; height: auto">
+        <div style="height: 3px"></div>
+        <div id="panel_contol_Search">
+            <div style="margin-bottom: 5px">
+                <a href="#" class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick="addInfo()">添加</a>
+                <a href="#" class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="deleteInfo()">删除</a>
+                <a href="#" class="easyui-linkbutton" iconcls="icon-edit" plain="true" onclick="editInfo()">编辑</a>
+            </div>
+            <form id="ff_easySearch" method="post">
+                <table cellpadding="5">
+                    <tr>
+                        <td>推广员名字：</td>
+                        <td>
+                            <input class="easyui-tooltip easyui-validatebox textbox_YuR" type="text" id="txtUName" data-options="required:false, position:'right',deltaY:-15" title="*输入包含的字符串内容" /></td>
+                        <td>备注：</td>
+                        <td>
+                            <input class="easyui-tooltip easyui-validatebox textbox_YuR" type="text" id="txtURemark" data-options="required:false, position:'right',deltaY:-15" title="*输入包含的字符串内容" /></td>
+                    </tr>
+                </table>
+            </form>
+            <span style="text-align: center; padding: 10px; position: absolute; right: 10px; top: 20px;">
+                <a href="javascript:void(0)" style="margin: 10px" class="button button-rounded button-raised button-primary" onclick="submitForm()">查&nbsp&nbsp询</a>
+                <a href="javascript:void(0)" style="margin: 10px" class="button button-rounded button-raised button-primary" onclick="clearForm()">清&nbsp&nbsp空</a>
+            </span>
+        </div>
+        <div style="height: 7px"></div>
+        <a id="button_hid" data-options="plain:true" style="position: absolute; right: 1px; top: 1px;" href="#" class="icon-up_toolbar easyui-linkbutton" onclick="control_toobar()"></a>
+    </div>
+    <!-------------------------------------------------------------数据表插入位置DataGrid-------结束------------------------------------------------------>
+
+
+    <!------------------------添加信息开始----------对话框元素-------------------------------------------->
+    <div id="addDiv">
+        @using (Ajax.BeginForm("AddAgentInfo", new { }, new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterAdd" }, new { id = "addForm" }))
+        {
+            @Html.ValidationSummary(true)
+            <table style="margin: 20px">
+                <tr>
+                    <td>@Html.LabelFor(m => m.LName)：</td>
+                    <td>
+                        @Html.EditorFor(m => m.LName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp</td>
+                    <td>
+                        @Html.ValidationMessageFor(m => m.LName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.UrlName)：</td>
+                    <td>
+                        @Html.DropDownList("UrlName")
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp</td>
+                    <td>
+                        @Html.ValidationMessageFor(m => m.UrlName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.Remark)：</td>
+                    <td>
+                        @Html.EditorFor(m => m.Remark)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp</td>
+                    <td>
+                        @Html.ValidationMessageFor(m => m.Remark)
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+    <!------------------------添加信息结束----------对话框元素-------------------------------------------->
+
+
+    <!------------------------修改信息开始----------对话框元素-------------------------------------------->
+    <div id="editDiv">
+        <iframe id="editFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+    </div>
+    <!------------------------修改信息结束----------对话框元素-------------------------------------------->
+
+
+</body>
+</html>

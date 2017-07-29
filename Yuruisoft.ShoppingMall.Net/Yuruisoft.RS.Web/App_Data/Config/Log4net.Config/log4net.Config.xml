@@ -1,0 +1,55 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<configuration>
+  <configSections>
+    <!--Log4Net配置-->
+    <section name='log4net' type='log4net.Config.Log4NetConfigurationSectionHandler,log4net' />
+    <!--Log4Net配置-->
+  </configSections>
+  <!--log4net配置开始-->
+  <log4net>
+    <!--Define some output appenders-->
+    <!--<appender name='RollingLogFileAppender' type='log4net.Appender.RollingFileAppender'>
+      <file value='test.txt'/>
+      <appendToFile value='true'/>
+      <maxSizeRollBackups value='10'/>
+      <maximumFileSize value='1024KB'/>
+      <rollingStyle value='Size'/>
+      <staticLogFileName value='true'/>
+      <layout type='log4net.Layout.PatternLayout'>
+        <conversionPattern value='%date [%thread] %-5level %logger - %message%newline'/>
+      </layout>
+    </appender>
+    <root>
+      <level value='DEBUG'/>
+      <appender-ref ref='RollingLogFileAppender'/>
+    </root>-->
+    <!-- OFF, FATAL, ERROR, WARN, INFO, DEBUG, ALL -->
+    <!-- Set root logger level to ERROR and its appenders -->
+    <root>
+      <level value='WARN' />
+      <appender-ref ref='SysAppender' />
+    </root>
+    <!-- Print only messages of level DEBUG or above in the packages -->
+    <logger name='WebLogger'>
+      <level value='DEBUG' />
+    </logger>
+    <appender name='SysAppender' type='log4net.Appender.RollingFileAppender,log4net'>
+      <param name='File' value='App_Data/Log/' />
+      <param name='AppendToFile' value='true' />
+      <param name='RollingStyle' value='Date' />
+      <param name='DatePattern' value='&quot;Logs_&quot;yyyyMMdd&quot;.txt&quot;' />
+      <param name='StaticLogFileName' value='false' />
+      <layout type='log4net.Layout.PatternLayout,log4net'>
+        <param name='ConversionPattern' value='%d [%t] %-5p %c - %m%n' />
+        <param name='Header' value='&#xD;&#xA;----------------------header--------------------------&#xD;&#xA;' />
+        <param name='Footer' value='&#xD;&#xA;----------------------footer--------------------------&#xD;&#xA;' />
+      </layout>
+    </appender>
+    <appender name='consoleApp' type='log4net.Appender.ConsoleAppender,log4net'>
+      <layout type='log4net.Layout.PatternLayout,log4net'>
+        <param name='ConversionPattern' value='%d [%t] %-5p %c - %m%n' />
+      </layout>
+    </appender>
+  </log4net>
+  <!--log4net配置结束-->
+</configuration>

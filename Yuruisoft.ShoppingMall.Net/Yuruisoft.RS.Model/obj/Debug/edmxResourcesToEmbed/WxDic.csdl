@@ -1,0 +1,2721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WxDicModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WxDicEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="WxDic_Dictionary" EntityType="WxDicModel.WxDic_Dictionary" />
+    <EntitySet Name="WxDic_EnToCn_A_b" EntityType="WxDicModel.WxDic_EnToCn_A_b" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_b" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_b" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_c" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_c" />
+    <EntitySet Name="WxDic_EnToCn_A_c" EntityType="WxDicModel.WxDic_EnToCn_A_c" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_d" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_d" />
+    <EntitySet Name="WxDic_EnToCn_A_d" EntityType="WxDicModel.WxDic_EnToCn_A_d" />
+    <EntitySet Name="WxDic_EnToCn_A_e" EntityType="WxDicModel.WxDic_EnToCn_A_e" />
+    <EntitySet Name="WxDic_EnToCn_A_f" EntityType="WxDicModel.WxDic_EnToCn_A_f" />
+    <EntitySet Name="WxDic_EnToCn_A_g" EntityType="WxDicModel.WxDic_EnToCn_A_g" />
+    <EntitySet Name="WxDic_EnToCn_A_h" EntityType="WxDicModel.WxDic_EnToCn_A_h" />
+    <EntitySet Name="WxDic_EnToCn_A_ijk" EntityType="WxDicModel.WxDic_EnToCn_A_ijk" />
+    <EntitySet Name="WxDic_EnToCn_A_l" EntityType="WxDicModel.WxDic_EnToCn_A_l" />
+    <EntitySet Name="WxDic_EnToCn_A_m" EntityType="WxDicModel.WxDic_EnToCn_A_m" />
+    <EntitySet Name="WxDic_EnToCn_A_n" EntityType="WxDicModel.WxDic_EnToCn_A_n" />
+    <EntitySet Name="WxDic_EnToCn_A_op" EntityType="WxDicModel.WxDic_EnToCn_A_op" />
+    <EntitySet Name="WxDic_EnToCn_A_qr" EntityType="WxDicModel.WxDic_EnToCn_A_qr" />
+    <EntitySet Name="WxDic_EnToCn_A_s" EntityType="WxDicModel.WxDic_EnToCn_A_s" />
+    <EntitySet Name="WxDic_EnToCn_A_t" EntityType="WxDicModel.WxDic_EnToCn_A_t" />
+    <EntitySet Name="WxDic_EnToCn_A_uvwxyz" EntityType="WxDicModel.WxDic_EnToCn_A_uvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_e" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_e" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_f" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_f" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_g" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_g" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_h" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_h" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_ijk" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_ijk" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_l" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_l" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_m" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_m" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_n" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_n" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_op" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_op" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_qr" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_qr" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_s" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_s" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_t" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_t" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_A_uvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_A_uvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_B_a" EntityType="WxDicModel.WxDic_EnToCn_B_a" />
+    <EntitySet Name="WxDic_EnToCn_B_bcde" EntityType="WxDicModel.WxDic_EnToCn_B_bcde" />
+    <EntitySet Name="WxDic_EnToCn_B_fghi" EntityType="WxDicModel.WxDic_EnToCn_B_fghi" />
+    <EntitySet Name="WxDic_EnToCn_B_jklmn" EntityType="WxDicModel.WxDic_EnToCn_B_jklmn" />
+    <EntitySet Name="WxDic_EnToCn_B_o" EntityType="WxDicModel.WxDic_EnToCn_B_o" />
+    <EntitySet Name="WxDic_EnToCn_B_pqr" EntityType="WxDicModel.WxDic_EnToCn_B_pqr" />
+    <EntitySet Name="WxDic_EnToCn_B_stu" EntityType="WxDicModel.WxDic_EnToCn_B_stu" />
+    <EntitySet Name="WxDic_EnToCn_B_vwxyz" EntityType="WxDicModel.WxDic_EnToCn_B_vwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_B_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_B_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_fghi" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_B_fghi" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_jklmn" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_B_jklmn" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_o" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_B_o" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_pqr" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_B_pqr" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_stu" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_B_stu" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_B_vwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_B_vwxyz" />
+    <EntitySet Name="WxDic_EnToCn_B_stuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_B_stuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_C_a" EntityType="WxDicModel.WxDic_EnToCn_C_a" />
+    <EntitySet Name="WxDic_EnToCn_C_bcdefg" EntityType="WxDicModel.WxDic_EnToCn_C_bcdefg" />
+    <EntitySet Name="WxDic_EnToCn_C_h" EntityType="WxDicModel.WxDic_EnToCn_C_h" />
+    <EntitySet Name="WxDic_EnToCn_C_ijk" EntityType="WxDicModel.WxDic_EnToCn_C_ijk" />
+    <EntitySet Name="WxDic_EnToCn_C_lmn" EntityType="WxDicModel.WxDic_EnToCn_C_lmn" />
+    <EntitySet Name="WxDic_EnToCn_C_o" EntityType="WxDicModel.WxDic_EnToCn_C_o" />
+    <EntitySet Name="WxDic_EnToCn_C_pqr" EntityType="WxDicModel.WxDic_EnToCn_C_pqr" />
+    <EntitySet Name="WxDic_EnToCn_D_a" EntityType="WxDicModel.WxDic_EnToCn_D_a" />
+    <EntitySet Name="WxDic_EnToCn_D_bcde" EntityType="WxDicModel.WxDic_EnToCn_D_bcde" />
+    <EntitySet Name="WxDic_EnToCn_D_i" EntityType="WxDicModel.WxDic_EnToCn_D_i" />
+    <EntitySet Name="WxDic_EnToCn_D_jklmno" EntityType="WxDicModel.WxDic_EnToCn_D_jklmno" />
+    <EntitySet Name="WxDic_EnToCn_D_pqr" EntityType="WxDicModel.WxDic_EnToCn_D_pqr" />
+    <EntitySet Name="WxDic_EnToCn_D_stuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_D_stuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_E_a" EntityType="WxDicModel.WxDic_EnToCn_E_a" />
+    <EntitySet Name="WxDic_EnToCn_E_bc" EntityType="WxDicModel.WxDic_EnToCn_E_bc" />
+    <EntitySet Name="WxDic_EnToCn_E_defg" EntityType="WxDicModel.WxDic_EnToCn_E_defg" />
+    <EntitySet Name="WxDic_EnToCn_E_hijkl" EntityType="WxDicModel.WxDic_EnToCn_E_hijkl" />
+    <EntitySet Name="WxDic_EnToCn_E_m" EntityType="WxDicModel.WxDic_EnToCn_E_m" />
+    <EntitySet Name="WxDic_EnToCn_E_n" EntityType="WxDicModel.WxDic_EnToCn_E_n" />
+    <EntitySet Name="WxDic_EnToCn_E_opq" EntityType="WxDicModel.WxDic_EnToCn_E_opq" />
+    <EntitySet Name="WxDic_EnToCn_E_rs" EntityType="WxDicModel.WxDic_EnToCn_E_rs" />
+    <EntitySet Name="WxDic_EnToCn_E_tuvw" EntityType="WxDicModel.WxDic_EnToCn_E_tuvw" />
+    <EntitySet Name="WxDic_EnToCn_E_xyz" EntityType="WxDicModel.WxDic_EnToCn_E_xyz" />
+    <EntitySet Name="WxDic_EnToCn_F_a" EntityType="WxDicModel.WxDic_EnToCn_F_a" />
+    <EntitySet Name="WxDic_EnToCn_F_bcde" EntityType="WxDicModel.WxDic_EnToCn_F_bcde" />
+    <EntitySet Name="WxDic_EnToCn_F_fghi" EntityType="WxDicModel.WxDic_EnToCn_F_fghi" />
+    <EntitySet Name="WxDic_EnToCn_F_jkl" EntityType="WxDicModel.WxDic_EnToCn_F_jkl" />
+    <EntitySet Name="WxDic_EnToCn_F_mno" EntityType="WxDicModel.WxDic_EnToCn_F_mno" />
+    <EntitySet Name="WxDic_EnToCn_F_pqr" EntityType="WxDicModel.WxDic_EnToCn_F_pqr" />
+    <EntitySet Name="WxDic_EnToCn_F_stuvwvxyz" EntityType="WxDicModel.WxDic_EnToCn_F_stuvwvxyz" />
+    <EntitySet Name="WxDic_EnToCn_G_a" EntityType="WxDicModel.WxDic_EnToCn_G_a" />
+    <EntitySet Name="WxDic_EnToCn_G_bcde" EntityType="WxDicModel.WxDic_EnToCn_G_bcde" />
+    <EntitySet Name="WxDic_EnToCn_G_fghi" EntityType="WxDicModel.WxDic_EnToCn_G_fghi" />
+    <EntitySet Name="WxDic_EnToCn_G_jkl" EntityType="WxDicModel.WxDic_EnToCn_G_jkl" />
+    <EntitySet Name="WxDic_EnToCn_G_mno" EntityType="WxDicModel.WxDic_EnToCn_G_mno" />
+    <EntitySet Name="WxDic_EnToCn_G_pqr" EntityType="WxDicModel.WxDic_EnToCn_G_pqr" />
+    <EntitySet Name="WxDic_EnToCn_G_stuvwvxyz" EntityType="WxDicModel.WxDic_EnToCn_G_stuvwvxyz" />
+    <EntitySet Name="WxDic_EnToCn_H_a" EntityType="WxDicModel.WxDic_EnToCn_H_a" />
+    <EntitySet Name="WxDic_EnToCn_H_bcde" EntityType="WxDicModel.WxDic_EnToCn_H_bcde" />
+    <EntitySet Name="WxDic_EnToCn_H_fghi" EntityType="WxDicModel.WxDic_EnToCn_H_fghi" />
+    <EntitySet Name="WxDic_EnToCn_H_jklmno" EntityType="WxDicModel.WxDic_EnToCn_H_jklmno" />
+    <EntitySet Name="WxDic_EnToCn_H_pqrstuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_H_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_I_abcd" EntityType="WxDicModel.WxDic_EnToCn_I_abcd" />
+    <EntitySet Name="WxDic_EnToCn_I_efghijklm" EntityType="WxDicModel.WxDic_EnToCn_I_efghijklm" />
+    <EntitySet Name="WxDic_EnToCn_I_n" EntityType="WxDicModel.WxDic_EnToCn_I_n" />
+    <EntitySet Name="WxDic_EnToCn_I_opqrstuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_I_opqrstuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_J" EntityType="WxDicModel.WxDic_EnToCn_J" />
+    <EntitySet Name="WxDic_EnToCn_K" EntityType="WxDicModel.WxDic_EnToCn_K" />
+    <EntitySet Name="WxDic_EnToCn_L_a" EntityType="WxDicModel.WxDic_EnToCn_L_a" />
+    <EntitySet Name="WxDic_EnToCn_L_bcde" EntityType="WxDicModel.WxDic_EnToCn_L_bcde" />
+    <EntitySet Name="WxDic_EnToCn_L_fghi" EntityType="WxDicModel.WxDic_EnToCn_L_fghi" />
+    <EntitySet Name="WxDic_EnToCn_L_jklmno" EntityType="WxDicModel.WxDic_EnToCn_L_jklmno" />
+    <EntitySet Name="WxDic_EnToCn_L_pqrstuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_L_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_M_a" EntityType="WxDicModel.WxDic_EnToCn_M_a" />
+    <EntitySet Name="WxDic_EnToCn_M_bcde" EntityType="WxDicModel.WxDic_EnToCn_M_bcde" />
+    <EntitySet Name="WxDic_EnToCn_M_fghi" EntityType="WxDicModel.WxDic_EnToCn_M_fghi" />
+    <EntitySet Name="WxDic_EnToCn_M_jklmno" EntityType="WxDicModel.WxDic_EnToCn_M_jklmno" />
+    <EntitySet Name="WxDic_EnToCn_M_pqrstuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_M_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_N_a" EntityType="WxDicModel.WxDic_EnToCn_N_a" />
+    <EntitySet Name="WxDic_EnToCn_N_bcde" EntityType="WxDicModel.WxDic_EnToCn_N_bcde" />
+    <EntitySet Name="WxDic_EnToCn_N_fghi" EntityType="WxDicModel.WxDic_EnToCn_N_fghi" />
+    <EntitySet Name="WxDic_EnToCn_N_jklmno" EntityType="WxDicModel.WxDic_EnToCn_N_jklmno" />
+    <EntitySet Name="WxDic_EnToCn_N_pqrstuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_N_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_O_ab" EntityType="WxDicModel.WxDic_EnToCn_O_ab" />
+    <EntitySet Name="WxDic_EnToCn_O_cdef" EntityType="WxDicModel.WxDic_EnToCn_O_cdef" />
+    <EntitySet Name="WxDic_EnToCn_O_ghijklmn" EntityType="WxDicModel.WxDic_EnToCn_O_ghijklmn" />
+    <EntitySet Name="WxDic_EnToCn_O_op" EntityType="WxDicModel.WxDic_EnToCn_O_op" />
+    <EntitySet Name="WxDic_EnToCn_O_qr" EntityType="WxDicModel.WxDic_EnToCn_O_qr" />
+    <EntitySet Name="WxDic_EnToCn_O_stu" EntityType="WxDicModel.WxDic_EnToCn_O_stu" />
+    <EntitySet Name="WxDic_EnToCn_O_vwvxyz" EntityType="WxDicModel.WxDic_EnToCn_O_vwvxyz" />
+    <EntitySet Name="WxDic_EnToCn_P_a" EntityType="WxDicModel.WxDic_EnToCn_P_a" />
+    <EntitySet Name="WxDic_EnToCn_P_bcde" EntityType="WxDicModel.WxDic_EnToCn_P_bcde" />
+    <EntitySet Name="WxDic_EnToCn_P_fgh" EntityType="WxDicModel.WxDic_EnToCn_P_fgh" />
+    <EntitySet Name="WxDic_EnToCn_P_i" EntityType="WxDicModel.WxDic_EnToCn_P_i" />
+    <EntitySet Name="WxDic_EnToCn_P_jkl" EntityType="WxDicModel.WxDic_EnToCn_P_jkl" />
+    <EntitySet Name="WxDic_EnToCn_P_mno" EntityType="WxDicModel.WxDic_EnToCn_P_mno" />
+    <EntitySet Name="WxDic_EnToCn_P_pqr" EntityType="WxDicModel.WxDic_EnToCn_P_pqr" />
+    <EntitySet Name="WxDic_EnToCn_P_stuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_P_stuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_Q" EntityType="WxDicModel.WxDic_EnToCn_Q" />
+    <EntitySet Name="WxDic_EnToCn_R_a" EntityType="WxDicModel.WxDic_EnToCn_R_a" />
+    <EntitySet Name="WxDic_EnToCn_R_bcde" EntityType="WxDicModel.WxDic_EnToCn_R_bcde" />
+    <EntitySet Name="WxDic_EnToCn_R_fghi" EntityType="WxDicModel.WxDic_EnToCn_R_fghi" />
+    <EntitySet Name="WxDic_EnToCn_R_jklmno" EntityType="WxDicModel.WxDic_EnToCn_R_jklmno" />
+    <EntitySet Name="WxDic_EnToCn_R_pqrstuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_R_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_S_a" EntityType="WxDicModel.WxDic_EnToCn_S_a" />
+    <EntitySet Name="WxDic_EnToCn_S_bc" EntityType="WxDicModel.WxDic_EnToCn_S_bc" />
+    <EntitySet Name="WxDic_EnToCn_S_de" EntityType="WxDicModel.WxDic_EnToCn_S_de" />
+    <EntitySet Name="WxDic_EnToCn_S_fgh" EntityType="WxDicModel.WxDic_EnToCn_S_fgh" />
+    <EntitySet Name="WxDic_EnToCn_S_i" EntityType="WxDicModel.WxDic_EnToCn_S_i" />
+    <EntitySet Name="WxDic_EnToCn_S_jk" EntityType="WxDicModel.WxDic_EnToCn_S_jk" />
+    <EntitySet Name="WxDic_EnToCn_S_l" EntityType="WxDicModel.WxDic_EnToCn_S_l" />
+    <EntitySet Name="WxDic_EnToCn_S_mn" EntityType="WxDicModel.WxDic_EnToCn_S_mn" />
+    <EntitySet Name="WxDic_EnToCn_S_o" EntityType="WxDicModel.WxDic_EnToCn_S_o" />
+    <EntitySet Name="WxDic_EnToCn_S_p" EntityType="WxDicModel.WxDic_EnToCn_S_p" />
+    <EntitySet Name="WxDic_EnToCn_S_qst" EntityType="WxDicModel.WxDic_EnToCn_S_qst" />
+    <EntitySet Name="WxDic_EnToCn_S_u" EntityType="WxDicModel.WxDic_EnToCn_S_u" />
+    <EntitySet Name="WxDic_EnToCn_S_vwxyz" EntityType="WxDicModel.WxDic_EnToCn_S_vwxyz" />
+    <EntitySet Name="WxDic_EnToCn_T_a" EntityType="WxDicModel.WxDic_EnToCn_T_a" />
+    <EntitySet Name="WxDic_EnToCn_T_bcde" EntityType="WxDicModel.WxDic_EnToCn_T_bcde" />
+    <EntitySet Name="WxDic_EnToCn_T_fgh" EntityType="WxDicModel.WxDic_EnToCn_T_fgh" />
+    <EntitySet Name="WxDic_EnToCn_T_i" EntityType="WxDicModel.WxDic_EnToCn_T_i" />
+    <EntitySet Name="WxDic_EnToCn_T_o" EntityType="WxDicModel.WxDic_EnToCn_T_o" />
+    <EntitySet Name="WxDic_EnToCn_T_pqr" EntityType="WxDicModel.WxDic_EnToCn_T_pqr" />
+    <EntitySet Name="WxDic_EnToCn_T_stu" EntityType="WxDicModel.WxDic_EnToCn_T_stu" />
+    <EntitySet Name="WxDic_EnToCn_T_vwxyz" EntityType="WxDicModel.WxDic_EnToCn_T_vwxyz" />
+    <EntitySet Name="WxDic_EnToCn_U_abcdefghijklmn" EntityType="WxDicModel.WxDic_EnToCn_U_abcdefghijklmn" />
+    <EntitySet Name="WxDic_EnToCn_U_opqrstuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_U_opqrstuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_V_a" EntityType="WxDicModel.WxDic_EnToCn_V_a" />
+    <EntitySet Name="WxDic_EnToCn_V_bcde" EntityType="WxDicModel.WxDic_EnToCn_V_bcde" />
+    <EntitySet Name="WxDic_EnToCn_V_fghi" EntityType="WxDicModel.WxDic_EnToCn_V_fghi" />
+    <EntitySet Name="WxDic_EnToCn_V_jklmnopqrstuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_V_jklmnopqrstuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_W_a" EntityType="WxDicModel.WxDic_EnToCn_W_a" />
+    <EntitySet Name="WxDic_EnToCn_W_bcde" EntityType="WxDicModel.WxDic_EnToCn_W_bcde" />
+    <EntitySet Name="WxDic_EnToCn_W_fgh" EntityType="WxDicModel.WxDic_EnToCn_W_fgh" />
+    <EntitySet Name="WxDic_EnToCn_W_i" EntityType="WxDicModel.WxDic_EnToCn_W_i" />
+    <EntitySet Name="WxDic_EnToCn_W_jklmno" EntityType="WxDicModel.WxDic_EnToCn_W_jklmno" />
+    <EntitySet Name="WxDic_EnToCn_W_pqrstuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_W_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_X" EntityType="WxDicModel.WxDic_EnToCn_X" />
+    <EntitySet Name="WxDic_EnToCn_Y" EntityType="WxDicModel.WxDic_EnToCn_Y" />
+    <EntitySet Name="WxDic_EnToCn_Z" EntityType="WxDicModel.WxDic_EnToCn_Z" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_C_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_bcdefg" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_C_bcdefg" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_h" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_C_h" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_ijk" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_C_ijk" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_lmn" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_C_lmn" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_o" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_C_o" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_pqr" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_C_pqr" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_C_stuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_C_stuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_D_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_D_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_i" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_D_i" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_jklmno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_D_jklmno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_pqr" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_D_pqr" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_D_stuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_D_stuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_bc" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_bc" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_defg" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_defg" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_hijkl" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_hijkl" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_m" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_m" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_n" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_n" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_opq" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_opq" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_rs" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_rs" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_tuvw" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_tuvw" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_E_xyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_E_xyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_F_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_F_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_fghi" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_F_fghi" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_jkl" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_F_jkl" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_mno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_F_mno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_pqr" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_F_pqr" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_F_stuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_F_stuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_G_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_G_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_fghi" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_G_fghi" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_jkl" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_G_jkl" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_mno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_G_mno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_pqr" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_G_pqr" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_G_stuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_G_stuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_H_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_H_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_fghi" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_H_fghi" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_jklmno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_H_jklmno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_H_pqrstuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_H_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_I_abcd" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_I_abcd" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_I_efghijklm" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_I_efghijklm" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_I_n" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_I_n" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_I_opqrstuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_I_opqrstuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_J" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_J" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_K" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_K" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_L_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_L_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_fghi" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_L_fghi" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_jklmno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_L_jklmno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_L_pqrstuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_L_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_M_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_M_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_fghi" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_M_fghi" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_jklmno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_M_jklmno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_M_pqrstuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_M_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_N_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_N_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_fghi" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_N_fghi" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_jklmno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_N_jklmno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_N_pqrstuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_N_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_ab" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_O_ab" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_cdef" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_O_cdef" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_ghijklmn" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_O_ghijklmn" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_op" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_O_op" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_qr" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_O_qr" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_stu" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_O_stu" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_O_vwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_O_vwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_P_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_P_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_fgh" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_P_fgh" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_i" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_P_i" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_jkl" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_P_jkl" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_mno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_P_mno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_pqr" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_P_pqr" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_P_stuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_P_stuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_Q" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_Q" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_R_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_R_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_fghi" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_R_fghi" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_jklmno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_R_jklmno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_R_pqrstuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_R_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_bc" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_bc" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_de" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_de" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_fgh" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_fgh" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_i" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_i" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_jk" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_jk" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_l" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_l" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_mn" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_mn" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_o" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_o" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_p" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_p" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_qst" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_qst" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_u" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_u" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_S_vwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_S_vwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_T_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_T_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_fgh" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_T_fgh" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_i" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_T_i" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_o" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_T_o" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_pqr" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_T_pqr" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_stu" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_T_stu" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_vwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_T_vwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_U_abcdefghijklmn" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_U_abcdefghijklmn" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_U_opqrstuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_U_opqrstuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_V_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_V_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_V_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_V_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_V_fghi" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_V_fghi" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_V_jklmnopqrstuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_V_jklmnopqrstuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_a" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_W_a" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_bcde" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_W_bcde" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_fgh" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_W_fgh" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_i" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_W_i" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_jklmno" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_W_jklmno" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_W_pqrstuvwxyz" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_W_pqrstuvwxyz" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_X" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_X" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_Y" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_Y" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_Z" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_Z" />
+    <EntitySet Name="WxDic_EnToCn_C_stuvwxyz" EntityType="WxDicModel.WxDic_EnToCn_C_stuvwxyz" />
+    <EntitySet Name="WxDic_EnToCn_T_jklmn" EntityType="WxDicModel.WxDic_EnToCn_T_jklmn" />
+    <EntitySet Name="WxDic_SearchKey_EnToCn_T_jklmn" EntityType="WxDicModel.WxDic_SearchKey_EnToCn_T_jklmn" />
+    <EntitySet Name="WxDic_CnToEn_a" EntityType="WxDicModel.WxDic_CnToEn_a" />
+    <EntitySet Name="WxDic_CnToEn_b" EntityType="WxDicModel.WxDic_CnToEn_b" />
+    <EntitySet Name="WxDic_CnToEn_c" EntityType="WxDicModel.WxDic_CnToEn_c" />
+    <EntitySet Name="WxDic_CnToEn_d" EntityType="WxDicModel.WxDic_CnToEn_d" />
+    <EntitySet Name="WxDic_CnToEn_e" EntityType="WxDicModel.WxDic_CnToEn_e" />
+    <EntitySet Name="WxDic_CnToEn_f" EntityType="WxDicModel.WxDic_CnToEn_f" />
+    <EntitySet Name="WxDic_CnToEn_g" EntityType="WxDicModel.WxDic_CnToEn_g" />
+    <EntitySet Name="WxDic_CnToEn_h" EntityType="WxDicModel.WxDic_CnToEn_h" />
+    <EntitySet Name="WxDic_CnToEn_i" EntityType="WxDicModel.WxDic_CnToEn_i" />
+    <EntitySet Name="WxDic_CnToEn_j" EntityType="WxDicModel.WxDic_CnToEn_j" />
+    <EntitySet Name="WxDic_CnToEn_k" EntityType="WxDicModel.WxDic_CnToEn_k" />
+    <EntitySet Name="WxDic_CnToEn_l" EntityType="WxDicModel.WxDic_CnToEn_l" />
+    <EntitySet Name="WxDic_CnToEn_m" EntityType="WxDicModel.WxDic_CnToEn_m" />
+    <EntitySet Name="WxDic_CnToEn_n" EntityType="WxDicModel.WxDic_CnToEn_n" />
+    <EntitySet Name="WxDic_CnToEn_o" EntityType="WxDicModel.WxDic_CnToEn_o" />
+    <EntitySet Name="WxDic_CnToEn_p" EntityType="WxDicModel.WxDic_CnToEn_p" />
+    <EntitySet Name="WxDic_CnToEn_q" EntityType="WxDicModel.WxDic_CnToEn_q" />
+    <EntitySet Name="WxDic_CnToEn_r" EntityType="WxDicModel.WxDic_CnToEn_r" />
+    <EntitySet Name="WxDic_CnToEn_s" EntityType="WxDicModel.WxDic_CnToEn_s" />
+    <EntitySet Name="WxDic_CnToEn_t" EntityType="WxDicModel.WxDic_CnToEn_t" />
+    <EntitySet Name="WxDic_CnToEn_w" EntityType="WxDicModel.WxDic_CnToEn_w" />
+    <EntitySet Name="WxDic_CnToEn_x" EntityType="WxDicModel.WxDic_CnToEn_x" />
+    <EntitySet Name="WxDic_CnToEn_y" EntityType="WxDicModel.WxDic_CnToEn_y" />
+    <EntitySet Name="WxDic_CnToEn_z" EntityType="WxDicModel.WxDic_CnToEn_z" />
+  </EntityContainer>
+  <EntityType Name="WxDic_Dictionary">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="WKey" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="WValue" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_b">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_b">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_c">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_c">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_d">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_d">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_e">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_f">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_g">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_ijk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_op">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_qr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_s">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_t">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_A_uvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_e">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_f">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_g">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_ijk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_op">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_qr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_s">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_t">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_A_uvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_jklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_jklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_B_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_B_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_bcdefg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_ijk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_lmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_D_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_bc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_defg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_hijkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_opq">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_rs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_tuvw">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_E_xyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_F_stuvwvxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_G_stuvwvxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_H_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_I_abcd">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_I_efghijklm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_I_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_I_opqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_J">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_K">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_L_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_M_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_N_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_ab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_cdef">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_ghijklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_op">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_qr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_O_vwvxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_P_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_Q">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_R_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_bc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_de">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_jk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_mn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_p">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_qst">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_u">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_S_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_U_abcdefghijklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_U_opqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_V_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_V_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_V_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_V_jklmnopqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_W_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_X">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_Y">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_Z">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_bcdefg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_ijk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_lmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_C_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_D_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_bc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_defg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_hijkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_opq">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_rs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_tuvw">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_E_xyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_F_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_G_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_H_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_I_abcd">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_I_efghijklm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_I_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_I_opqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_J">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_K">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_L_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_M_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_N_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_ab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_cdef">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_ghijklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_op">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_qr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_O_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_jkl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_mno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_P_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_Q">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_R_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_bc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_de">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_jk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_mn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_p">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_qst">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_u">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_S_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_pqr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_stu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_vwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_U_abcdefghijklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_U_opqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_V_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_V_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_V_fghi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_V_jklmnopqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_bcde">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_fgh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_jklmno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_W_pqrstuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_X">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_Y">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_Z">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_C_stuvwxyz">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_EnToCn_T_jklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_SearchKey_EnToCn_T_jklmn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKey" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_a">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_b">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_c">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_d">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_e">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_f">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_g">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_h">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_i">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_j">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_k">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_l">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_m">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_n">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_o">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_p">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_q">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_r">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_s">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_t">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_w">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_x">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_y">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WxDic_CnToEn_z">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WKey" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WValue" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

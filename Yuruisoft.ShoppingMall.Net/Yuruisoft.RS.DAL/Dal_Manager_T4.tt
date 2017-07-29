@@ -1,0 +1,38 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="Yuruisoft.RS.Model" #>
+<#@ assembly name="$(SolutionDir)\Yuruisoft.RS.Model\bin\Debug\Yuruisoft.RS.Model.dll" #>
+<#@ output extension=".cs" #>
+/*
+ * 该文件为T4模板自动创建，请勿手动添加任何代码，否则会被刷新覆盖
+ * 
+ * 更多技术支持，请联系业务电话：15308202328  业务QQ：11082929
+ * 
+ * 更多业务请查看：www.yuruisoft.com(全球） www.yurusoft.net(国内专线)
+ * 
+ * 版权为裕睿软件@yuruisoft.com所持 
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Yuruisoft.RS.IDAL;
+using Yuruisoft.RS.Model;
+
+namespace Yuruisoft.RS.DAL
+{
+<#var entity = new EntityClassInfo();
+foreach(var item in entity.EntitiesList)
+{#>
+    public partial class <#=item#>Dal : Base_Dal<<#=item#>>, I<#=item#>Dal
+    {
+
+    }
+<#}#>
+}

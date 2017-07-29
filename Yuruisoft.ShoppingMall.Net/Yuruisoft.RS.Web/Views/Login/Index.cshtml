@@ -1,0 +1,251 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>   
+    <title>裕睿软件·RS·登录界面</title>
+    <script type="text/javascript">
+        if (window.parent.window != window) {
+            window.top.location.href = "/Login/CheckLogin";
+        }
+    </script>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        function changeCheckCode() {
+            $("#img").attr("src", $("#img").data("src") + "?"+ Math.random());
+        }
+        function afterLogin(data) {
+            var serverData = data.split(':');
+            if (serverData[0] == "ok") {
+                window.location.href = "/Home/HomePage"
+            } else if (serverData[0] == "no") {
+                $("#errorMsg").text(serverData[1]);
+                changeCheckCode();
+            } else {
+               window.location.href="/Error.html"
+            }
+        }
+    </script>
+    <style type="text/css">
+        *
+        {
+            padding: 0;
+            margin: 0;
+        }
+        body
+        {
+            text-align: center;
+            background: #4974A4;
+        }
+        #login
+        {
+            width: 740px;
+            margin: 0 auto;
+            font-size: 12px;
+        }
+        #loginlogo
+        {
+            width: 700px;
+            height: 100px;
+            overflow: hidden;
+            background: url('/Content/Images/login/logo.png') no-repeat;
+            margin-top: 50px;
+        }
+        #loginpanel
+        {
+            width: 729px;
+            position: relative;
+            height: 300px;
+        }
+        .panel-h
+        {
+            width: 729px;
+            height: 20px;
+            background: url('/Content/Images/login/panel-h.gif') no-repeat;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 3;
+        }
+        .panel-f
+        {
+            width: 729px;
+            height: 13px;
+            background: url('/Content/Images/login/panel-f.gif') no-repeat;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            z-index: 3;
+        }
+        .panel-c
+        {
+            z-index: 2;
+            background: url('/Content/Images/login/panel-c.gif') repeat-y;
+            width: 729px;
+            height: 300px;
+        }
+        .panel-c-l
+        {
+            position: absolute;
+            left: 60px;
+            top: 40px;
+        }
+        .panel-c-r
+        {
+            position: absolute;
+            right: 20px;
+            top: 50px;
+            width: 222px;
+            line-height: 200%;
+            text-align: left;
+        }
+        .panel-c-l h3
+        {
+            color: #556A85;
+            margin-bottom: 10px;
+        }
+        .panel-c-l td
+        {
+            padding: 7px;
+        }
+        .login-text
+        {
+            height: 24px;
+            left: 24px;
+            border: 1px solid #e9e9e9;
+            background: #f9f9f9;
+        }
+        .login-text-focus
+        {
+            border: 1px solid #E6BF73;
+        }
+        .login-btn
+        {
+            width: 114px;
+            height: 29px;
+            color: #E9FFFF;
+            line-height: 29px;
+            background: url('/Content/Images/login/login-btn.gif') no-repeat;
+            border: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        #txtUsername, #code, #txtPassword
+        {
+            width: 191px;
+        }
+        #logincopyright
+        {
+            text-align: center;
+            color: White;
+            margin-top: 50px;
+        }
+        a
+        {
+            color: Black;
+        }
+        a:hover
+        {
+            color: Red;
+            text-decoration: underline;
+        }
+        .cellpadding_replace 
+        {
+            border:0;margin:0;border-collapse:collapse;border-spacing:0;
+        }
+        .cellspacing_replace 
+        {
+            padding:0;
+        }
+    </style>
+</head>
+<body style="padding: 10px">
+    <div id="login">
+        <div id="loginlogo">
+        </div>
+        <div id="loginpanel">
+            <div class="panel-h">
+            </div>
+            <div class="panel-c">
+                <div class="panel-c-l">
+                    @using(Ajax.BeginForm("CheckLogin",new{},new AjaxOptions(){OnSuccess="afterLogin"},new{id="loginForm"})){
+                    <table class ="cellpadding_replace,cellspacing_replace">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left;" colspan="2">
+                                    <h3>
+                                        请使用裕睿软件·RS·账号登录</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">
+                                    账号：
+                                </td>
+                                <td style="text-align:left;">
+                                    <input type="text" name="LoginCode" id="LoginCode" class="login-text" />
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">
+                                    密码：
+                                </td>
+                                <td style="text-align:left;">
+                                    <input type="password" name="LoginPwd" id="LoginPwd" value="123" class="login-text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    验证码：
+                                </td>
+                                <td style="text-align:left;">
+                                    <input type="text" class="login-text" id="code" name="vCode" value="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    <img id="img" src="/Login/ValidateCode/" data-src="/Login/ValidateCode/" style="float: left; height: 24px;" />
+                                    <div style="float: left; margin-left: 5px; margin-top: 10px;">
+                                        <a href="javascript:void(0)" onclick="changeCheckCode();return false;">看不清，换一张</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;" colspan="2">
+                                    <input type="submit" id="btnLogin" value="登录" class="login-btn" /><a href="/Login/FindPwd">找回密码</a>
+                                   <input type="checkbox" name="checkMe" value="CheckTheCheckbox" />记住我
+                                    <span id="errorMsg"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    }
+                </div>
+                <div class="panel-c-r">
+                    <p>
+                        请从左侧输入登录账号和密码登录</p>
+                    <p>
+                        如果遇到系统问题，请联系网络管理员。</p>
+                    <p>
+                        如果没有账号，请联系网站管理员。
+                    </p>
+                    <p>
+                        ......</p>
+                </div>
+            </div>
+            <div class="panel-f">
+            </div>
+        </div>
+        <div id="logincopyright">
+            Copyright · 2016 Yuruisoft.com
+        </div>
+    </div>
+</body>
+</html>

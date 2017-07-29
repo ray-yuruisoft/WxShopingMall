@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dd4ace5aac704b03834cddf43008a12e" Name="关系图1">
+        <EntityTypeShape EntityType="MathtoolDBEntitiesModel.math_key_and_level" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MathtoolDBEntitiesModel.math_level_data" Width="1.5" PointX="2.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MathtoolDBEntitiesModel.math_search_key" Width="1.5" PointX="4.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MathtoolDBEntitiesModel.math_user_info" Width="1.5" PointX="6.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MathtoolDBEntitiesModel.math_AbilityContent" Width="1.5" PointX="0.5" PointY="3.25" />
+        <EntityTypeShape EntityType="MathtoolDBEntitiesModel.math_FeedBackInfo" Width="1.5" PointX="8.75" PointY="0.5" />
+        <EntityTypeShape EntityType="MathtoolDBEntitiesModel.math_SourceBuy" Width="1.5" PointX="11" PointY="0.5" />
+        <EntityTypeShape EntityType="MathtoolDBEntitiesModel.math_SourceBuyOrderstatus" Width="1.5" PointX="2.25" PointY="3.25" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

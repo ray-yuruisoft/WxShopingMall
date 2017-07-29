@@ -1,0 +1,469 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>登录页面 - Yuruisoft后台管理系统</title>
+    <meta name="keywords" content="裕睿软件,微信小程序后台管理,后台管理系统,Yuruisoft" />
+    <meta name="description" content="裕睿软件,微信小程序后台管理,后台管理系统,Yuruisoft" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- basic styles -->
+
+    @*    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" /> 已用CDN加速*@
+    <link href="~/Content/assets/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--[if IE 7]>
+		  <link rel="stylesheet" href="~/Content/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+    <!-- page specific plugin styles -->
+
+    <link rel="stylesheet" href="~/Content/assets/css/jquery.gritter.css" />
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="~/Content/assets/css/ace-rtl.min.css" />
+	<link rel="stylesheet" href="~/Content/assets/css/ace.min.css" />
+
+    <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="~/Content/assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+		<script src="~/Content/assets/js/html5shiv.js"></script>
+		<script src="~/Content/assets/js/respond.min.js"></script>
+		<![endif]-->
+
+    @*CDN加速，后来引入*@
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+
+
+
+
+
+    <script type="text/javascript">
+        function changeCheckCode() {
+            $("#img").attr("src", $("#img").data("src") + "?" + Math.random());
+        }
+        function afterLogin(data) {
+            var serverData = data.split(':');
+            if (serverData[0] == "ok") {
+                window.location.href = "/Home/HomePage"
+            } else if (serverData[0] == "no") {
+                bootbox.hideAll();
+                if (TimeOutHandler != undefined) {
+                    clearTimeout(TimeOutHandler);
+                }
+                if (lastTimer != undefined) {
+                    clearTimeout(lastTimer);
+                }
+                $("#AlertDiv").css("display", "block");
+                $("#errorMsg").text(serverData[1]);
+                if (parseInt(serverData[2]) > 2) {
+                    $("#ValidataCodeInputDiv").css("display", "block");
+                    $("#ValidataCodeDiv").css("display", "block");
+                }
+                changeCheckCode();
+            } else {
+                window.location.href = "/Error.html"
+            }
+        } 
+        function afterSendFindpwd(data) {
+            var serverData = data.split(':');
+            if (serverData[0] == "ok") {
+                bootbox.hideAll();//隐藏模态框，并取消倒计时
+                if (TimeOutHandler != undefined) {
+                    clearTimeout(TimeOutHandler);
+                }
+                if (lastTimer != undefined) {
+                    clearTimeout(lastTimer);
+                }
+                //TODO:回复 这里加的有问题！
+                $.gritter.add({
+                    title: '发送成功',
+                    text: '您的邮件已成功发送！',
+                    class_name: 'gritter-info gritter-center'
+                });
+            } else if (serverData[0] == "no") {
+                bootbox.hideAll();
+                if (TimeOutHandler != undefined) {
+                    clearTimeout(TimeOutHandler);
+                }
+                if (lastTimer != undefined)
+                {
+                    clearTimeout(lastTimer);
+                }
+                //TODO:回复
+                $.gritter.add({
+                    title: '输入错误',
+                    text: "用户名或Email错误",
+                    class_name: 'gritter-info gritter-center gritter-error'
+                });
+
+            } else {
+                window.location.href = "/Error.html"
+            }
+        }
+        var TimeOutHandler;
+        function BeforeSend() {
+            TimeOutHandler = setTimeout("WaitTODirect()", 500);
+        }
+        function WaitTODirect() {
+            bootbox.dialog({
+                message: "<h3 class='header smaller lighter grey'><i class='icon-spinner icon-spin orange bigger-125'></i>努力加载中...请耐心等待！<small id='WaitSecond'>10秒后自动跳转</small></h3>",
+                closeButton: false
+            });
+            settime();
+        }
+        var countdown = 10;
+        var lastTimer;
+        function settime() {//倒计时
+            clearTimeout(lastTimer);
+            if (countdown == 0) {
+                window.location.href = "/Error500.html"
+            } else {
+                $("#WaitSecond").text(countdown + "秒后自动跳转");
+                countdown--;
+            }
+            lastTimer = setTimeout(function () {
+                settime()
+            }, 1000)
+        }
+    </script>
+
+
+
+</head>
+
+<body class="login-layout">
+    <div class="main-container">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="login-container">
+                        <div class="center">
+                            <h1>
+                                <i class="icon-leaf green"></i>
+                                <span class="red">Yuruisoft</span>
+                                <span class="white">综合管理</span>
+                            </h1>
+                            <h4 class="blue">&copy; The Yuruisoft 2017.</h4>
+                        </div>
+
+                        <div class="space-6"></div>
+
+                        <div class="position-relative">
+                            <div id="login-box" class="login-box visible widget-box no-border">
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <h4 class="header blue lighter bigger">
+                                            <i class="icon-coffee green"></i>
+                                            版本号v1.0.0更新于2017.6.11
+                                        </h4>
+
+                                        <div class="space-6"></div>
+                                        @using (Ajax.BeginForm("CheckLogin", new { }, new AjaxOptions() { OnBegin = "BeforeSend", OnSuccess = "afterLogin" }, new { id = "loginForm" }))
+                                        {
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input name="LoginCode" id="LoginCode" type="text" class="form-control" placeholder="用户名" />
+                                                    <i class="icon-user"></i>
+                                                </span>
+                                            </label>
+
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input name="LoginPwd" id="LoginPwd" type="password" class="form-control" placeholder="密码" />
+                                                    <i class="icon-lock"></i>
+                                                </span>
+                                            </label>
+                                            
+                                            <div id="ValidataCodeInputDiv" style="display: none">
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        <input id="code" name="vCode" type="text" class="form-control" placeholder="验证码" />
+                                                        <i class="icon-exclamation-sign"></i>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            
+                                            <div id="ValidataCodeDiv" class="clearfix" style="display: none">
+                                                <img id="img" src="/LogOn/ValidateCode/" data-src="/LogOn/ValidateCode/" style="float: left; height: 24px;" />
+                                                <div style="float: left; margin-left: 5px; margin-top: 5px;">
+                                                    <a href="javascript:void(0)" onclick="changeCheckCode();return false;">看不清，换一张</a>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="space"></div>
+                                            
+                                            <div id="AlertDiv" style="display: none">
+                                                <div class="alert alert-danger">
+                                                    <button type="button" class="close" onclick="$('#AlertDiv').hide()">
+                                                        <i class="icon-remove"></i>
+                                                    </button>
+                                                    <strong id="errorMsg">
+                                                        <i class="icon-remove"></i>
+                                                    </strong>
+                                                </div>
+                                                <div class="space"></div>
+                                            </div>
+                                            
+                                            <div class="clearfix">
+                                                <label class="inline">
+                                                    <input name="checkMe" value="CheckTheCheckbox" type="checkbox" class="ace" />
+                                                    <span class="lbl">记住我</span>
+                                                </label>
+
+                                                <button id="btnLogin" type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                                                    <i class="icon-key"></i>
+                                                    登录
+                                                </button>
+                                            </div>
+
+                                            <div class="space-4"></div>
+                                        }
+                                        <div class="social-or-login center">
+                                            <span class="bigger-110">或使用以下登录</span>
+                                        </div>
+
+                                        <div class="social-login center">
+                                            <a class="btn btn-primary">
+                                                <i class="icon-facebook"></i>
+                                            </a>
+
+                                            <a class="btn btn-info">
+                                                <i class="icon-twitter"></i>
+                                            </a>
+
+                                            <a class="btn btn-danger">
+                                                <i class="icon-google-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- /widget-main -->
+
+                                    <div class="toolbar clearfix">
+                                        <div>
+                                            <a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
+                                                <i class="icon-arrow-left"></i>
+                                                忘记密码
+                                            </a>
+                                        </div>
+
+                                        <div>
+                                            <a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">注册
+													<i class="icon-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /widget-body -->
+                            </div>
+                            <!-- /login-box -->
+
+                            <div id="forgot-box" class="forgot-box widget-box no-border">
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <h4 class="header red lighter bigger">
+                                            <i class="icon-key"></i>
+                                            重置密码
+                                        </h4>
+
+                                        <div class="space-6"></div>
+                                        <p>
+                                            输入用户名和Email，然后点击发送
+                                        </p>
+
+                                        @using (Ajax.BeginForm("FindPwd", new { }, new AjaxOptions() { OnBegin = "BeforeSend", OnSuccess = "afterSendFindpwd" }, new { id = "FindPwdForm" }))
+                                        {
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input name="txtName" id="txtName" type="text" class="form-control" placeholder="用户名" />
+                                                    <i class="icon-user"></i>
+                                                </span>
+                                            </label>
+                                            
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input name="txtMail" id="txtMail" type="email" class="form-control" placeholder="Email" />
+                                                    <i class="icon-envelope"></i>
+                                                </span>
+                                            </label>
+
+                                            <div class="clearfix">
+                                                <button id="btnFindPwd" type="submit" class="width-35 pull-right btn btn-sm btn-danger">
+                                                    <i class="icon-lightbulb"></i>
+                                                    点我发送！
+                                                </button>
+                                            </div>
+
+                                        }
+                                    </div>
+                                    <!-- /widget-main -->
+
+                                    <div class="toolbar center">
+                                        <a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">回到登录
+												<i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- /widget-body -->
+                            </div>
+                            <!-- /forgot-box -->
+
+                            <div id="signup-box" class="signup-box widget-box no-border">
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <h4 class="header green lighter bigger">
+                                            <i class="icon-group blue"></i>
+                                            注册新用户
+                                        </h4>
+
+                                        <div class="space-6"></div>
+                                        <p>请输入用户资料: </p>
+
+                                        <form>
+                                            <fieldset>
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        <input type="email" class="form-control" placeholder="Email" />
+                                                        <i class="icon-envelope"></i>
+                                                    </span>
+                                                </label>
+
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        <input type="text" class="form-control" placeholder="用户名" />
+                                                        <i class="icon-user"></i>
+                                                    </span>
+                                                </label>
+
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        <input type="password" class="form-control" placeholder="密码" />
+                                                        <i class="icon-lock"></i>
+                                                    </span>
+                                                </label>
+
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        <input type="password" class="form-control" placeholder="再次输入密码" />
+                                                        <i class="icon-retweet"></i>
+                                                    </span>
+                                                </label>
+
+                                                <label class="block">
+                                                    <input type="checkbox" class="ace" />
+                                                    <span class="lbl">我接受
+															<a href="#">用户协议</a>
+                                                    </span>
+                                                </label>
+
+                                                <div class="space-24"></div>
+
+                                                <div class="clearfix">
+                                                    <button type="reset" class="width-30 pull-left btn btn-sm">
+                                                        <i class="icon-refresh"></i>
+                                                        清空
+                                                    </button>
+
+                                                    <button type="button" class="width-65 pull-right btn btn-sm btn-success">
+                                                        点我注册！
+															<i class="icon-arrow-right icon-on-right"></i>
+                                                    </button>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+
+                                    <div class="toolbar center">
+                                        <a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
+                                            <i class="icon-arrow-left"></i>
+                                            返回登录
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- /widget-body -->
+                            </div>
+                            <!-- /signup-box -->
+                        </div>
+                        <!-- /position-relative -->
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </div>
+    <!-- /.main-container -->
+
+    @*CDN加速，后来引入*@
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    @*表单验证需要，框架外引入*@
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    @*表单验证需要，框架外引入*@
+    <!-- page specific plugin JS -->
+
+    <script src="https://cdn.bootcss.com/bootbox.js/4.4.0/bootbox.min.js"></script>
+@*    <script src="~/Content/assets/js/bootbox.min.js"></script>*@
+    <script src="~/Content/assets/js/jquery.gritter.min.js"></script>
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+
+    @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 谷歌国内太慢了*@
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+    <!--[if !IE]> -->
+
+    @*    <script type="text/javascript">
+        window.jQuery || document.write("<script src='~/Content/assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script> 已用CDN加速*@
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+    <script type="text/javascript">
+        if ("ontouchend" in document) document.write("<script src='~/Content/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+
+    <!-- inline scripts related to this page -->
+
+    <script type="text/javascript">
+        function show_box(id) {
+            jQuery('.widget-box.visible').removeClass('visible');
+            jQuery('#' + id).addClass('visible');
+        }
+    </script>
+    <div style="display: none">
+        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+    </div>
+</body>
+</html>

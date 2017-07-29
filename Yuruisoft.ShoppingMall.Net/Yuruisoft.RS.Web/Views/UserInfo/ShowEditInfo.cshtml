@@ -1,0 +1,105 @@
+﻿@model Yuruisoft.RS.Model.UserInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowEditInfo</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        function subEditForm() {
+            $("#FormEdit").submit();
+        }
+        function afterEdit() {
+            //子窗体怎样调用父窗体的方法.
+            window.parent.afterEdit();
+        }
+    </script>
+</head>
+<body>
+
+    @using (Ajax.BeginForm("EditUserInfo", new { }, new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterEdit" }, new { id = "FormEdit" }))
+    {
+        @Html.ValidationSummary(true)
+        <table style="margin: 20px">
+            @Html.HiddenFor(model => model.ID)
+            @Html.HiddenFor(model => model.SubTime)
+            @Html.HiddenFor(model=>model.UName)
+            @Html.HiddenFor(model=>model.DelFlag)
+            @Html.HiddenFor(model=>model.Sort)
+            <tr>
+                <td>@Html.LabelFor(m => m.UName)：</td>
+                <td>
+                    @Html.DisplayFor(m => m.UName)
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.UPwd)：</td>
+                <td>
+                    @Html.EditorFor(m => m.UPwd)
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.UPwd)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.TUPwd)：</td>
+                <td>
+                    @Html.EditorFor(m => m.TUPwd)
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.TUPwd)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.UEmail)：</td>
+                <td>
+                    @Html.EditorFor(m => m.UEmail)
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.UEmail)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.UPhoneNumber)：</td>
+                <td>
+                    @Html.EditorFor(m => m.UPhoneNumber)
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.UPhoneNumber)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.Remark)：</td>
+                <td>
+                    @Html.EditorFor(m => m.Remark)
+
+                </td>
+            </tr>
+        </table>
+    }
+</body>
+</html>

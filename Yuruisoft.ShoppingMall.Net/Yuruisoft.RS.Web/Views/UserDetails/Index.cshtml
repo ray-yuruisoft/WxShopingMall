@@ -1,0 +1,216 @@
+﻿@using DynamicDal
+
+@{
+    DynamicDal.BaseDal dal = new DynamicDal.BaseDal(Yuruisoft.RS.DAL.DBContextFactory.CreateDbContext());
+    Type runtimeModel= dal.GetRuntimeModelType(Yuruisoft.RS.Common.GetJsonDatas.GetJson(), 0);
+    DynamicFormGenerator FormGenerator = new DynamicFormGenerator(new DynamicFormFieldGeneratorProvider());
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户详细信息管理界面</title>
+    <link href="~/Content/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/datapattern.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/Content/Yuruisoft.RS.CSS.Custom.css" rel="stylesheet" />
+    <link href="~/Content/Yuruisoft.RS.CSS.Button.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $("#addDiv").css("display", "none");
+            $("#editDiv").css("display", "none");
+            $("#SearchDiv").css("display", "none");
+            loadData();
+        });
+
+        //加载DataGrid数据
+        function loadData(pars) {
+            var pager = $('#tt').datagrid({
+                url: '/UserDetails/GetUserDetails',
+                height: 520,
+                rownumbers: true,
+                remoteSort: false,
+                multiSort: true,
+                collapsible: true,
+                fitColumns: true, //列自适应
+                nowrap: true,
+                pagination: true,
+                idField: 'ID',//主键列的列明
+                loadMsg: '正在加载用户的信息...',
+                pagination: true,//是否有分页
+                singleSelect: false,//是否单行选择
+                pageSize: 5,//页大小，一页多少条数据
+                pageNumber: 1,//当前页，默认的
+                pageList: [5, 10, 15],
+                queryParams: pars,//往后台传递参数
+                toolbar: '#toolbar_Admin',
+                onBeforeLoad: function () {
+                    $('#tt').datagrid('getPager').pagination({
+                        buttons: [{
+                            iconCls: 'icon-configure',
+                            handler: function () {
+                                alert('search');
+                            }
+                        }, {
+                            iconCls: 'icon-add',
+                            handler: function () {
+                                alert('add');
+                            }
+                        }, {
+                            iconCls: 'icon-edit',
+                            handler: function () {
+                                alert('edit');
+                            }
+                        }]
+                    })
+                },
+                onLoadSuccess: function () {
+                },
+            });
+            return pager;
+        }
+
+        //添加信息
+        function addInfo() {
+            $("#addDiv").css("display", "block");
+            $('#addDiv').dialog({
+                title: "添加信息",
+                modal: true,
+                collapsible: true,
+                width: 350,
+                height: 400,
+                buttons: [{
+                    text: '保存',
+                    iconCls: 'icon-save',
+                    handler: function () {
+                        //自己完成表单校验 使用了MVC校验
+                        $("#addForm").submit();//提交表单.
+                    }
+                }, {
+                    text: '取消',
+                    handler: function () {
+                        $('#addDiv').dialog('close');
+                    }
+                }]
+            });
+        }
+        //添加完成以后调用该方法,回调函数
+        function afterAdd() {
+            $('#addDiv').dialog('close');
+            $('#tt').datagrid('reload');//重新加载。
+            $("#addForm input").val("");
+        }
+
+
+    </script>
+</head>
+<body>
+    <!-------------------------------------------------------------数据表插入位置DataGrid-------开始------------------------------------------------------>
+    <table id="tt">
+       <thead>
+			<tr>
+                <th field="ck" width="50" checkbox="true" align="left"></th>
+                  @foreach (var item in ViewBag.Propertys)
+                  { 
+                    <th field="@item.PropertyName" width="100">@item.Name</th>
+                  }
+			</tr>
+		</thead>
+    </table>
+    <div id="toolbar_Admin" style="padding: 5px; height: auto">
+        <div style="height: 3px"></div>
+        <div id="panel_contol_Search">
+            <div style="margin-bottom: 5px">
+                <a href="#" class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick="addInfo()">添加</a>
+                <a href="#" class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="deleteInfo()">删除</a>
+                <a href="#" class="easyui-linkbutton" iconcls="icon-edit" plain="true" onclick="editInfo()">编辑</a>
+                <a href="#" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="SearchTheSearch()">简单查询</a>
+                <a href="#" class="easyui-linkbutton" iconcls="icon-edit" plain="true" onclick="setUserRole()">为用户分配角色</a>
+                <a href="#" class="easyui-linkbutton" iconcls="icon-edit" plain="true" onclick="setUserAction()">直接为用户分配权限</a>
+            </div>
+@*            <form id="ff_easySearch" method="post">
+                <table cellpadding="5">
+                    <tr>
+                        <td>账户：</td>
+                        <td>
+                            <input class="easyui-tooltip easyui-validatebox textbox_YuR" type="text" id="txtUName" data-options="required:false, position:'right',deltaY:-15" title="*输入包含的字符串内容" /></td>
+                        <td>电子邮箱：</td>
+                        <td>
+                            <input class="easyui-tooltip easyui-validatebox textbox_YuR" type="text" id="txtUEmail" data-options="required:false, position:'right',deltaY:-15" title="*输入包含的字符串内容" /></td>
+                    </tr>
+                    <tr>
+                        <td>手机号码：</td>
+                        <td>
+                            <input class="easyui-tooltip easyui-validatebox textbox_YuR" type="text" id="txtUPhoneNumber" data-options="required:false, position:'right',deltaY:-15" title="*输入包含的字符串内容" /></td>
+                        <td>备注：</td>
+                        <td>
+                            <input class="easyui-tooltip easyui-validatebox textbox_YuR" type="text" id="txtURemark" data-options="required:false, position:'right',deltaY:-15" title="*输入包含的字符串内容" /></td>
+                    </tr>
+                </table>
+            </form>
+            <span style="text-align: center; padding: 10px; position: absolute; right: 10px; top: 20px;">
+                <a href="javascript:void(0)" style="margin: 10px" class="button button-rounded button-raised button-primary" onclick="submitForm()">查&nbsp&nbsp询</a>
+                <a href="javascript:void(0)" style="margin: 10px" class="button button-rounded button-raised button-primary" onclick="clearForm()">清&nbsp&nbsp空</a>
+            </span>*@
+        </div>
+        <div style="height: 7px"></div>
+        <a id="button_hid" data-options="plain:true" style="position: absolute; right: 1px; top: 1px;" href="#" class="icon-up_toolbar easyui-linkbutton" onclick="control_toobar()"></a>
+    </div>
+    <!-------------------------------------------------------------数据表插入位置DataGrid-------结束------------------------------------------------------>
+
+    <!------------------------添加信息开始----------对话框元素-------------------------------------------->
+    <div id="addDiv">
+        @using (Ajax.BeginForm("AddUserDetails", new { }, new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterAdd" }, new { id = "addForm" }))
+        {
+            <table style="margin:20px">
+                @Html.Raw(FormGenerator.Generate(dal.GetRuntimeModel(runtimeModel),ViewBag.Propertys))
+            </table>
+        }
+    </div>
+    <!------------------------添加信息结束----------对话框元素-------------------------------------------->
+
+
+    <!------------------------多条件搜索开始--------对话框元素-------------------------------------------->
+@*    <div id="SearchDiv">
+        <table style="margin: 10px">
+            <tr>
+                <td>账户：</td>
+                <td>
+                    <input class="easyui-validatebox textbox" type="text" id="txtUName" data-options="required:false"></td>
+            </tr>
+            <tr>
+                <td>电子邮箱：</td>
+                <td>
+                    <input class="easyui-validatebox textbox" type="text" id="txtUEmail" data-options="required:false"></td>
+            </tr>
+            <tr>
+                <td>手机号码：</td>
+                <td>
+                    <input class="easyui-validatebox textbox" type="text" id="txtUPhoneNumber" data-options="required:false"></td>
+            </tr>
+            <tr>
+                <td>备注：</td>
+                <td>
+                    <input class="easyui-validatebox textbox" type="text" id="txtURemark" data-options="required:false"></td>
+            </tr>
+        </table>
+    </div>*@
+    <!------------------------多条件搜索结束--------对话框元素-------------------------------------------->
+
+
+    <!------------------------修改信息开始----------对话框元素-------------------------------------------->
+@*    <div id="editDiv">
+        <iframe id="editFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+    </div>*@
+    <!------------------------修改信息结束----------对话框元素-------------------------------------------->
+
+</body>
+</html>

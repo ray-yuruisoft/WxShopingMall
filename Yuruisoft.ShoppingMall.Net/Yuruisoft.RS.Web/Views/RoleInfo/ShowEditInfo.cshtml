@@ -1,0 +1,91 @@
+﻿@model Yuruisoft.RS.Model.RoleInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowEditInfo</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        function subEditForm() {
+            $("#form1").submit();
+        }
+        function afterEdit() {
+            window.parent.afterEdit();
+        }
+    </script>
+</head>
+<body>
+    @using (Ajax.BeginForm("EditInfo",new{},new AjaxOptions(){ OnSuccess="afterEdit"},new{id="form1"})) {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>RoleInfo</legend>
+    
+            @Html.HiddenFor(model => model.ID)
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RoleName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RoleName)
+                @Html.ValidationMessageFor(model => model.RoleName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DelFlag)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DelFlag)
+                @Html.ValidationMessageFor(model => model.DelFlag)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SubTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SubTime)
+                @Html.ValidationMessageFor(model => model.SubTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Remark)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Remark)
+                @Html.ValidationMessageFor(model => model.Remark)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ModifiedOn)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ModifiedOn)
+                @Html.ValidationMessageFor(model => model.ModifiedOn)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Sort)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Sort)
+                @Html.ValidationMessageFor(model => model.Sort)
+            </div>
+    
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MathtoolDBEntitiesModelStoreContainer" CdmEntityContainer="MathtoolDBEntities">
+    <EntitySetMapping Name="math_key_and_level">
+      <EntityTypeMapping TypeName="MathtoolDBEntitiesModel.math_key_and_level">
+        <MappingFragment StoreEntitySet="math_key_and_level">
+          <ScalarProperty Name="keys" ColumnName="keys" />
+          <ScalarProperty Name="level" ColumnName="level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="math_level_data">
+      <EntityTypeMapping TypeName="MathtoolDBEntitiesModel.math_level_data">
+        <MappingFragment StoreEntitySet="math_level_data">
+          <ScalarProperty Name="order_all" ColumnName="order_all" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="order_in" ColumnName="order_in" />
+          <ScalarProperty Name="first_level" ColumnName="first_level" />
+          <ScalarProperty Name="second_level" ColumnName="second_level" />
+          <ScalarProperty Name="third_level" ColumnName="third_level" />
+          <ScalarProperty Name="fourth_level" ColumnName="fourth_level" />
+          <ScalarProperty Name="fifth_level" ColumnName="fifth_level" />
+          <ScalarProperty Name="full_key" ColumnName="full_key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="math_search_key">
+      <EntityTypeMapping TypeName="MathtoolDBEntitiesModel.math_search_key">
+        <MappingFragment StoreEntitySet="math_search_key">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Search_key" ColumnName="Search_key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="math_user_info">
+      <EntityTypeMapping TypeName="MathtoolDBEntitiesModel.math_user_info">
+        <MappingFragment StoreEntitySet="math_user_info">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="yuruisoft_session_key" ColumnName="yuruisoft_session_key" />
+          <ScalarProperty Name="openId" ColumnName="openId" />
+          <ScalarProperty Name="session_key" ColumnName="session_key" />
+          <ScalarProperty Name="nickName" ColumnName="nickName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="avatarUrl" ColumnName="avatarUrl" />
+          <ScalarProperty Name="watermark_timestamp" ColumnName="watermark_timestamp" />
+          <ScalarProperty Name="appid" ColumnName="appid" />
+          <ScalarProperty Name="unionId" ColumnName="unionId" />
+          <ScalarProperty Name="math_score" ColumnName="math_score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="math_AbilityContent">
+      <EntityTypeMapping TypeName="MathtoolDBEntitiesModel.math_AbilityContent">
+        <MappingFragment StoreEntitySet="math_AbilityContent">
+          <ScalarProperty Name="AbContent" ColumnName="AbContent" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="math_FeedBackInfo">
+      <EntityTypeMapping TypeName="MathtoolDBEntitiesModel.math_FeedBackInfo">
+        <MappingFragment StoreEntitySet="math_FeedBackInfo">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="qq" ColumnName="qq" />
+          <ScalarProperty Name="phoneNum" ColumnName="phoneNum" />
+          <ScalarProperty Name="FeedBackWords" ColumnName="FeedBackWords" />
+          <ScalarProperty Name="openId" ColumnName="openId" />
+          <ScalarProperty Name="nickName" ColumnName="nickName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="math_SourceBuy">
+      <EntityTypeMapping TypeName="MathtoolDBEntitiesModel.math_SourceBuy">
+        <MappingFragment StoreEntitySet="math_SourceBuy">
+          <ScalarProperty Name="SourceUrl" ColumnName="SourceUrl" />
+          <ScalarProperty Name="SurportDetail" ColumnName="SurportDetail" />
+          <ScalarProperty Name="SurportTitle" ColumnName="SurportTitle" />
+          <ScalarProperty Name="WxBody" ColumnName="WxBody" />
+          <ScalarProperty Name="TotalFee" ColumnName="TotalFee" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="ModiyTime" ColumnName="ModiyTime" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="SBTitleImage" ColumnName="SBTitleImage" />
+          <ScalarProperty Name="SBTitle" ColumnName="SBTitle" />
+          <ScalarProperty Name="SBContentImage" ColumnName="SBContentImage" />
+          <ScalarProperty Name="SBContent" ColumnName="SBContent" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="math_SourceBuyOrderstatus">
+      <EntityTypeMapping TypeName="MathtoolDBEntitiesModel.math_SourceBuyOrderstatus">
+        <MappingFragment StoreEntitySet="math_SourceBuyOrderstatus">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="orderName" ColumnName="orderName" />
+          <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
+          <ScalarProperty Name="sourceBuyId" ColumnName="sourceBuyId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

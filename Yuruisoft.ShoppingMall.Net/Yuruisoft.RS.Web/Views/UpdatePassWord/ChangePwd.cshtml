@@ -1,0 +1,351 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>找回密码修改页面 - Yuruisoft后台管理系统</title>
+    <meta name="keywords" content="裕睿软件,微信小程序后台管理,后台管理系统,Yuruisoft" />
+    <meta name="description" content="裕睿软件,微信小程序后台管理,后台管理系统,Yuruisoft" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- basic styles -->
+
+    @*    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" /> 已用CDN加速*@
+    <link href="~/Content/assets/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--[if IE 7]>
+		  <link rel="stylesheet" href="~/Content/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="~/Content/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="~/Content/assets/css/ace.min.css" />
+
+    <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="~/Content/assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+		<script src="~/Content/assets/js/html5shiv.js"></script>
+		<script src="~/Content/assets/js/respond.min.js"></script>
+		<![endif]-->
+
+    @*CDN加速，后来引入*@
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+
+    <script type="text/javascript">
+        function Ajxsubmit() {
+            //获取表单对象
+            var bootstrapValidator = $('#ChangePwdForm').data('bootstrapValidator');
+            //手动触发验证
+            bootstrapValidator.validate();
+            if (bootstrapValidator.isValid()) {
+                //表单提交的方法、比如ajax提交
+                $.ajax({
+                    url: "/UpdatePassWord/ChangePwd",
+                    type: "POST",
+                    data: {
+                        Vcode: $(" #Vcode ").val(),
+                        UserName: $(" #UserName ").val(),
+                        PSW: $(" #PSW ").val(),
+                        PSWA: $(" #PSWA ").val()
+                    },
+                    cache: false,
+                    beforeSend: BeforeSend(),
+                    success: function (data) {
+                        afterSend(data);
+                    },
+                    error: function () {
+                        window.location.href = "/Error.html";
+                    },
+                });
+            }
+        }
+        function afterLogin(data) {//修改密码成功后，直接登录系统
+            var serverData = data.split(':');
+            if (serverData[0] == "ok") {
+                window.location.href = "/Home/HomePage"
+            } else if (serverData[0] == "no") {
+                window.location.href = "/LogOn/Index"
+            } else {
+                window.location.href = "/Error.html"
+            }
+        }
+        function afterSend(data) {
+            var serverData = data.split(':');
+            if (serverData[0] == "ok") {
+                bootbox.hideAll();//隐藏模态框，并取消倒计时
+                if (TimeOutHandler != undefined) {
+                    clearTimeout(TimeOutHandler);
+                }
+                if (lastTimer != undefined) {
+                    clearTimeout(lastTimer);
+                }
+                WaitTOHomePage();
+                $.ajax({
+                    url: "/LogOn/CheckLogin",
+                    type: "POST",
+                    data: {
+                        LoginCode: $(" #UserName ").val(),
+                        LoginPwd: $(" #PSW ").val(),
+                        vCode: ''
+                    },
+                    cache: false,
+                    success: function (data) {
+                        afterLogin(data);
+                    },
+                    error: function () {
+                        window.location.href = "/Error.html";
+                    },
+                });
+
+            }
+            else if (serverData[0] == "no") {
+                bootbox.hideAll();//隐藏模态框，并取消倒计时
+                if (TimeOutHandler != undefined) {
+                    clearTimeout(TimeOutHandler);
+                }
+                if (lastTimer != undefined) {
+                    clearTimeout(lastTimer);
+                }
+                WaitTORetry();//给10秒的缓冲时间，让服务器休息
+            }
+            else {
+                window.location.href = "/Error.html"
+            }
+        }
+        var TimeOutHandler;
+        function BeforeSend() {
+            TimeOutHandler = setTimeout("WaitTODirect()", 500);
+        }
+        function WaitTORetry() {
+            bootbox.dialog({
+                message: "<h3 class='header smaller lighter grey'><i class='icon-spinner icon-spin orange bigger-125'></i>  数据库忙，稍后请重试...<small id='WaitSecond'>10秒后自动跳转</small></h3>",
+                closeButton: false
+            });
+            settime("#");
+        }
+        function WaitTODirect() {
+            bootbox.dialog({
+                message: "<h3 class='header smaller lighter grey'><i class='icon-spinner icon-spin orange bigger-125'></i>  努力加载中...请耐心等待！<small id='WaitSecond'>10秒后自动跳转</small></h3>",
+                closeButton: false
+            });
+            settime("/Error500.html");//10秒后跳转去哪个页面
+        }
+        function WaitTOHomePage() {
+            bootbox.dialog({
+                message: "<h3 class='header smaller lighter grey'><i class='icon-spinner icon-spin orange bigger-125'></i>  直接登录系统中...请耐心等待！<small id='WaitSecond'>10秒后自动跳转</small></h3>",
+                closeButton: false
+            });
+            settime("/Error500.html");//10秒后跳转去哪个页面
+        }
+
+        var countdown = 10;
+        var lastTimer;
+        function settime(url) {//倒计时
+            clearTimeout(lastTimer);
+            if (countdown == 0) {
+                if (url == '#')
+                    window.location.reload();
+                else
+                    window.location.href = url;
+            } else {
+                $("#WaitSecond").text(countdown + "秒后自动跳转");
+                countdown--;
+            }
+            lastTimer = setTimeout(function () {
+                settime(url)
+            }, 1000)
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#ChangePwdForm').bootstrapValidator({
+                message: 'This value is not valid',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    PSW: {
+                        validators: {
+                            notEmpty: {
+                                message: '密码不能为空'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 12,
+                                message: '密码长度必须在6到12位之间'
+                            }
+                        }
+                    },
+                    PSWA: {
+                        validators: {
+                            notEmpty: {
+                                message: '确认密码不能为空'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 12,
+                                message: '密码长度必须在6到12位之间'
+                            },
+                            identical: {//相同
+                                field: 'PSW',
+                                message: '两次密码不一致'
+                            }
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body class="login-layout">
+    <div class="main-container">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="login-container">
+                        <div class="center">
+                            <h1>
+                                <i class="icon-leaf green"></i>
+                                <span class="red">Yuruisoft</span>
+                                <span class="white">综合管理</span>
+                            </h1>
+                            <h4 class="blue">&copy; The Yuruisoft 2017.</h4>
+                        </div>
+
+                        <div class="space-6"></div>
+
+                        <div class="position-relative">
+                            <div id="forgot-box" class="forgot-box visible widget-box no-border">
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <h4 class="header red lighter bigger">
+                                            <i class="icon-key"></i>
+                                            重置密码
+                                        </h4>
+                                        <div class="space-6"></div>
+                                        <p>
+                                            请输入密码
+                                        </p>
+                                        <form id="ChangePwdForm">
+                                            <input type="hidden" id ="Vcode" name="Vcode" value="@ViewBag.Vcode">
+                                            <input type="hidden" id ="UserName" name="UserName" value="@ViewBag.UserName">
+                                            <div class="form-group clearfix">
+                                                <input type="password" placeholder="密码" class="form-control" required autofocus autocomplete="off" id="PSW" name="PSW" />
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <input type="password" placeholder="再次输入密码" class="form-control" required autocomplete="off" id="PSWA" name="PSWA" />
+                                            </div>
+
+                                            <div class="form-group clearfix">
+                                                <button onclick="Ajxsubmit()" id="btnChangePwd" type="button" class="width-35 pull-right btn btn-sm btn-danger">
+                                                    <i class="icon-key"></i>
+                                                    确认修改
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- /widget-main -->
+
+                                    <div class="toolbar center clearfix">
+                                        <div>
+                                            <a href="/LogOn/Index" class="back-to-login-link">回到登录
+												<i class="icon-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /widget-body -->
+
+                            </div>
+                            <!-- /position-relative -->
+                        </div>
+
+
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- /.main-container -->
+
+    <!-- page specific plugin JS -->
+
+    <script src="https://cdn.bootcss.com/bootbox.js/4.4.0/bootbox.min.js"></script>
+    @*    <script src="~/Content/assets/js/bootbox.min.js"></script>*@
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+
+    @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 谷歌国内太慢了*@
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+    <!--[if !IE]> -->
+
+    @*    <script type="text/javascript">
+        window.jQuery || document.write("<script src='~/Content/assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script> 已用CDN加速*@
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+    <script type="text/javascript">
+        if ("ontouchend" in document) document.write("<script src='~/Content/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+
+    <!-- inline scripts related to this page -->
+
+    <script type="text/javascript">
+        function show_box(id) {
+            jQuery('.widget-box.visible').removeClass('visible');
+            jQuery('#' + id).addClass('visible');
+        }
+    </script>
+    <div style="display: none">
+        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+    </div>
+</body>
+</html>

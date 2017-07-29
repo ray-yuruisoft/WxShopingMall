@@ -1,0 +1,198 @@
+﻿@model Yuruisoft.RS.Model.UserInfo
+
+@{
+    Layout = null;
+}
+@*<!DOCTYPE html>*@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户管理界面</title>
+    <link href="~/Content/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/datapattern.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/Yuruisoft.RS.Js/Yuruisoft.RS.HomePage.Layout.js"></script>
+    <link href="~/Content/Yuruisoft.RS.CSS.Custom.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            //发送异步请求，根据登录用户，找出该用户有的菜单权限
+            //$.getJSON("/Home/GetMenuItems/", {}, function (data) {
+            //    var links = data;
+            //})
+
+            $('#tt_tabs_Yurui').tabs(
+                {
+                    tools: [
+                    {
+                        iconCls: 'icon-application_add',
+                        handler: function () {
+                        }
+                    }, {
+                        iconCls: 'icon-application_delete',
+                        handler: function () {
+                            removePanel();
+                        }
+                    }, {
+                        iconCls: 'icon-application_home',
+                        handler: function () {
+                            if (confirm("确定要关闭其他窗口吗？")) {
+                                location.reload();
+                            }
+                        }
+                    }]
+                });
+        });
+    </script>
+</head>
+<body class="easyui-layout">
+    <!----------------------------------------------------------------标题布局开始north---------------------------------------------------------------->
+    <div data-options="region:'north'" style="height: 90px; overflow: hidden; background-image: url(/Content/Images/bg3.png)">
+        <img class="image_title_YuR" src="~/Content/Images/login/logo.png" />
+        <span class="txt_title_YuR">裕睿网站流量来路统计系统 v1.0.0</span>
+        <span style="float: right; margin-top: 30px; margin-right: 10px"><a href="#" class="easyui-menubutton" data-options="menu:'#mm_UserLogin',iconCls:'icon-user'">当前用户：@ViewBag.userName</a>
+        </span>
+    </div>
+    <div id="mm_UserLogin" style="width: 100px;">
+        <div>更换账户</div>
+        <div>更改密码</div>
+        <div onclick="location.href='/Login/LoginOut'" data-options="iconCls:'icon-user_go'">安全退出</div>
+    </div>
+    <!----------------------------------------------------------------标题布局结束north---------------------------------------------------------------->
+
+
+
+
+    <!----------------------------------------------------------------导航布局开始west---------------------------------------------------------------->
+    <div data-options="region:'west',split:true" title="导航栏" style="width: 160px;">
+        <div class="easyui-accordion" data-options="fit:true,border:false">
+            <div title="网站来路流量管理" style="padding: 10px;">
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true" onclick="LoadRouteStatisticsLinksInfo()">
+                    <span class="icon-users_Yurui icon_Yurui">&nbsp</span>
+                    <span id="btnRouteStatisticsLinks">推广链接管理</span>
+                </a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true" onclick="LoadExtensionAgentsInfo()">
+                    <span class="icon-users_Yurui icon_Yurui">&nbsp</span>
+                    <span id="btnExtensionAgents">推广员管理</span>
+                </a>
+                <div style="margin-top:2px;">
+                    <ul class="easyui-tree">
+                        <li data-options="state:'closed'">
+                            <span>使用说明</span>
+                            <ul>
+                                <li data-options="state:'closed'">
+                                    <span>用户管理</span>
+                                    <ul>
+                                        <li><span><a style="text-decoration:none;color:#000000;" href="javascript:void(0)"onclick="LoadUserInfo_Instructions()">说明书</a></span></li>
+                                    </ul>
+                                </li>
+                                <li data-options="state:'closed'">
+                                    <span>角色管理</span>
+                                    <ul>
+                                        <li><span><a style="text-decoration:none;color:#000000;" href="javascript:void(0)"onclick="LoadRoleInfo_Instructions()">说明书</a></span></li>
+                                    </ul>
+                                </li>
+                                <li data-options="state:'closed'">
+                                    <span>权限管理</span>
+                                    <ul>
+                                        <li><span><a style="text-decoration:none;color:#000000;" href="javascript:void(0)"onclick="LoadActionInfo_Instructions()">说明书</a></span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div title="用户与权限" style="padding: 10px;">
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true" onclick="LoadAdminInfo()">
+                    <span class="icon-users_Yurui icon_Yurui">&nbsp</span>
+                    <span id="btnAdminInfo">用户管理</span>
+                </a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true" onclick="LoadRoleInfo()">
+                    <span class="icon-users_Yurui icon_Yurui">&nbsp</span>
+                    <span id="btnRoleInfo">角色管理</span>
+                </a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true" onclick="LoadActionInfo()">
+                    <span class="icon-users_Yurui icon_Yurui">&nbsp</span>
+                    <span id="btnActionInfo">权限管理</span>
+                </a>
+                <div style="margin-top:2px;">
+                    <ul class="easyui-tree">
+                        <li data-options="state:'closed'">
+                            <span>使用说明</span>
+                            <ul>
+                                <li data-options="state:'closed'">
+                                    <span>用户管理</span>
+                                    <ul>
+                                        <li><span><a style="text-decoration:none;color:#000000;" href="javascript:void(0)"onclick="LoadUserInfo_Instructions()">说明书</a></span></li>
+                                    </ul>
+                                </li>
+                                <li data-options="state:'closed'">
+                                    <span>角色管理</span>
+                                    <ul>
+                                        <li><span><a style="text-decoration:none;color:#000000;" href="javascript:void(0)"onclick="LoadRoleInfo_Instructions()">说明书</a></span></li>
+                                    </ul>
+                                </li>
+                                <li data-options="state:'closed'">
+                                    <span>权限管理</span>
+                                    <ul>
+                                        <li><span><a style="text-decoration:none;color:#000000;" href="javascript:void(0)"onclick="LoadActionInfo_Instructions()">说明书</a></span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div title="报名界面配置" data-options="selected:false" style="padding: 10px;">
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true" onclick="LoadEnterConfigPage()">
+                    <span class="icon-users_Yurui icon_Yurui">&nbsp</span>
+                    <span id="btnEnterConfig">预览报名页面</span>
+                </a>
+            </div>
+            <div title="帮助" data-options="iconCls:'icon-help'" style="padding: 10px;">
+                <p>The accordion allows you to provide multiple panels and display one or more at a time. Each panel has built-in support for expanding and collapsing. Clicking on a panel header to expand or collapse that panel body. The panel content can be loaded via ajax by specifying a 'href' property. Users can define a panel to be selected. If it is not specified, then the first panel is taken by default.</p>
+            </div>
+            <div title="信息完善" data-options="iconCls:'icon-ok'" style="overflow: auto; padding: 10px;">
+                <h3 style="color: #0099FF;">Accordion for jQuery</h3>
+                <p>Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.</p>
+            </div>
+            <div title="关于" data-options="iconCls:'icon-search'" style="padding: 10px;">
+                裕睿软件
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------------------------------导航布局结束west---------------------------------------------------------------->
+
+
+
+
+    <!----------------------------------------------------------------页脚布局开始south---------------------------------------------------------------->
+    <div data-options="region:'south'" style="height: 40px; padding: 10px; text-align: center">
+        版权所有&copyYuruisoft.com
+    </div>
+    <!----------------------------------------------------------------页脚布局结束south---------------------------------------------------------------->
+
+
+
+
+    <!----------------------------------------------------------------中间布局开始center---------------------------------------------------------------->
+    <div data-options="region:'center'">
+        <div id="tt_tabs_Yurui" class="easyui-tabs" data-options="fit:true,border:false,plain:true">
+            <div title="我的桌面" @*data-options="href:'_content.html'"*@ style="padding: 10px">
+                @*<iframe src ="/UserInfo/Index" scrolling="no" frameborder="0" width="100%" height="100%"></iframe>*@
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------------------------------中间布局结束center---------------------------------------------------------------->
+</body>
+</html>

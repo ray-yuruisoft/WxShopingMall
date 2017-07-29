@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MathtoolDBEntitiesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MathtoolDBEntitiesModelStoreContainer">
+    <EntitySet Name="math_key_and_level" EntityType="MathtoolDBEntitiesModel.Store.math_key_and_level" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="math_level_data" EntityType="MathtoolDBEntitiesModel.Store.math_level_data" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="math_search_key" EntityType="MathtoolDBEntitiesModel.Store.math_search_key" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="math_AbilityContent" EntityType="MathtoolDBEntitiesModel.Store.math_AbilityContent" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="math_FeedBackInfo" EntityType="MathtoolDBEntitiesModel.Store.math_FeedBackInfo" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="math_SourceBuy" EntityType="MathtoolDBEntitiesModel.Store.math_SourceBuy" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="math_SourceBuyOrderstatus" EntityType="MathtoolDBEntitiesModel.Store.math_SourceBuyOrderstatus" store:Type="Tables" Schema="rayyewang01" />
+    <EntitySet Name="math_user_info" EntityType="MathtoolDBEntitiesModel.Store.math_user_info" store:Type="Tables" Schema="rayyewang01" />
+  </EntityContainer>
+  <EntityType Name="math_key_and_level">
+    <Key>
+      <PropertyRef Name="keys" />
+    </Key>
+    <Property Name="keys" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="level" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="math_level_data">
+    <Key>
+      <PropertyRef Name="url" />
+    </Key>
+    <Property Name="order_all" Type="int" />
+    <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="order_in" Type="int" Nullable="false" />
+    <Property Name="first_level" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="second_level" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="third_level" Type="nvarchar" MaxLength="50" />
+    <Property Name="fourth_level" Type="nvarchar" MaxLength="50" />
+    <Property Name="fifth_level" Type="nvarchar" MaxLength="50" />
+    <Property Name="full_key" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="math_search_key">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Search_key" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="math_AbilityContent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="AbContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="math_FeedBackInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="openId" Type="nvarchar" MaxLength="50" />
+    <Property Name="FeedBackWords" Type="nvarchar(max)" />
+    <Property Name="phoneNum" Type="bigint" />
+    <Property Name="qq" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="SubTime" Type="datetime" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="math_SourceBuy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SBContent" Type="nvarchar(max)" />
+    <Property Name="SBContentImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SBTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="SBTitleImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalFee" Type="int" />
+    <Property Name="WxBody" Type="nvarchar" MaxLength="50" />
+    <Property Name="SurportTitle" Type="nchar" MaxLength="10" />
+    <Property Name="SurportDetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubTime" Type="datetime" />
+    <Property Name="ModiyTime" Type="datetime" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="SourceUrl" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="math_SourceBuyOrderstatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="sourceBuyId" Type="int" Nullable="false" />
+    <Property Name="orderStatus" Type="int" Nullable="false" />
+    <Property Name="orderName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="math_user_info">
+    <Key>
+      <PropertyRef Name="openId" />
+    </Key>
+    <Property Name="Sort" Type="int" />
+    <Property Name="openId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="session_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="yuruisoft_session_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="nickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="gender" Type="nchar" MaxLength="10" />
+    <Property Name="language" Type="nchar" MaxLength="10" />
+    <Property Name="city" Type="nchar" MaxLength="10" />
+    <Property Name="province" Type="nchar" MaxLength="10" />
+    <Property Name="country" Type="nchar" MaxLength="10" />
+    <Property Name="avatarUrl" Type="nvarchar(max)" />
+    <Property Name="watermark_timestamp" Type="nvarchar" MaxLength="50" />
+    <Property Name="appid" Type="nvarchar" MaxLength="50" />
+    <Property Name="unionId" Type="nchar" MaxLength="10" />
+    <Property Name="math_score" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubTime" Type="datetime" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

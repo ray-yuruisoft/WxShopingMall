@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+@using  Yuruisoft.RS.Model
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>为权限分配角色</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        function subEditForm() {
+            $("#form1").submit();
+        }
+        function afterSetAction() {
+            window.parent.afterSetAction_div();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        为权限
+        @{
+            ActionInfo actionInfo = (ActionInfo)ViewBag.ActionInfo;
+              <span style="font-size:16px;color:red">@actionInfo.ActionInfoName</span> 
+        }分配角色
+
+    </div>
+    <div>
+        @using (Ajax.BeginForm("SetActionRole", new { }, new AjaxOptions() { OnSuccess = "afterSetAction", HttpMethod = "post" }, new { id = "form1" }))
+        {
+            <input type="hidden" name="actionId" value="@actionInfo.ID" />
+            List<RoleInfo> AllRoleList = (List<RoleInfo>)ViewBag.AllRoles;
+            List<int> RoleIdList = (List<int>)ViewBag.AllExtRoleIds;
+            foreach (var roleInfo in AllRoleList)
+            {
+                var name="cba_"+roleInfo.ID;
+                if (RoleIdList.Contains(roleInfo.ID))
+                {
+                    <input type="checkbox" checked="checked" name="@name" value="@roleInfo.ID" />@roleInfo.RoleName
+                }
+                else
+                {
+                       <input type="checkbox" name="@name" value="@roleInfo.ID"/>@roleInfo.RoleName
+                }
+            }
+        }
+    </div>
+</body>
+</html>

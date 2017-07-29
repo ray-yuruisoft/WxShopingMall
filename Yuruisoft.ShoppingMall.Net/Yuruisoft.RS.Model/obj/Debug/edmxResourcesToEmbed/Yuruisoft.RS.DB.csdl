@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Yuruisoft_RS_DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Yuruisoft_RS_DBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfo_Web_Side" EntityType="Yuruisoft_RS_DBModel.UserInfo_Web_Side" />
+  </EntityContainer>
+  <EntityType Name="UserInfo_Web_Side">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UName" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="UPwd" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="SubTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Sort" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

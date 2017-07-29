@@ -1,0 +1,10 @@
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\Emit_DynamicClassBuild\bin\Debug\Emit_DynamicClassBuild.exe.config
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\Emit_DynamicClassBuild\bin\Debug\Emit_DynamicClassBuild.exe
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\Emit_DynamicClassBuild\bin\Debug\Emit_DynamicClassBuild.pdb
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\Emit_DynamicClassBuild\obj\Debug\Emit_DynamicClassBuild.exe
+C:\Users\Administrator\Desktop\2017.5.5\RS\RS\Yuruisoft.RS\Emit_DynamicClassBuild\obj\Debug\Emit_DynamicClassBuild.pdb
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\Emit_DynamicClassBuild\bin\Debug\Emit_DynamicClassBuild.exe.config
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\Emit_DynamicClassBuild\bin\Debug\Emit_DynamicClassBuild.exe
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\Emit_DynamicClassBuild\bin\Debug\Emit_DynamicClassBuild.pdb
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\Emit_DynamicClassBuild\obj\Debug\Emit_DynamicClassBuild.exe
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\Emit_DynamicClassBuild\obj\Debug\Emit_DynamicClassBuild.pdb

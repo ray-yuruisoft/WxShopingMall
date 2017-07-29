@@ -1,0 +1,13 @@
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\T4Test.exe.config
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\T4Test.exe
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\T4Test.pdb
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\Yuruisoft.RS.Model.dll
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\Yuruisoft.RS.Model.pdb
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\obj\Debug\T4Test.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\obj\Debug\T4Test.exe
+C:\Users\Administrator\Desktop\RS\Yuruisoft.RS\T4Test\obj\Debug\T4Test.pdb

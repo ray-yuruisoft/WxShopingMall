@@ -1,0 +1,171 @@
+﻿@model   Yuruisoft.RS.Model.ActionInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowEditInfo</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        function subEditForm() {
+            $("#form1").submit();
+        }
+        function afterEdit() {
+            window.parent.afterEdit();
+        }
+    </script>
+</head>
+<body>
+    @using (Ajax.BeginForm("EditActionInfo", new {}, new AjaxOptions() { OnSuccess = "afterEdit" }, new {id="form1" }))
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>ActionInfo</legend>
+    
+            @Html.HiddenFor(model => model.ID)
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SubTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SubTime)
+                @Html.ValidationMessageFor(model => model.SubTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DelFlag)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DelFlag)
+                @Html.ValidationMessageFor(model => model.DelFlag)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ModifiedOn)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ModifiedOn)
+                @Html.ValidationMessageFor(model => model.ModifiedOn)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Remark)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Remark)
+                @Html.ValidationMessageFor(model => model.Remark)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Url)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Url)
+                @Html.ValidationMessageFor(model => model.Url)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.HttpMethod)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.HttpMethod)
+                @Html.ValidationMessageFor(model => model.HttpMethod)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ActionMethodName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ActionMethodName)
+                @Html.ValidationMessageFor(model => model.ActionMethodName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ControllerName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ControllerName)
+                @Html.ValidationMessageFor(model => model.ControllerName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ActionInfoName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ActionInfoName)
+                @Html.ValidationMessageFor(model => model.ActionInfoName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Sort)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Sort)
+                @Html.ValidationMessageFor(model => model.Sort)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ActionTypeEnum)
+            </div>
+            <div class="editor-field">
+               @* @Html.EditorFor(model => model.ActionTypeEnum)*@
+                <select name="ActionTypeEnum">
+                    @if (Model.ActionTypeEnum == 0)
+                    {
+                 <option value="0" selected="selected">普通权限</option>
+                        <option value="1">菜单权限</option>
+                    }
+                    else
+                    {
+                     <option value="0">普通权限</option>
+                        <option value="1"  selected="selected">菜单权限</option>
+                    }
+
+                </select>
+                
+
+
+                @Html.ValidationMessageFor(model => model.ActionTypeEnum)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.MenuIcon)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MenuIcon)
+                @Html.ValidationMessageFor(model => model.MenuIcon)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IconWidth)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IconWidth)
+                @Html.ValidationMessageFor(model => model.IconWidth)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IconHeight)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IconHeight)
+                @Html.ValidationMessageFor(model => model.IconHeight)
+            </div>
+    
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

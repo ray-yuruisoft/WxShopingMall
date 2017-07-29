@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+}
+@using Yuruisoft.RS.Model
+@model Yuruisoft.RS.Model.UserInfo
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>为用户设置权限</title>
+    <link href="~/Content/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/tableStyle.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".setActions").click(function () {
+                $.post("/UserInfo/SetActionForUser", {"userId": @Model.ID ,"actionId":$(this).attr("ids"),"value":$(this).val()}, function (data) {
+                    if(data=="ok"){
+                        $.messager.show({
+                            title:'提示信息',
+                            msg:'设置成功!!',
+                            showType:'fade'
+                        });
+                    }
+                });
+            });
+            //清除
+            $(".btnClearAction").click(function(){
+              
+                $(this).parent().find(".setActions").attr("checked",false);
+                $.post("/UserInfo/ClearActionUser",{"userId":@Model.ID,"actionId":$(this).attr("ids")},function(data){
+                    if(data=="ok"){
+                        $.messager.show({
+                            title:'提示信息',
+                            msg:'清除成功!!',
+                            showType:'fade'
+                        });
+
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        当前给用户:
+        @{
+            UserInfo userInfo = (UserInfo)ViewBag.UserInfo;
+            <span style="font-size: 16px; color: red">@userInfo.UName</span>
+        }设置权限
+    </div>
+    <div>
+        @using(Ajax.BeginForm("SetUserAction", new { }, new AjaxOptions() { OnSuccess = "afterSet" }, new { id = "form1" })){
+                 List<ActionInfo>AllActionList=(List<ActionInfo>)  ViewBag.AllActions;
+                List<R_UserInfo_ActionInfo>AllExtActionList=(List<R_UserInfo_ActionInfo>)ViewBag.AllExtActions;
+        <table>
+            <tr>
+                <th>权限编号</th>
+                <th>权限名</th>
+                <th>地址</th>
+                <th>请求方式</th>
+                <th>操作</th>
+            </tr>
+            @foreach (var actionInfo in AllActionList)
+            {
+            var rb = "rb_" + actionInfo.ID;
+            var rb_no = "rb_no_" + actionInfo.ID;
+            <tr>
+                <td>@actionInfo.ID</td>
+                <td>@actionInfo.ActionInfoName</td>
+                <td>@actionInfo.Url</td>
+                <td>@actionInfo.HttpMethod</td>
+                <td>
+                    @{
+                         var ExtAction =( from a in AllExtActionList
+                            where a.ActionInfoID == actionInfo.ID
+                            select a).FirstOrDefault();
+            if (ExtAction != null)
+            {
+                if (ExtAction.IsPass == true)//允许
+                {
+                       
+                        <input type="radio" id="@rb" name="@rb"  checked="checked" value="true" ids="@actionInfo.ID" class="setActions"/>
+                        <label for="@rb_no">拒绝</label>
+                        <input type="radio" id="@rb_no" name="@rb" value="false"  ids="@actionInfo.ID" class="setActions"/>
+                }
+                else//禁止
+                {
+                        <label for="@rb">允许</label>
+                        <input type="radio" id="@rb" name="@rb"  value="true" ids="@actionInfo.ID" class="setActions" />
+                        <label for="@rb_no">拒绝</label>
+                        <input type="radio" id="@rb_no" name="@rb" value="false"    checked="checked" ids="@actionInfo.ID" class="setActions"/>
+                }
+            }
+            else//表示没有给当前设置权限允许与禁止
+            {
+                        <label for="@rb">允许</label>
+                        <input type="radio" id="@rb" name="@rb"  value="true" ids="@actionInfo.ID"/ class="setActions">
+                        <label for="@rb_no">拒绝</label>
+                        <input type="radio" id="@rb_no" name="@rb" value="false"     ids="@actionInfo.ID" class="setActions"/>
+            }   
+   
+                    }
+                    <input type="button" class="btnClearAction" value="清除"  ids="@actionInfo.ID">
+                 @*   注意:由于按钮放在循环中，如果设置id，一定要唯一.所以这里可以改成class*@
+                </td>
+            </tr>
+            }
+        </table>
+        }
+    </div>
+ 
+
+
+</body>
+</html>

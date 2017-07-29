@@ -1,0 +1,25 @@
+如何将最新的库更新到本地？http://blog.csdn.net/chailyuan/article/details/53292031
+1、查看远程分支
+使用如下命令可以查看远程仓库（我这里有一个origin仓库）
+
+it remote -v
+
+2、从远程获取最新版本到本地
+使用如下命令可以在本地新建一个temp分支，并将远程origin仓库的master分支代码下载到本地temp分支
+
+git fetch origin master:temp
+
+3、比较本地仓库与下载的temp分支
+使用如下命令来比较本地代码与刚刚从远程下载下来的代码的区别：
+
+git diff temp
+
+4、合并temp分支到本地的master分支
+对比区别之后，如果觉得没有问题，可以使用如下命令进行代码合并：
+
+git merge temp
+
+5、删除temp分支
+如果temp分支不想要保留，可以使用如下命令删除该分支：
+
+git branch -d temp

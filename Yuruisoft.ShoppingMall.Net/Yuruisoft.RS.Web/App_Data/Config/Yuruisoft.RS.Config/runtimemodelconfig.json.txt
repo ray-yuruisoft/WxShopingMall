@@ -1,0 +1,45 @@
+﻿      {
+        "ModelId": 1,
+        "ModelName": "公民信息",
+        "ClassName": "PersonInfo",       
+        "ModelProperties": [
+          {
+            "Name": "身份证",
+            "PropertyName": "PersonID",
+			"ValueType":"int",
+			"IsRequired":"true",
+			"ShowType":"input"
+          },
+          {
+            "Name": "姓名",
+            "PropertyName": "Name",
+			"ValueType":"string",
+			"IsRequired":"true",
+			"Length":"100",
+			"ShowType":"input"
+          },
+		  {
+			"Name": "性别",
+            "PropertyName": "Sex",
+			"ValueType":"string",
+			"IsRequired":"true",
+			"Length":"5",
+			"ShowType":"input"
+		  },
+		  {
+			"Name": "年龄",
+            "PropertyName": "Age",
+			"ValueType":"int",
+			"IsRequired":"true",
+			"ShowType":"input"
+		  },
+		  {
+			"Name": "备注",
+            "PropertyName": "Mark",
+			"ValueType":"string",
+			"IsRequired":"false",
+			"Length":"100",
+			"ShowType":"input"
+		  }
+        ]
+      }
