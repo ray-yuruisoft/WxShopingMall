@@ -43,20 +43,12 @@ page {
   font-family: 'FontAwesome';
 }
 
-.icon-book {
+.icon-sort {
   font-size: 40rpx;
 }
 
-.icon-book:after {
-  content: '\f02d';
-  color: palevioletred;
-}
-
-.icon-edit{
-  font-size: 40rpx;
-}
-.icon-edit::after{
-  content: '\f013';
+.icon-sort:after {
+  content: '\f0dc';
   color: palevioletred;
 }
 

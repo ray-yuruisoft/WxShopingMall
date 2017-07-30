@@ -1,14 +1,15 @@
 {
   "pages": [
-    "Page/index",
-    "Page/Dictionary/Dictionary",
-    "Page/SetAutoNum/SetAutoNum"
+    "Page/index/index",
+    "Page/shoppingCart/shoppingCart",
+    "Page/shoppingCart/userInfo",
+    "Page/index/produceDetails/produceDetails"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "英汉小词典",
-    "navigationBarBackgroundColor": "#f8f8f8",
-    "backgroundColor": "#f8f8f8"
+    "navigationBarTextStyle": "write",
+    "navigationBarTitleText": "好万家购物",
+    "navigationBarBackgroundColor": "#18BC9C",
+    "backgroundColor": "#18BC9C"
   },
   "networkTimeout": {
     "request": 10000,
@@ -16,5 +17,31 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": true,
+  "tabBar": {
+    "color": "#cccccc",
+    "selectedColor": "#18BC9C",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "Page/index/index",
+        "iconPath": "style/images/tabbar/indexNormal.png",
+        "selectedIconPath": "style/images/tabbar/indexSelected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "Page/shoppingCart/shoppingCart",
+        "iconPath": "style/images/tabbar/shoppingCartNormal.png",
+        "selectedIconPath": "style/images/tabbar/shoppingCartSelected.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "Page/shoppingCart/userInfo",
+        "iconPath": "style/images/tabbar/userInfoNormal.png",
+        "selectedIconPath": "style/images/tabbar/userInfoSelected.png",
+        "text": "我的"
+      }
+    ]
+  }
 }
