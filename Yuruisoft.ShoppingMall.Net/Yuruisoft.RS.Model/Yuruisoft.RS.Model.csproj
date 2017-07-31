@@ -1097,6 +1097,25 @@
     <Compile Include="WxDic_SearchKey_EnToCn_Z.cs">
       <DependentUpon>WxDic.tt</DependentUpon>
     </Compile>
+    <Compile Include="wxShoppingMall\wxShoppingMall.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wxShoppingMall.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wxShoppingMall\wxShoppingMall.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wxShoppingMall.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wxShoppingMall\wxShoppingMall.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wxShoppingMall.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="wxShoppingMall\wxShoppingMallDBFactory.cs" />
+    <Compile Include="wxShoppingMall\wxShoppingMall_produceInfo.cs">
+      <DependentUpon>wxShoppingMall.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -1135,6 +1154,13 @@
       <DependentUpon>WxDic.edmx</DependentUpon>
       <LastGenOutput>WxDic.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="wxShoppingMall\wxShoppingMall.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>wxShoppingMall.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="wxShoppingMall\wxShoppingMall.edmx.diagram">
+      <DependentUpon>wxShoppingMall.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -1157,7 +1183,18 @@
       <DependentUpon>201706150130361_20170615_DisabledDynamicModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="wxShoppingMall\wxShoppingMall.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>wxShoppingMall.edmx</DependentUpon>
+      <LastGenOutput>wxShoppingMall.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="wxShoppingMall\wxShoppingMall.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>wxShoppingMall.edmx</DependentUpon>
+      <LastGenOutput>wxShoppingMall.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

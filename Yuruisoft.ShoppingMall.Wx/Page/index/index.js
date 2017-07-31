@@ -1,20 +1,20 @@
 var app = getApp();
-var FlagSetOut;
-
+var flagSetOut;
+var searchKeyObject;
 Page({
   data: {
     list: [
       {
-        icon:'',
-        imageUrl:'../../style/images/replaceIcon/groceries.png',
+        icon: '',
+        imageUrl: '../../style/images/replaceIcon/groceries.png',
         id: 'agProducts',
         name: '特色农产品',
         open: false,
         pages: [{ displayName: '小香菜', url: 'produceDetails' }, { displayName: '大头菜', url: 'produceDetails' }],
       },
       {
-        icon:'',
-        imageUrl:'../../style/images/replaceIcon/fresh-vendor.png',
+        icon: '',
+        imageUrl: '../../style/images/replaceIcon/fresh-vendor.png',
         id: 'freshProducts',
         name: '特色生鲜',
         open: false,
@@ -22,7 +22,7 @@ Page({
       },
       {
         icon: '',
-        imageUrl:'../../style/images/replaceIcon/ellipsis.png',
+        imageUrl: '../../style/images/replaceIcon/ellipsis.png',
         id: 'findMore',
         name: '更多',
         open: false,
@@ -57,67 +57,28 @@ Page({
       SearchKeyList: []
     });
   },
-  KeyListTap: function (e) {//搜索内容点击
-
+  keyListTap: function (e) {//搜索内容点击,函数主要清空作用
+    console.log(e)
     this.setData({
-      inputVal: e.currentTarget.dataset.skey,
-      SearchKeyList: []
+      searchKeyList: []
     })
-
   },
-  inputTyping: function (e) {//输入时异步远程查询
+  inputTyping: function (e) {//输入时异步本地查询
     var that = this;
+    var searchKeyArr = searchKeyObject.searchKeyArray;
 
-    // try {
-    //   var TempObject = app.com.dealUrl(e.detail.value);
-    //   if (TempObject.error)
-    //     return;
-    //   var TempSearchList = TempObject.SearchList;
-    //   var Tempkind = TempObject.kind;
-    //   var TempSe = TempObject.SeletData;
-    //   var TempDa = TempObject.key_data_Temp;
-    // }
-    // catch (e) {
-    //   return
-    // }
-
-
-    // if (FlagSetOut != undefined) {
-    //   clearTimeout(FlagSetOut);
-    // }
-    // if (Tempkind == "EnToCn")//英译汉
-    // {
-    //   FlagSetOut = setTimeout(function () {
-    //     app.ajax.reqPOST('/tinyDic/SearchKey', {
-    //       "Searchdata": TempDa,
-    //       "TakeNum": app.globalData.autodisplayNum,
-    //       "SeletData": TempSe
-    //     }, function (res) {
-    //       if (!res) {//失败直接返回        
-    //         return
-    //       }
-    //       if (res.error != undefined && res.error == true) {
-    //         return;
-    //       }
-    //       else {//成功
-    //         console.log(res);
-    //         that.setData({
-    //           SearchKeyList: res
-    //         })
-    //       }
-    //     })
-    //   }, 500);
-    // }
-    // else if (Tempkind == "CnToEn")//汉译英
-    // {
-    //   FlagSetOut = setTimeout(function () {
-    //     that.setData({
-    //       SearchKeyList: TempSearchList
-    //     })
-    //   }, 500);
-    // }
-
-
+    if (flagSetOut != undefined) {
+      clearTimeout(flagSetOut);
+    }
+    flagSetOut = setTimeout(function () {
+      if (e.detail.value == '') {
+        return
+      }
+      var searchKeyList = that.searchKeyListGet(searchKeyArr, e.detail.value);
+      that.setData({
+        searchKeyList: searchKeyList
+      })
+    }, 500);
     this.setData({
       inputVal: e.detail.value
     });
@@ -168,14 +129,7 @@ Page({
     //     })
     //   });
     // }
-
-
-
-
-
   },
-
-
   kindToggle: function (e) {//辅助选项栏
     var id = e.currentTarget.id, list = this.data.list;
     for (var i = 0, len = list.length; i < len; ++i) {
@@ -189,17 +143,76 @@ Page({
       list: list
     });
   },
-
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数  
     var that = this;
+    app.ajax.reqPOST('/shoppingMall/recommentListsGet', {//TODO:这里可以做大数据扩展
+      "userInfo": "",//TODO:用户信息,调整推荐策略
+      "takeNum": app.globalData.recommentListsNum,
+      "prefers": ""  //TODO:用户喜好,调整推荐策略
+    }, function (res) {
+      if (!res || res.error == true) {//失败直接返回        
+        return
+      }
+      that.setData({
+        recommentLists: res
+      })
+
+    });
+    this.searchKeyObjectGet(that);//搜索栏关键字获取
+  },
+  searchKeyObjectGet: function (that) {//搜索栏关键字对象获取
     wx.getStorage({
-      key: 'autodisplayNum',
+      key: 'searchKeyObject',
       success: function (res) {
-        console.log(res.data)
-        app.globalData.autodisplayNum = res.data
+        searchKeyObject = res.data
+      },
+      fail: function () {
+        app.ajax.reqPOST('/shoppingMall/searchKeyTreeGet', {//TODO:这里可以做大数据扩展    
+        }, function (res) {
+          if (!res || res.error == true) {//失败直接返回        
+            return
+          }
+          searchKeyObject = res.data;
+          wx.setStorage({
+            key: 'searchKeyObject',
+            data: res,
+          })
+        });
       }
     })
-  }
+  },
+  searchKeyListGet: function (searchKeyArr, input) {//搜索栏关键字列表获取
+    var TempArr = searchKeyArr.map(item => {
+      return {   
+        id : item.id,
+        listImageUrl : item.listImageUrl,
+        listTitle : item.listTitle,
+        evaluationCount : item.evaluationCount,
+        evaluationPercent : item.evaluationPercent,
+        price : item.price,
+        unit : item.unit,
+        sort: (item.listTitle.indexOf(input) == -1) ? 99999 : item.listTitle.indexOf(input)      
+      }
+    })
+    var returnTemp = TempArr.sort(function (value1, value2) {
+      if (value1.sort > value2.sort) {
+        return 1;
+      } else if (value1.sort < value2.sort) {
+        return -1;
+      } else {
+        return 0;
+      }
+    }).slice(0, app.globalData.searchKeyDisplayNum);
 
+    for (var i = 0; i <= returnTemp.length; i++) {//排除包含不匹配的情况
+      if (returnTemp[i].sort == 99999) {
+        if (i == 0) {
+          return []
+        }
+        return returnTemp.slice(0, i)
+      }
+    }
+    return returnTemp
+  }
 });

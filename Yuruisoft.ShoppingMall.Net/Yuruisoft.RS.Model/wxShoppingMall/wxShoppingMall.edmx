@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="rayyewang01Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="wxShoppingMall_produceInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="listTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="listImageUrl" Type="nvarchar(max)" />
+          <Property Name="evaluationCount" Type="int" />
+          <Property Name="evaluationPercent" Type="float" />
+          <Property Name="price" Type="float" />
+          <Property Name="unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="subTime" Type="datetime" />
+          <Property Name="modiyTime" Type="datetime" />
+          <Property Name="sort" Type="int" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="rayyewang01ModelStoreContainer">
+          <EntitySet Name="wxShoppingMall_produceInfo" EntityType="Self.wxShoppingMall_produceInfo" Schema="rayyewang01" Table="wxShoppingMall.produceInfo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rayyewang01Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="wxShoppingMallEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
+        </EntityContainer>
+        <EntityType Name="wxShoppingMall_produceInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="listTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="listImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="evaluationCount" Type="Int32" />
+          <Property Name="evaluationPercent" Type="Double" />
+          <Property Name="price" Type="Double" />
+          <Property Name="unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subTime" Type="DateTime" Precision="3" />
+          <Property Name="modiyTime" Type="DateTime" Precision="3" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rayyewang01ModelStoreContainer" CdmEntityContainer="wxShoppingMallEntities">
+          <EntitySetMapping Name="wxShoppingMall_produceInfo">
+            <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
+              <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="modiyTime" ColumnName="modiyTime" />
+                <ScalarProperty Name="subTime" ColumnName="subTime" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="evaluationPercent" ColumnName="evaluationPercent" />
+                <ScalarProperty Name="evaluationCount" ColumnName="evaluationCount" />
+                <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
+                <ScalarProperty Name="listTitle" ColumnName="listTitle" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

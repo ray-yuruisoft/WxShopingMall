@@ -6,7 +6,7 @@ function reqPOST(url, data, cb) {//Get请求
     method: 'POST',
     header: {
       'content-type': 'application/json',
-      'yuruisoft': 'www.yuruisoft.com'
+      'haowanFamily': 'www.haowanFamily.com'
     },
     success: function (res) {
       return typeof cb == "function" && cb(res.data)

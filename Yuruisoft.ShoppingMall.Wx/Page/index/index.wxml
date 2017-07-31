@@ -7,7 +7,7 @@
       <view class="weui-search-bar__form">
         <view class="weui-search-bar__box">
           <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-          <input type="text" class="weui-search-bar__input" placeholder="搜索好万家商品" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="翻译" bindconfirm="translating" />
+          <input type="text" class="weui-search-bar__input" placeholder="搜索好万家商品" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="完成" bindconfirm="searching" />
           <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
             <icon type="clear" size="14"></icon>
           </view>
@@ -23,20 +23,11 @@
   <!-- Head 标题+介绍+搜索栏 结束 -->
   <!-- Body1 搜索提示内容 开始 -->
   <view class="page__bd">
-    <view class="weui-cells searchbar-result" wx:if="{{SearchKeyList != undefined && SearchKeyList.length > 0}}">
-      <view bindtap="KeyListTap" data-SKey="{{item.SKey}}" class="weui-cell" hover-class="weui-cell_active" wx:for-items="{{SearchKeyList}}" wx:key="item.id">
-        <view class="weui-cell__bd">
-          <view>{{item.SKey}}</view>
-        </view>
-      </view>
-    </view>
-    <view class="weui-article" wx:if="{{articleList.length > 0}}">
-      <view class="weui-article__section" wx:for-items="{{articleList}}" wx:key="item.id">
-        <view class="weui-article__section">
-          <view class="weui-article__h3">{{item.Key}}</view>
-          <text class="weui-article__p">
-            {{item.Value}}
-          </text>
+    <view class="weui-cells searchbar-result" wx:if="{{searchKeyList != undefined && searchKeyList.length > 0}}">
+      <view wx:for-items="{{searchKeyList}}" wx:key="{{item.id}}">
+        <view bindtap="keyListTap" class="kind-list__item">
+          <!--用is 使用模版-->
+          <template is="recommentTemp" data="{{...item}}" />
         </view>
       </view>
     </view>
@@ -69,10 +60,10 @@
   </view>
   <!-- Body2 商品导航栏 结束 -->
   <!-- Body3 商品推荐栏 开始 -->
-  <view wx:for-items="{{msgList}}" wx:key="{{item.id}}">
+  <view wx:for-items="{{recommentLists}}" wx:key="{{item.id}}">
     <view class="kind-list__item">
       <!--用is 使用模版-->
-      <template is="msgTemp" data="{{...item}}" />
+      <template is="recommentTemp" data="{{...item}}" />
     </view>
   </view>
   <!-- Body3 商品推荐栏 结束 -->
@@ -85,7 +76,7 @@
   <!-- Foot 公司联系方式+版权申明 结束 -->
 </view>
 
-<template name="msgTemp">
+<template name="recommentTemp">
   <!--  
     1. scaleToFill : 图片全部填充显示，可能导致变形 默认  
     2. aspectFit ： 图片全部显示，以最长边为准  
@@ -93,13 +84,14 @@
     4. widthFix ： 宽不变，全部显示图片  
     -->
   <view class="weui-panel__bd">
-    <navigator url="../math_source_buy/detail/detail?id={{id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+    <navigator url="produceDetails/produceDetails?id={{id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
       <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-        <image class="weui-media-box__thumb" src="{{SBTitleImage}}" style="width: 60px; height: 60px;" />
+        <image class="weui-media-box__thumb" src="{{listImageUrl}}" style="width: 60px; height: 60px;" />
       </view>
       <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-        <view class="weui-media-box__title">{{SBTitle}}</view>
-        <view class="weui-media-box__desc">{{ModiyTime}}</view>
+        <view class="weui-media-box__title">{{listTitle}}</view>
+        <view class="weui-media-box__desc" style="color:red">¥{{price}} / {{unit}}</view>
+        <view class="weui-media-box__desc">{{evaluationCount}}条评价 {{evaluationPercent}}%好评</view>
       </view>
     </navigator>
   </view>

@@ -163,6 +163,7 @@
     <Compile Include="Controllers\UpdatePassWordController.cs" />
     <Compile Include="Controllers\UserDetailsController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Controllers\wxShoppingMall\shoppingMallController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -632,6 +633,9 @@
     <Content Include="Content\assets\avatars\Thumbs.db" />
     <Content Include="Content\assets\css\images\Thumbs.db" />
     <Content Include="Content\assets\font\fontawesome-webfont.woff" />
+    <Content Include="wxshoppingMallContent\Images\produce\chicken.jpg" />
+    <Content Include="wxshoppingMallContent\Images\produce\ecologyBeefPopNormal.jpg" />
+    <Content Include="wxshoppingMallContent\Images\produce\kerR.jpg" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Instructions\ActionInfoInstructions.html" />
     <Content Include="Instructions\RoleInfoInstructions.html" />
