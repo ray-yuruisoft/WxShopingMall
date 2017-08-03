@@ -13,13 +13,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
     {
         //
         // GET: /shoppingMall/
-
-        private DbContext Db;
-        public shoppingMallController()//构造注入,这里可以用autofac
-        {
-            Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
-        }
-
+   
         [HttpPost]
         public ActionResult recommentListsGet(int takeNum)
         {
@@ -27,6 +21,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             {
                 return Content("forbid!");
             }
+            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             var lists = Db.Set<wxShoppingMall_produceInfo>().Where(c => true).OrderBy(c => c.sort).Take(takeNum);
             string host = "http://" + Request.Url.Host.ToString() + ":4943";
             ArrayList results = new ArrayList();
@@ -56,17 +51,22 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             {
                 return Content("forbid!");
             }
+            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             var lists = Db.Set<wxShoppingMall_produceInfo>().Where(c => true);
+
             ArrayList results = new ArrayList();
             string host = "http://" + Request.Url.Host.ToString() + ":4943";
             foreach (var item in lists)
             {
+                ArrayList temp = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(item.listKeys);
+
                 results.Add(
                         new
                         {
                             id = item.id,
                             listImageUrl = host + item.listImageUrl,
                             listTitle = item.listTitle,
+                            listKeys = temp,
                             evaluationCount = item.evaluationCount,
                             evaluationPercent = item.evaluationPercent,
                             price = item.price,

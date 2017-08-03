@@ -11,6 +11,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="listTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="listKeys" Type="nvarchar(max)" />
           <Property Name="listImageUrl" Type="nvarchar(max)" />
           <Property Name="evaluationCount" Type="int" />
           <Property Name="evaluationPercent" Type="float" />
@@ -37,6 +38,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="listTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="listKeys" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="listImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="evaluationCount" Type="Int32" />
           <Property Name="evaluationPercent" Type="Double" />
@@ -65,6 +67,7 @@
                 <ScalarProperty Name="evaluationPercent" ColumnName="evaluationPercent" />
                 <ScalarProperty Name="evaluationCount" ColumnName="evaluationCount" />
                 <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
+                <ScalarProperty Name="listKeys" ColumnName="listKeys" />
                 <ScalarProperty Name="listTitle" ColumnName="listTitle" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

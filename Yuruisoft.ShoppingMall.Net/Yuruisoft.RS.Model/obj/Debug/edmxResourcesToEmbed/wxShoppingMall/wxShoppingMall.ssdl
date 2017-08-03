@@ -6,6 +6,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="listTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="listKeys" Type="nvarchar(max)" />
     <Property Name="listImageUrl" Type="nvarchar(max)" />
     <Property Name="evaluationCount" Type="int" />
     <Property Name="evaluationPercent" Type="float" />

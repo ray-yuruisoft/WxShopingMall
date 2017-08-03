@@ -3,7 +3,8 @@
     "Page/index/index",
     "Page/shoppingCart/shoppingCart",
     "Page/shoppingCart/userInfo",
-    "Page/index/produceDetails/produceDetails"
+    "Page/index/produceDetails/produceDetails",
+    "Page/extraPages/searchPage/searchPage"
   ],
   "window": {
     "navigationBarTextStyle": "write",

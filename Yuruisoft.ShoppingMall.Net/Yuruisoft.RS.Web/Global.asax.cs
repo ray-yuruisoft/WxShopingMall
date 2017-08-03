@@ -50,7 +50,10 @@ namespace Yuruisoft.RS.Web
             var builder = new ContainerBuilder();
             var assembly = Assembly.GetExecutingAssembly();
             var BllService = System.Reflection.Assembly.Load("Yuruisoft.RS.BLL");//类似于RegisterType的形式注册，被注册类型可以不是直接引用，但是必须被加载
+            //var dbModel = System.Reflection.Assembly.Load("Yuruisoft.RS.Model");
             builder.RegisterAssemblyTypes(BllService, BllService).AsImplementedInterfaces();
+            //builder.RegisterAssemblyTypes(dbModel, dbModel).AsImplementedInterfaces();
+
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

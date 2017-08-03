@@ -13,6 +13,7 @@
           <ScalarProperty Name="evaluationPercent" ColumnName="evaluationPercent" />
           <ScalarProperty Name="evaluationCount" ColumnName="evaluationCount" />
           <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
+          <ScalarProperty Name="listKeys" ColumnName="listKeys" />
           <ScalarProperty Name="listTitle" ColumnName="listTitle" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>

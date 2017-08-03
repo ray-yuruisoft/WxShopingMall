@@ -9,6 +9,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="listTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="listKeys" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="listImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="evaluationCount" Type="Int32" />
     <Property Name="evaluationPercent" Type="Double" />

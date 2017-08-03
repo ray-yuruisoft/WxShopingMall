@@ -16,6 +16,7 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
     {
         public int id { get; set; }
         public string listTitle { get; set; }
+        public string listKeys { get; set; }
         public string listImageUrl { get; set; }
         public Nullable<int> evaluationCount { get; set; }
         public Nullable<double> evaluationPercent { get; set; }

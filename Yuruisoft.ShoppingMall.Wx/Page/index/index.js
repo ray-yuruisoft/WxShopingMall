@@ -1,6 +1,6 @@
 var app = getApp();
 var flagSetOut;
-var searchKeyObject;
+
 Page({
   data: {
     list: [
@@ -65,7 +65,7 @@ Page({
   },
   inputTyping: function (e) {//输入时异步本地查询
     var that = this;
-    var searchKeyArr = searchKeyObject.searchKeyArray;
+    var searchKeyArr = app.globalData.searchKeyObject.searchKeyArray;
 
     if (flagSetOut != undefined) {
       clearTimeout(flagSetOut);
@@ -74,7 +74,7 @@ Page({
       if (e.detail.value == '') {
         return
       }
-      var searchKeyList = that.searchKeyListGet(searchKeyArr, e.detail.value);
+      var searchKeyList = app.search.searchKeyListGet(searchKeyArr, e.detail.value, app.globalData.searchKeyDisplayNum);
       that.setData({
         searchKeyList: searchKeyList
       })
@@ -83,52 +83,11 @@ Page({
       inputVal: e.detail.value
     });
   },
-  translating: function (e) {//回车键
-    var that = this;
-
-    // try {
-    //   var TempObject = app.com.dealUrl(e.detail.value);
-    //   if (TempObject.error)
-    //     return;
-    //   var Tempkind = TempObject.kind;
-    //   var TempSe = TempObject.SeletData;
-    //   var TempDa = TempObject.key_data_Temp;
-    // }
-    // catch (e) {
-    //   return
-    // }
-
-
-    // if (Tempkind == "EnToCn")// 英译汉
-    // {
-    //   app.ajax.reqPOST('/tinyDic/Search', {
-    //     "Searchdata": TempDa,
-    //     "SeletData": TempSe
-    //   }, function (res) {
-    //     if (!res) {
-    //       return
-    //     }
-    //     //请求数据完成后
-    //     that.setData({
-    //       articleList: res
-    //     })
-    //   });
-    // }
-    // else if (Tempkind == "CnToEn")//汉译英
-    // {
-    //   app.ajax.reqPOST('/tinyDic/SearchCnToEn', {
-    //     "Searchdata": TempDa,
-    //     "SeletData": TempSe
-    //   }, function (res) {
-    //     if (!res) {
-    //       return
-    //     }
-    //     //请求数据完成后
-    //     that.setData({
-    //       articleList: res
-    //     })
-    //   });
-    // }
+  searching: function (e) {//搜索栏回车键
+    var par = "searchData="+e.detail.value;
+    wx.navigateTo({
+      url: '../extraPages/searchPage/searchPage?' + par,
+    })
   },
   kindToggle: function (e) {//辅助选项栏
     var id = e.currentTarget.id, list = this.data.list;
@@ -165,7 +124,7 @@ Page({
     wx.getStorage({
       key: 'searchKeyObject',
       success: function (res) {
-        searchKeyObject = res.data
+        app.globalData.searchKeyObject = res.data
       },
       fail: function () {
         app.ajax.reqPOST('/shoppingMall/searchKeyTreeGet', {//TODO:这里可以做大数据扩展    
@@ -173,7 +132,7 @@ Page({
           if (!res || res.error == true) {//失败直接返回        
             return
           }
-          searchKeyObject = res.data;
+          app.globalData.searchKeyObject = res;
           wx.setStorage({
             key: 'searchKeyObject',
             data: res,
@@ -182,37 +141,5 @@ Page({
       }
     })
   },
-  searchKeyListGet: function (searchKeyArr, input) {//搜索栏关键字列表获取
-    var TempArr = searchKeyArr.map(item => {
-      return {   
-        id : item.id,
-        listImageUrl : item.listImageUrl,
-        listTitle : item.listTitle,
-        evaluationCount : item.evaluationCount,
-        evaluationPercent : item.evaluationPercent,
-        price : item.price,
-        unit : item.unit,
-        sort: (item.listTitle.indexOf(input) == -1) ? 99999 : item.listTitle.indexOf(input)      
-      }
-    })
-    var returnTemp = TempArr.sort(function (value1, value2) {
-      if (value1.sort > value2.sort) {
-        return 1;
-      } else if (value1.sort < value2.sort) {
-        return -1;
-      } else {
-        return 0;
-      }
-    }).slice(0, app.globalData.searchKeyDisplayNum);
-
-    for (var i = 0; i <= returnTemp.length; i++) {//排除包含不匹配的情况
-      if (returnTemp[i].sort == 99999) {
-        if (i == 0) {
-          return []
-        }
-        return returnTemp.slice(0, i)
-      }
-    }
-    return returnTemp
-  }
+  
 });

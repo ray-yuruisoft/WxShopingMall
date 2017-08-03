@@ -90,7 +90,10 @@
 /**
 搜索
 */
-
+.weui-panel__bd {
+  background-color: #fff;
+  border-bottom: 1rpx solid #d7d6dc;
+}
 .searchbar-result {
   margin-top: 0;
   font-size: 14px;
