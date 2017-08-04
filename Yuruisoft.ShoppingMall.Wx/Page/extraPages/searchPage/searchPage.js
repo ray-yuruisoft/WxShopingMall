@@ -111,7 +111,7 @@ Page({
     // 刷新的准备工作，想将页数设置为一，然后清空文章列表信息，定位在距顶部为0的地方  
     pageNum = 1;
     that.setData({
-      msgList: []
+      searchKeyList: []
     });
     // 加载数据  
     loadSearchData(that);
@@ -313,7 +313,7 @@ var keyListGet = function (allKeyWord, input, num) {
   if (num != '' && num != undefined) {
     returnTemp = returnTemp.slice(0, num)
   }
-  for (var i = 0; i <= returnTemp.length; i++) {//排除包含不匹配的情况
+  for (var i = 0; i < returnTemp.length; i++) {//排除包含不匹配的情况
     if (returnTemp[i].sort == 99999) {
       if (i == 0) {
         return []

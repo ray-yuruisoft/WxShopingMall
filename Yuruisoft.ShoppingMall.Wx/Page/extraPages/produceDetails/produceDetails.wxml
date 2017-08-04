@@ -1,0 +1,37 @@
+<!--produceDetails.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange" indicator-dots="{{indicator_dots}}" indicator-color="{{indicator_color}}" indicator-active-color="{{indicator_active_color}}">
+      <block wx:for="{{produceDetails}}" wx:key="{{item.id}}">
+        <swiper-item>
+          <image bindtap="tapBanner" data-id="{{item.id}}" src="{{item.bannerImageUrl}}" class="slide-image" width="750rpx" height="562.5rpx" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="weui-panel">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="produceTitle">{{title}}</view>
+          <view class="producePrice">¥{{price}}</view>
+        </view>
+      </view>
+    </view>
+        
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell shoppingBanner">
+        <view class="weui-cell__hd" style="background-color: #f8f8f8">
+          <view class="icon icon-shoppingCart shoppingIcon"></view>
+          <view class="weui-badge shoppingBadge">8</view>
+        </view>
+        <text class="shoppingText">购物车</text>
+        <view class="weui-cell__bd shoppingAdd">
+          <view>加入购物车</view>
+        </view>
+        <view class="weui-cell__bd shoppingBuyNow">
+          <view>立即购买</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

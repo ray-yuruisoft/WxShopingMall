@@ -26,7 +26,7 @@ function searchKeyListGet(searchKeyArr, input, searchKeyDisplayNum) {//搜索栏
     returnTemp = returnTemp.slice(0, searchKeyDisplayNum)
   }
 
-  for (var i = 0; i <= returnTemp.length; i++) {//排除包含不匹配的情况
+  for (var i = 0; i < returnTemp.length; i++) {//排除包含不匹配的情况
     if (returnTemp[i].sort == 99999) {
       if (i == 0) {
         return []

@@ -12,6 +12,8 @@
           <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="evaluationPercent" ColumnName="evaluationPercent" />
           <ScalarProperty Name="evaluationCount" ColumnName="evaluationCount" />
+          <ScalarProperty Name="detailBannerImageUrl" ColumnName="detailBannerImageUrl" />
+          <ScalarProperty Name="detailBannerImageDic" ColumnName="detailBannerImageDic" />
           <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
           <ScalarProperty Name="listKeys" ColumnName="listKeys" />
           <ScalarProperty Name="listTitle" ColumnName="listTitle" />

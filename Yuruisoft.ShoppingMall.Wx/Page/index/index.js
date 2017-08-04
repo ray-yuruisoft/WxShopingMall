@@ -48,13 +48,14 @@ Page({
     this.setData({
       inputVal: "",
       inputShowed: false,
-      articleList: []
+      articleList: [],
+      searchKeyList: []
     });
   },
   clearInput: function () {
     this.setData({
       inputVal: "",
-      SearchKeyList: []
+      searchKeyList: []
     });
   },
   keyListTap: function (e) {//搜索内容点击,函数主要清空作用
@@ -84,7 +85,7 @@ Page({
     });
   },
   searching: function (e) {//搜索栏回车键
-    var par = "searchData="+e.detail.value;
+    var par = "searchData=" + e.detail.value;
     wx.navigateTo({
       url: '../extraPages/searchPage/searchPage?' + par,
     })
@@ -113,8 +114,19 @@ Page({
       if (!res || res.error == true) {//失败直接返回        
         return
       }
+      var temp = res.map(item => {//格式化数字
+        return {
+          id: item.id,
+          listImageUrl: item.listImageUrl,
+          listTitle: item.listTitle,
+          evaluationCount: item.evaluationCount,
+          evaluationPercent: item.evaluationPercent.toFixed(2),
+          price: item.price.toFixed(2),
+          unit: item.unit
+        }
+      })
       that.setData({
-        recommentLists: res
+        recommentLists: temp
       })
 
     });
@@ -132,14 +144,33 @@ Page({
           if (!res || res.error == true) {//失败直接返回        
             return
           }
-          app.globalData.searchKeyObject = res;
+
+          var arrTemp = res.searchKeyArray.map(item => {
+            return {//格式化数字
+              id: item.id,
+              listImageUrl: item.listImageUrl,
+              listTitle: item.listTitle,
+              listKeys: item.listKeys,
+              evaluationCount: item.evaluationCount,
+              evaluationPercent: item.evaluationPercent.toFixed(2),
+              price: item.price.toFixed(2),
+              unit: item.unit
+            }
+          })
+
+          var temp = {
+            searchKeyArrayVersion: res.searchKeyArrayVersion,
+            searchKeyArray: arrTemp
+          }
+
+          app.globalData.searchKeyObject = temp;
           wx.setStorage({
             key: 'searchKeyObject',
-            data: res,
+            data: temp,
           })
         });
       }
     })
   },
-  
+
 });

@@ -1,0 +1,80 @@
+/* produceDetails.wxss */
+
+.swiper_box {
+  width: 100%;
+  height: 562.5rpx;
+  border-bottom: 1rpx solid #d7d6dc;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.produceTitle {
+  font-size: 35rpx;
+}
+
+.producePrice {
+  font-size: 40rpx;
+  color: red;
+}
+
+.weui-badge {
+  display: inline-block;
+  padding: 0.15em 0.4em;
+  min-width: 4px;
+  border-radius: 12px;
+  background-color: #e64340;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 8px;
+  vertical-align: middle;
+}
+
+.shoppingBanner {
+  position: fixed;
+  bottom: -0.8em;
+  left: -0.8em;
+  width: 100%;
+  display: flex;
+  line-height: 60px;
+  height: 60px;
+}
+
+.shoppingIcon {
+  width: 50px;
+  display: block;
+  text-align: center;
+}
+
+.shoppingBadge {
+  position: absolute;
+  bottom: 5.5em;
+  left: 5.5em;
+}
+
+.shoppingText {
+  color: gray;
+  font-size: 10px;
+  position: absolute;
+  bottom: -8px;
+  left: 26px;
+}
+
+.shoppingAdd {
+  color: white;
+  font-size: 20px;
+  background-color: #18BC9C;
+  text-align: center;
+}
+
+.shoppingBuyNow {
+  color: white;
+  font-size: 20px;
+  background-color: #e33a3c;
+  text-align: center;
+}

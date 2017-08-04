@@ -2,15 +2,15 @@
   "pages": [
     "Page/index/index",
     "Page/shoppingCart/shoppingCart",
-    "Page/shoppingCart/userInfo",
-    "Page/index/produceDetails/produceDetails",
+    "Page/userInfo/userInfo",
+    "Page/extraPages/produceDetails/produceDetails",
     "Page/extraPages/searchPage/searchPage"
   ],
   "window": {
     "navigationBarTextStyle": "write",
     "navigationBarTitleText": "好万家购物",
     "navigationBarBackgroundColor": "#18BC9C",
-    "backgroundColor": "#18BC9C"
+    "backgroundColor": "#f8f8f8"
   },
   "networkTimeout": {
     "request": 10000,

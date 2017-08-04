@@ -4,7 +4,7 @@
 page {
   background-color: #f8f8f8;
   font-size: 16px;
-  font-family:  -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
 }
 
 .page__hd {
@@ -38,32 +38,35 @@ page {
   font-size: 14px;
 }
 
-
 .icon {
   font-family: 'FontAwesome';
 }
 
-.icon-sort {
-  font-size: 40rpx;
+.icon-shoppingCart {
+  font-size: 25px;
 }
 
-.icon-sort:after {
-  content: '\f0dc';
-  color: palevioletred;
+.icon-shoppingCart:after {
+  content: '\f07a';
+  color: black;
 }
 
-.icon-phone{
+.icon-phone {
   font-size: 30rpx;
 }
-.icon-phone::before{
+
+.icon-phone::before {
   content: '\f095';
   color: gray;
 }
 
-.icon-mobile-phone{
+.icon-mobile-phone {
   font-size: 30rpx;
 }
-.icon-mobile-phone::before{
+
+.icon-mobile-phone::before {
   content: '\f10b';
   color: gray;
 }
+
+

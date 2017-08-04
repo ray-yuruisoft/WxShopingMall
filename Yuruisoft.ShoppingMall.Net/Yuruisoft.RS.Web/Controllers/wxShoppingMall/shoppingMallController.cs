@@ -13,7 +13,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
     {
         //
         // GET: /shoppingMall/
-   
+
         [HttpPost]
         public ActionResult recommentListsGet(int takeNum)
         {
@@ -92,6 +92,36 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             }
             string version = System.Web.Configuration.WebConfigurationManager.AppSettings["version"].ToString();
             return Json(new { version = version });
+        }
+
+        [HttpPost]
+        public ActionResult produceDetailGet(int id)
+        {
+            if (Request.Headers["haowanFamily"] != "www.haowanFamily.com")//请求头自定义
+            {
+                return Content("forbid!");
+            }
+            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            var finditem = Db.Set<wxShoppingMall_produceInfo>().Where(c => c.id == id).FirstOrDefault();         
+            if (finditem == null)
+            {
+                return Json(new
+                {
+                    error = true
+                });
+            }
+            string host = "http://" + Request.Url.Host.ToString() + ":4943";
+            ArrayList temp = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(finditem.detailBannerImageUrl);
+            return Json(new
+            {
+                id = finditem.id,
+                bannerImageDic = host+finditem.detailBannerImageDic,
+                bannerImages = temp,
+                price = finditem.price,
+                title = finditem.listTitle,
+                unit = finditem.unit,
+                error = false
+            });
         }
     }
 }
