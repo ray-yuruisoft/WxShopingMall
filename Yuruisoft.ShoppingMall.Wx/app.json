@@ -38,7 +38,7 @@
         "text": "购物车"
       },
       {
-        "pagePath": "Page/shoppingCart/userInfo",
+        "pagePath": "Page/userInfo/userInfo",
         "iconPath": "style/images/tabbar/userInfoNormal.png",
         "selectedIconPath": "style/images/tabbar/userInfoSelected.png",
         "text": "我的"

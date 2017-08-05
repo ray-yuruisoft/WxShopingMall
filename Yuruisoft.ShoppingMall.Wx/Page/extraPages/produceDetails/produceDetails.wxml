@@ -1,6 +1,7 @@
 <!--produceDetails.wxml-->
 <view class="page">
   <view class="page__bd">
+    <!-- 幻灯片 开始 -->
     <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange" indicator-dots="{{indicator_dots}}" indicator-color="{{indicator_color}}" indicator-active-color="{{indicator_active_color}}">
       <block wx:for="{{produceDetails}}" wx:key="{{item.id}}">
         <swiper-item>
@@ -8,6 +9,8 @@
         </swiper-item>
       </block>
     </swiper>
+    <!-- 幻灯片 结束 -->
+    <!-- 商品标题和售价 开始 -->
     <view class="weui-panel">
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_text">
@@ -16,8 +19,64 @@
         </view>
       </view>
     </view>
-        
-    <view class="weui-cells weui-cells_after-title">
+    <!-- 商品标题和售价 结束 -->
+    <!-- 商品数量选择组件 开始 -->
+    <view class="weui-panel">
+      <view bindtap="angleTapChooseNum" class="weui-panel__hd verticalCenter spaceBetween">
+        <view class="textPanelHead">已选{{chooseNum}}个</view>
+        <view class="icon {{icon_angleChooseNum?'icon-angle-down':'icon-angle-up'}}"></view>
+      </view>
+      <view class="weui-panel__bd" style="{{icon_angleChooseNum?'display:none':'display:block'}}">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="buy-num">
+            <view class="titleNum verticalCenter">
+              <text>数量</text>
+            </view>
+            <view bindtap="minusChooseNum" class="jian-btn {{chooseNum==1?'disabled':''}}">－</view>
+            <view class="inputContainer verticalCenter">
+              <input bindblur="inputChooseNumBlur" bindinput="inputChooseNum" maxlength='3' type="number" value="{{chooseNum}}">
+              </input>
+            </view>
+            <view bindtap="plusChooseNum" class="jia-btn {{chooseNum==999?'disabled':''}}">＋</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 商品数量选择组件 结束 -->
+    <!-- 地址组件栏 开始 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd spaceBetween">
+        <view class="textPanelHead verticalCenter" style="display:flex;">
+          <view>地址{{hanSpace}}</view>
+          <view>四川省 成都市 高新区</view>
+        </view>
+        <view bindtap="angleTapChooseAddress" class="icon icon-angle-right"></view>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text textPanelBodyRed">[现货]</view>
+          <view class="weui-media-box__desc textPanelBodyGray">在线支付运费15元</view>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__desc spaceBetween">
+            <view class="verticalCenter" style="display:flex;">
+              <view class="icon icon-ok-circle textPanelBodyBlack">{{space}}商家发货&售后{{hanSpace}}</view>
+              <view class="icon icon-ban-circle textPanelBodyGray">{{space}}不可七天退货</view>
+            </view>
+            <view class="icon icon-angle-right"></view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="weui-panel__ft">
+        <view class="weui-cell weui-cell_access weui-cell_link">
+          <view class="weui-cell__bd">查看更多</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </view> -->
+    </view>
+    <!-- 地址组件栏 结束 -->
+    <!-- 购物操作按钮组件 开始 -->
+    <view class="weui-cells_after-title">
       <view class="weui-cell shoppingBanner">
         <view class="weui-cell__hd" style="background-color: #f8f8f8">
           <view class="icon icon-shoppingCart shoppingIcon"></view>
@@ -33,5 +92,8 @@
       </view>
 
     </view>
+    <!-- 购物操作按钮组件 结束 -->
+  </view>
+  <view class="page__ft">
   </view>
 </view>

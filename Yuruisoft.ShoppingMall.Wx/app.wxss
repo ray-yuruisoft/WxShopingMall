@@ -42,6 +42,51 @@ page {
   font-family: 'FontAwesome';
 }
 
+.icon-ban-circle {
+  font-size: 12px;
+}
+
+.icon-ban-circle:before {
+  content: '\f05e';
+  color: gray;
+}
+
+.icon-ok-circle {
+  font-size: 12px;
+}
+
+.icon-ok-circle:before {
+  content: '\f05d';
+  color: red;
+}
+
+.icon-angle-right {
+  font-size: 20px;
+}
+
+.icon-angle-right:after {
+  content: '\f105';
+  color: gray;
+}
+
+.icon-angle-up {
+  font-size: 20px;
+}
+
+.icon-angle-up:after {
+  content: '\f106';
+  color: gray;
+}
+
+.icon-angle-down {
+  font-size: 20px;
+}
+
+.icon-angle-down:after {
+  content: '\f107';
+  color: gray;
+}
+
 .icon-shoppingCart {
   font-size: 25px;
 }
@@ -69,4 +114,15 @@ page {
   color: gray;
 }
 
+.verticalCenter {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
 
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}

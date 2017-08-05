@@ -13,7 +13,58 @@ Page({
     autoplay: true,//是否自动切换
     interval: 3000,//自动切换时间间隔	
     duration: 1000,//滑动动画时长	
+
+    icon_angleChooseNum: false,//商品数量栏隐藏图标
+    chooseNum: 1,//商品选择的数量
+
+    hanSpace:'\r\n\r\n\r\n\r\n',//空格输出
+    space:'\r\n'
   },
+
+  /* 数量选择组件 开始*/
+  plusChooseNum: function () {//商品选择加号
+    if (this.data.chooseNum == 999)
+      return;
+    var count = ++this.data.chooseNum;
+    this.setData({
+      chooseNum: count
+    })
+  },
+  minusChooseNum: function () {//商品选择减号
+    if (this.data.chooseNum == 1)
+      return;
+    var count = --this.data.chooseNum;
+    this.setData({
+      chooseNum: count
+    })
+  },
+  inputChooseNum: function (e) {
+    if (e.detail.value == 0)
+      return;
+    var temp = parseInt(e.detail.value);
+    this.setData({
+      chooseNum: temp
+    })
+  },
+  inputChooseNumBlur: function (e) {
+    if (e.detail.value == 0)
+      this.setData({
+        chooseNum: 1
+      })
+  },
+  angleTapChooseNum: function () {
+    if (this.data.icon_angleChooseNum == false) {
+      this.setData({
+        icon_angleChooseNum: true
+      })
+    }
+    else {
+      this.setData({
+        icon_angleChooseNum: false
+      })
+    }
+  },
+  /*数量选择组件 结束*/
 
   /**
    * 生命周期函数--监听页面加载

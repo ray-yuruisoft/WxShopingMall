@@ -1,4 +1,5 @@
 {
+  "enablePullDownRefresh": true,
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "搜索",
   "navigationBarBackgroundColor": "#f8f8f8",
