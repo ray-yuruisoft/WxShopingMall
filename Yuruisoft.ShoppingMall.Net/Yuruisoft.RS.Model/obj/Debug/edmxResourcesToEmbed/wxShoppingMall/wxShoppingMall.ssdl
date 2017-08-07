@@ -10,6 +10,7 @@
     <Property Name="listImageUrl" Type="nvarchar(max)" />
     <Property Name="detailBannerImageDic" Type="nvarchar(max)" />
     <Property Name="detailBannerImageUrl" Type="nvarchar(max)" />
+    <Property Name="detailTabInstructionImageUrl" Type="nvarchar(max)" />
     <Property Name="evaluationCount" Type="int" />
     <Property Name="evaluationPercent" Type="float" />
     <Property Name="price" Type="float" />

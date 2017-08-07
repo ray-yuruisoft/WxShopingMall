@@ -13,6 +13,7 @@
     <Property Name="listImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="detailBannerImageDic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="detailBannerImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="detailTabInstructionImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="evaluationCount" Type="Int32" />
     <Property Name="evaluationPercent" Type="Double" />
     <Property Name="price" Type="Double" />

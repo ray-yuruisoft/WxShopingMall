@@ -15,6 +15,7 @@
           <Property Name="listImageUrl" Type="nvarchar(max)" />
           <Property Name="detailBannerImageDic" Type="nvarchar(max)" />
           <Property Name="detailBannerImageUrl" Type="nvarchar(max)" />
+          <Property Name="detailTabInstructionImageUrl" Type="nvarchar(max)" />
           <Property Name="evaluationCount" Type="int" />
           <Property Name="evaluationPercent" Type="float" />
           <Property Name="price" Type="float" />
@@ -44,6 +45,7 @@
           <Property Name="listImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="detailBannerImageDic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="detailBannerImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="detailTabInstructionImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="evaluationCount" Type="Int32" />
           <Property Name="evaluationPercent" Type="Double" />
           <Property Name="price" Type="Double" />
@@ -70,6 +72,7 @@
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="evaluationPercent" ColumnName="evaluationPercent" />
                 <ScalarProperty Name="evaluationCount" ColumnName="evaluationCount" />
+                <ScalarProperty Name="detailTabInstructionImageUrl" ColumnName="detailTabInstructionImageUrl" />
                 <ScalarProperty Name="detailBannerImageUrl" ColumnName="detailBannerImageUrl" />
                 <ScalarProperty Name="detailBannerImageDic" ColumnName="detailBannerImageDic" />
                 <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />

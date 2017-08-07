@@ -1,12 +1,29 @@
 // produceDetails.js
 var app = getApp();
+var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    tabs: ["商品介绍", "规格参数", "售后保障"],//商品详情Tab
+    activeIndex: 0,//商品详情Tab
+    sliderOffset: 0,//商品详情Tab
+    sliderLeft: 0,//商品详情Tab
+    templateObject: {
+      listData: [
+        { "th": "主体" },
+        { "tdHead": "贮存条件", "tdBody": "深冷、冷冻 -18°C" },
+        { "tdHead": "保质期", "tdBody": "7天" },
+        { "tdHead": "净含量", "tdBody": "1.5kg" },
+        { "th": "其他" },
+        { "tdHead": "商品编号", "tdBody": "10401600506" }
+      ]
+    },
+
     produceDetails: {},
+    produceTabInstruction: [],
     indicator_dots: true,//是否显示面板指示点
     indicator_color: 'rgba(0, 0, 0, .3)',
     indicator_active_color: 'red',
@@ -17,8 +34,8 @@ Page({
     icon_angleChooseNum: false,//商品数量栏隐藏图标
     chooseNum: 1,//商品选择的数量
 
-    hanSpace:'\r\n\r\n\r\n\r\n',//空格输出
-    space:'\r\n'
+    hanSpace: '\r\n\r\n\r\n\r\n',//空格输出
+    space: '\r\n'
   },
 
   /* 数量选择组件 开始*/
@@ -65,6 +82,17 @@ Page({
     }
   },
   /*数量选择组件 结束*/
+  /*商品详情Tab 开始*/
+  tabClick: function (e) {
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
+  },
+  /*商品详情Tab 结束*/
+
+
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -86,13 +114,31 @@ Page({
           bannerImageUrl: res.bannerImageDic + item
         }
       })
+      var produceTabInstruction = res.detailTabInstructionImageUrl.map((item, index) => {
+        return {
+          id: index,
+          InstructionUrl: res.bannerImageDic + item
+        }
+      })
+
       that.setData({
         title: res.title,
         price: res.price.toFixed(2),
         unit: res.unit,
-        produceDetails: produceDetails
+        produceDetails: produceDetails,
+        produceTabInstruction: produceTabInstruction
       })
     });
+    /*商品详情Tab 开始*/
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
+      }
+    });
+    /*商品详情Tab 结束*/
   },
 
   /**

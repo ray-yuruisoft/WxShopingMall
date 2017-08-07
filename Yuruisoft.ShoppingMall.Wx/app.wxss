@@ -114,6 +114,33 @@ page {
   color: gray;
 }
 
+.icon-star {
+  font-size: 12px;
+}
+
+.icon-star::after {
+  content: '\f005';
+  color: orange;
+}
+
+.icon-star-half {
+  font-size: 12px;
+}
+
+.icon-star-half::after {
+  content: '\f123';
+  color: orange;
+}
+
+.icon-star-empty {
+  font-size: 12px;
+}
+
+.icon-star-empty::after {
+  content: '\f006';
+  color: orange;
+}
+
 .verticalCenter {
   display: -webkit-flex;
   -webkit-align-items: center;
@@ -125,4 +152,10 @@ page {
 .spaceBetween {
   display: flex;
   justify-content: space-between;
+}
+
+.middleLine{
+  height: 1px;
+  border: none;
+  border-top: 1px solid #d9d9d9;
 }

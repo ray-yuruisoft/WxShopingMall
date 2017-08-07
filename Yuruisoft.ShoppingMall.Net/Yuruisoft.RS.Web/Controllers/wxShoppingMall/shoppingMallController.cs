@@ -111,12 +111,14 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 });
             }
             string host = "http://" + Request.Url.Host.ToString() + ":4943";
-            ArrayList temp = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(finditem.detailBannerImageUrl);
+            ArrayList tempBannerImages = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(finditem.detailBannerImageUrl);
+            ArrayList tempDetailTabInstructionImageUrl = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(finditem.detailTabInstructionImageUrl);
             return Json(new
             {
                 id = finditem.id,
                 bannerImageDic = host+finditem.detailBannerImageDic,
-                bannerImages = temp,
+                bannerImages = tempBannerImages,
+                detailTabInstructionImageUrl = tempDetailTabInstructionImageUrl,
                 price = finditem.price,
                 title = finditem.listTitle,
                 unit = finditem.unit,

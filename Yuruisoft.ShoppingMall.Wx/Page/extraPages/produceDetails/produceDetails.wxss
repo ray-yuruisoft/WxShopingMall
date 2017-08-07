@@ -35,6 +35,11 @@
   vertical-align: middle;
 }
 
+.topLevel {
+  position: absolute;
+  z-index: 999;
+}
+
 .shoppingBanner {
   position: fixed;
   bottom: -0.8em;
@@ -43,7 +48,6 @@
   display: flex;
   line-height: 60px;
   height: 60px;
-  z-index: 1;
 }
 
 .shoppingIcon {
@@ -125,6 +129,16 @@
   color: black;
 }
 
+.textPanelHeadRed {
+  font-size: 15px;
+  color: red;
+}
+
+.textPanelHeadGray {
+  font-size: 15px;
+  color: gray;
+}
+
 .textPanelBodyBlack {
   font-size: 12px;
   color: black;
@@ -134,6 +148,7 @@
   font-size: 12px;
   color: gray;
 }
+
 .textPanelBodyRed {
   font-size: 12px;
   color: red;
@@ -143,4 +158,80 @@
   background-color: #f5f5f9;
   border: 1rpx solid #eee;
   color: #ccc;
+}
+
+.flexDisplay {
+  display: flex;
+}
+
+.weui-tab__content {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.weui-navbar__slider {
+  background-color: #18bc9c;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+  color: #18bc9c;
+}
+
+.table {
+  border-top: 1rpx solid #d9d9d9;
+  border-left: 1rpx solid #d9d9d9;
+  border-right: 1rpx solid #d9d9d9;
+  overflow: hidden;
+  margin: 10px;
+  font-size: 12px;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 1.5rem;
+  align-items: center;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.td {
+  justify-content: center;
+  text-align: center;
+  height: 1.5rem;
+}
+
+.td-head {
+  width: 40%;
+  border-right: 1rpx solid #d9d9d9;
+}
+
+.td-body {
+  width: 80%;
+}
+
+.th {
+  width: 40%;
+  justify-content: center;
+  display: flex;
+  height: 1.5rem;
+  align-items: center;
+}
+
+.weui-tab__panel {
+  padding-top: 0;
+  padding-bottom: 50px;
+}
+
+.paddingBetween {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.detailsInstruction {
+  width: 20%;
+  font-size: 15px;
+}
+.fourtyPercent{
+  width: 40%;
 }

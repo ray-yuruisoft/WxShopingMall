@@ -22,7 +22,7 @@
     <!-- 商品标题和售价 结束 -->
     <!-- 商品数量选择组件 开始 -->
     <view class="weui-panel">
-      <view bindtap="angleTapChooseNum" class="weui-panel__hd verticalCenter spaceBetween">
+      <view bindtap="angleTapChooseNum" class="weui-panel__hd verticalCenter spaceBetween weui-cell_link">
         <view class="textPanelHead">已选{{chooseNum}}个</view>
         <view class="icon {{icon_angleChooseNum?'icon-angle-down':'icon-angle-up'}}"></view>
       </view>
@@ -45,8 +45,8 @@
     <!-- 商品数量选择组件 结束 -->
     <!-- 地址组件栏 开始 -->
     <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd spaceBetween">
-        <view class="textPanelHead verticalCenter" style="display:flex;">
+      <view class="weui-panel__hd spaceBetween weui-cell_link">
+        <view class="textPanelHead verticalCenter flexDisplay">
           <view>地址{{hanSpace}}</view>
           <view>四川省 成都市 高新区</view>
         </view>
@@ -57,9 +57,9 @@
           <view class="weui-media-box__title weui-media-box__title_in-text textPanelBodyRed">[现货]</view>
           <view class="weui-media-box__desc textPanelBodyGray">在线支付运费15元</view>
         </view>
-        <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box weui-media-box_text weui-cell_link">
           <view class="weui-media-box__desc spaceBetween">
-            <view class="verticalCenter" style="display:flex;">
+            <view class="verticalCenter flexDisplay">
               <view class="icon icon-ok-circle textPanelBodyBlack">{{space}}商家发货&售后{{hanSpace}}</view>
               <view class="icon icon-ban-circle textPanelBodyGray">{{space}}不可七天退货</view>
             </view>
@@ -67,16 +67,79 @@
           </view>
         </view>
       </view>
-      <!-- <view class="weui-panel__ft">
-        <view class="weui-cell weui-cell_access weui-cell_link">
-          <view class="weui-cell__bd">查看更多</view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-        </view>
-      </view> -->
     </view>
     <!-- 地址组件栏 结束 -->
+    <!-- 评价组件栏 开始 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd spaceBetween">
+        <view class="textPanelHead">评价</view>
+        <view class="flexDisplay">
+          <view class="textPanelHeadRed">98.8%</view>
+          <view class="textPanelHead">好评</view>
+        </view>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text flexDisplay">
+            <view class="textPanelBodyBlack">rayyewang01</view>
+            <view class="textPanelBodyGray">{{space}}(银牌会员){{hanSpace}}</view>
+            <!-- TODO:星星需做自动化 -->
+            <view class="icon icon-star"></view>
+            <view class="icon icon-star"></view>
+            <view class="icon icon-star-half"></view>
+            <view class="icon icon-star-empty"></view>
+            <view class="icon icon-star-empty"></view>
+
+          </view>
+          <view class="weui-media-box__title weui-media-box__title_in-text textPanelBodyBlack">收到后就交给老婆加工了，味道还可以！</view>
+          <view class="weui-media-box__desc textPanelBodyGray">2017-08-06</view>
+        </view>
+      </view>
+      <view class="weui-media-box weui-media-box_text weui-cell_link">
+        <view class="weui-media-box__desc spaceBetween">
+          <view class="verticalCenter flexDisplay">
+            <view class="textPanelBodyGray">共1500+条评论</view>
+          </view>
+          <view class="flexDisplay verticalCenter">
+            <view class="textPanelBodyGray">查看更多{{hanSpace}}</view>
+            <view class="icon icon-angle-right"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 评价组件栏 结束 -->
+    <!-- 商品详情Tab 开始 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <view wx:for-items="{{produceTabInstruction}}" wx:key="{{item.id}}">
+              <view class="kind-list__item">
+                <!--用is 使用模版-->
+                <template is="produceTabInstruction" data="{{...item}}" />
+              </view>
+            </view>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <template is="produceTabSpecifications" data="{{...templateObject}}" />
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <template is="produceTabService" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 商品详情Tab 结束 -->
     <!-- 购物操作按钮组件 开始 -->
-    <view class="weui-cells_after-title">
+    <view class="weui-cells_after-title topLevel">
       <view class="weui-cell shoppingBanner">
         <view class="weui-cell__hd" style="background-color: #f8f8f8">
           <view class="icon icon-shoppingCart shoppingIcon"></view>
@@ -97,3 +160,48 @@
   <view class="page__ft">
   </view>
 </view>
+<!-- 商品说明模板 开始 -->
+<template name="produceTabInstruction">
+  <!--  
+    1. scaleToFill : 图片全部填充显示，可能导致变形 默认  
+    2. aspectFit ： 图片全部显示，以最长边为准  
+    3. aspectFill ： 图片全部显示，以最短边为准  
+    4. widthFix ： 宽不变，全部显示图片  
+    -->
+  <image style="width:100%" mode="widthFix" src="{{ InstructionUrl }}"/>
+</template>
+<!-- 商品说明模板 结束 -->
+<!-- 规格参数模板 开始 -->
+<template name="produceTabSpecifications">
+  <view class="flexDisplay verticalCenter paddingBetween">
+    <view class="middleLine fourtyPercent"></view>
+    <text class="detailsInstruction">商品参数</text>
+    <view class="middleLine fourtyPercent"></view>
+  </view>
+  <view class="table">    
+    <block wx:for="{{listData}}" wx:key="{{index}}">
+      <view class="tr" wx:if="{{item.th !=undefined }}">
+        <view class="th">{{item.th}}</view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td td-head verticalCenter">{{item.tdHead}}</view>
+        <view class="td td-body verticalCenter">{{item.tdBody}}</view>
+      </view>
+    </block>
+  </view>     
+</template>
+<!-- 规格参数模板 结束 -->
+<!-- 售后保障 开始 -->
+<template name="produceTabService">
+  <view class="flexDisplay verticalCenter paddingBetween">
+    <view class="middleLine fourtyPercent"></view>
+    <text class="detailsInstruction">服务承诺</text>
+    <view class="middleLine fourtyPercent"></view>
+  </view>
+  <view class="flexDisplay verticalCenter paddingBetween">
+    <view class="middleLine fourtyPercent"></view>
+    <text class="detailsInstruction">权利声明</text>
+    <view class="middleLine fourtyPercent"></view>
+  </view>
+</template>
+<!-- 售后保障 结束 -->
