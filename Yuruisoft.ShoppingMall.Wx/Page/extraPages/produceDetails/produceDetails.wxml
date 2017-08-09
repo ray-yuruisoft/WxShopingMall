@@ -139,21 +139,14 @@
     </view>
     <!-- 商品详情Tab 结束 -->
     <!-- 购物操作按钮组件 开始 -->
-    <view class="weui-cells_after-title topLevel">
-      <view class="weui-cell shoppingBanner">
-        <view class="weui-cell__hd" style="background-color: #f8f8f8">
-          <view class="icon icon-shoppingCart shoppingIcon"></view>
-          <view class="weui-badge shoppingBadge">8</view>
-        </view>
+    <view class="banner topLevel">
+      <view class="shoppingCartTap verticalCenter" bindtap="shoppingCartTap">
+        <view style="{{shoppingCartNum==0?'opacity:0':'opacity:1'}}" class="weui-badge shoppingBadge">{{shoppingCartNum}}</view>
+        <view class="icon icon-shoppingCart shoppingIcon"></view>
         <text class="shoppingText">购物车</text>
-        <view class="weui-cell__bd shoppingAdd">
-          <view>加入购物车</view>
-        </view>
-        <view class="weui-cell__bd shoppingBuyNow">
-          <view>立即购买</view>
-        </view>
       </view>
-
+      <view bindtap="AddshoppingCart" class="shoppingAdd verticalCenter weui-cell_link">加入购物车</view>
+      <view class="shoppingBuyNow verticalCenter weui-cell_link">立即购买</view>
     </view>
     <!-- 购物操作按钮组件 结束 -->
   </view>

@@ -1,6 +1,8 @@
 // produceDetails.js
 var app = getApp();
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
+var currentPrId;//当前页面商品ID
+var currentshoppingCartNum;//当前商品的购物车数量
 Page({
 
   /**
@@ -11,7 +13,7 @@ Page({
     activeIndex: 0,//商品详情Tab
     sliderOffset: 0,//商品详情Tab
     sliderLeft: 0,//商品详情Tab
-    templateObject: {
+    templateObject: {//规格参数表格
       listData: [
         { "th": "主体" },
         { "tdHead": "贮存条件", "tdBody": "深冷、冷冻 -18°C" },
@@ -21,7 +23,8 @@ Page({
         { "tdHead": "商品编号", "tdBody": "10401600506" }
       ]
     },
-
+    merchantName: '',
+    shoppingCartNum: (app.globalData.shoppingCart == '') ? 0 : app.globalData.shoppingCart.shoppingCartNum,//购物车总数
     produceDetails: {},
     produceTabInstruction: [],
     indicator_dots: true,//是否显示面板指示点
@@ -91,14 +94,76 @@ Page({
   },
   /*商品详情Tab 结束*/
 
+  shoppingCartTap: function (e) {
+    console.log(e);
+    wx.switchTab({
+      url: '../../shoppingCart/shoppingCart',
+    })
+  },
+  AddshoppingCart: function (e) {
+    var that = this;
+    if (this.data.shoppingCartNum != 999) {
+      var temp = this.data.shoppingCartNum;
+      this.setData({
+        shoppingCartNum: ++temp
+      })
 
+      var testExist = 0;
+      if (app.globalData.shoppingCart != '') {
+        app.globalData.shoppingCart.shoppingCartNum = temp;
+        app.globalData.shoppingCart.detail.forEach(item => {
+          if (item.id == currentPrId) {
+            item.shoppingCartNum = ++item.shoppingCartNum;
+            testExist++;
+          }
+        })
+        if (testExist == 0) {
+          app.globalData.shoppingCart.detail.push(
+            {
+              id: currentPrId,
+              merchantName: that.data.merchantName,
+              shoppingCartNum: 1
+            }
+          )
+        }
+      }
+      else//初始化购物车数据结构
+      {
+        app.globalData.shoppingCart = {
+          shoppingCartNum: temp,
+          detail: [{
+            id: currentPrId,
+            merchantName: that.data.merchantName,
+            shoppingCartNum: temp
+          }]
+        }
+      }
 
+      wx.setStorage({//异步缓存
+        key: 'shoppingCart',
+        data: app.globalData.shoppingCart
+      })
+    }
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    currentPrId = options.id
+
+    if (app.globalData.shoppingCart != '') {
+      this.setData({
+        shoppingCartNum: app.globalData.shoppingCart.shoppingCartNum
+      })
+      app.globalData.shoppingCart.detail.forEach(item => {
+        if (item.id == currentPrId) {
+          currentshoppingCartNum = item.shoppingCartNum;
+        }
+      })
+    }
+
+
     var that = this;
     app.ajax.reqPOST('/shoppingMall/produceDetailGet', {//TODO:这里可以做大数据扩展
       "id": options.id,//TODO:用户信息,调整推荐策略
@@ -123,6 +188,7 @@ Page({
 
       that.setData({
         title: res.title,
+        merchantName: res.merchantName,
         price: res.price.toFixed(2),
         unit: res.unit,
         produceDetails: produceDetails,

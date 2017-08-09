@@ -25,6 +25,7 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<wxShoppingMall_merchantInfo> wxShoppingMall_merchantInfo { get; set; }
         public virtual DbSet<wxShoppingMall_produceInfo> wxShoppingMall_produceInfo { get; set; }
     }
 }

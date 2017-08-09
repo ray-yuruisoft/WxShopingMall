@@ -23,7 +23,6 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             }
             DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             var lists = Db.Set<wxShoppingMall_produceInfo>().Where(c => true).OrderBy(c => c.sort).Take(takeNum);
-            string host = "http://" + Request.Url.Host.ToString() + ":4943";
             ArrayList results = new ArrayList();
             foreach (var item in lists)
             {
@@ -31,7 +30,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                         new
                         {
                             id = item.id,
-                            listImageUrl = host + item.listImageUrl,
+                            listImageUrl = domainGet() + item.listImageUrl,
                             listTitle = item.listTitle,
                             evaluationCount = item.evaluationCount,
                             evaluationPercent = item.evaluationPercent,
@@ -55,7 +54,6 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             var lists = Db.Set<wxShoppingMall_produceInfo>().Where(c => true);
 
             ArrayList results = new ArrayList();
-            string host = "http://" + Request.Url.Host.ToString() + ":4943";
             foreach (var item in lists)
             {
                 ArrayList temp = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(item.listKeys);
@@ -64,7 +62,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                         new
                         {
                             id = item.id,
-                            listImageUrl = host + item.listImageUrl,
+                            listImageUrl = domainGet() + item.listImageUrl,
                             listTitle = item.listTitle,
                             listKeys = temp,
                             evaluationCount = item.evaluationCount,
@@ -102,7 +100,8 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 return Content("forbid!");
             }
             DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
-            var finditem = Db.Set<wxShoppingMall_produceInfo>().Where(c => c.id == id).FirstOrDefault();         
+            var finditem = Db.Set<wxShoppingMall_produceInfo>().Where(c => c.id == id).FirstOrDefault();
+            var merchantName = Db.Set<wxShoppingMall_merchantInfo>().Where(c => c.id == finditem.merchantId).FirstOrDefault();
             if (finditem == null)
             {
                 return Json(new
@@ -110,13 +109,13 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                     error = true
                 });
             }
-            string host = "http://" + Request.Url.Host.ToString() + ":4943";
             ArrayList tempBannerImages = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(finditem.detailBannerImageUrl);
             ArrayList tempDetailTabInstructionImageUrl = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(finditem.detailTabInstructionImageUrl);
             return Json(new
             {
                 id = finditem.id,
-                bannerImageDic = host+finditem.detailBannerImageDic,
+                merchantName = merchantName.merchantName,
+                bannerImageDic = domainGet()+finditem.detailBannerImageDic,
                 bannerImages = tempBannerImages,
                 detailTabInstructionImageUrl = tempDetailTabInstructionImageUrl,
                 price = finditem.price,
@@ -125,5 +124,17 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 error = false
             });
         }
+
+        public string domainGet()
+        {
+            if (bool.Parse(System.Web.Configuration.WebConfigurationManager.AppSettings["debug"]))
+                return "http://" + Request.Url.Authority;
+            else
+                return "https://" + Request.Url.Authority;
+        }
     }
+
+
+
+
 }

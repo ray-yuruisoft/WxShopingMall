@@ -1,10 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="rayyewang01Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="wxShoppingMall_merchantInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="merchantName" Type="nvarchar" MaxLength="50" />
+    <Property Name="subTime" Type="datetime" />
+    <Property Name="modiyTime" Type="datetime" />
+    <Property Name="sort" Type="int" />
+    <Property Name="remark" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="wxShoppingMall_produceInfo">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="merchantId" Type="int" />
     <Property Name="listTitle" Type="nvarchar(max)" />
     <Property Name="listKeys" Type="nvarchar(max)" />
     <Property Name="listImageUrl" Type="nvarchar(max)" />
@@ -21,6 +33,7 @@
     <Property Name="remark" Type="nvarchar(max)" />
   </EntityType>
   <EntityContainer Name="rayyewang01ModelStoreContainer">
+    <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="Self.wxShoppingMall_merchantInfo" Schema="rayyewang01" Table="wxShoppingMall.merchantInfo" store:Type="Tables" />
     <EntitySet Name="wxShoppingMall_produceInfo" EntityType="Self.wxShoppingMall_produceInfo" Schema="rayyewang01" Table="wxShoppingMall.produceInfo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -1,1 +1,48 @@
 /* shoppingCart.wxss */
+
+.shoppingCheckNow {
+  color: white;
+  font-size: 20px;
+  background-color: #e33a3c;
+  text-align: center;
+  width:150px;
+}
+
+.shoppingTotalFee {
+  color: black;
+  background-color: #fff;
+  display: flex;
+  width: 60%;
+}
+
+.totalFeeText {
+  font-size: 20px;
+}
+
+.privilegeFeeText {
+  font-size: 12px;
+  color: gray;
+}
+
+.boxInside {
+  text-align: center;
+  flex-direction: column;
+}
+
+.iconStyle {
+  font-size: 20px;
+}
+
+.chooseText {
+  font-size: 12px;
+  color: black;
+}
+
+.chooseAll {
+  background-color: #fff;
+  z-index: 1000;
+  width: 50px;
+}
+.weui-panel__hd {
+  padding:10px 10px;
+}

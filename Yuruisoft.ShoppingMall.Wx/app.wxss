@@ -42,6 +42,24 @@ page {
   font-family: 'FontAwesome';
 }
 
+.icon-circle-thin {
+  font-size: 12px;
+}
+
+.icon-circle-thin::before {
+  content: '\f1db';
+  color: gray;
+}
+
+.icon-circle-check {
+  font-size: 12px;
+}
+
+.icon-circle-check::before {
+  content: '\f058';
+  color: red;
+}
+
 .icon-ban-circle {
   font-size: 12px;
 }
@@ -154,8 +172,58 @@ page {
   justify-content: space-between;
 }
 
-.middleLine{
+.middleLine {
   height: 1px;
   border: none;
   border-top: 1px solid #d9d9d9;
+}
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  height: 60px;
+}
+
+.topLevel {
+  z-index: 999;
+}
+
+.borderLineTop {
+  border-top: 1rpx solid #d9d9d9;
+}
+
+.textPanelHead {
+  font-size: 15px;
+  color: black;
+}
+
+.textPanelHeadRed {
+  font-size: 15px;
+  color: red;
+}
+
+.textPanelHeadGray {
+  font-size: 15px;
+  color: gray;
+}
+
+.textPanelBodyBlack {
+  font-size: 12px;
+  color: black;
+}
+
+.textPanelBodyGray {
+  font-size: 12px;
+  color: gray;
+}
+
+.textPanelBodyRed {
+  font-size: 12px;
+  color: red;
+}
+
+.flexDisplay {
+  display: flex;
 }

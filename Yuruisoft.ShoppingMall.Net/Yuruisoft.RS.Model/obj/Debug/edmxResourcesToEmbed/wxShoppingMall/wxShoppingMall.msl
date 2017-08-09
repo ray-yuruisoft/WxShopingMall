@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="rayyewang01ModelStoreContainer" CdmEntityContainer="wxShoppingMallEntities">
+    <EntitySetMapping Name="wxShoppingMall_merchantInfo">
+      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_merchantInfo">
+        <MappingFragment StoreEntitySet="wxShoppingMall_merchantInfo">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="modiyTime" ColumnName="modiyTime" />
+          <ScalarProperty Name="subTime" ColumnName="subTime" />
+          <ScalarProperty Name="merchantName" ColumnName="merchantName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="wxShoppingMall_produceInfo">
       <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
         <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
@@ -18,6 +30,7 @@
           <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
           <ScalarProperty Name="listKeys" ColumnName="listKeys" />
           <ScalarProperty Name="listTitle" ColumnName="listTitle" />
+          <ScalarProperty Name="merchantId" ColumnName="merchantId" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

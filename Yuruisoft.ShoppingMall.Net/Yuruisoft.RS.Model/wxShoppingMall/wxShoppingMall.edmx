@@ -5,11 +5,23 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="rayyewang01Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="wxShoppingMall_merchantInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="merchantName" Type="nvarchar" MaxLength="50" />
+          <Property Name="subTime" Type="datetime" />
+          <Property Name="modiyTime" Type="datetime" />
+          <Property Name="sort" Type="int" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="wxShoppingMall_produceInfo">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="merchantId" Type="int" />
           <Property Name="listTitle" Type="nvarchar(max)" />
           <Property Name="listKeys" Type="nvarchar(max)" />
           <Property Name="listImageUrl" Type="nvarchar(max)" />
@@ -26,6 +38,7 @@
           <Property Name="remark" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="rayyewang01ModelStoreContainer">
+          <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="Self.wxShoppingMall_merchantInfo" Schema="rayyewang01" Table="wxShoppingMall.merchantInfo" store:Type="Tables" />
           <EntitySet Name="wxShoppingMall_produceInfo" EntityType="Self.wxShoppingMall_produceInfo" Schema="rayyewang01" Table="wxShoppingMall.produceInfo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -33,13 +46,26 @@
     <edmx:ConceptualModels>
       <Schema Namespace="rayyewang01Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="wxShoppingMallEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
           <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
         </EntityContainer>
+        <EntityType Name="wxShoppingMall_merchantInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="merchantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subTime" Type="DateTime" Precision="3" />
+          <Property Name="modiyTime" Type="DateTime" Precision="3" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="wxShoppingMall_produceInfo">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="merchantId" Type="Int32" />
           <Property Name="listTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="listKeys" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="listImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -61,6 +87,18 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="rayyewang01ModelStoreContainer" CdmEntityContainer="wxShoppingMallEntities">
+          <EntitySetMapping Name="wxShoppingMall_merchantInfo">
+            <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_merchantInfo">
+              <MappingFragment StoreEntitySet="wxShoppingMall_merchantInfo">
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="modiyTime" ColumnName="modiyTime" />
+                <ScalarProperty Name="subTime" ColumnName="subTime" />
+                <ScalarProperty Name="merchantName" ColumnName="merchantName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="wxShoppingMall_produceInfo">
             <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
               <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
@@ -78,6 +116,7 @@
                 <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
                 <ScalarProperty Name="listKeys" ColumnName="listKeys" />
                 <ScalarProperty Name="listTitle" ColumnName="listTitle" />
+                <ScalarProperty Name="merchantId" ColumnName="merchantId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

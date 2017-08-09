@@ -35,42 +35,24 @@
   vertical-align: middle;
 }
 
-.topLevel {
-  position: absolute;
-  z-index: 999;
-}
-
-.shoppingBanner {
-  position: fixed;
-  bottom: -0.8em;
-  left: -0.9em;
-  width: 100%;
-  display: flex;
-  line-height: 60px;
-  height: 60px;
-}
-
 .shoppingIcon {
-  width: 50px;
-  display: block;
   text-align: center;
 }
 
 .shoppingBadge {
-  position: absolute;
-  bottom: 5.5em;
-  left: 5.5em;
+  margin-bottom:-16px;
+  margin-right: -20px;
+  z-index: 1;
 }
 
 .shoppingText {
   color: gray;
   font-size: 10px;
-  position: absolute;
-  bottom: -8px;
-  left: 26px;
+  margin-top: -7px;
 }
 
 .shoppingAdd {
+  width: 50%;
   color: white;
   font-size: 20px;
   background-color: #18bc9c;
@@ -78,10 +60,17 @@
 }
 
 .shoppingBuyNow {
+  width: 45%;
   color: white;
   font-size: 20px;
   background-color: #e33a3c;
   text-align: center;
+}
+
+.shoppingCartTap {
+  flex-direction: column;
+  width: 15%;
+  background-color: #fff;
 }
 
 .buy-num {
@@ -124,44 +113,10 @@
   font-size: 24px;
 }
 
-.textPanelHead {
-  font-size: 15px;
-  color: black;
-}
-
-.textPanelHeadRed {
-  font-size: 15px;
-  color: red;
-}
-
-.textPanelHeadGray {
-  font-size: 15px;
-  color: gray;
-}
-
-.textPanelBodyBlack {
-  font-size: 12px;
-  color: black;
-}
-
-.textPanelBodyGray {
-  font-size: 12px;
-  color: gray;
-}
-
-.textPanelBodyRed {
-  font-size: 12px;
-  color: red;
-}
-
 .disabled {
   background-color: #f5f5f9;
   border: 1rpx solid #eee;
   color: #ccc;
-}
-
-.flexDisplay {
-  display: flex;
 }
 
 .weui-tab__content {
@@ -232,6 +187,7 @@
   width: 20%;
   font-size: 15px;
 }
-.fourtyPercent{
+
+.fourtyPercent {
   width: 40%;
 }
