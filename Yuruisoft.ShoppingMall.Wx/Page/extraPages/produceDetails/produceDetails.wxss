@@ -40,7 +40,7 @@
 }
 
 .shoppingBadge {
-  margin-bottom:-16px;
+  margin-bottom: -16px;
   margin-right: -20px;
   z-index: 1;
 }
@@ -71,52 +71,6 @@
   flex-direction: column;
   width: 15%;
   background-color: #fff;
-}
-
-.buy-num {
-  width: 200px;
-  display: flex;
-  font-size: 20px;
-  text-align: center;
-}
-
-.titleNum {
-  color: gray;
-  width: 20%;
-  font-size: 15px;
-}
-
-.jian-btn {
-  width: 25%;
-  border: 1rpx solid #ccc;
-  min-height: 10px;
-  font-size: 25px;
-  border-bottom-left-radius: 6rpx;
-  border-top-left-radius: 6rpx;
-}
-
-.jia-btn {
-  width: 25%;
-  border: 1rpx solid #ccc;
-  min-height: 20px;
-  font-size: 25px;
-  border-bottom-right-radius: 6rpx;
-  border-top-right-radius: 6rpx;
-}
-
-.inputContainer {
-  width: 30%;
-  border-bottom: 1rpx solid #ccc;
-  border-top: 1rpx solid #ccc;
-  min-height: 10px;
-  text-align: center;
-  font-size: 24px;
-}
-
-.disabled {
-  background-color: #f5f5f9;
-  border: 1rpx solid #eee;
-  color: #ccc;
 }
 
 .weui-tab__content {
@@ -190,4 +144,50 @@
 
 .fourtyPercent {
   width: 40%;
+}
+
+.buy-num {
+  width: 200px;
+  display: flex;
+  font-size: 20px;
+  text-align: center;
+}
+
+.titleNum {
+  color: gray;
+  width: 20%;
+  font-size: 15px;
+}
+
+.jian-btn {
+  width: 25%;
+  border: 1rpx solid #ccc;
+  min-height: 10px;
+  font-size: 25px;
+  border-bottom-left-radius: 6rpx;
+  border-top-left-radius: 6rpx;
+}
+
+.jia-btn {
+  width: 25%;
+  border: 1rpx solid #ccc;
+  min-height: 20px;
+  font-size: 25px;
+  border-bottom-right-radius: 6rpx;
+  border-top-right-radius: 6rpx;
+}
+
+.inputContainer {
+  width: 30%;
+  border-bottom: 1rpx solid #ccc;
+  border-top: 1rpx solid #ccc;
+  min-height: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.disabled {
+  background-color: #f5f5f9;
+  border: 1rpx solid #eee;
+  color: #ccc;
 }

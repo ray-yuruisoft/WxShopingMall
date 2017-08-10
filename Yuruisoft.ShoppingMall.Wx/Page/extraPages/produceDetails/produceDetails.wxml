@@ -141,7 +141,7 @@
     <!-- 购物操作按钮组件 开始 -->
     <view class="banner topLevel">
       <view class="shoppingCartTap verticalCenter" bindtap="shoppingCartTap">
-        <view style="{{shoppingCartNum==0?'opacity:0':'opacity:1'}}" class="weui-badge shoppingBadge">{{shoppingCartNum}}</view>
+        <view style="{{shoppingCartNum==0?'opacity:0':'opacity:1'}}" class="weui-badge shoppingBadge">{{shoppingCartNum<=99?shoppingCartNum:'99+'}}</view>
         <view class="icon icon-shoppingCart shoppingIcon"></view>
         <text class="shoppingText">购物车</text>
       </view>

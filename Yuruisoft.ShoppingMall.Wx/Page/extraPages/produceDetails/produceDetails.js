@@ -102,10 +102,11 @@ Page({
   },
   AddshoppingCart: function (e) {
     var that = this;
+    var chooseNum = this.data.chooseNum;
     if (this.data.shoppingCartNum != 999) {
-      var temp = this.data.shoppingCartNum;
+      var temp = this.data.shoppingCartNum + chooseNum;
       this.setData({
-        shoppingCartNum: ++temp
+        shoppingCartNum: temp
       })
 
       var testExist = 0;
@@ -113,7 +114,7 @@ Page({
         app.globalData.shoppingCart.shoppingCartNum = temp;
         app.globalData.shoppingCart.detail.forEach(item => {
           if (item.id == currentPrId) {
-            item.shoppingCartNum = ++item.shoppingCartNum;
+            item.shoppingCartNum = item.shoppingCartNum + chooseNum;
             testExist++;
           }
         })
@@ -121,8 +122,9 @@ Page({
           app.globalData.shoppingCart.detail.push(
             {
               id: currentPrId,
+              merchantId: that.data.merchantId,
               merchantName: that.data.merchantName,
-              shoppingCartNum: 1
+              shoppingCartNum: chooseNum
             }
           )
         }
@@ -133,6 +135,7 @@ Page({
           shoppingCartNum: temp,
           detail: [{
             id: currentPrId,
+            merchantId: that.data.merchantId,
             merchantName: that.data.merchantName,
             shoppingCartNum: temp
           }]
@@ -188,6 +191,7 @@ Page({
 
       that.setData({
         title: res.title,
+        merchantId: res.merchantId,
         merchantName: res.merchantName,
         price: res.price.toFixed(2),
         unit: res.unit,

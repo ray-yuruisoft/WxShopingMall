@@ -1,25 +1,38 @@
 <!--shoppingCart.wxml-->
 <view class="page">
   <view class="page__bd">
-
-    <view wx:for-items="{{shoppingCart.detail}}" wx:key="{{*item}}" class="weui-panel">
+    <view wx:for-items="{{shoppingCart}}" wx:key="{{*item}}" class="weui-panel">
       <view class="weui-panel__hd textPanelHead flexDisplay">
         <view class="icon {{chooseAllOn?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
         <text class="verticalCenter">{{item.merchantName}}</text>
       </view>
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_text">
-          <view class="weui-media-box__title weui-media-box__title_in-text">标题一</view>
-          <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
-          <view class="weui-media-box__info">
-            <view class="weui-media-box__info__meta">文字来源</view>
-            <view class="weui-media-box__info__meta">时间</view>
-            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">其它信息</view>
+
+      <view wx:for-items="{{item.produceArr}}" class="weui-panel__bd" catchtap="navigation" id="{{item.id}}">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="icon {{chooseAllOn?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.listImageUrl}}" style="width: 80px; height: 80px;" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="display2Lines">{{item.listTitle}}</view>
+            <view class="boxBlow spaceBetween">
+              <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:red">¥{{item.price}}</view>
+              <view class="weui-panel__bd verticalCenter" style="{{icon_angleChooseNum?'display:none':'display:block'}}">
+                <view class="buy-num">
+                  <view catchtap="minusChooseNum" class="jian-btn {{chooseNum==1?'disabled':''}}">－</view>
+                  <view class="inputContainer verticalCenter">
+                    <input catchtap="nothingToDo" bindblur="inputChooseNumBlur" bindtap="inputChooseNum" maxlength='3' type="number" value="{{chooseNum}}">
+                    </input>
+                  </view>
+                  <view catchtap="plusChooseNum" class="jia-btn {{chooseNum==999?'disabled':''}}">＋</view>
+                </view>
+              </view>
+            </view>
           </view>
         </view>
       </view>
-    </view>
 
+    </view>
   </view>
   <view class="page__ft">
   </view>

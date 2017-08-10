@@ -114,6 +114,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             return Json(new
             {
                 id = finditem.id,
+                merchantId = finditem.merchantId,
                 merchantName = merchantName.merchantName,
                 bannerImageDic = domainGet()+finditem.detailBannerImageDic,
                 bannerImages = tempBannerImages,
