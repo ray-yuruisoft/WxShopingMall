@@ -33,12 +33,7 @@ Page({
     inputShowed: false,//搜索
     inputVal: ""
   },
-  /***
-   * 搜索
-   * 
-   * 
-   * 
-   * */
+  
   showInput: function () {
     this.setData({
       inputShowed: true
@@ -130,47 +125,6 @@ Page({
       })
 
     });
-    this.searchKeyObjectGet(that);//搜索栏关键字获取
-  },
-  searchKeyObjectGet: function (that) {//搜索栏关键字对象获取
-    wx.getStorage({
-      key: 'searchKeyObject',
-      success: function (res) {
-        app.globalData.searchKeyObject = res.data
-      },
-      fail: function () {
-        app.ajax.reqPOST('/shoppingMall/searchKeyTreeGet', {//TODO:这里可以做大数据扩展    
-        }, function (res) {
-          if (!res || res.error == true) {//失败直接返回        
-            return
-          }
 
-          var arrTemp = res.searchKeyArray.map(item => {
-            return {//格式化数字
-              id: item.id,
-              listImageUrl: item.listImageUrl,
-              listTitle: item.listTitle,
-              listKeys: item.listKeys,
-              evaluationCount: item.evaluationCount,
-              evaluationPercent: item.evaluationPercent.toFixed(2),
-              price: item.price.toFixed(2),
-              unit: item.unit
-            }
-          })
-
-          var temp = {
-            searchKeyArrayVersion: res.searchKeyArrayVersion,
-            searchKeyArray: arrTemp
-          }
-
-          app.globalData.searchKeyObject = temp;
-          wx.setStorage({
-            key: 'searchKeyObject',
-            data: temp,
-          })
-        });
-      }
-    })
-  },
-
+  }
 });

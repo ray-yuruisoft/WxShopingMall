@@ -1,7 +1,7 @@
 // produceDetails.js
 var app = getApp();
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
-var currentPrId;//当前页面商品ID
+
 var currentshoppingCartNum;//当前商品的购物车数量
 Page({
 
@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    produceDetail: {},//商品详细对象
     tabs: ["商品介绍", "规格参数", "售后保障"],//商品详情Tab
     activeIndex: 0,//商品详情Tab
     sliderOffset: 0,//商品详情Tab
@@ -24,9 +25,9 @@ Page({
       ]
     },
     merchantName: '',
-    shoppingCartNum: (app.globalData.shoppingCart == '') ? 0 : app.globalData.shoppingCart.shoppingCartNum,//购物车总数
-    produceDetails: {},
-    produceTabInstruction: [],
+    shoppingCartItemCount: (app.globalData.shoppingCart == '') ? 0 : app.globalData.shoppingCart.allItemCount,//购物车总数
+
+
     indicator_dots: true,//是否显示面板指示点
     indicator_color: 'rgba(0, 0, 0, .3)',
     indicator_active_color: 'red',
@@ -95,53 +96,108 @@ Page({
   /*商品详情Tab 结束*/
 
   shoppingCartTap: function (e) {
-    console.log(e);
     wx.switchTab({
       url: '../../shoppingCart/shoppingCart',
     })
   },
   AddshoppingCart: function (e) {
     var that = this;
-    var chooseNum = this.data.chooseNum;
-    if (this.data.shoppingCartNum != 999) {
-      var temp = this.data.shoppingCartNum + chooseNum;
-      this.setData({
-        shoppingCartNum: temp
-      })
+    var chooseNum = this.data.chooseNum;//商品选中的数量
 
-      var testExist = 0;
-      if (app.globalData.shoppingCart != '') {
-        app.globalData.shoppingCart.shoppingCartNum = temp;
-        app.globalData.shoppingCart.detail.forEach(item => {
-          if (item.id == currentPrId) {
-            item.shoppingCartNum = item.shoppingCartNum + chooseNum;
-            testExist++;
+    if (this.data.shoppingCartItemCount != 999) {
+
+      // 在该商品没有被加入购物车的情况下，该商品的初始化
+      var price = that.data.produceDetail.price;//先计算出价格
+      var feeSum = app.com.mul(parseFloat(price), chooseNum);
+      var produceObject = {
+        id: that.data.produceDetail.id,
+        itemCount: chooseNum,//商品总数
+        listImageUrl: that.data.produceDetail.listImageUrl,
+        listTitle: that.data.produceDetail.title,
+        price: price,//商品单价
+        feeSum: feeSum.toFixed(2),//商品总价
+        choosedFlag: true//是否被选中
+      }
+
+      var testExist = 0;//有这个商品的情况和没有这个商品的情况测试！
+      var testMerchanIdExist = 0;
+      if (app.globalData.shoppingCart != '') {//分两种情况
+
+        var tempShoppingCart = app.globalData.shoppingCart;
+
+        tempShoppingCart.allItemCount += chooseNum;//第一层级先改变
+        tempShoppingCart.chooseItemCount += chooseNum;
+        tempShoppingCart.feeSum = app.com.add(parseFloat(tempShoppingCart.feeSum), parseFloat(feeSum)).toFixed(2);
+
+        tempShoppingCart.detail.forEach(item => {
+          if (item.merchantId == that.data.produceDetail.merchantId) {
+
+            item.allItemCount += chooseNum;//第二层级再改变
+            item.chooseItemCount += chooseNum;
+            item.feeSum = app.com.add(parseFloat(item.feeSum), parseFloat(feeSum)).toFixed(2);
+            testMerchanIdExist++;
+            item.produceArr.forEach(itemBottom => {
+              if (itemBottom.id == that.data.produceDetail.id) {//有这个商品的情况和没有这个商品的情况
+                itemBottom.itemCount += chooseNum;//第三层级再改变
+                itemBottom.feeSum = app.com.add(parseFloat(itemBottom.feeSum), parseFloat(feeSum)).toFixed(2);
+                testExist++;
+              }
+            })
+            if (testExist == 0) {//没有这种商品的情况,直接PUSH
+              item.produceArr.push(produceObject);
+            }
           }
         })
-        if (testExist == 0) {
-          app.globalData.shoppingCart.detail.push(
-            {
-              id: currentPrId,
-              merchantId: that.data.merchantId,
-              merchantName: that.data.merchantName,
-              shoppingCartNum: chooseNum
-            }
-          )
+        if (testMerchanIdExist == 0) {//还有一种情况是 另一个商家 第一次进来   
+          var produceArr = [];
+          produceArr.push(produceObject);
+          var detailObject = {
+            merchantId: that.data.produceDetail.merchantId,//商户ID
+            merchantName: that.data.produceDetail.merchantName,//商户名字
+
+            allItemCount: chooseNum,//该商户下，所有商品总数
+            chooseItemCount: chooseNum,//该商户下，所有被选中的商品数
+            feeSum: feeSum.toFixed(2),//该商户下，所有被选中商品总价
+            choosedFlag: true,//该商户下，所有是否被选中
+
+            produceArr: produceArr
+          }
+          tempShoppingCart.detail.push(detailObject);
         }
+        app.globalData.shoppingCart = tempShoppingCart;
       }
       else//初始化购物车数据结构
-      {
+      {//对第一次加入的购物车来说，加入的所有数量都是一样的
+        var initCount = chooseNum;
+
+        var produceArr = [];
+        produceArr.push(produceObject);
+
         app.globalData.shoppingCart = {
-          shoppingCartNum: temp,
+          //...省略会员ID和会员名，做会员时候，加上 TODO:
+          allItemCount: initCount,//该购物车下，所有商品总数
+          chooseItemCount: initCount,//该购物车下，所有被选中商品总数         
+          feeSum: feeSum.toFixed(2),//该购物车下，所有被选中商品总价
+          choosedFlag: true,//该购物车下，所有是否被选中
+
           detail: [{
-            id: currentPrId,
-            merchantId: that.data.merchantId,
-            merchantName: that.data.merchantName,
-            shoppingCartNum: temp
+            merchantId: that.data.produceDetail.merchantId,//商户ID
+            merchantName: that.data.produceDetail.merchantName,//商户名字
+
+            allItemCount: initCount,//该商户下，所有商品总数
+            chooseItemCount: initCount,//该商户下，所有被选中的商品数
+            feeSum: feeSum.toFixed(2),//该商户下，所有被选中商品总价
+            choosedFlag: true,//该商户下，所有是否被选中
+
+            produceArr: produceArr
           }]
         }
       }
 
+      this.setData({//必须要单独设置一个购物车数量显示变量，初始化才不出错
+        shoppingCartItemCount: app.globalData.shoppingCart.allItemCount
+      })
+      
       wx.setStorage({//异步缓存
         key: 'shoppingCart',
         data: app.globalData.shoppingCart
@@ -153,50 +209,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    currentPrId = options.id
+    var currentPrId = options.id
 
-    if (app.globalData.shoppingCart != '') {
+    if (app.globalData.shoppingCart != '') {//购物车数据结构初始化
       this.setData({
-        shoppingCartNum: app.globalData.shoppingCart.shoppingCartNum
-      })
-      app.globalData.shoppingCart.detail.forEach(item => {
-        if (item.id == currentPrId) {
-          currentshoppingCartNum = item.shoppingCartNum;
-        }
+        shoppingCart: app.globalData.shoppingCart,
+        shoppingCartItemCount: app.globalData.shoppingCart.allItemCount
       })
     }
 
-
     var that = this;
     app.ajax.reqPOST('/shoppingMall/produceDetailGet', {//TODO:这里可以做大数据扩展
-      "id": options.id,//TODO:用户信息,调整推荐策略
+      "id": currentPrId,//TODO:用户信息,调整推荐策略
     }, function (res) {
       if (!res || res.error == true) {//失败直接返回        
         return
       }
-
-      console.log(res)
-      var produceDetails = res.bannerImages.map((item, index) => {
-        return {
-          id: index,
-          bannerImageUrl: res.bannerImageDic + item
-        }
-      })
-      var produceTabInstruction = res.detailTabInstructionImageUrl.map((item, index) => {
-        return {
-          id: index,
-          InstructionUrl: res.bannerImageDic + item
-        }
-      })
-
       that.setData({
-        title: res.title,
-        merchantId: res.merchantId,
-        merchantName: res.merchantName,
-        price: res.price.toFixed(2),
-        unit: res.unit,
-        produceDetails: produceDetails,
-        produceTabInstruction: produceTabInstruction
+        produceDetail: res
       })
     });
     /*商品详情Tab 开始*/

@@ -1,15 +1,15 @@
 <!--shoppingCart.wxml-->
 <view class="page">
   <view class="page__bd">
-    <view wx:for-items="{{shoppingCart}}" wx:key="{{*item}}" class="weui-panel">
+    <view wx:for="{{shoppingCart.detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" class="weui-panel">
       <view class="weui-panel__hd textPanelHead flexDisplay">
-        <view class="icon {{chooseAllOn?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
-        <text class="verticalCenter">{{item.merchantName}}</text>
+        <view catchtap="merchantChoose" id="{{itemMerchant.merchantId}}" class="icon {{itemMerchant.choosedFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
+        <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
       </view>
 
-      <view wx:for-items="{{item.produceArr}}" class="weui-panel__bd" catchtap="navigation" id="{{item.id}}">
+      <view wx:for-items="{{itemMerchant.produceArr}}" class="weui-panel__bd" catchtap="navigation" id="{{item.id}}">
         <view class="weui-media-box weui-media-box_appmsg">
-          <view class="icon {{chooseAllOn?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
+          <view catchtap="produceChoose" id="{{item.id}}" data-merchantid="{{itemMerchant.merchantId}}" class="icon {{item.choosedFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
             <image class="weui-media-box__thumb" src="{{item.listImageUrl}}" style="width: 80px; height: 80px;" />
           </view>
@@ -19,12 +19,12 @@
               <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:red">¥{{item.price}}</view>
               <view class="weui-panel__bd verticalCenter" style="{{icon_angleChooseNum?'display:none':'display:block'}}">
                 <view class="buy-num">
-                  <view catchtap="minusChooseNum" class="jian-btn {{chooseNum==1?'disabled':''}}">－</view>
+                  <view catchtap="minusChooseNum" id="{{item.id}}" data-merchantid="{{itemMerchant.merchantId}}" data-itemcount="{{item.itemCount}}" data-price="{{item.price}}" class="jian-btn {{item.itemCount==1?'disabled':''}}">－</view>
                   <view class="inputContainer verticalCenter">
-                    <input catchtap="nothingToDo" bindblur="inputChooseNumBlur" bindtap="inputChooseNum" maxlength='3' type="number" value="{{chooseNum}}">
+                    <input catchtap="nothingToDo" bindblur="inputChooseNumBlur" bindtap="inputChooseNum" maxlength='3' type="number" value="{{item.itemCount}}">
                     </input>
                   </view>
-                  <view catchtap="plusChooseNum" class="jia-btn {{chooseNum==999?'disabled':''}}">＋</view>
+                  <view catchtap="plusChooseNum" id="{{item.id}}" data-merchantid="{{itemMerchant.merchantId}}" data-itemcount="{{item.itemCount}}" data-price="{{item.price}}" class="jia-btn {{item.itemCount==999?'disabled':''}}">＋</view>
                 </view>
               </view>
             </view>
@@ -45,12 +45,12 @@
     <view class="shoppingTotalFee boxInside verticalCenter">
       <view class="totalFeeText verticalCenter">
         <text>总计：</text>
-        <text style="color:red">¥199.00</text>
+        <text style="color:red">¥{{shoppingCart.feeSum}}</text>
       </view>
       <view class="privilegeFeeText verticalCenter">不含运费，已优惠 ¥0.00</view>
     </view>
     <view class="shoppingCheckNow verticalCenter weui-cell_link">
-      <view>去结算(1件)</view>
+      <view>去结算({{shoppingCart.chooseItemCount}}件)</view>
     </view>
   </view>
   <!-- 去结算操作按钮组件 结束 -->

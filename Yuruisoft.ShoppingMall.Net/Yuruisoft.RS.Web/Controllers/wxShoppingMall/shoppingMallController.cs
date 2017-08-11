@@ -66,8 +66,8 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                             listTitle = item.listTitle,
                             listKeys = temp,
                             evaluationCount = item.evaluationCount,
-                            evaluationPercent = item.evaluationPercent,
-                            price = item.price,
+                            evaluationPercent = String.Format("{0:N2}", item.evaluationPercent),
+                            price = String.Format("{0:N2}", item.price),
                             unit = item.unit
                         }
                         );
@@ -110,16 +110,30 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 });
             }
             ArrayList tempBannerImages = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(finditem.detailBannerImageUrl);
+            var domain = domainGet();
+            var detailBannerImageDic = finditem.detailBannerImageDic;
+
+            for (var i = 0; i < tempBannerImages.Count; i++)
+            {
+                tempBannerImages[i] = domain + detailBannerImageDic + tempBannerImages[i].ToString();
+            }
+
             ArrayList tempDetailTabInstructionImageUrl = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(finditem.detailTabInstructionImageUrl);
+            for (var j = 0; j < tempDetailTabInstructionImageUrl.Count; j++)
+            {
+                tempDetailTabInstructionImageUrl[j] = domain + detailBannerImageDic + tempDetailTabInstructionImageUrl[j].ToString();
+            }
+
+
             return Json(new
             {
                 id = finditem.id,
                 merchantId = finditem.merchantId,
                 merchantName = merchantName.merchantName,
-                bannerImageDic = domainGet()+finditem.detailBannerImageDic,
-                bannerImages = tempBannerImages,
+                listImageUrl = domain + finditem.listImageUrl,
+                bannerImageUrl = tempBannerImages,
                 detailTabInstructionImageUrl = tempDetailTabInstructionImageUrl,
-                price = finditem.price,
+                price = String.Format("{0:N2}", finditem.price),
                 title = finditem.listTitle,
                 unit = finditem.unit,
                 error = false

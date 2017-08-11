@@ -3,9 +3,9 @@
   <view class="page__bd">
     <!-- 幻灯片 开始 -->
     <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange" indicator-dots="{{indicator_dots}}" indicator-color="{{indicator_color}}" indicator-active-color="{{indicator_active_color}}">
-      <block wx:for="{{produceDetails}}" wx:key="{{item.id}}">
+      <block wx:for="{{produceDetail.bannerImageUrl}}" wx:key="{{*item}}">
         <swiper-item>
-          <image bindtap="tapBanner" data-id="{{item.id}}" src="{{item.bannerImageUrl}}" class="slide-image" width="750rpx" height="562.5rpx" />
+          <image src="{{item}}" class="slide-image" height="562.5rpx" />
         </swiper-item>
       </block>
     </swiper>
@@ -14,8 +14,8 @@
     <view class="weui-panel">
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_text">
-          <view class="produceTitle">{{title}}</view>
-          <view class="producePrice">¥{{price}}</view>
+          <view class="produceTitle">{{produceDetail.title}}</view>
+          <view class="producePrice">¥{{produceDetail.price}}</view>
         </view>
       </view>
     </view>
@@ -121,10 +121,9 @@
         </view>
         <view class="weui-tab__panel">
           <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-            <view wx:for-items="{{produceTabInstruction}}" wx:key="{{item.id}}">
+            <view wx:for-items="{{produceDetail.detailTabInstructionImageUrl}}" wx:key="{{*item}}">
               <view class="kind-list__item">
-                <!--用is 使用模版-->
-                <template is="produceTabInstruction" data="{{...item}}" />
+                <image style="width:100%" mode="widthFix" src="{{item}}" />
               </view>
             </view>
           </view>
@@ -141,31 +140,32 @@
     <!-- 购物操作按钮组件 开始 -->
     <view class="banner topLevel">
       <view class="shoppingCartTap verticalCenter" bindtap="shoppingCartTap">
-        <view style="{{shoppingCartNum==0?'opacity:0':'opacity:1'}}" class="weui-badge shoppingBadge">{{shoppingCartNum<=99?shoppingCartNum:'99+'}}</view>
-        <view class="icon icon-shoppingCart shoppingIcon"></view>
-        <text class="shoppingText">购物车</text>
+        <view style="{{shoppingCartItemCount==0?'opacity:0':'opacity:1'}}" class="weui-badge shoppingBadge">{{shoppingCartItemCount
+          <=99?shoppingCartItemCount: '99+'}}</view>
+            <view class="icon icon-shoppingCart shoppingIcon"></view>
+            <text class="shoppingText">购物车</text>
+        </view>
+        <view bindtap="AddshoppingCart" class="shoppingAdd verticalCenter weui-cell_link">加入购物车</view>
+        <view class="shoppingBuyNow verticalCenter weui-cell_link">立即购买</view>
       </view>
-      <view bindtap="AddshoppingCart" class="shoppingAdd verticalCenter weui-cell_link">加入购物车</view>
-      <view class="shoppingBuyNow verticalCenter weui-cell_link">立即购买</view>
+      <!-- 购物操作按钮组件 结束 -->
     </view>
-    <!-- 购物操作按钮组件 结束 -->
+    <view class="page__ft">
+    </view>
   </view>
-  <view class="page__ft">
-  </view>
-</view>
-<!-- 商品说明模板 开始 -->
-<template name="produceTabInstruction">
+  <!-- 商品说明模板 开始 -->
+  <template name="produceTabInstruction">
   <!--  
     1. scaleToFill : 图片全部填充显示，可能导致变形 默认  
     2. aspectFit ： 图片全部显示，以最长边为准  
     3. aspectFill ： 图片全部显示，以最短边为准  
     4. widthFix ： 宽不变，全部显示图片  
     -->
-  <image style="width:100%" mode="widthFix" src="{{ InstructionUrl }}"/>
+  
 </template>
-<!-- 商品说明模板 结束 -->
-<!-- 规格参数模板 开始 -->
-<template name="produceTabSpecifications">
+  <!-- 商品说明模板 结束 -->
+  <!-- 规格参数模板 开始 -->
+  <template name="produceTabSpecifications">
   <view class="flexDisplay verticalCenter paddingBetween">
     <view class="middleLine fourtyPercent"></view>
     <text class="detailsInstruction">商品参数</text>
@@ -183,9 +183,9 @@
     </block>
   </view>     
 </template>
-<!-- 规格参数模板 结束 -->
-<!-- 售后保障 开始 -->
-<template name="produceTabService">
+  <!-- 规格参数模板 结束 -->
+  <!-- 售后保障 开始 -->
+  <template name="produceTabService">
   <view class="flexDisplay verticalCenter paddingBetween">
     <view class="middleLine fourtyPercent"></view>
     <text class="detailsInstruction">服务承诺</text>
@@ -197,4 +197,4 @@
     <view class="middleLine fourtyPercent"></view>
   </view>
 </template>
-<!-- 售后保障 结束 -->
+  <!-- 售后保障 结束 -->
