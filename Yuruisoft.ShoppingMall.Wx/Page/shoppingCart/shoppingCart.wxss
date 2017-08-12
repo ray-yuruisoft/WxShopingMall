@@ -6,6 +6,7 @@
   background-color: #e33a3c;
   text-align: center;
   width: 150px;
+  white-space : nowrap;
 }
 
 .shoppingTotalFee {
@@ -16,6 +17,7 @@
 }
 
 .totalFeeText {
+  white-space : nowrap;
   font-size: 20px;
 }
 
@@ -42,6 +44,7 @@
   background-color: #fff;
   z-index: 1000;
   width: 50px;
+  white-space : nowrap;
 }
 
 .weui-panel__hd {
