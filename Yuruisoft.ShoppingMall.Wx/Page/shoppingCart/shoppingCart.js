@@ -31,7 +31,6 @@ Page({
       })
     });
 
-
     shoppingCart = this.checkAllFee(shoppingCart);
     this.setData({
       chooseAllOn: chooseStatue,

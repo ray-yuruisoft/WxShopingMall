@@ -2,7 +2,7 @@
   <!-- Head 标题+介绍+搜索栏 开始 -->
   <view class="page__hd">
     <view class="page__title">haowanFamily 好万家</view>
-    <view class="page__desc">多 · 快 · 好 · 省</view>
+    <view class="page__desc">好生活 · 好万家</view>
     <view class="weui-search-bar">
       <view class="weui-search-bar__form">
         <view class="weui-search-bar__box">

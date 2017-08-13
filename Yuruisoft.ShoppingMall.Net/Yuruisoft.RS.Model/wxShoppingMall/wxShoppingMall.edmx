@@ -37,9 +37,26 @@
           <Property Name="sort" Type="int" />
           <Property Name="remark" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="wxShoppingMall_userInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="openId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="openId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="sessionKey" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="thirdSessionKey" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="encryptedData" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="haoWanFamilyUserInfo" Type="nvarchar(max)" />
+          <Property Name="subTime" Type="datetime" Nullable="false" />
+          <Property Name="modifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="sort" Type="int" />
+        </EntityType>
         <EntityContainer Name="rayyewang01ModelStoreContainer">
           <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="Self.wxShoppingMall_merchantInfo" Schema="rayyewang01" Table="wxShoppingMall.merchantInfo" store:Type="Tables" />
           <EntitySet Name="wxShoppingMall_produceInfo" EntityType="Self.wxShoppingMall_produceInfo" Schema="rayyewang01" Table="wxShoppingMall.produceInfo" store:Type="Tables" />
+          <EntitySet Name="wxShoppingMall_userInfo" EntityType="Self.wxShoppingMall_userInfo" Schema="rayyewang01" Table="wxShoppingMall.userInfo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -48,6 +65,7 @@
         <EntityContainer Name="wxShoppingMallEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
           <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
+          <EntitySet Name="wxShoppingMall_userInfo" EntityType="rayyewang01Model.wxShoppingMall_userInfo" />
         </EntityContainer>
         <EntityType Name="wxShoppingMall_merchantInfo">
           <Key>
@@ -80,6 +98,22 @@
           <Property Name="modiyTime" Type="DateTime" Precision="3" />
           <Property Name="sort" Type="Int32" />
           <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="wxShoppingMall_userInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="openId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="openId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sessionKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="thirdSessionKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="encryptedData" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="haoWanFamilyUserInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -117,6 +151,22 @@
                 <ScalarProperty Name="listKeys" ColumnName="listKeys" />
                 <ScalarProperty Name="listTitle" ColumnName="listTitle" />
                 <ScalarProperty Name="merchantId" ColumnName="merchantId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wxShoppingMall_userInfo">
+            <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_userInfo">
+              <MappingFragment StoreEntitySet="wxShoppingMall_userInfo">
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+                <ScalarProperty Name="subTime" ColumnName="subTime" />
+                <ScalarProperty Name="haoWanFamilyUserInfo" ColumnName="haoWanFamilyUserInfo" />
+                <ScalarProperty Name="encryptedData" ColumnName="encryptedData" />
+                <ScalarProperty Name="thirdSessionKey" ColumnName="thirdSessionKey" />
+                <ScalarProperty Name="sessionKey" ColumnName="sessionKey" />
+                <ScalarProperty Name="openId" ColumnName="openId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

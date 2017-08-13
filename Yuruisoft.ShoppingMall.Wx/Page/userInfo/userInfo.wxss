@@ -1,1 +1,45 @@
 /* userInfo.wxss */
+
+.page__hd {
+  padding: 10px;
+}
+
+.userTitleCard {
+  height: 100px;
+  width: 100%;
+  background-color: #18bc9c;
+  border-radius: 5px;
+}
+
+.userHeadPhoto {
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+.nickName{
+  color: #fff;
+  font-size: 15px;
+}
+
+.haowanFamilyName{
+  color: #fff;
+  font-size: 12px;
+}
+
+.userName{
+  padding-left: 10px;
+}
+
+.userNameHover{
+  background-color: #ECECEC;
+  border-radius: 5px;
+}
+.config{
+  padding-right: 10px;
+}
+
+.itemInOrder{
+  width: 25%;
+  flex-direction: column;
+}

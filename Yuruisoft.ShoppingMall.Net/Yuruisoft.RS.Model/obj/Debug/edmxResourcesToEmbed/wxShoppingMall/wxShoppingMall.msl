@@ -35,5 +35,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="wxShoppingMall_userInfo">
+      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_userInfo">
+        <MappingFragment StoreEntitySet="wxShoppingMall_userInfo">
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+          <ScalarProperty Name="subTime" ColumnName="subTime" />
+          <ScalarProperty Name="haoWanFamilyUserInfo" ColumnName="haoWanFamilyUserInfo" />
+          <ScalarProperty Name="encryptedData" ColumnName="encryptedData" />
+          <ScalarProperty Name="thirdSessionKey" ColumnName="thirdSessionKey" />
+          <ScalarProperty Name="sessionKey" ColumnName="sessionKey" />
+          <ScalarProperty Name="openId" ColumnName="openId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

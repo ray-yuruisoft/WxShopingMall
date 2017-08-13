@@ -219,7 +219,7 @@ Page({
     }
 
     var that = this;
-    app.ajax.reqPOST('/shoppingMall/produceDetailGet', {//TODO:这里可以做大数据扩展
+    app.ajax.reqPost('/shoppingMall/produceDetailGet', {//TODO:这里可以做大数据扩展
       "id": currentPrId,//TODO:用户信息,调整推荐策略
     }, function (res) {
       if (!res || res.error == true) {//失败直接返回        

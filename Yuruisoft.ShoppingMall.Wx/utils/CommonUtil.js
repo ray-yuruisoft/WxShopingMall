@@ -1,4 +1,4 @@
-function reqPOST(url, data, cb) {//Get请求
+function reqPost(url, data, cb) {//Post请求
   wx.request({
     //url: getApp().data.servsers + url,
     url: "http://localhost:4943" + url,
@@ -17,6 +17,37 @@ function reqPOST(url, data, cb) {//Get请求
   })
 }
 
+function Login(code, encryptedData, iv, rawData, signature) {
+  
+  reqPost('/shoppingMall/userLogin', {
+    "code": code,
+    "encryptedData": encryptedData,
+    "iv": iv,
+    "raw": rawData,
+    "signature": signature
+  }, function (res) {
+    if (!res) {
+      console.log("失败！")
+      return
+    }
+
+    wx.setStorage({
+      key: 'thirdSessionKey',
+      data: res.thirdSessionKey,
+      success: function (res) {
+      },
+      fail: function (res) {
+        // fail
+      },
+      complete: function (res) {
+        // complete
+      }
+    })
+  });
+ 
+}
+
 module.exports = {
-  reqPOST: reqPOST            //Post请求
+  reqPost: reqPost,            //Post请求
+  Login: Login//登录函数
 }

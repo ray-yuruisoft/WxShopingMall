@@ -45,12 +45,12 @@
     <view class="shoppingTotalFee boxInside verticalCenter">
       <view class="totalFeeText verticalCenter">
         <text>总计：</text>
-        <text style="color:red">¥{{shoppingCart.feeSum}}</text>
+        <text style="color:red">¥{{shoppingCart.feeSum==undefined?'0.00':shoppingCart.feeSum}}</text>
       </view>
       <view class="privilegeFeeText verticalCenter">不含运费，已优惠 ¥0.00</view>
     </view>
-    <view style="{{shoppingCart.chooseItemCount==0? 'background-color: #ECECEC;':''}}" class="shoppingCheckNow verticalCenter weui-cell_link">
-      <view>去结算({{shoppingCart.chooseItemCount > 99?"99+":shoppingCart.chooseItemCount}}件)</view>
+    <view style="{{(shoppingCart.chooseItemCount==0||shoppingCart.chooseItemCount==undefined)? 'background-color: #ECECEC;':''}}" class="shoppingCheckNow verticalCenter weui-cell_link">
+      <view>去结算({{shoppingCart.chooseItemCount==undefined?'0':(shoppingCart.chooseItemCount > 99?"99+":shoppingCart.chooseItemCount)}}件)</view>
     </view>
   </view>
   <!-- 去结算操作按钮组件 结束 -->

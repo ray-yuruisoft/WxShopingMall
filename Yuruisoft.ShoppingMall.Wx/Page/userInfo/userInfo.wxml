@@ -1,2 +1,65 @@
 <!--userInfo.wxml-->
-<text>userInfo.wxml</text>
+<view class="page">
+  <view class="page__hd">
+    <view class="userTitleCard spaceBetween verticalCenter">
+      <view class="flexDisplay">
+        <image class="userHeadPhoto" src="{{userInfo.avatarUrl}}"></image>
+        <view hover="true" hover-class="userNameHover" class="userName">
+          <view class="nickName">{{userInfo.nickName}}</view>
+          <view class="haowanFamilyName">还没有账号？马上点击注册</view>
+        </view>
+      </view>
+      <view hover="true" hover-class="userNameHover" class="icon icon-cog config"> 账号设置</view>
+    </view>
+  </view>
+  <view class="page__bd">
+    <!-- list模板One 开始 -->
+    <template is="listTypeOne" data="{{...listTypeOne}}" />
+    <!-- list模板One 结束 -->
+  </view>
+  <view class="page__ft">
+  </view>
+  <!-- 去结算操作按钮组件 开始 -->
+  <view class="banner topLevel borderLineTop">
+    <view class="chooseAll verticalCenter boxInside" bindtap="chooseAll">
+      <view class="icon {{chooseAllOn?'icon-circle-check':'icon-circle-thin'}} iconStyle"></view>
+      <view class="chooseText">全选</view>
+    </view>
+    <view class="shoppingTotalFee boxInside verticalCenter">
+      <view class="totalFeeText verticalCenter">
+        <text>总计：</text>
+        <text style="color:red">¥{{shoppingCart.feeSum}}</text>
+      </view>
+      <view class="privilegeFeeText verticalCenter">不含运费，已优惠 ¥0.00</view>
+    </view>
+    <view style="{{shoppingCart.chooseItemCount==0? 'background-color: #ECECEC;':''}}" class="shoppingCheckNow verticalCenter weui-cell_link">
+      <view>去结算({{shoppingCart.chooseItemCount > 99?"99+":shoppingCart.chooseItemCount}}件)</view>
+    </view>
+  </view>
+  <!-- 去结算操作按钮组件 结束 -->
+</view>
+
+<!-- list模板One 开始 -->
+<template name="listTypeOne">
+  <view wx:for="{{listArr}}" wx:key="*item" class="weui-panel weui-panel_access">
+      <view catchtap="listTypeOneTap" id="{{item.id}}" class="weui-panel__hd spaceBetween weui-cell_link">
+        <view class="textPanelHead verticalCenter flexDisplay">
+          <view>{{item.title}}</view>
+        </view>
+        <view bindtap="angleTapChooseAddress" class="icon icon-angle-right spaceBetween">
+          <view class="textPanelBodyGray verticalCenter">{{item.checkName}}\r\n\r\n\r\n\r\n</view>
+        </view>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text flexDisplay">
+          <view catchtap="listTypeOneItemTap" id="{{itemBottom.id}}" wx:for="{{item.listArr}}" wx:for-item="itemBottom" wx:key="*itemBottom" class="itemInOrder verticalCenter">
+            <view class="weui-media-box__title weui-media-box__title_in-text">
+              <view class="icon {{itemBottom.iconName}}"></view>
+            </view>
+            <view class="weui-media-box__desc textPanelBodyGray">{{itemBottom.icontitle}}</view>
+          </view>         
+        </view>
+      </view>
+    </view>   
+</template>
+<!-- list模板One 结束 -->

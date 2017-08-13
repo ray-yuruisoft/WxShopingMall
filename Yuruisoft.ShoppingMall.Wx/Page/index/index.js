@@ -101,7 +101,7 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数  
     var that = this;
-    app.ajax.reqPOST('/shoppingMall/recommentListsGet', {//TODO:这里可以做大数据扩展
+    app.ajax.reqPost('/shoppingMall/recommentListsGet', {//TODO:这里可以做大数据扩展
       "userInfo": "",//TODO:用户信息,调整推荐策略
       "takeNum": app.globalData.recommentListsNum,
       "prefers": ""  //TODO:用户喜好,调整推荐策略

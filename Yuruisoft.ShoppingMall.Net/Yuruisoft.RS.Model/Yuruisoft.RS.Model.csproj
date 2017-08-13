@@ -109,6 +109,9 @@
     <Compile Include="wxShoppingMall\wxShoppingMall_produceInfo.cs">
       <DependentUpon>wxShoppingMall.tt</DependentUpon>
     </Compile>
+    <Compile Include="wxShoppingMall\wxShoppingMall_userInfo.cs">
+      <DependentUpon>wxShoppingMall.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

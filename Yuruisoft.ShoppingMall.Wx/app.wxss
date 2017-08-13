@@ -42,6 +42,51 @@ page {
   font-family: 'FontAwesome';
 }
 
+.icon-undo {
+  font-size: 25px;
+}
+
+.icon-undo::before {
+  content: "\f0e2";
+  color: black;
+}
+
+.icon-comments-o {
+  font-size: 25px;
+}
+
+.icon-comments-o::before {
+  content: "\f0e6";
+  color: black;
+}
+
+.icon-truck {
+  font-size: 25px;
+}
+
+.icon-truck::before {
+  content: "\f0d1";
+  color: black;
+}
+
+.icon-credit-card-alt {
+  font-size: 25px;
+}
+
+.icon-credit-card-alt::before {
+  content: "\f283";
+  color: black;
+}
+
+.icon-cog {
+  font-size: 12px;
+}
+
+.icon-cog::before {
+  content: "\f013";
+  color: black;
+}
+
 .icon-circle-thin {
   font-size: 12px;
 }
@@ -227,4 +272,3 @@ page {
 .flexDisplay {
   display: flex;
 }
-
