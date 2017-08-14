@@ -150,6 +150,7 @@
       </view>
       <!-- 购物操作按钮组件 结束 -->
     </view>
+    <!-- 购物操作按钮组件 结束 -->
     <view class="page__ft">
     </view>
   </view>

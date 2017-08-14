@@ -17,29 +17,31 @@
   height: 60px;
   border-radius: 50px;
 }
-.nickName{
+
+.nickName {
   color: #fff;
   font-size: 15px;
 }
 
-.haowanFamilyName{
+.haowanFamilyName {
   color: #fff;
   font-size: 12px;
 }
 
-.userName{
+.userName {
   padding-left: 10px;
 }
 
-.userNameHover{
-  background-color: #ECECEC;
-  border-radius: 5px;
-}
-.config{
+.config {
   padding-right: 10px;
 }
 
-.itemInOrder{
+.itemInOrder {
   width: 25%;
   flex-direction: column;
+  text-align: center;
+}
+
+.badgeInTypeOne {
+  position: absolute;
 }

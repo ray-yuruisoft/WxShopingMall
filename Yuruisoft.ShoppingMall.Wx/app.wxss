@@ -42,12 +42,46 @@ page {
   font-family: 'FontAwesome';
 }
 
-.icon-undo {
+.icon-ellipsis{
+  font-size: 25px;
+}
+.icon-ellipsis::before{
+  content: "\f141";
+  color: black;
+}
+
+.icon-mobile{
+  font-size: 25px;
+}
+.icon-mobile::before{
+  content: "\f10b";
+  color: black;
+}
+
+.icon-envelope {
   font-size: 25px;
 }
 
-.icon-undo::before {
-  content: "\f0e2";
+.icon-envelope::before {
+  content: "\f0e0";
+  color: black;
+}
+
+.icon-weixin {
+  font-size: 25px;
+}
+
+.icon-weixin::before {
+  content: "\f1d7";
+  color: black;
+}
+
+.icon-wrench {
+  font-size: 25px;
+}
+
+.icon-wrench::before {
+  content: "\f0ad";
   color: black;
 }
 
