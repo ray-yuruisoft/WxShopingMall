@@ -1,0 +1,92 @@
+<!--registerPage.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title fontBold">haowanFamily.com 欢迎注册</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">用户名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input focus="true" class="weui-input" placeholder="您的账户名和登录名" />
+        </view>
+        <view style="{{accountIsRight?'display:none':''}}" class="weui-cell__ft">
+          <icon type="warn" size="23" color="#E64340"></icon>
+        </view>
+      </view>
+      <view style="{{accountIsRight?'display:none':''}}" class="weui-cells__tips fontRed">* 格式错误，仅支持汉字、字母、数字、“-”“_”的组合</view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">设置密码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="建议至少使用两种字符组合" />
+        </view>
+        <view style="{{passwordIsRight?'display:none':''}}" class="weui-cell__ft">
+          <icon type="warn" size="23" color="#E64340"></icon>
+        </view>
+      </view>
+      <view style="{{passwordIsRight?'display:none':''}}" class="weui-cells__tips">* 建议使用字母、数字和符号两种及以上的组合，6-20个字符</view>
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd" style="width: 105px">
+          <picker bindchange="bindCountryCodeChange" value="{{countryCodeIndex}}" range="{{countryCodes}}">
+            <view class="weui-select">{{countryCodes[countryCodeIndex]}}</view>
+          </picker>
+        </view>
+        <view class="weui-cell__bd weui-cell__bd_in-select-before">
+          <input class="weui-input" placeholder="建议使用常用手机" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机验证码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入手机验证码" />
+        </view>
+        <view class="weui-cell__ft">
+          <view class="weui-vcode-btn">获取验证码</view>
+        </view>
+      </view>
+    </view>
+    <view style="{{phoneNumIsRight?'display:none':''}}" class="weui-cells__tips fontRed">* 手机号码格式有误</view>
+    <view class="weui-cells__title"></view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">开启邮箱验证</view>
+        <view class="weui-cell__ft">
+          <switch color="#18BC9C" bindchange="emailvertify" />
+        </view>
+      </view>
+      <view style="{{showEmailvertify?'':'display:none'}}" class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">邮箱验证</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input bindblur="vEmail" bindconfirm="vEmail" type="text" class="weui-input" placeholder="建议使用常用邮箱" />
+        </view>
+        <view style="{{emailIsRight?'display:none':''}}" class="weui-cell__ft">
+          <icon type="warn" size="23" color="#E64340"></icon>
+        </view>
+      </view>
+      <view style="{{(emailIsRight?'display:none':'')||(showEmailvertify?'':'display:none')}}" class="weui-cells__tips fontRed">* 请输入正确的Email地址</view>
+    </view>
+    <checkbox-group bindchange="bindAgreeChange">
+      <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text">
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    阅读并同意<navigator url="" class="weui-agree__link">《好万家用户注册协议》</navigator><navigator url="" class="weui-agree__link">《隐私政策》</navigator>
+                </view>
+            </label>
+    </checkbox-group>
+    <view class="weui-btn-area">
+      <button style="background-color: #18BC9C;" class="weui-btn" type="primary" bindtap="showTopTips">立即注册</button>
+    </view>
+  </view>
+</view>

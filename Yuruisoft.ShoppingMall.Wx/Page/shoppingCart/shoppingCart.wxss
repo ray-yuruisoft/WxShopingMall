@@ -3,7 +3,7 @@
 .shoppingCheckNow {
   color: white;
   font-size: 20px;
-  background-color: #e33a3c;
+  background-color: #18BC9C;
   text-align: center;
   width: 150px;
   white-space : nowrap;
@@ -114,4 +114,7 @@
 .weui-media-box__hd_in-appmsg {
   width: 80px;
   height: 80px;
+}
+.weui-panel__bd {
+  border-bottom: 1rpx solid #d7d6dc;
 }

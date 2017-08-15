@@ -1,7 +1,7 @@
 <view class="page">
   <!-- Head 标题+介绍+搜索栏 开始 -->
   <view class="page__hd">
-    <view class="page__title">haowanFamily 好万家</view>
+    <view class="page__title fontBold">haowanFamily 好万家</view>
     <view class="page__desc">好生活 · 好万家</view>
     <view class="weui-search-bar">
       <view class="weui-search-bar__form">
@@ -22,53 +22,62 @@
   </view>
   <!-- Head 标题+介绍+搜索栏 结束 -->
   <!-- Body1 搜索提示内容 开始 -->
-  <view class="page__bd">
-    <view class="weui-cells searchbar-result" wx:if="{{searchKeyList != undefined && searchKeyList.length > 0}}">
-      <view wx:for-items="{{searchKeyList}}" wx:key="{{item.id}}">
-        <view bindtap="keyListTap" class="kind-list__item">
-          <!--用is 使用模版-->
-          <template is="recommentTemp" data="{{...item}}" />
-        </view>
+  <view class="weui-cells searchbar-result" wx:if="{{searchKeyList != undefined && searchKeyList.length > 0}}">
+    <view wx:for-items="{{searchKeyList}}" wx:key="{{item.id}}">
+      <view bindtap="keyListTap" class="kind-list__item">
+        <!--用is 使用模版-->
+        <template is="recommentTemp" data="{{...item}}" />
       </view>
     </view>
   </view>
   <!-- Body1 搜索提示内容 结束 -->
   <!-- Body2 商品导航栏 开始 -->
-  <view class="page__bd page__bd_spacing">
-    <view class="kind-list">
-      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
-        <view class="kind-list__item">
-          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
-            <view class="weui-flex__item">{{item.name}}</view>
-            <view class="icon {{item.icon}}">
-              <image style="width:40rpx;height:40rpx;" src="{{item.imageUrl}}"></image>
+  <view class="weui-panel">
+    <view bindtap="angleTapProduceSort" class="weui-panel__hd verticalCenter spaceBetween weui-cell_link">
+      <view class="textPanelHead fontBold">商品总类</view>
+      <view class="icon {{icon_angleProduceSort?'icon-angle-down':'icon-angle-up'}}"></view>
+    </view>
+    <view class="weui-panel__bd" style="{{icon_angleProduceSort?'display:none':'display:block'}}">
+      <view class="kind-list">
+        <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+          <view class="kind-list__item">
+            <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+              <view class="weui-flex__item">{{item.name}}</view>
+              <view class="icon {{item.icon}}">
+                <image style="width:40rpx;height:40rpx;" src="{{item.imageUrl}}"></image>
+              </view>
+            </view>
+            <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+              <view class="weui-cells weui-cells-CustomForList {{item.open ? 'weui-cells_show' : ''}}">
+                <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                  <navigator url="../extraPages/{{page.url}}/{{page.url}}?id={{page.displayName}}" class="weui-cell weui-cell_access">
+                    <view class="weui-cell__bd">{{page.displayName}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                  </navigator>
+                </block>
+              </view>
             </view>
           </view>
-          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
-            <view class="weui-cells weui-cells-CustomForList {{item.open ? 'weui-cells_show' : ''}}">
-              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
-                <navigator url="../extraPages/{{page.url}}/{{page.url}}?id={{page.displayName}}" class="weui-cell weui-cell_access">
-                  <view class="weui-cell__bd">{{page.displayName}}</view>
-                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                </navigator>
-              </block>
-            </view>
-          </view>
-        </view>
-      </block>
+        </block>
+      </view>
     </view>
   </view>
   <!-- Body2 商品导航栏 结束 -->
   <!-- Body3 商品推荐栏 开始 -->
-  <view wx:for-items="{{recommentLists}}" wx:key="{{item.id}}">
-    <view class="kind-list__item">
-      <!--用is 使用模版-->
-      <template is="recommentTemp" data="{{...item}}" />
+  <view class="weui-panel">
+    <view bindtap="angleTapEverydayAdvice" class="weui-panel__hd verticalCenter spaceBetween weui-cell_link">
+      <view class="textPanelHead fontBold">每日推荐</view>
+      <view class="icon {{icon_angleEverydayAdvice?'icon-angle-down':'icon-angle-up'}}"></view>
+    </view>
+    <view class="weui-panel__bd" style="{{icon_angleEverydayAdvice?'display:none':'display:block'}}">
+      <view wx:for-items="{{recommentLists}}" wx:key="{{item.id}}">
+        <template is="recommentTemp" data="{{...item}}" />
+      </view>
     </view>
   </view>
   <!-- Body3 商品推荐栏 结束 -->
   <!-- Foot 公司联系方式+版权申明 开始 -->
-  <view class="page__ft">
+  <view class="page__ft" style="margin-top:10px;">
     <view class="icon icon-phone" style="color : gray"> 028-61777338</view>
     <view class="icon icon-mobile-phone" style="color : gray"> 15308202328</view>
     <view class="weui-footer__text">Copyright © 四川好万家智能科技有限公司</view>

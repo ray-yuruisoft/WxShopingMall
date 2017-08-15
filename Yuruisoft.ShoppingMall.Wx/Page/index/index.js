@@ -31,9 +31,36 @@ Page({
     ],
 
     inputShowed: false,//搜索
-    inputVal: ""
+    inputVal: "",
+
+    icon_angleProduceSort: true,//商品总类栏隐藏图标
+    icon_angleEverydayAdvice:false,//每日推荐隐藏图标
   },
-  
+  angleTapProduceSort: function () {
+    if (this.data.icon_angleProduceSort == false) {
+      this.setData({
+        icon_angleProduceSort: true
+      })
+    }
+    else {
+      this.setData({
+        icon_angleProduceSort: false
+      })
+    }
+  },
+  angleTapEverydayAdvice: function () {
+    if (this.data.icon_angleEverydayAdvice == false) {
+      this.setData({
+        icon_angleEverydayAdvice: true
+      })
+    }
+    else {
+      this.setData({
+        icon_angleEverydayAdvice: false
+      })
+    }
+  },
+
   showInput: function () {
     this.setData({
       inputShowed: true

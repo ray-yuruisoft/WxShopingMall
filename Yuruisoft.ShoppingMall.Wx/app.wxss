@@ -42,18 +42,20 @@ page {
   font-family: 'FontAwesome';
 }
 
-.icon-ellipsis{
+.icon-ellipsis {
   font-size: 25px;
 }
-.icon-ellipsis::before{
+
+.icon-ellipsis::before {
   content: "\f141";
   color: black;
 }
 
-.icon-mobile{
+.icon-mobile {
   font-size: 25px;
 }
-.icon-mobile::before{
+
+.icon-mobile::before {
   content: "\f10b";
   color: black;
 }
@@ -136,7 +138,7 @@ page {
 
 .icon-circle-check::before {
   content: '\f058';
-  color: red;
+  color: #18bc9c;
 }
 
 .icon-ban-circle {
@@ -266,7 +268,7 @@ page {
 }
 
 .topLevel {
-  z-index: 999;
+  z-index: 500;
 }
 
 .borderLineTop {
@@ -305,4 +307,43 @@ page {
 
 .flexDisplay {
   display: flex;
+}
+
+.fontBold {
+  font-weight: bold;
+}
+
+.kind-list__item {
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.kind-list__item:first-child {
+  margin-top: 0;
+}
+
+.kind-list__img {
+  width: 30px;
+  height: 30px;
+}
+
+.kind-list__item-hd {
+  padding: 10px;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.kind-list__item-hd_show {
+  opacity: 0.4;
+}
+
+.kind-list__item-bd {
+  height: 0;
+  overflow: hidden;
+}
+
+.kind-list__item-bd_show {
+  height: auto;
 }

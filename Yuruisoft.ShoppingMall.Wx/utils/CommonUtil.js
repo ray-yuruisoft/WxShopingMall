@@ -1,6 +1,6 @@
 function reqPost(url, data, cb) {//Post请求
   wx.request({
-    //url: getApp().data.servsers + url,
+    // url: "http://www.yurusoft.net" + url,
     url: "http://localhost:4943" + url,
     data: data,
     method: 'POST',
@@ -18,7 +18,7 @@ function reqPost(url, data, cb) {//Post请求
 }
 
 function Login(code, encryptedData, iv, rawData, signature) {
-  
+
   reqPost('/shoppingMall/userLogin', {
     "code": code,
     "encryptedData": encryptedData,
@@ -44,10 +44,17 @@ function Login(code, encryptedData, iv, rawData, signature) {
       }
     })
   });
- 
+
 }
+
+
+function regexEmail(value) {
+  return /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/.test(value)
+}
+
 
 module.exports = {
   reqPost: reqPost,            //Post请求
-  Login: Login//登录函数
+  Login: Login,//登录函数
+  regexEmail: regexEmail //正则验证Email
 }

@@ -12,7 +12,8 @@ App({
     add: calculate.add,
     sub: calculate.sub,
     mul: calculate.mul,
-    div: calculate.div
+    div: calculate.div,
+    regexEmail: http.regexEmail
   },
   onLaunch: function () {
     console.log('App Launch')
@@ -26,6 +27,7 @@ App({
     console.log('App Hide')
   },
   globalData: {
+    servsers:'http://www.yurusoft.net',
     hasLogin: false,
     userInfo: {},
     shoppingCart: wx.getStorageSync('shoppingCart'),//全局购物车

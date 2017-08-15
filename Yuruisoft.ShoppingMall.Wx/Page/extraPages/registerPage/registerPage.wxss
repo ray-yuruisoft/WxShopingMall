@@ -1,0 +1,8 @@
+/* registerPage.wxss */
+
+.weui-vcode-btn{
+  color: #18BC9C;
+}
+.fontRed{
+  color: red;
+}

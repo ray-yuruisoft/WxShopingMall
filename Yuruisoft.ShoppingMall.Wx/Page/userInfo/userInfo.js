@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showModalStatus: false,//自定义模态框
     userInfo: {},
     bannerListArr: [{
       id: 1,
@@ -15,13 +16,13 @@ Page({
     }, {
       id: 2,
       iconName: "icon-mobile",
-      icontitle: "拨打电话",
+      icontitle: "直通电话",
       badgeNum: 1
     },
     {
       id: 3,
       iconName: "icon-envelope",
-      icontitle: "发送邮件",
+      icontitle: "直通邮件",
       badgeNum: 9
     }, {
       id: 4,
@@ -85,6 +86,71 @@ Page({
     space: '\r\n',
   },
 
+  passwordForgot: function (e) { },
+
+  register: function (e) {
+    this.setData({
+      showModalStatus: false
+    })
+    wx.navigateTo({
+      url: '../extraPages/registerPage/registerPage',
+    })
+  },
+  powerDrawer: function (e) {
+    var currentStatu = e.currentTarget.dataset.statu;
+    this.util(currentStatu)
+  },
+  util: function (currentStatu) {
+    /* 动画部分 */
+    // 第1步：创建动画实例   
+    var animation = wx.createAnimation({
+      duration: 200,  //动画时长  
+      timingFunction: "linear", //线性  
+      delay: 0  //0则不延迟  
+    });
+
+    // 第2步：这个动画实例赋给当前的动画实例  
+    this.animation = animation;
+
+    // 第3步：执行第一组动画  
+    animation.opacity(0).rotateX(-100).step();
+
+    // 第4步：导出动画对象赋给数据对象储存  
+    this.setData({
+      animationData: animation.export()
+    })
+
+    // 第5步：设置定时器到指定时候后，执行第二组动画  
+    setTimeout(function () {
+      // 执行第二组动画  
+      animation.opacity(1).rotateX(0).step();
+      // 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象  
+      this.setData({
+        animationData: animation
+      })
+
+      //关闭  
+      if (currentStatu == "close") {
+        this.setData(
+          {
+            showModalStatus: false
+          }
+        );
+      }
+    }.bind(this), 200)
+    // 显示  
+    if (currentStatu == "open") {
+      this.setData(
+        {
+          showModalStatus: true
+        }
+      );
+    }
+  },
+
+  /**
+   * 
+   */
   listTypeTwoItemTap: function (e) { },
   listTypeOneTap: function (e) {
 
@@ -96,6 +162,7 @@ Page({
     console.log(e);
 
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -104,6 +171,35 @@ Page({
     this.setData({
       userInfo: userInfo
     })
+
+
+    var that = this;
+    app.ajax.reqPost('/shoppingMall/recommentListsGet', {//TODO:这里可以做大数据扩展
+      "userInfo": "",//TODO:用户信息,调整推荐策略
+      "takeNum": app.globalData.recommentListsNum,
+      "prefers": ""  //TODO:用户喜好,调整推荐策略
+    }, function (res) {
+      if (!res || res.error == true) {//失败直接返回        
+        return
+      }
+      var temp = res.map(item => {//格式化数字
+        return {
+          id: item.id,
+          listImageUrl: item.listImageUrl,
+          listTitle: item.listTitle,
+          evaluationCount: item.evaluationCount,
+          evaluationPercent: item.evaluationPercent.toFixed(2),
+          price: item.price.toFixed(2),
+          unit: item.unit
+        }
+      })
+      that.setData({
+        recommentLists: temp
+      })
+
+    });
+
+
   },
 
   /**
