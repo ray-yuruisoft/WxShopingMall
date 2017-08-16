@@ -6,3 +6,9 @@
 .fontRed{
   color: red;
 }
+.placeholder{
+  font-size: 12px;
+}
+.weui-toptips_suc {
+  background-color: blue;
+}

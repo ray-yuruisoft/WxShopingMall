@@ -1,5 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="rayyewang01Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="haowanFamilyAccountInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="account" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="phoneNumber" Type="bigint" Nullable="false" />
+    <Property Name="subtime" Type="datetime" Nullable="false" />
+    <Property Name="modifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="remark" Type="nvarchar(max)" />
+    <Property Name="sort" Type="int" />
+  </EntityType>
   <EntityType Name="wxShoppingMall_merchantInfo">
     <Key>
       <PropertyRef Name="id" />
@@ -49,6 +63,7 @@
     <Property Name="sort" Type="int" />
   </EntityType>
   <EntityContainer Name="rayyewang01ModelStoreContainer">
+    <EntitySet Name="haowanFamilyAccountInfo" EntityType="Self.haowanFamilyAccountInfo" Schema="rayyewang01" store:Type="Tables" />
     <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="Self.wxShoppingMall_merchantInfo" Schema="rayyewang01" Table="wxShoppingMall.merchantInfo" store:Type="Tables" />
     <EntitySet Name="wxShoppingMall_produceInfo" EntityType="Self.wxShoppingMall_produceInfo" Schema="rayyewang01" Table="wxShoppingMall.produceInfo" store:Type="Tables" />
     <EntitySet Name="wxShoppingMall_userInfo" EntityType="Self.wxShoppingMall_userInfo" Schema="rayyewang01" Table="wxShoppingMall.userInfo" store:Type="Tables" />

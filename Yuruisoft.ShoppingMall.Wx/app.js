@@ -13,7 +13,10 @@ App({
     sub: calculate.sub,
     mul: calculate.mul,
     div: calculate.div,
-    regexEmail: http.regexEmail
+    regexEmail: http.regexEmail,
+    regexAccount: http.regexAccount,
+    regexPassword: http.regexPassword,
+    regexPhoneNum: http.regexPhoneNum
   },
   onLaunch: function () {
     console.log('App Launch')
@@ -27,7 +30,8 @@ App({
     console.log('App Hide')
   },
   globalData: {
-    servsers:'http://www.yurusoft.net',
+    account: '',
+    servsers: 'http://www.yurusoft.net',
     hasLogin: false,
     userInfo: {},
     shoppingCart: wx.getStorageSync('shoppingCart'),//全局购物车
@@ -111,6 +115,7 @@ App({
         that.login(that);
       }
     });
+    that.globalVarInit(that);
   },
   login: function (that) {//丢弃所有SessionKey,重新登录
     wx.login({
@@ -134,5 +139,12 @@ App({
         console.log(that.globalData.userInfo);
       }
     })
+  },
+
+  globalVarInit: function (that) {
+
+    var account = wx.getStorageSync('account');
+    if (account)
+      that.globalData.account = account;
   }
 });

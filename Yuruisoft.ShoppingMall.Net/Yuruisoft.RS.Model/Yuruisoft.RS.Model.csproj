@@ -87,6 +87,9 @@
     <Compile Include="UserInfoParams\UserInfoFilter.cs" />
     <Compile Include="SystemDB\UserInfo.cs" />
     <Compile Include="SystemDB\Yuruisoft_DBContext.cs" />
+    <Compile Include="wxShoppingMall\haowanFamilyAccountInfo.cs">
+      <DependentUpon>wxShoppingMall.tt</DependentUpon>
+    </Compile>
     <Compile Include="wxShoppingMall\wxShoppingMall.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

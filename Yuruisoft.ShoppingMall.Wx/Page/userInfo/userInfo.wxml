@@ -6,7 +6,7 @@
         <image class="userHeadPhoto" src="{{userInfo.avatarUrl}}"></image>
         <view bindtap="powerDrawer" data-statu="open" class="userName">
           <view class="nickName">{{userInfo.nickName}}</view>
-          <view class="haowanFamilyName">还未绑定账号？马上点击绑定</view>
+          <view class="haowanFamilyName">{{account==undefined?'还未绑定账号？马上点击绑定':'用户名：'+account}}</view>
         </view>
       </view>
       <view class="icon icon-cog config"> 账号设置</view>

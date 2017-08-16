@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    account: undefined,
     showModalStatus: false,//自定义模态框
     userInfo: {},
     bannerListArr: [{
@@ -97,6 +98,9 @@ Page({
     })
   },
   powerDrawer: function (e) {
+    if (this.data.account){
+      return;
+    }
     var currentStatu = e.currentTarget.dataset.statu;
     this.util(currentStatu)
   },
@@ -212,8 +216,13 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function (e) {
+    var account = app.globalData.account
+    if (account) {
+      this.setData({
+        account: account
+      })
+    }
   },
 
   /**

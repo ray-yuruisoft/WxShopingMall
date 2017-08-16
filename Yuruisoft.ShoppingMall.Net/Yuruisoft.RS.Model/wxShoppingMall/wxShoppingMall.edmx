@@ -5,6 +5,20 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="rayyewang01Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="haowanFamilyAccountInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="account" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="phoneNumber" Type="bigint" Nullable="false" />
+          <Property Name="subtime" Type="datetime" Nullable="false" />
+          <Property Name="modifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="sort" Type="int" />
+        </EntityType>
         <EntityType Name="wxShoppingMall_merchantInfo">
           <Key>
             <PropertyRef Name="id" />
@@ -54,6 +68,7 @@
           <Property Name="sort" Type="int" />
         </EntityType>
         <EntityContainer Name="rayyewang01ModelStoreContainer">
+          <EntitySet Name="haowanFamilyAccountInfo" EntityType="Self.haowanFamilyAccountInfo" Schema="rayyewang01" store:Type="Tables" />
           <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="Self.wxShoppingMall_merchantInfo" Schema="rayyewang01" Table="wxShoppingMall.merchantInfo" store:Type="Tables" />
           <EntitySet Name="wxShoppingMall_produceInfo" EntityType="Self.wxShoppingMall_produceInfo" Schema="rayyewang01" Table="wxShoppingMall.produceInfo" store:Type="Tables" />
           <EntitySet Name="wxShoppingMall_userInfo" EntityType="Self.wxShoppingMall_userInfo" Schema="rayyewang01" Table="wxShoppingMall.userInfo" store:Type="Tables" />
@@ -66,6 +81,7 @@
           <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
           <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
           <EntitySet Name="wxShoppingMall_userInfo" EntityType="rayyewang01Model.wxShoppingMall_userInfo" />
+          <EntitySet Name="haowanFamilyAccountInfo" EntityType="rayyewang01Model.haowanFamilyAccountInfo" />
         </EntityContainer>
         <EntityType Name="wxShoppingMall_merchantInfo">
           <Key>
@@ -111,6 +127,20 @@
           <Property Name="encryptedData" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="haoWanFamilyUserInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" />
+        </EntityType>
+        <EntityType Name="haowanFamilyAccountInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="account" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="phoneNumber" Type="Int64" Nullable="false" />
+          <Property Name="subtime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="sort" Type="Int32" />
@@ -167,6 +197,21 @@
                 <ScalarProperty Name="thirdSessionKey" ColumnName="thirdSessionKey" />
                 <ScalarProperty Name="sessionKey" ColumnName="sessionKey" />
                 <ScalarProperty Name="openId" ColumnName="openId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="haowanFamilyAccountInfo">
+            <EntityTypeMapping TypeName="rayyewang01Model.haowanFamilyAccountInfo">
+              <MappingFragment StoreEntitySet="haowanFamilyAccountInfo">
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+                <ScalarProperty Name="subtime" ColumnName="subtime" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="account" ColumnName="account" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

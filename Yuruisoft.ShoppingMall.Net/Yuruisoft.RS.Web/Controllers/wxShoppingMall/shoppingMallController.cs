@@ -220,21 +220,22 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             }
             else
             {
-                wxShoppingMall_userInfo CurrentUserInDB = Db.Set<wxShoppingMall_userInfo>().Find(CurrentUser.id,CurrentUser.openId);
+                wxShoppingMall_userInfo CurrentUserInDB = Db.Set<wxShoppingMall_userInfo>().Find(CurrentUser.id, CurrentUser.openId);
                 if (CurrentUserInDB == null)//缓存中查不到实体，先删除，后添加
                 {
                     #region 缓存中查不到实体，先删除，后添加
-                    Db.Set<wxShoppingMall_userInfo>().Remove(CurrentUser);                                 
+                    Db.Set<wxShoppingMall_userInfo>().Remove(CurrentUser);
                     dataFromWx.subTime = DateTime.Now;                                     //首次登陆时间                  
                     Db.Set<wxShoppingMall_userInfo>().Add(dataFromWx);
-                    #endregion                   
+                    #endregion
                 }
                 else//其余判断为二次登陆
                 {
                     CurrentUserInDB.sessionKey = dataFromWx.sessionKey;
-                    if (CurrentUserInDB.encryptedData != dataFromWx.encryptedData) {
+                    if (CurrentUserInDB.encryptedData != dataFromWx.encryptedData)
+                    {
                         CurrentUserInDB.encryptedData = dataFromWx.encryptedData;
-                    }                   
+                    }
                     CurrentUserInDB.modifiedOn = dataFromWx.modifiedOn;
                     CurrentUserInDB.thirdSessionKey = dataFromWx.thirdSessionKey;
                 }
@@ -247,7 +248,40 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             {
                 return Json(new { Update = false });
             }
-            #endregion           
+            #endregion
+        }
+
+
+        [HttpPost]
+        public ActionResult checkAccountRepeat(string account)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            var result = Db.Set<haowanFamilyAccountInfo>().Any(c => c.account == account);
+            return Json(new { error = result });
+        }
+
+        [HttpPost]
+        public ActionResult accountAdd(string account, string password, string phoneNum, string email)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            if (account != null && password != null && phoneNum != null)
+            {
+                haowanFamilyAccountInfo current = new haowanFamilyAccountInfo();
+                current.account = account;
+                current.email = email;
+                current.modifiedOn = DateTime.Now;
+                current.subtime = DateTime.Now;
+                current.password = password;
+                current.phoneNumber = long.Parse(phoneNum);
+                DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                Db.Set<haowanFamilyAccountInfo>().Add(current);
+                if (Db.SaveChanges() > 0)
+                {
+                    return Json(new { error = false });
+                }
+            }
+            return Json(new { error = true });
         }
 
         string domainGet()

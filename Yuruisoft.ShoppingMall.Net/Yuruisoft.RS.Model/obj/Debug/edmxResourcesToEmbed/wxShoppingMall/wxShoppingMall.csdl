@@ -4,6 +4,7 @@
     <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
     <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
     <EntitySet Name="wxShoppingMall_userInfo" EntityType="rayyewang01Model.wxShoppingMall_userInfo" />
+    <EntitySet Name="haowanFamilyAccountInfo" EntityType="rayyewang01Model.haowanFamilyAccountInfo" />
   </EntityContainer>
   <EntityType Name="wxShoppingMall_merchantInfo">
     <Key>
@@ -49,6 +50,20 @@
     <Property Name="encryptedData" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="haoWanFamilyUserInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="Int32" />
+  </EntityType>
+  <EntityType Name="haowanFamilyAccountInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="account" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="phoneNumber" Type="Int64" Nullable="false" />
+    <Property Name="subtime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="sort" Type="Int32" />

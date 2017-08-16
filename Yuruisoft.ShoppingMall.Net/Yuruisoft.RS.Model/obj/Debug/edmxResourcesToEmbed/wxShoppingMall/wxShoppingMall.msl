@@ -51,5 +51,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="haowanFamilyAccountInfo">
+      <EntityTypeMapping TypeName="rayyewang01Model.haowanFamilyAccountInfo">
+        <MappingFragment StoreEntitySet="haowanFamilyAccountInfo">
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+          <ScalarProperty Name="subtime" ColumnName="subtime" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
