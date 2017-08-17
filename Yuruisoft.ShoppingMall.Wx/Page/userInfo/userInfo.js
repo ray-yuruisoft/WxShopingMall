@@ -87,6 +87,57 @@ Page({
     space: '\r\n',
   },
 
+  formSubmit: function (e) {
+    var that = this;
+    var name = e.detail.value.name;
+    var password = e.detail.value.password;
+    var isEmail = app.com.regexEmail(name);
+    var isPhoneNum = app.com.regexPhoneNum(name);
+
+    app.ajax.reqPost('/shoppingMall/login', {
+      name: name,
+      password: password,
+      isEmail: isEmail,
+      isPhoneNum: isPhoneNum
+    }, function (res) {
+      if (!res) {//失败直接返回        
+        return
+      }
+      if (res.error) {
+        if (res.error == 'NAMEWRONG') { return }
+        if (res.error == 'PASSWORDWRONG') { return }
+        return
+      }
+      app.globalData.account = res.account;
+      that.setData({
+        account: res.account
+      })
+      
+      that.util('close');
+      wx.setStorage({
+        key: 'account',
+        data: res.account,
+      })
+    });
+  },
+
+
+
+
+  inputAccount: function (e) {
+    var input = e.detail.value;
+    this.setData({
+      inputAccount: input
+    })
+  },
+
+  inputPassword: function (e) {
+    var password = e.detail.value;
+    this.setData({
+      inputPassword: password
+    })
+  },
+
   passwordForgot: function (e) { },
 
   register: function (e) {
@@ -98,7 +149,7 @@ Page({
     })
   },
   powerDrawer: function (e) {
-    if (this.data.account){
+    if (this.data.account) {
       return;
     }
     var currentStatu = e.currentTarget.dataset.statu;

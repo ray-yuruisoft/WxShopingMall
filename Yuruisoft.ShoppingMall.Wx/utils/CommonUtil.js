@@ -64,6 +64,9 @@ function regexPhoneNum(value) {
   return /^1[3|4|5|7|8][0-9]{9}$/.test(value)
 }
 
+function regexNumber(value){
+  return /^\d+$/.test(value)
+}
 
 module.exports = {
   reqPost: reqPost,            //Post请求
@@ -71,5 +74,6 @@ module.exports = {
   regexEmail: regexEmail, //正则验证Email
   regexAccount: regexAccount,//正则验证用户名
   regexPassword: regexPassword,//正则验证密码
-  regexPhoneNum: regexPhoneNum//正则验证手机号码
+  regexPhoneNum: regexPhoneNum,//正则验证手机号码
+  regexNumber: regexNumber//正则验证纯数字
 }

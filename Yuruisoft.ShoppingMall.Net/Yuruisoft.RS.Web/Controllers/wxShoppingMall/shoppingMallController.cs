@@ -262,6 +262,17 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         }
 
         [HttpPost]
+
+        public ActionResult checkPhoneNumRepeat(string phoneNum)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            var temp = long.Parse(phoneNum);
+            var result = Db.Set<haowanFamilyAccountInfo>().Any(c => c.phoneNumber == temp);
+            return Json(new { error = result });
+        }
+
+        [HttpPost]
         public ActionResult accountAdd(string account, string password, string phoneNum, string email)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
@@ -280,6 +291,68 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 {
                     return Json(new { error = false });
                 }
+            }
+            return Json(new { error = true });
+        }
+
+        [HttpPost]
+        public ActionResult login(string name, string password, bool isEmail, bool isPhoneNum)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            if (name != null)
+            {
+                #region 1、判断邮件名
+                if (isEmail)
+                {
+                    DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                    var result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.email == name).FirstOrDefault();
+                    if (result == null)
+                    {
+                        return Json(new { error = "NAMEWRONG" });
+                    }
+
+                    if (result.password != password)
+                    {
+
+                        return Json(new { error = "PASSWORDWRONG" });
+                    }
+
+                    return Json(new { account = result.account });
+                }
+                #endregion
+                #region 2、判断电话号码
+                if (isPhoneNum)
+                {
+                    DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                    var temp = long.Parse(name);
+                    var result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.phoneNumber == temp).FirstOrDefault();
+                    if (result == null)
+                    {
+                        return Json(new { error = "NAMEWRONG" });
+                    }
+
+                    if (result.password != password)
+                    {
+
+                        return Json(new { error = "PASSWORDWRONG" });
+                    }
+
+                    return Json(new { account = result.account });
+                }
+                #endregion
+                DbContext DataBase = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                var res = DataBase.Set<haowanFamilyAccountInfo>().Where(c => c.account == name).FirstOrDefault();
+                if (res == null)
+                {
+                    return Json(new { error = "NAMEWRONG" });
+                }
+
+                if (res.password != password)
+                {
+
+                    return Json(new { error = "PASSWORDWRONG" });
+                }
+                return Json(new { account = res.account });
             }
             return Json(new { error = true });
         }

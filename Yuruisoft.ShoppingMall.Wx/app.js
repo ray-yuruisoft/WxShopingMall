@@ -16,7 +16,8 @@ App({
     regexEmail: http.regexEmail,
     regexAccount: http.regexAccount,
     regexPassword: http.regexPassword,
-    regexPhoneNum: http.regexPhoneNum
+    regexPhoneNum: http.regexPhoneNum,
+    regexNumber: http.regexNumber
   },
   onLaunch: function () {
     console.log('App Launch')

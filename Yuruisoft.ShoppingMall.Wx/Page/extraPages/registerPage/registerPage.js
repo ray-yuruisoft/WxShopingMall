@@ -40,7 +40,8 @@ Page({
     var that = this;
     if (input == '') {//1、空
       that.setData({
-        phoneNumIsEmpty: true
+        phoneNumIsEmpty: true,
+        phoneNumInputSuccess: false
       })
       that.checkForm();
       return;
@@ -51,7 +52,8 @@ Page({
 
     if (!app.com.regexPhoneNum(input)) {//2、格式
       that.setData({
-        phoneNumIsRight: false
+        phoneNumIsRight: false,
+        phoneNumInputSuccess: false
       })
       that.checkForm();
       return;
@@ -59,8 +61,23 @@ Page({
     that.setData({
       phoneNumIsRight: true
     })
-    this.local.phoneNum = input;
-    this.checkForm();
+
+    app.ajax.reqPost('/shoppingMall/checkPhoneNumRepeat', {
+      phoneNum: input,
+    }, function (res) {//3、是否重复
+      if (!res) {
+        that.setData({
+          phoneNumNoRepeat: false
+        })
+      }
+      that.setData({
+        phoneNumNoRepeat: !res.error,
+        phoneNumInputSuccess: !res.error
+      })
+      that.local.phoneNum = input;
+      that.checkForm();
+    })
+
   },
   vPassword: function (e) {
     var input = e.detail.value;
@@ -131,7 +148,19 @@ Page({
       accountLengthRight: true
     })
 
-    if (!app.com.regexAccount(input)) {//3、格式
+    if (app.com.regexNumber(input)) {//3、纯数字
+      that.setData({
+        accountIsNumber: true,
+        accountInputSuccess: false
+      })
+      that.checkForm();
+      return;
+    }
+    that.setData({
+      accountIsNumber: false
+    })
+
+    if (!app.com.regexAccount(input)) {//4、格式
       that.setData({
         accountInputSuccess: false,
         accountIsRight: false
@@ -145,7 +174,7 @@ Page({
 
     app.ajax.reqPost('/shoppingMall/checkAccountRepeat', {
       account: input,
-    }, function (res) {//3、是否重复
+    }, function (res) {//5、是否重复
       if (!res) {
         that.setData({
           accountNoRepeat: false
@@ -214,7 +243,7 @@ Page({
       })
       return false;
     }
-    if (!this.data.phoneNumIsRight) {//4、手机正确
+    if (!this.data.phoneNumInputSuccess) {//4、手机正确
       this.setData({
         registerButtonDisabled: true
       })
@@ -255,34 +284,34 @@ Page({
       return;
     }
     app.ajax.reqPost('/shoppingMall/accountAdd', {
-        account: account,
-        password: password,
-        phoneNum: phoneNum,
-        email: email
-      }, function (res) {//3、是否重复
-        if (!res || res.error) {
-          that.showTopTipsFail();
-          return;
-        }
-        app.globalData.account = account;
-        wx.setStorage({
-          key: 'account',
-          data: account,
-        })
-        wx.showModal({
-          title: '注册成功！',
-          content: '感谢注册 haowanFamily.com账户，更多便捷应用请登录好万家官方网站：www.haowanFamily.com',
-          confirmColor: '#18BC9C',
-          showCancel: false,
-          confirmText: '点击跳转',
-          success: function (res) {
-            if (res.confirm) {
-              wx.switchTab({
-                url: '../../userInfo/userInfo',
-              })
-            }
-          }
-        });
+      account: account,
+      password: password,
+      phoneNum: phoneNum,
+      email: email
+    }, function (res) {//3、是否重复
+      if (!res || res.error) {
+        that.showTopTipsFail();
+        return;
+      }
+      app.globalData.account = account;
+      wx.setStorage({
+        key: 'account',
+        data: account,
       })
+      wx.showModal({
+        title: '注册成功！',
+        content: '感谢注册 haowanFamily.com账户，更多便捷应用请登录好万家官方网站：www.haowanFamily.com',
+        confirmColor: '#18BC9C',
+        showCancel: false,
+        confirmText: '点击跳转',
+        success: function (res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '../../userInfo/userInfo',
+            })
+          }
+        }
+      });
+    })
   }
 });

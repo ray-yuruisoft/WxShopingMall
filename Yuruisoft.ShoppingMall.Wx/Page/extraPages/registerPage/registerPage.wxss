@@ -12,3 +12,8 @@
 .weui-toptips_suc {
   background-color: blue;
 }
+
+.relativePosition{
+  position: relative;
+  right: 15px;
+}

@@ -6,7 +6,7 @@
         <image class="userHeadPhoto" src="{{userInfo.avatarUrl}}"></image>
         <view bindtap="powerDrawer" data-statu="open" class="userName">
           <view class="nickName">{{userInfo.nickName}}</view>
-          <view class="haowanFamilyName">{{account==undefined?'还未绑定账号？马上点击绑定':'用户名：'+account}}</view>
+          <view class="haowanFamilyName">{{account==undefined?'登录 / 注册？马上点我':'用户名：'+account}}</view>
         </view>
       </view>
       <view class="icon icon-cog config"> 账号设置</view>
@@ -68,26 +68,34 @@
 
 <!-- 自定义模态框--开始 -->
 <!--mask-->
-<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<view class="drawer_screen" wx:if="{{showModalStatus}}"></view>
 <!--content-->
 <!--使用animation属性指定需要执行的动画-->
 <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
   <!--drawer content-->
-  <view class="drawer_title">账户绑定</view>
-  <view class="drawer_content">
-    <view class="top grid">
-      <label class="title col-0">账户</label>
-      <input focus="true" class="input_base input_h30 col-1" name="rName" value=""></input>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="drawer_title">好万家账户-登录</view>
+    <view class="drawer_content">
+      <view class="top grid">
+        <label class="title col-0">账号</label>
+        <input bindinput="inputAccount" placeholder="用户名/邮箱/手机号" focus="true" class="input_base input_h30 col-1" name="name" value="{{inputAccount}}"></input>
+        <view class="weui-icon-clear weui-icon-clear-account" bindtap="powerDrawer" data-statu="close">
+          <icon type="clear" size="20"></icon>
+        </view>
+      </view>
+      <view class="top grid">
+        <label class="title col-0">密码</label>
+        <input bindinput="inputPassword" placeholder="请输入密码" password="true" class="input_base input_h30 col-1" name="password" value="{{inputPassword}}"></input>
+      </view>
     </view>
-    <view class="top grid">
-      <label class="title col-0">密码</label>
-      <input password="true" class="input_base input_h30 col-1" name="mobile" value=""></input>
+    <view class="weui-btn-area">
+      <button formType="submit" disabled="{{!((inputPassword.length>0)&&(inputAccount.length>0))}}" style="background-color:{{!((inputPassword.length>0)&&(inputAccount.length>0))?'#ECECEC;':'#18BC9C;'}} " class="weui-btn" type="primary">登录</button>
     </view>
-  </view>
-  <view class="flexDisplay">
-    <view style="width:50%;border-right:1px solid #e8e8ea;"  class="btn_ok" bindtap="passwordForgot">忘记密码</view>
-    <view style="width:50%" class="btn_ok" bindtap="register">立即注册</view>
-  </view>
+    <view class="flexDisplay">
+      <view style="width:50%;border-right:1px solid #e8e8ea;" class="btn_ok" bindtap="passwordForgot">忘记密码</view>
+      <view style="width:50%" class="btn_ok" bindtap="register">立即注册</view>
+    </view>
+  </form>
 </view>
 <!-- 自定义模态框--结束 -->
 

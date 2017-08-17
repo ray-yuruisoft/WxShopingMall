@@ -5,7 +5,7 @@
   </view>
   <view class="page__bd">
     <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTipsFail}}">提交失败</view>
-    
+
     <view class="weui-cells weui-cells_after-title">
       <!-- 用户名  开始 -->
       <view class="weui-cell weui-cell_input">
@@ -22,6 +22,7 @@
       </view>
       <view style="{{(accountIsEmpty==undefined)?'display:none':(accountIsEmpty?'':'display:none')}}" class="weui-cells__tips fontRed">* 用户名不能为空</view>
       <view style="{{(accountLengthRight==undefined)?'display:none':(accountLengthRight?'display:none':'')}}" class="weui-cells__tips fontRed">* 长度只能在4-20个字符之间</view>
+      <view style="{{(accountIsNumber==undefined)?'display:none':(accountIsNumber?'':'display:none')}}" class="weui-cells__tips fontRed">* 用户名不能为纯数字</view>
       <view style="{{(accountIsRight==undefined)?'display:none':(accountIsRight?'display:none':'')}}" class="weui-cells__tips fontRed">* 格式错误，仅支持汉字、数字、字母、下划线的组合且不能以下划线开头和结尾</view>
       <view style="{{(accountNoRepeat==undefined)?'display:none':(accountNoRepeat?'display:none':'')}}" class="weui-cells__tips fontRed">* 用户名被占用，请重新输入</view>
       <!-- 用户名  结束 -->
@@ -54,6 +55,10 @@
         <view class="weui-cell__bd weui-cell__bd_in-select-before">
           <input type="number" bindblur="vPhoneNum" bindconfirm="vPhoneNum" placeholder-class="placeholder" class="weui-input" placeholder="建议使用常用手机" />
         </view>
+        <view class="weui-cell__ft relativePosition">
+          <icon style="{{(phoneNumInputSuccess==undefined)?'display:none':(phoneNumInputSuccess?'display:none':'')}}" type="warn" size="23" color="#E64340"></icon>
+          <icon style="{{(phoneNumInputSuccess==undefined)?'display:none':(phoneNumInputSuccess?'':'display:none')}}" type="success" size="23" color="#18BC9C"></icon>
+        </view>
       </view>
       <view class="weui-cell weui-cell_input weui-cell_vcode">
         <view class="weui-cell__hd">
@@ -69,6 +74,7 @@
     </view>
     <view style="{{(phoneNumIsEmpty==undefined)?'display:none':(phoneNumIsEmpty?'':'display:none')}}" class="weui-cells__tips fontRed">* 手机号码不能为空</view>
     <view style="{{(phoneNumIsRight==undefined)?'display:none':(phoneNumIsRight?'display:none':'')}}" class="weui-cells__tips fontRed">* 手机号码格式有误</view>
+    <view style="{{(phoneNumNoRepeat==undefined)?'display:none':(phoneNumNoRepeat?'display:none':'')}}" class="weui-cells__tips fontRed">* 该手机号码已绑定</view>
     <!-- 手机验证 结束 -->
 
     <!-- 邮箱验证 开始 -->
@@ -106,7 +112,7 @@
             </label>
     </checkbox-group>
     <view class="weui-btn-area">
-      <button catchtap="submit" disabled="{{registerButtonDisabled}}" style="background-color:{{registerButtonDisabled?'#ECECEC;':'#18BC9C;'}} " class="weui-btn" type="primary" bindtap="showTopTips">立即注册</button>
+      <button catchtap="submit" disabled="{{registerButtonDisabled}}" style="background-color:{{registerButtonDisabled?'#ECECEC;':'#18BC9C;'}} " class="weui-btn" type="primary">立即注册</button>
     </view>
   </view>
 </view>

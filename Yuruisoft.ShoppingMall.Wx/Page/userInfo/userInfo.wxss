@@ -103,13 +103,12 @@
 }
 
 .drawer_content {
-  height: 110px;
   overflow-y: scroll; /*超出父盒子高度可滚动*/
 }
 
 .btn_ok {
   padding: 10px;
-  font: 20px "microsoft yahei";
+  font: 18px "microsoft yahei";
   text-align: center;
   border-top: 1px solid #e8e8ea;
   color: #18BC9C;
