@@ -1,11 +1,15 @@
 // userInfo.js
 var app = getApp();
+var passwordLockTime = 6;
+var session;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    vcodeImg: "",
+    eysNoOpen: true,
     account: undefined,
     showModalStatus: false,//自定义模态框
     userInfo: {},
@@ -87,42 +91,166 @@ Page({
     space: '\r\n',
   },
 
+  validateCodeGet: function () {
+    var that = this;
+    app.ajax.reqPost('/shoppingMall/validateCodeGet', {
+    }, function (res) {
+      if (!res || res.error == true) {//失败直接返回        
+        return
+      }
+      session = res.session;
+      that.setData({
+        vcodeImg: res.base64Image
+      })
+    });
+  },
+  validateCodeCheck: function (e) {
+    var input = e.detail.value;
+    this.setData({
+      inputVcode: input
+    })
+  },
+  inputClear: function () {
+    this.setData({
+      inputAccount: ''
+    });
+  },
+  inputEyeOpen: function () {
+    var temp = !this.data.eysNoOpen;
+    this.setData({
+      eysNoOpen: temp
+    });
+  },
+  showToastWrong: function (title) {
+    wx.showToast({
+      title: title,
+      image: '../../style/images/replaceIcon/exclamation-sign.png'
+    })
+  },
+  showFindPassModel: function () {
+    this.util('close');
+    wx.showModal({
+      title: '账号或密码不正确',
+      confirmText: "找回密码",
+      confirmColor: '#18BC9C',
+      cancelText: "确定",
+      success: function (res) {
+        console.log(res);
+        if (res.confirm) {
+
+        } else {
+
+        }
+      }
+    });
+  },
+  showFindPassWordModel: function () {
+    wx.showModal({
+      title: '账号或密码多次不正确，请尝试找回密码',
+      confirmText: "找回密码",
+      confirmColor: '#18BC9C',
+      cancelText: "确定",
+      success: function (res) {
+        console.log(res);
+        if (res.confirm) {
+
+        } else {
+
+        }
+      }
+    });
+  },
+
   formSubmit: function (e) {
     var that = this;
     var name = e.detail.value.name;
     var password = e.detail.value.password;
     var isEmail = app.com.regexEmail(name);
     var isPhoneNum = app.com.regexPhoneNum(name);
+    var thirdSessionKey = wx.getStorageSync('thirdSessionKey');
+    var vCode = e.detail.value.vCode;
 
     app.ajax.reqPost('/shoppingMall/login', {
       name: name,
       password: password,
       isEmail: isEmail,
-      isPhoneNum: isPhoneNum
+      isPhoneNum: isPhoneNum,
+      thirdSessionKey: thirdSessionKey,
+      vCode: vCode
     }, function (res) {
       if (!res) {//失败直接返回        
         return
       }
       if (res.error) {
-        if (res.error == 'NAMEWRONG') { return }
-        if (res.error == 'PASSWORDWRONG') { return }
-        return
+        if (res.failCount < 3) {
+          if (res.error == 'NAMEWRONG') {
+            that.showToastWrong('账号或密码错误');
+            return;
+          }
+          if (res.error == 'PASSWORDWRONG') {
+            if (passwordLockTime == 0) {//密码输入错误6次
+              that.showFindPassModel();
+              return;
+            }
+            if (passwordLockTime > 3) {
+              that.showToastWrong('账号或密码错误');
+              passwordLockTime--;
+              return;
+            }
+            that.showToastWrong('密码错误，您还可以尝试' + passwordLockTime + '次');
+            passwordLockTime--;
+            return;
+          }
+        }
+        if (res.failCount >= 3) {
+          that.validateCodeGet();
+          that.setData({
+            vCodeInputShow: true
+          })
+
+          if (res.error == 'NAMEWRONG') {
+            that.showToastWrong('账号或密码错误');
+            return;
+          }
+          if (res.error == 'PASSWORDWRONG') {
+            if (passwordLockTime == 0) {//密码输入错误6次
+              that.showFindPassModel();
+              return;
+            }
+            if (passwordLockTime > 3) {
+              that.showToastWrong('账号或密码错误');
+              passwordLockTime--;
+              return;
+            }
+            that.showToastWrong('密码错误，您还可以尝试' + passwordLockTime + '次');
+            passwordLockTime--;
+            return;
+          }
+          if (res.error == 'VCODEWRONG'){
+            that.showToastWrong('验证码错误');
+            return;
+          }
+        }
+        that.showToastWrong('网络或其他错误');
+        return;
       }
+
       app.globalData.account = res.account;
       that.setData({
         account: res.account
       })
-      
+
       that.util('close');
       wx.setStorage({
         key: 'account',
         data: res.account,
       })
-    });
+      wx.setStorage({
+        key: 'sessionData',
+        data: res.password,
+      })
+    }, session);
   },
-
-
-
 
   inputAccount: function (e) {
     var input = e.detail.value;
@@ -149,7 +277,12 @@ Page({
     })
   },
   powerDrawer: function (e) {
+
     if (this.data.account) {
+      return;
+    }
+    if (passwordLockTime == 0) {
+      this.showFindPassWordModel();
       return;
     }
     var currentStatu = e.currentTarget.dataset.statu;
@@ -195,6 +328,7 @@ Page({
     }.bind(this), 200)
     // 显示  
     if (currentStatu == "open") {
+      this.validateCodeGet();
       this.setData(
         {
           showModalStatus: true
@@ -226,7 +360,6 @@ Page({
     this.setData({
       userInfo: userInfo
     })
-
 
     var that = this;
     app.ajax.reqPost('/shoppingMall/recommentListsGet', {//TODO:这里可以做大数据扩展

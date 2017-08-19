@@ -21,6 +21,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using Yuruisoft.RS.Common;
 using Yuruisoft.RS.Model.Enum;
+using Yuruisoft.RS.Web.Models;
 
 
 
@@ -296,66 +297,194 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         }
 
         [HttpPost]
-        public ActionResult login(string name, string password, bool isEmail, bool isPhoneNum)
-        {
+        public ActionResult login(string name, string password, bool isEmail, bool isPhoneNum, string thirdSessionKey, string vCode)
+        {//验证码初次不显示功能，实现为加缓存，缓存每10分钟清空一次。如果加到数据库会增加压力
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-            if (name != null)
+            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            haowanFamilyAccountInfo result = new haowanFamilyAccountInfo();
+            if (SingleLogOnVcodeCache.GetLogOnVcodeCache().LogOnCache.ContainsKey(thirdSessionKey))
             {
+                short FailCount = SingleLogOnVcodeCache.GetLogOnVcodeCache().LogOnCache[thirdSessionKey];
+                if (FailCount > 3)
+                {
+                    #region 需要验证码,成功登陆需重置验证码
+                    string validateCode = Session["validateCode"] == null ? string.Empty : Session["validateCode"].ToString();
+                    if (string.IsNullOrEmpty(validateCode))
+                    {
+                        return Json(new
+                        {
+                            error = "VCODEWRONG",
+                            failCount = FailCount
+                        });
+                    }
+                    Session["validateCode"] = null;
+                    if (!vCode.Equals(validateCode, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return Json(new
+                        {
+                            error = "VCODEWRONG",
+                            failCount = FailCount
+                        });
+                    }
+                    #region 1、判断邮件名
+                    if (isEmail)
+                    {
+                        result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.email == name).FirstOrDefault();
+                    }
+                    #endregion
+                    #region 2、判断电话号码
+                    if (isPhoneNum)
+                    {
+                        var temp = long.Parse(name);
+                        result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.phoneNumber == temp).FirstOrDefault();
+                    }
+                    #endregion
+                    #region 3、判断账户名
+                    if ((!isEmail) && (!isPhoneNum))
+                    {
+                        result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.account == name).FirstOrDefault();
+                    }
+                    #endregion
+                    if (result == null)
+                    {
+                        return Json(new
+                        {
+                            error = "NAMEWRONG",
+                            failCount = FailCount
+                        });
+                    }
+                    if (result.password != password)
+                    {
+                        return Json(new
+                        {
+                            error = "PASSWORDWRONG",
+                            failCount = FailCount
+                        });
+                    }
+                    SingleLogOnVcodeCache.GetLogOnVcodeCache().LogOnCache[thirdSessionKey] = 0;
+                    var passwordMD5 = Common.WebCommon.Md5String(Common.WebCommon.Md5String(password));
+                    return Json(new
+                    {
+                        account = result.account,
+                        password = passwordMD5
+                    });
+                    #endregion
+                }
+                else
+                {
+                    SingleLogOnVcodeCache.GetLogOnVcodeCache().LogOnCache[thirdSessionKey]++;
+                    #region 不需要验证码,成功登陆需重置验证码
+                    #region 1、判断邮件名
+                    if (isEmail)
+                    {
+                        result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.email == name).FirstOrDefault();
+                    }
+                    #endregion
+                    #region 2、判断电话号码
+                    if (isPhoneNum)
+                    {
+                        var temp = long.Parse(name);
+                        result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.phoneNumber == temp).FirstOrDefault();
+                    }
+                    #endregion
+                    #region 3、判断账户名
+                    if ((!isEmail) && (!isPhoneNum))
+                    {
+                        result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.account == name).FirstOrDefault();
+                    }
+                    #endregion
+                    if (result == null)
+                    {
+                        return Json(new
+                        {
+                            error = "NAMEWRONG",
+                            failCount = FailCount
+                        });
+                    }
+                    if (result.password != password)
+                    {
+                        return Json(new
+                        {
+                            error = "PASSWORDWRONG",
+                            failCount = FailCount
+                        });
+                    }
+                    SingleLogOnVcodeCache.GetLogOnVcodeCache().LogOnCache[thirdSessionKey] = 0;
+                    var passwordMD5 = Common.WebCommon.Md5String(Common.WebCommon.Md5String(password));
+                    return Json(new
+                    {
+                        account = result.account,
+                        password = passwordMD5
+                    });
+                    #endregion
+                }
+            }
+            else//第一次登陆
+            {
+                SingleLogOnVcodeCache.GetLogOnVcodeCache().LogOnCache[thirdSessionKey] = 1;
+                #region 不需要验证码,成功登陆需重置验证码
                 #region 1、判断邮件名
                 if (isEmail)
                 {
-                    DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
-                    var result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.email == name).FirstOrDefault();
-                    if (result == null)
-                    {
-                        return Json(new { error = "NAMEWRONG" });
-                    }
-
-                    if (result.password != password)
-                    {
-
-                        return Json(new { error = "PASSWORDWRONG" });
-                    }
-
-                    return Json(new { account = result.account });
+                    result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.email == name).FirstOrDefault();
                 }
                 #endregion
                 #region 2、判断电话号码
                 if (isPhoneNum)
                 {
-                    DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
                     var temp = long.Parse(name);
-                    var result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.phoneNumber == temp).FirstOrDefault();
-                    if (result == null)
-                    {
-                        return Json(new { error = "NAMEWRONG" });
-                    }
-
-                    if (result.password != password)
-                    {
-
-                        return Json(new { error = "PASSWORDWRONG" });
-                    }
-
-                    return Json(new { account = result.account });
+                    result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.phoneNumber == temp).FirstOrDefault();
                 }
                 #endregion
-                DbContext DataBase = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
-                var res = DataBase.Set<haowanFamilyAccountInfo>().Where(c => c.account == name).FirstOrDefault();
-                if (res == null)
+                #region 3、判断账户名
+                if ((!isEmail) && (!isPhoneNum))
                 {
-                    return Json(new { error = "NAMEWRONG" });
+                    result = Db.Set<haowanFamilyAccountInfo>().Where(c => c.account == name).FirstOrDefault();
                 }
-
-                if (res.password != password)
+                #endregion
+                if (result == null)
                 {
-
-                    return Json(new { error = "PASSWORDWRONG" });
+                    return Json(new
+                    {
+                        error = "NAMEWRONG",
+                        failCount = 0
+                    });
                 }
-                return Json(new { account = res.account });
+                if (result.password != password)
+                {
+                    return Json(new
+                    {
+                        error = "PASSWORDWRONG",
+                        failCount = 0
+                    });
+                }
+                SingleLogOnVcodeCache.GetLogOnVcodeCache().LogOnCache[thirdSessionKey] = 0;
+                var passwordMD5 = Common.WebCommon.Md5String(Common.WebCommon.Md5String(password));
+                return Json(new
+                {
+                    account = result.account,
+                    password = passwordMD5
+                });
+                #endregion
             }
-            return Json(new { error = true });
         }
+
+        #region 请求验证码.
+        [HttpPost]
+        public ActionResult validateCodeGet()
+        {         
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            Common.ValidateCode validateCode = new Common.ValidateCode();
+            string code = validateCode.CreateValidateCode(4);
+            Session["validateCode"] = code;
+            byte[] buffer = validateCode.CreateValidateGraphic(code);
+            string str = "data:image/png;base64," + Convert.ToBase64String(buffer);
+            return Json(new
+            {              
+                base64Image = str
+            });
+        }
+        #endregion
 
         string domainGet()
         {

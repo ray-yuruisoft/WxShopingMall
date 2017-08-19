@@ -1,15 +1,19 @@
-function reqPost(url, data, cb) {//Post请求
+function reqPost(url, data, cb, sessionId) {//Post请求
   wx.request({
     // url: "http://www.yurusoft.net" + url,
     url: "http://localhost:4943" + url,
     data: data,
     method: 'POST',
     header: {
-      'content-type': 'application/json',
-      'haowanFamily': 'www.haowanFamily.com'
+      'haowanFamily': 'www.haowanFamily.com',
+      'content-type': 'application/x-www-form-urlencoded',
+      'Cookie': sessionId,
     },
     success: function (res) {
-      return typeof cb == "function" && cb(res.data)
+      var temp = res.data;
+      if (res.header['Set-Cookie'])
+        temp['session'] = res.header['Set-Cookie'].split(';')[0];
+      return typeof cb == "function" && cb(temp)
     },
     fail: function () {
       return typeof cb == "function" && cb(false)
@@ -64,7 +68,7 @@ function regexPhoneNum(value) {
   return /^1[3|4|5|7|8][0-9]{9}$/.test(value)
 }
 
-function regexNumber(value){
+function regexNumber(value) {
   return /^\d+$/.test(value)
 }
 

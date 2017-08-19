@@ -138,6 +138,9 @@ App({
       success: function (res) {
         that.globalData.userInfo = res.userInfo
         console.log(that.globalData.userInfo);
+      },
+      fail:item=>{
+        console.log(item);
       }
     })
   },

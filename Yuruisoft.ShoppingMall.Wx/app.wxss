@@ -42,6 +42,33 @@ page {
   font-family: 'FontAwesome';
 }
 
+.icon-eye {
+  font-size: 20px;
+}
+
+.icon-eye::before {
+  content: "\f06e";
+  color: gray;
+}
+
+.icon-eye-slash {
+  font-size: 20px;
+}
+
+.icon-eye-slash:before {
+  content: "\f070";
+  color: gray;
+}
+
+.icon-window-close {
+  font-size: 25px;
+}
+
+.icon-window-close::before {
+  content: "\f00d";
+  color: black;
+}
+
 .icon-ellipsis {
   font-size: 25px;
 }

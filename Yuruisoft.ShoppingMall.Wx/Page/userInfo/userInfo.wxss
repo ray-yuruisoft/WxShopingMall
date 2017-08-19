@@ -111,7 +111,7 @@
   font: 18px "microsoft yahei";
   text-align: center;
   border-top: 1px solid #e8e8ea;
-  color: #18BC9C;
+  color: #18bc9c;
 }
 
 .top {
@@ -132,7 +132,7 @@
 }
 
 .input_base {
-  border: 2rpx solid #ccc;
+  width: 80%;
   padding-left: 10rpx;
   margin-right: 50rpx;
 }
@@ -185,6 +185,46 @@ radio {
 .fr {
   float: right;
 }
+
 /**
 自定义模态框----结束
 */
+
+.contact {
+  position: absolute;
+  opacity: 0;
+  width: 25%;
+  height: 60px;
+}
+
+.inputView {
+  width: 67.5%;
+  border: 2rpx solid #ccc;
+  background: #fff;
+  display: flex;
+}
+
+.iconInput {
+  padding-right: 5px;
+}
+
+.windowClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0px 8px;
+}
+
+.vcode {
+  width: 90%;
+  margin: 10px 0 10px 0;
+}
+
+.inputVcode {
+  padding-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.weui-cell::before {
+  border: 0;
+}

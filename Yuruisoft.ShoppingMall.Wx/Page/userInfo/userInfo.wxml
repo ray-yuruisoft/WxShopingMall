@@ -20,7 +20,7 @@
     <template is="listTypeTwo" data="{{...listTypeTwo}}" />
     <!-- list模板two 结束 -->
     <!-- Body3 商品推荐栏 开始 -->
-    <view class="weui-panel weui-panel_access">
+    <view style="{{showModalStatus?'position:fixed':''}}" class="weui-panel weui-panel_access">
       <view class="weui-panel__hd">
         <view class="textPanelHead verticalCenter flexDisplay spaceBetween">
           <view>为您推荐</view>
@@ -38,23 +38,7 @@
   </view>
   <!-- 去结算操作按钮组件 开始 -->
   <view class="banner topLevel borderLineTop backgroundColor">
-    <contact-button style="position: absolute; opacity:0" type="default-dark" size="27" session-from="weapp">
-    </contact-button>
-    <contact-button style="position: absolute;left:20px; opacity:0" type="default-dark" size="27" session-from="weapp">
-    </contact-button>
-    <contact-button style="position: absolute;left:40px; opacity:0" type="default-dark" size="27" session-from="weapp">
-    </contact-button>
-    <contact-button style="position: absolute;left:50px; opacity:0" type="default-dark" size="27" session-from="weapp">
-    </contact-button>
-    <contact-button style="position: absolute;top:20px; opacity:0" type="default-dark" size="27" session-from="weapp">
-    </contact-button>
-    <contact-button style="position: absolute;left:20px;top:20px; opacity:0" type="default-dark" size="27" session-from="weapp">
-    </contact-button>
-    <contact-button style="position: absolute;left:40px;top:20px; opacity:0" type="default-dark" size="27" session-from="weapp">
-    </contact-button>
-    <contact-button style="position: absolute;left:50px;top:20px; opacity:0" type="default-dark" size="27" session-from="weapp">
-    </contact-button>
-
+    <button class="contact" open-type="contact"></button>
     <view catchtap="bannerItemTap" id="{{itemBottom.id}}" wx:for="{{bannerListArr}}" wx:for-item="itemBottom" wx:key="*itemBottom" class="itemInOrder flexDisplay">
       <view class="">
         <view style="{{itemBottom.badgeNum==0?'opacity:0':'opacity:1'}}" class="weui-badge badgeInTypeOne">{{itemBottom.badgeNum}}</view>
@@ -74,26 +58,47 @@
 <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
   <!--drawer content-->
   <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="windowClose" bindtap="powerDrawer" data-statu="close">
+      <view class="icon icon-window-close"></view>
+    </view>
     <view class="drawer_title">好万家账户-登录</view>
     <view class="drawer_content">
       <view class="top grid">
         <label class="title col-0">账号</label>
-        <input bindinput="inputAccount" placeholder="用户名/邮箱/手机号" focus="true" class="input_base input_h30 col-1" name="name" value="{{inputAccount}}"></input>
-        <view class="weui-icon-clear weui-icon-clear-account" bindtap="powerDrawer" data-statu="close">
-          <icon type="clear" size="20"></icon>
+        <view class="inputView spaceBetween verticalCenter">
+          <input bindinput="inputAccount" placeholder="用户名/邮箱/手机号" focus="true" class="input_base input_h30 col-1" name="name" value="{{inputAccount}}"></input>
+          <view wx:if="{{inputAccount.length>0}}" class="iconInput" bindtap="inputClear">
+            <icon type="clear" size="20"></icon>
+          </view>
         </view>
       </view>
       <view class="top grid">
         <label class="title col-0">密码</label>
-        <input bindinput="inputPassword" placeholder="请输入密码" password="true" class="input_base input_h30 col-1" name="password" value="{{inputPassword}}"></input>
+        <view class="inputView spaceBetween verticalCenter">
+          <input bindinput="inputPassword" placeholder="请输入密码" password="{{eysNoOpen}}" class="input_base input_h30 col-1" name="password" value="{{inputPassword}}">
+          </input>
+          <view wx:if="{{inputPassword.length>0}}" class="iconInput" bindtap="inputEyeOpen">
+            <view class="icon {{eysNoOpen?'icon-eye-slash':'icon-eye'}}"></view>
+          </view>
+        </view>
       </view>
     </view>
+
+    <view style="{{vCodeInputShow?'':'display:none'}}" class="vcode weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__bd flexDisplay">
+        <input name="vCode" bindinput="validateCodeCheck" value="{{inputVcode}}" class="weui-input inputVcode input_h30 col-1" placeholder="请输入验证码" />      
+      </view>
+      <view catchtap="validateCodeGet" class="weui-cell__ft">
+        <image class="weui-vcode-img" src="{{vcodeImg}}" style="width: 108px"></image>
+      </view>
+    </view>
+
     <view class="weui-btn-area">
       <button formType="submit" disabled="{{!((inputPassword.length>0)&&(inputAccount.length>0))}}" style="background-color:{{!((inputPassword.length>0)&&(inputAccount.length>0))?'#ECECEC;':'#18BC9C;'}} " class="weui-btn" type="primary">登录</button>
     </view>
     <view class="flexDisplay">
-      <view style="width:50%;border-right:1px solid #e8e8ea;" class="btn_ok" bindtap="passwordForgot">忘记密码</view>
-      <view style="width:50%" class="btn_ok" bindtap="register">立即注册</view>
+      <view style="width:50%;border-right:1px solid #e8e8ea;" class="btn_ok weui-cell_link" bindtap="passwordForgot">忘记密码</view>
+      <view style="width:50%" class="btn_ok weui-cell_link" bindtap="register">立即注册</view>
     </view>
   </form>
 </view>
