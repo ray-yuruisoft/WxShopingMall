@@ -1,6 +1,6 @@
 // registerPage.js
 var app = getApp();
-
+var session;
 Page({
   data: {
     showTopTipsFail: false,
@@ -10,7 +10,7 @@ Page({
     countryCodeIndex: 0,
     isAgree: false,
 
-    emailIsRight: true,
+    emailIsRight: undefined,
 
     phoneNumIsRight: undefined,
     phoneNumIsEmpty: undefined,
@@ -32,9 +32,50 @@ Page({
     account: undefined,
     password: undefined,
     phoneNum: undefined,
-    email: undefined
+    email: undefined,
+    vCode: undefined
   },
-
+  validateCodeGet: function () {
+    var that = this;
+    app.ajax.reqPost('/shoppingMall/validateCodeGet', {
+    }, function (res) {
+      if (!res || res.error == true) {//失败直接返回        
+        return
+      }
+      session = res.session;
+      that.setData({
+        vcodeImg: res.base64Image
+      })
+    });
+  },
+  vCode: function (e) {
+    var input = e.detail.value;
+    var that = this;
+    if (input == '') {//1、空
+      that.setData({
+        vCodeInputSuccess: false
+      })
+      that.checkForm();
+      return;
+    }
+    app.ajax.reqPost('/shoppingMall/checkVCode', {
+      vCode: input,
+    }, function (res) {//2、是否正确
+      if (!res || res.error) {
+        that.setData({
+          vCodeInputSuccess: false
+        })
+        that.validateCodeGet();
+        that.checkForm();
+        return;
+      }
+      that.setData({
+        vCodeInputSuccess: true
+      })
+      that.local.vCode = input;
+      that.checkForm();
+    }, session)
+  },
   vPhoneNum: function (e) {
     var input = e.detail.value;
     var that = this;
@@ -222,7 +263,6 @@ Page({
     });
     this.checkForm();
   },
-
   checkForm: function () {//提交前检查
     if (!this.data.isAgree) {//1、同意协议
       this.setData({
@@ -230,7 +270,6 @@ Page({
       })
       return false;
     }
-
     if (!this.data.accountInputSuccess) {//2、用户名正确
       this.setData({
         registerButtonDisabled: true
@@ -243,23 +282,26 @@ Page({
       })
       return false;
     }
-    if (!this.data.phoneNumInputSuccess) {//4、手机正确
+    if (!this.data.vCodeInputSuccess) {//4、验证码正确
       this.setData({
         registerButtonDisabled: true
       })
       return false;
     }
-    if (this.data.showEmailvertify) {//5、邮箱正确
+    if (!this.data.phoneNumInputSuccess) {//5、手机正确
+      this.setData({
+        registerButtonDisabled: true
+      })
+      return false;
+    }
+    if (this.data.showEmailvertify) {//6、邮箱正确
 
     }
-
     this.setData({
       registerButtonDisabled: false
     })
-
     return true;
   },
-
   showTopTipsFail: function () {
     var that = this;
     this.setData({
@@ -276,6 +318,8 @@ Page({
     var password = this.local.password;
     var phoneNum = this.local.phoneNum;
     var email = this.local.email;
+    var vCode = this.local.vCode;
+    var that = this;
     if (!(this.data.showEmailvertify && email)) {
       email = null;
     }
@@ -287,9 +331,18 @@ Page({
       account: account,
       password: password,
       phoneNum: phoneNum,
-      email: email
+      email: email,
+      vCode: vCode
     }, function (res) {//3、是否重复
       if (!res || res.error) {
+        if (res.error == 'VCODEWRONG') {
+          that.setData({
+            vCodeInputSuccess: false
+          })
+          that.validateCodeGet();
+          that.checkForm();
+          return;
+        }
         that.showTopTipsFail();
         return;
       }
@@ -312,6 +365,9 @@ Page({
           }
         }
       });
-    })
+    }, session);
+  },
+  onLoad: function () {
+    this.validateCodeGet();
   }
 });

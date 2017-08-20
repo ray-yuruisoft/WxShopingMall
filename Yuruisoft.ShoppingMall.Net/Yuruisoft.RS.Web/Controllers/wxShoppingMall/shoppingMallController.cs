@@ -274,9 +274,25 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         }
 
         [HttpPost]
-        public ActionResult accountAdd(string account, string password, string phoneNum, string email)
-        {
+        public ActionResult accountAdd(string account, string password, string phoneNum, string email, string vCode)
+        {        
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            string validateCode = Session["validateCode"] == null ? string.Empty : Session["validateCode"].ToString();
+            if (string.IsNullOrEmpty(validateCode))
+            {
+                return Json(new
+                {
+                    error = "VCODEWRONG"                   
+                });
+            }
+            Session["validateCode"] = null;
+            if (!vCode.Equals(validateCode, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return Json(new
+                {
+                    error = "VCODEWRONG"                
+                });
+            }
             if (account != null && password != null && phoneNum != null)
             {
                 haowanFamilyAccountInfo current = new haowanFamilyAccountInfo();
@@ -469,10 +485,39 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             }
         }
 
+
+        [HttpPost]
+        public ActionResult checkVCode(string vCode)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            string validateCode = Session["validateCode"] == null ? string.Empty : Session["validateCode"].ToString();
+            if (string.IsNullOrEmpty(validateCode))
+            {
+                Session["validateCode"] = null;
+                return Json(new
+                {
+                    error = true
+                });
+            }
+            if (vCode.Equals(validateCode, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return Json(new
+                {
+                    error = false
+                });
+            }
+            Session["validateCode"] = null;
+            return Json(new
+            {
+                error = true
+            });
+        }
+
         #region 请求验证码.
         [HttpPost]
         public ActionResult validateCodeGet()
-        {         
+        {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
             Common.ValidateCode validateCode = new Common.ValidateCode();
             string code = validateCode.CreateValidateCode(4);
@@ -480,7 +525,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             byte[] buffer = validateCode.CreateValidateGraphic(code);
             string str = "data:image/png;base64," + Convert.ToBase64String(buffer);
             return Json(new
-            {              
+            {
                 base64Image = str
             });
         }

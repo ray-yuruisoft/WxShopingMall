@@ -1,10 +1,23 @@
 <!--registerPage.wxml-->
-<view class="page">
+<view style="position:fixed" class="page">
   <view class="page__hd">
     <view class="page__title fontBold">haowanFamily.com 欢迎注册</view>
   </view>
   <view class="page__bd">
     <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTipsFail}}">提交失败</view>
+    <view style="{{(accountIsEmpty==undefined)?'display:none':(accountIsEmpty?'':'display:none')}}" class="weui-toptips weui-toptips_warn">用户名不能为空</view>
+    <view style="{{(accountLengthRight==undefined)?'display:none':(accountLengthRight?'display:none':'')}}" class="weui-toptips weui-toptips_warn">用户名长度只能在4-20个字符之间</view>
+    <view style="{{(accountIsNumber==undefined)?'display:none':(accountIsNumber?'':'display:none')}}" class="weui-toptips weui-toptips_warn">用户名不能为纯数字</view>
+    <view style="{{(accountIsRight==undefined)?'display:none':(accountIsRight?'display:none':'')}}" class="weui-toptips weui-toptips_warn">用户名格式错误，仅支持汉字、数字、字母、下划线的组合且不能以下划线开头和结尾</view>
+    <view style="{{(accountNoRepeat==undefined)?'display:none':(accountNoRepeat?'display:none':'')}}" class="weui-toptips weui-toptips_warn">用户名被占用，请重新输入</view>
+    <view style="{{(passwordIsEmpty==undefined)?'display:none':(passwordIsEmpty?'':'display:none')}}" class="weui-toptips weui-toptips_warn">密码不能为空</view>
+    <view style="{{(passwordLengthRight==undefined)?'display:none':(passwordLengthRight?'display:none':'')}}" class="weui-toptips weui-toptips_warn">密码长度只能在6-20个字符之间</view>
+    <view style="{{(passwordIsRight==undefined)?'display:none':(passwordIsRight?'display:none':'')}}" class="weui-toptips weui-toptips_warn">密码建议使用字母、数字和符号两种及以上的组合，6-20个字符</view>
+    <view style="{{(vCodeInputSuccess==undefined)?'display:none':(vCodeInputSuccess?'display:none':'')}}" class="weui-toptips weui-toptips_warn">验证码不正确</view>
+    <view style="{{(phoneNumIsEmpty==undefined)?'display:none':(phoneNumIsEmpty?'':'display:none')}}" class="weui-toptips weui-toptips_warn">手机号码不能为空</view>
+    <view style="{{(phoneNumIsRight==undefined)?'display:none':(phoneNumIsRight?'display:none':'')}}" class="weui-toptips weui-toptips_warn">手机号码格式有误</view>
+    <view style="{{(phoneNumNoRepeat==undefined)?'display:none':(phoneNumNoRepeat?'display:none':'')}}" class="weui-toptips weui-toptips_warn">该手机号码已绑定</view>
+    <view style="{{(emailIsRight?'display:none':'')||(showEmailvertify?'':'display:none')}}" class="weui-toptips weui-toptips_warn">请输入正确的Email地址</view>
 
     <view class="weui-cells weui-cells_after-title">
       <!-- 用户名  开始 -->
@@ -20,11 +33,6 @@
           <icon style="{{(accountInputSuccess==undefined)?'display:none':(accountInputSuccess?'':'display:none')}}" type="success" size="23" color="#18BC9C"></icon>
         </view>
       </view>
-      <view style="{{(accountIsEmpty==undefined)?'display:none':(accountIsEmpty?'':'display:none')}}" class="weui-cells__tips fontRed">* 用户名不能为空</view>
-      <view style="{{(accountLengthRight==undefined)?'display:none':(accountLengthRight?'display:none':'')}}" class="weui-cells__tips fontRed">* 长度只能在4-20个字符之间</view>
-      <view style="{{(accountIsNumber==undefined)?'display:none':(accountIsNumber?'':'display:none')}}" class="weui-cells__tips fontRed">* 用户名不能为纯数字</view>
-      <view style="{{(accountIsRight==undefined)?'display:none':(accountIsRight?'display:none':'')}}" class="weui-cells__tips fontRed">* 格式错误，仅支持汉字、数字、字母、下划线的组合且不能以下划线开头和结尾</view>
-      <view style="{{(accountNoRepeat==undefined)?'display:none':(accountNoRepeat?'display:none':'')}}" class="weui-cells__tips fontRed">* 用户名被占用，请重新输入</view>
       <!-- 用户名  结束 -->
 
       <!-- 设置密码 开始 -->
@@ -40,10 +48,25 @@
           <icon style="{{(passwordInputSuccess==undefined)?'display:none':(passwordInputSuccess?'':'display:none')}}" type="success" size="23" color="#18BC9C"></icon>
         </view>
       </view>
-      <view style="{{(passwordIsEmpty==undefined)?'display:none':(passwordIsEmpty?'':'display:none')}}" class="weui-cells__tips fontRed">* 密码不能为空</view>
-      <view style="{{(passwordLengthRight==undefined)?'display:none':(passwordLengthRight?'display:none':'')}}" class="weui-cells__tips fontRed">* 长度只能在6-20个字符之间</view>
-      <view style="{{(passwordIsRight==undefined)?'display:none':(passwordIsRight?'display:none':'')}}" class="weui-cells__tips fontRed">* 建议使用字母、数字和符号两种及以上的组合，6-20个字符</view>
       <!-- 设置密码 结束 -->
+
+      <!-- 验证码 开始 -->
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">验证码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input bindblur="vCode" bindconfirm="vCode" placeholder-class="placeholder" class="weui-input" placeholder="请输入验证码" />
+        </view>
+        <view class="weui-cell__ft">
+          <icon style="{{(vCodeInputSuccess==undefined)?'display:none':(vCodeInputSuccess?'display:none':'')}}" type="warn" size="23" color="#E64340"></icon>
+          <icon style="{{(vCodeInputSuccess==undefined)?'display:none':(vCodeInputSuccess?'':'display:none')}}" type="success" size="23" color="#18BC9C"></icon>
+        </view>
+        <view catchtap="validateCodeGet" class="weui-cell__ft">
+          <image class="weui-vcode-img" src="{{vcodeImg}}" style="width: 108px"></image>
+        </view>
+      </view>
+      <!-- 验证码 结束 -->
 
       <!-- 手机验证 开始 -->
       <view class="weui-cell weui-cell_select">
@@ -72,9 +95,6 @@
         </view>
       </view>
     </view>
-    <view style="{{(phoneNumIsEmpty==undefined)?'display:none':(phoneNumIsEmpty?'':'display:none')}}" class="weui-cells__tips fontRed">* 手机号码不能为空</view>
-    <view style="{{(phoneNumIsRight==undefined)?'display:none':(phoneNumIsRight?'display:none':'')}}" class="weui-cells__tips fontRed">* 手机号码格式有误</view>
-    <view style="{{(phoneNumNoRepeat==undefined)?'display:none':(phoneNumNoRepeat?'display:none':'')}}" class="weui-cells__tips fontRed">* 该手机号码已绑定</view>
     <!-- 手机验证 结束 -->
 
     <!-- 邮箱验证 开始 -->
@@ -93,11 +113,11 @@
         <view class="weui-cell__bd">
           <input placeholder-class="placeholder" bindblur="vEmail" bindconfirm="vEmail" type="text" class="weui-input" placeholder="建议使用常用邮箱" />
         </view>
-        <view style="{{emailIsRight?'display:none':''}}" class="weui-cell__ft">
-          <icon type="warn" size="23" color="#E64340"></icon>
+        <view class="weui-cell__ft">
+          <icon style="{{(emailIsRight==undefined)?'display:none':(emailIsRight?'display:none':'')}}" type="warn" size="23" color="#E64340"></icon>
+          <icon style="{{(emailIsRight==undefined)?'display:none':(emailIsRight?'':'display:none')}}" type="success" size="23" color="#18BC9C"></icon>
         </view>
       </view>
-      <view style="{{(emailIsRight?'display:none':'')||(showEmailvertify?'':'display:none')}}" class="weui-cells__tips fontRed">* 请输入正确的Email地址</view>
     </view>
     <!-- 邮箱验证 结束 -->
     <checkbox-group bindchange="bindAgreeChange">

@@ -17,18 +17,18 @@ Page({
       id: 1,
       iconName: "icon-weixin",
       icontitle: "微信在线",
-      badgeNum: 9
+      badgeNum: 0
     }, {
       id: 2,
       iconName: "icon-mobile",
       icontitle: "直通电话",
-      badgeNum: 1
+      badgeNum: 0
     },
     {
       id: 3,
       iconName: "icon-envelope",
       icontitle: "直通邮件",
-      badgeNum: 9
+      badgeNum: 0
     }, {
       id: 4,
       iconName: "icon-ellipsis",
@@ -160,7 +160,6 @@ Page({
       }
     });
   },
-
   formSubmit: function (e) {
     var that = this;
     var name = e.detail.value.name;
@@ -226,7 +225,7 @@ Page({
             passwordLockTime--;
             return;
           }
-          if (res.error == 'VCODEWRONG'){
+          if (res.error == 'VCODEWRONG') {
             that.showToastWrong('验证码错误');
             return;
           }
@@ -251,23 +250,19 @@ Page({
       })
     }, session);
   },
-
   inputAccount: function (e) {
     var input = e.detail.value;
     this.setData({
       inputAccount: input
     })
   },
-
   inputPassword: function (e) {
     var password = e.detail.value;
     this.setData({
       inputPassword: password
     })
   },
-
   passwordForgot: function (e) { },
-
   register: function (e) {
     this.setData({
       showModalStatus: false
@@ -336,7 +331,6 @@ Page({
       );
     }
   },
-
   /**
    * 
    */
@@ -351,7 +345,17 @@ Page({
     console.log(e);
 
   },
+  bannerItemTap: function (e) {
 
+    if (e.currentTarget.id == 2){
+      wx.makePhoneCall({
+        phoneNumber: '15308202328' //仅为示例
+      })
+    }
+
+    
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
