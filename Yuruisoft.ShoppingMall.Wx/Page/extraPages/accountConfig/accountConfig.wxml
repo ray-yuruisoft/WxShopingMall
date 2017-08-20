@@ -1,0 +1,23 @@
+<!--accountConfig.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="title fontBold">当前登录账号</view>
+    <view class="userTitleCard spaceBetween verticalCenter">
+      <view class="flexDisplay">
+        <image class="userHeadPhoto" src="{{userInfo.avatarUrl}}"></image>
+        <view bindtap="powerDrawer" data-statu="open" class="userName">
+          <view class="haowanFamilyName">{{account}}</view>
+          <view class="email">邮箱：{{emailShow}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view wx:for="{{listArr}}" wx:key="*item" catchtap="{{item.tapFunction}}"class="weui-cell weui-cell_access " hover-class="weui-cell_active">
+        <view class="weui-cell__bd">{{item.title}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+</view>

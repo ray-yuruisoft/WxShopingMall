@@ -275,14 +275,14 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
 
         [HttpPost]
         public ActionResult accountAdd(string account, string password, string phoneNum, string email, string vCode)
-        {        
+        {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
             string validateCode = Session["validateCode"] == null ? string.Empty : Session["validateCode"].ToString();
             if (string.IsNullOrEmpty(validateCode))
             {
                 return Json(new
                 {
-                    error = "VCODEWRONG"                   
+                    error = "VCODEWRONG"
                 });
             }
             Session["validateCode"] = null;
@@ -290,7 +290,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             {
                 return Json(new
                 {
-                    error = "VCODEWRONG"                
+                    error = "VCODEWRONG"
                 });
             }
             if (account != null && password != null && phoneNum != null)
@@ -306,7 +306,15 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 Db.Set<haowanFamilyAccountInfo>().Add(current);
                 if (Db.SaveChanges() > 0)
                 {
-                    return Json(new { error = false });
+                    var passwordMD5 = Common.WebCommon.Md5String(Common.WebCommon.Md5String(password));
+                    return Json(new
+                    {
+                        account = account,
+                        email = email,
+                        phoneNumber = long.Parse(phoneNum),
+                        password = passwordMD5,
+                        error = false
+                    });
                 }
             }
             return Json(new { error = true });
@@ -382,6 +390,8 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                     return Json(new
                     {
                         account = result.account,
+                        email = result.email,
+                        phoneNumber = result.phoneNumber,
                         password = passwordMD5
                     });
                     #endregion
@@ -430,6 +440,8 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                     return Json(new
                     {
                         account = result.account,
+                        email = result.email,
+                        phoneNumber = result.phoneNumber,
                         password = passwordMD5
                     });
                     #endregion
@@ -479,6 +491,8 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 return Json(new
                 {
                     account = result.account,
+                    email = result.email,
+                    phoneNumber = result.phoneNumber,
                     password = passwordMD5
                 });
                 #endregion

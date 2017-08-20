@@ -346,11 +346,32 @@ Page({
         that.showTopTipsFail();
         return;
       }
-      app.globalData.account = account;
+      app.globalData.account = res.account;
       wx.setStorage({
         key: 'account',
-        data: account,
+        data: res.account,
       })
+
+      app.globalData.password = res.password;
+      wx.setStorage({
+        key: 'sessionData',
+        data: res.password,
+      })
+
+      app.globalData.phoneNumber = res.phoneNumber;
+      wx.setStorage({
+        key: 'phoneNumber',
+        data: res.phoneNumber,
+      })
+
+      if (res.email){
+        app.globalData.email = res.email;
+        wx.setStorage({
+          key: 'email',
+          data: res.email,
+        })
+      }
+       
       wx.showModal({
         title: '注册成功！',
         content: '感谢注册 haowanFamily.com账户，更多便捷应用请登录好万家官方网站：www.haowanFamily.com',

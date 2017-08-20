@@ -1,0 +1,39 @@
+/* accountConfig.wxss */
+.page__hd {
+  padding: 10px;
+}
+.title{
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+.userTitleCard {
+  height: 80px;
+  width: 100%;
+  border-top: 1rpx solid #D9D9D9;
+  border-bottom: 1rpx solid #D9D9D9;
+}
+
+.userHeadPhoto {
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+.haowanFamilyName {
+  color: black;
+  font-size: 15px;
+}
+
+.email {
+  font-size: 12px;
+  color: gray;
+}
+
+.userName {
+  padding-left: 10px;
+}
+
+.config {
+  padding-right: 10px;
+}

@@ -1,7 +1,7 @@
 <!--registerPage.wxml-->
-<view style="position:fixed" class="page">
+<view class="page">
   <view class="page__hd">
-    <view class="page__title fontBold">haowanFamily.com 欢迎注册</view>
+    <view class="displayOneLine page__title fontBold">haowanFamily.com 欢迎注册</view>
   </view>
   <view class="page__bd">
     <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTipsFail}}">提交失败</view>

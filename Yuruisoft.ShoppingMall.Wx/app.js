@@ -31,7 +31,10 @@ App({
     console.log('App Hide')
   },
   globalData: {
-    account: '',
+    account: undefined,
+    password: undefined,
+    email: undefined,
+    phoneNumber: undefined,
     servsers: 'http://www.yurusoft.net',
     hasLogin: false,
     userInfo: {},
@@ -139,16 +142,24 @@ App({
         that.globalData.userInfo = res.userInfo
         console.log(that.globalData.userInfo);
       },
-      fail:item=>{
+      fail: item => {
         console.log(item);
       }
     })
   },
 
   globalVarInit: function (that) {
-
     var account = wx.getStorageSync('account');
     if (account)
       that.globalData.account = account;
+    var password = wx.getStorageSync('sessionData')
+    if (password)
+      that.globalData.password = password;
+    var email = wx.getStorageSync('email')
+    if (email)
+      that.globalData.email = email;
+    var phoneNumber = wx.getStorageSync('phoneNumber')
+    if (phoneNumber)
+      that.globalData.phoneNumber = phoneNumber;
   }
 });

@@ -90,7 +90,11 @@ Page({
     hanSpace: '\r\n\r\n\r\n\r\n',//空格输出
     space: '\r\n',
   },
-
+  accountConfig: function () {
+    wx.navigateTo({
+      url: '../extraPages/accountConfig/accountConfig',
+    })
+  },
   validateCodeGet: function () {
     var that = this;
     app.ajax.reqPost('/shoppingMall/validateCodeGet', {
@@ -233,7 +237,10 @@ Page({
         that.showToastWrong('网络或其他错误');
         return;
       }
-
+      that.setData({
+        inputAccount: '',
+        inputPassword: ''
+      });
       app.globalData.account = res.account;
       that.setData({
         account: res.account
@@ -244,10 +251,25 @@ Page({
         key: 'account',
         data: res.account,
       })
+
       wx.setStorage({
         key: 'sessionData',
-        data: res.password,
+        data: res.password
       })
+      app.globalData.password = res.password
+      wx.setStorage({
+        key: 'phoneNumber',
+        data: res.phoneNumber
+      })
+      app.globalData.phoneNumber = res.phoneNumber
+      if (res.email != '') {
+        wx.setStorage({
+          key: 'email',
+          data: res.email
+        })
+        app.globalData.email = res.email
+      }
+
     }, session);
   },
   inputAccount: function (e) {
@@ -347,13 +369,13 @@ Page({
   },
   bannerItemTap: function (e) {
 
-    if (e.currentTarget.id == 2){
+    if (e.currentTarget.id == 2) {
       wx.makePhoneCall({
         phoneNumber: '15308202328' //仅为示例
       })
     }
 
-    
+
 
   },
   /**
@@ -406,7 +428,11 @@ Page({
    */
   onShow: function (e) {
     var account = app.globalData.account
-    if (account) {
+    if (account == undefined) {
+      this.setData({
+        account: ''
+      })
+    } else {
       this.setData({
         account: account
       })

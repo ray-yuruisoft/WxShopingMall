@@ -374,3 +374,7 @@ page {
 .kind-list__item-bd_show {
   height: auto;
 }
+
+.displayOneLine {
+  white-space: nowrap;
+}

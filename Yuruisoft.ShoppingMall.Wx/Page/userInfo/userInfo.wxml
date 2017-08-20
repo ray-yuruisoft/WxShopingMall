@@ -6,10 +6,10 @@
         <image class="userHeadPhoto" src="{{userInfo.avatarUrl}}"></image>
         <view bindtap="powerDrawer" data-statu="open" class="userName">
           <view class="nickName">{{userInfo.nickName}}</view>
-          <view class="haowanFamilyName">{{account==undefined?'登录 / 注册？马上点我':'用户名：'+account}}</view>
+          <view class="haowanFamilyName">{{account==''?'登录 / 注册？马上点我':'用户名：'+account}}</view>
         </view>
       </view>
-      <view class="icon icon-cog config"> 账号设置</view>
+      <view style="{{account==''?'display:none':''}}" catchtap="accountConfig" class="icon icon-cog config"> 账号设置</view>
     </view>
   </view>
   <view class="page__bd">
@@ -86,7 +86,7 @@
 
     <view style="{{vCodeInputShow?'':'display:none'}}" class="vcode weui-cell weui-cell_input weui-cell_vcode">
       <view class="weui-cell__bd flexDisplay">
-        <input name="vCode" bindinput="validateCodeCheck" value="{{inputVcode}}" class="weui-input inputVcode input_h30 col-1" placeholder="请输入验证码" />      
+        <input name="vCode" bindinput="validateCodeCheck" value="{{inputVcode}}" class="weui-input inputVcode input_h30 col-1" placeholder="请输入验证码" />
       </view>
       <view catchtap="validateCodeGet" class="weui-cell__ft">
         <image class="weui-vcode-img" src="{{vcodeImg}}" style="width: 108px"></image>

@@ -5,7 +5,8 @@
     "Page/userInfo/userInfo",
     "Page/extraPages/produceDetails/produceDetails",
     "Page/extraPages/searchPage/searchPage",
-    "Page/extraPages/registerPage/registerPage"
+    "Page/extraPages/registerPage/registerPage",
+    "Page/extraPages/accountConfig/accountConfig"
   ],
   "window": {
     "navigationBarTextStyle": "write",
