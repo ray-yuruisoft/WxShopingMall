@@ -3,10 +3,10 @@
 .shoppingCheckNow {
   color: white;
   font-size: 20px;
-  background-color: #18BC9C;
+  background-color: #18bc9c;
   text-align: center;
   width: 150px;
-  white-space : nowrap;
+  white-space: nowrap;
 }
 
 .shoppingTotalFee {
@@ -17,7 +17,7 @@
 }
 
 .totalFeeText {
-  white-space : nowrap;
+  white-space: nowrap;
   font-size: 20px;
 }
 
@@ -44,19 +44,11 @@
   background-color: #fff;
   z-index: 1000;
   width: 50px;
-  white-space : nowrap;
+  white-space: nowrap;
 }
 
 .weui-panel__hd {
   padding: 10px 10px;
-}
-
-.display2Lines {
-  font-size: 15px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
 }
 
 .weui-media-box {
@@ -66,7 +58,6 @@
 .boxBlow {
   margin-top: 10px;
 }
-
 
 .buy-num {
   width: 100px;
@@ -84,7 +75,6 @@
 .jian-btn {
   width: 30%;
   border: 1rpx solid #ccc;
-
   border-bottom-left-radius: 6rpx;
   border-top-left-radius: 6rpx;
 }
@@ -92,7 +82,6 @@
 .jia-btn {
   width: 30%;
   border: 1rpx solid #ccc;
-
   border-bottom-right-radius: 6rpx;
   border-top-right-radius: 6rpx;
 }
@@ -111,10 +100,12 @@
   border: 1rpx solid #eee;
   color: #ccc;
 }
+
 .weui-media-box__hd_in-appmsg {
   width: 80px;
   height: 80px;
 }
+
 .weui-panel__bd {
   border-bottom: 1rpx solid #d7d6dc;
 }

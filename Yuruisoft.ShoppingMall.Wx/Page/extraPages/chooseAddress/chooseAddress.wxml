@@ -1,0 +1,30 @@
+<!--chooseAddress.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">收货地址</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="checkboxChange">
+        <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="*item">
+          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+              <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+              <icon color="#18BC9C" class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+            </view>         
+            <view class="widthFull ">
+              <view class="fontName">王睿 15308202328</view>
+              <view class="weui-panel__hd spaceBetween">
+                <view class="textPanelHead verticalCenter">
+                  <view class="display2Lines">
+                    <text class="fontRed">[默认]</text> 四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省</view>
+                  </view>
+                <view catchtap="edit" id="{{item.value}}" class="textPanelBodyRed displayOneLine edit">编辑</view>
+              </view>
+            </view>
+       </label>
+      </radio-group>
+      <view class="weui-cell weui-cell_link">
+        <view class="weui-cell__bd">新增收货地址</view>
+      </view>
+    </view>
+  </view>
+</view>

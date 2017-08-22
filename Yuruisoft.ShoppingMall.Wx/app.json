@@ -6,7 +6,11 @@
     "Page/extraPages/produceDetails/produceDetails",
     "Page/extraPages/searchPage/searchPage",
     "Page/extraPages/registerPage/registerPage",
-    "Page/extraPages/accountConfig/accountConfig"
+    "Page/extraPages/accountConfig/accountConfig",
+    "Page/extraPages/modifyPhoneNum/modifyPhoneNum",
+    "Page/extraPages/check/check",
+    "Page/extraPages/chooseAddress/chooseAddress",
+    "Page/extraPages/chooseAddressEdit/chooseAddressEdit"
   ],
   "window": {
     "navigationBarTextStyle": "write",

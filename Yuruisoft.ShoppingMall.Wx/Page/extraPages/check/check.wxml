@@ -1,0 +1,88 @@
+<!--check.wxml-->
+<view class="page">
+  <!-- 收货地址组件 开始 -->
+  <view class="bannerCheck topLevel">
+    <view class="widthFull weui-panel weui-panel_access">
+      <view class="fontName">王睿 15308202328</view>
+      <navigator url="../chooseAddress/chooseAddress" class="weui-panel__hd spaceBetween weui-cell_link">
+        <view class="textPanelHead verticalCenter">
+          <view class="display2Lines">
+            <text class="fontRed">[默认]</text> 四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省</view>
+        </view>
+        <view class="icon icon-angle-right"></view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 收货地址组件 结束 -->
+  <view class="page__bd">
+    <!-- 商品详情 开始 -->
+    <view wx:for="{{shoppingCart.detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" class="weui-panel" wx:if="{{itemMerchant.choosedFlag}}">
+      <view class="weui-panel__hd textPanelHead flexDisplay">
+        <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
+      </view>
+      <view wx:for-items="{{itemMerchant.produceArr}}" class="weui-panel__bd" wx:key="{{item.id}}" wx:if="{{item.choosedFlag}}">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.listImageUrl}}" style="width: 80px; height: 80px;" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="display2Lines">{{item.listTitle}}</view>
+            <view class="boxBlow spaceBetween">
+              <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:red">¥{{item.price}}</view>
+              <view>× {{item.itemCount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 商品详情 结束 -->
+    <!-- 其他信息 开始 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text textPanelBodyRed">[现货]</view>
+          <view class="weui-media-box__desc textPanelBodyGray">在线支付运费15元</view>
+        </view>
+        <view class="weui-media-box weui-media-box_text weui-cell_link">
+          <view class="weui-media-box__desc spaceBetween">
+            <view class="verticalCenter flexDisplay">
+              <view class="icon icon-ok-circle textPanelBodyBlack">{{space}}商家发货&售后{{hanSpace}}</view>
+              <view class="icon icon-ban-circle textPanelBodyGray">{{space}}不可七天退货</view>
+            </view>
+            <view class="icon icon-angle-right"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 其他信息 结束 -->
+    <!-- 结算信息 开始 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="spaceBetween">
+            <view class="textPanelHead">商品金额</view>
+            <view class="textPanelHeadRed">¥ {{shoppingCart.feeSum}}</view>
+          </view>
+          <view class="spaceBetween">
+            <view class="textPanelHead">运费</view>
+            <view class="textPanelHeadRed">+¥0.00</view>
+          </view>
+          <view class="spaceBetween">
+            <view class="textPanelHead">优惠券</view>
+            <view class="textPanelHeadRed">-¥0.00</view>
+          </view>
+        </view>
+      </view>
+      <view class="classname">
+        <view class="sumFee textPanelHead">实付金额：
+          <text class="textPanelHeadRed">¥{{shoppingCart.feeSum}}</text>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button style="background-color:#18BC9C" formType="submit" class="weui-btn" type="primary">微信支付</button>
+        <button formType="submit" class="weui-btn" type="default">货到付款</button>
+      </view>
+    </view>
+    <!-- 结算信息 结束 -->
+  </view>
+</view>

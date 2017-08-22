@@ -1,0 +1,34 @@
+/* check.wxss */
+@import '../../shoppingCart/shoppingCart.wxss';
+
+.bannerCheck {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  border-bottom: 5px dashed #18bc9c;
+}
+
+.widthFull {
+  width: 100%;
+}
+
+.fontName {
+  font-size: 20px;
+  color: black;
+  padding: 5px 0 0 10px;
+}
+
+.page__bd {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+.sumFee {
+  padding: 15px;
+  text-align: right;
+}
+
+.weui-btn-area {
+  margin: 0 15px 15px;
+}

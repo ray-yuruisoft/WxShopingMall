@@ -20,6 +20,11 @@ Page({
     icon_angleChooseNum: false,//商品数量栏隐藏图标
 
   },
+  check: function () {
+    wx.navigateTo({
+      url: '../extraPages/check/check',
+    })
+  },
   chooseAll: function () {
     var chooseStatue = !this.data.chooseAllOn;
     var shoppingCart = this.data.shoppingCart;

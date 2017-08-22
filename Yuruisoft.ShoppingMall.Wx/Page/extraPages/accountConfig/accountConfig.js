@@ -39,6 +39,11 @@ Page({
     })
     console.log(e);
   },
+  modifyPhoneNum: function (e) {
+    wx.navigateTo({
+      url: '../modifyPhoneNum/modifyPhoneNum',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -67,7 +72,7 @@ Page({
 
     var temp = [
       {
-        tapFunction: '',
+        tapFunction: 'modifyPhoneNum',
         title: '修改绑定手机号码',
         content: phoneNum
       },

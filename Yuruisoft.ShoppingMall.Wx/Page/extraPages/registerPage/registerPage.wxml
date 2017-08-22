@@ -16,8 +16,9 @@
     <view style="{{(vCodeInputSuccess==undefined)?'display:none':(vCodeInputSuccess?'display:none':'')}}" class="weui-toptips weui-toptips_warn">验证码不正确</view>
     <view style="{{(phoneNumIsEmpty==undefined)?'display:none':(phoneNumIsEmpty?'':'display:none')}}" class="weui-toptips weui-toptips_warn">手机号码不能为空</view>
     <view style="{{(phoneNumIsRight==undefined)?'display:none':(phoneNumIsRight?'display:none':'')}}" class="weui-toptips weui-toptips_warn">手机号码格式有误</view>
-    <view style="{{(phoneNumNoRepeat==undefined)?'display:none':(phoneNumNoRepeat?'display:none':'')}}" class="weui-toptips weui-toptips_warn">该手机号码已绑定</view>
-    <view style="{{(emailIsRight?'display:none':'')||(showEmailvertify?'':'display:none')}}" class="weui-toptips weui-toptips_warn">请输入正确的Email地址</view>
+    <view style="{{(phoneNumNoRepeat==undefined)?'display:none':(phoneNumNoRepeat?'display:none':'')}}" class="weui-toptips weui-toptips_warn">该手机号码已绑定账户</view>
+    <view style="{{((emailIsRight==undefined)?'display:none':(emailIsRight?'display:none':''))||(showEmailvertify?'':'display:none')}}" class="weui-toptips weui-toptips_warn">请输入正确的Email地址</view>
+    <view style="{{((emailNoRepeat==undefined)?'display:none':(emailNoRepeat?'display:none':''))||(showEmailvertify?'':'display:none')}}" class="weui-toptips weui-toptips_warn">该邮箱已绑定账户</view>
 
     <view class="weui-cells weui-cells_after-title">
       <!-- 用户名  开始 -->
@@ -114,8 +115,8 @@
           <input placeholder-class="placeholder" bindblur="vEmail" bindconfirm="vEmail" type="text" class="weui-input" placeholder="建议使用常用邮箱" />
         </view>
         <view class="weui-cell__ft">
-          <icon style="{{(emailIsRight==undefined)?'display:none':(emailIsRight?'display:none':'')}}" type="warn" size="23" color="#E64340"></icon>
-          <icon style="{{(emailIsRight==undefined)?'display:none':(emailIsRight?'':'display:none')}}" type="success" size="23" color="#18BC9C"></icon>
+          <icon style="{{(emailInputSuccess==undefined)?'display:none':(emailInputSuccess?'display:none':'')}}" type="warn" size="23" color="#E64340"></icon>
+          <icon style="{{(emailInputSuccess==undefined)?'display:none':(emailInputSuccess?'':'display:none')}}" type="success" size="23" color="#18BC9C"></icon>
         </view>
       </view>
     </view>

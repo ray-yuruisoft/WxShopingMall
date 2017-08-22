@@ -1,0 +1,20 @@
+/* chooseAddress.wxss */
+
+.widthFull {
+  width: 100%;
+}
+
+.fontName {
+  font-size: 20px;
+  color: black;
+  padding: 5px 0 0 10px;
+}
+
+
+.weui-panel__hd::after{
+  border-bottom: 0;
+}
+
+.edit{
+  margin-left: 10px;
+}

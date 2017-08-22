@@ -6,7 +6,6 @@
         <view catchtap="merchantChoose" id="{{itemMerchant.merchantId}}" class="icon {{itemMerchant.choosedFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
         <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
       </view>
-
       <view wx:for-items="{{itemMerchant.produceArr}}" class="weui-panel__bd" catchtap="navigation" id="{{item.id}}" wx:key="{{item.id}}">
         <view class="weui-media-box weui-media-box_appmsg">
           <view catchtap="produceChoose" id="{{item.id}}" data-merchantid="{{itemMerchant.merchantId}}" class="icon {{item.choosedFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
@@ -31,7 +30,6 @@
           </view>
         </view>
       </view>
-
     </view>
   </view>
   <view class="page__ft">
@@ -49,7 +47,7 @@
       </view>
       <view class="privilegeFeeText verticalCenter">不含运费，已优惠 ¥0.00</view>
     </view>
-    <view style="{{(shoppingCart.chooseItemCount==0||shoppingCart.chooseItemCount==undefined)? 'background-color: #ECECEC;':''}}" class="shoppingCheckNow verticalCenter weui-cell_link">
+    <view catchtap="check" style="{{(shoppingCart.chooseItemCount==0||shoppingCart.chooseItemCount==undefined)? 'background-color: #ECECEC;':''}}" class="shoppingCheckNow verticalCenter weui-cell_link">
       <view>去结算({{shoppingCart.chooseItemCount==undefined?'0':(shoppingCart.chooseItemCount > 99?"99+":shoppingCart.chooseItemCount)}}件)</view>
     </view>
   </view>

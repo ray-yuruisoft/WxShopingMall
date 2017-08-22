@@ -27,7 +27,7 @@ Page({
     {
       id: 3,
       iconName: "icon-envelope",
-      icontitle: "直通邮件",
+      icontitle: "留言反馈",
       badgeNum: 0
     }, {
       id: 4,

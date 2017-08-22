@@ -274,6 +274,15 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         }
 
         [HttpPost]
+        public ActionResult checkEmailRepeat(string email)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            var result = Db.Set<haowanFamilyAccountInfo>().Any(c => c.email == email);
+            return Json(new { error = result });
+        }
+
+        [HttpPost]
         public ActionResult accountAdd(string account, string password, string phoneNum, string email, string vCode)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }

@@ -230,18 +230,35 @@ Page({
     })
   },
   vEmail: function (e) {//正则验证Email
-    if (!app.com.regexEmail(e.detail.value)) {
-      this.setData({
-        emailIsRight: false
+    var input = e.detail.value;
+    var that = this;
+    if (!app.com.regexEmail(input)) {//1、格式
+      that.setData({
+        emailIsRight: false,
+        emailInputSuccess: false
       })
+      that.checkForm();
+      return;
     }
-    else {
-      this.setData({
-        emailIsRight: true
+    that.setData({
+      emailIsRight: true
+    })
+    app.ajax.reqPost('/shoppingMall/checkEmailRepeat', {
+      email: input,
+    }, function (res) {//2、是否重复
+      if (!res) {
+        that.setData({
+          emailNoRepeat: false
+        })
+      }
+      that.setData({
+        emailNoRepeat: !res.error,
+        emailInputSuccess: !res.error
       })
-      this.local.email = e.detail.value;
-    }
-    this.checkForm();
+      that.local.email = input;
+      that.checkForm();
+    })
+
   },
   emailvertify: function (e) {
     var switchOn = e.detail.value;
@@ -294,8 +311,11 @@ Page({
       })
       return false;
     }
-    if (this.data.showEmailvertify) {//6、邮箱正确
-
+    if (this.data.showEmailvertify && (!this.data.emailInputSuccess)) {//6、邮箱正确
+      this.setData({
+        registerButtonDisabled: true
+      })
+      return false;
     }
     this.setData({
       registerButtonDisabled: false
@@ -364,14 +384,14 @@ Page({
         data: res.phoneNumber,
       })
 
-      if (res.email){
+      if (res.email) {
         app.globalData.email = res.email;
         wx.setStorage({
           key: 'email',
           data: res.email,
         })
       }
-       
+
       wx.showModal({
         title: '注册成功！',
         content: '感谢注册 haowanFamily.com账户，更多便捷应用请登录好万家官方网站：www.haowanFamily.com',
