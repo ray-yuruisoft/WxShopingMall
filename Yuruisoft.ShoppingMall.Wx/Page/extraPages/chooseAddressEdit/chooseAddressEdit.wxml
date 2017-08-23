@@ -1,67 +1,72 @@
 <!--chooseAddressEdit.wxml-->
 <view class="page">
   <view class="page__bd">
-    <view class="weui-cells__title"></view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">收货人</view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="weui-cells__title"></view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">收货人</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="name" value="{{name}}" bindinput="vName" bindblur="vName" bindconfirm="vName" focus="true" placeholder-class="placeholder" class="weui-input" placeholder="姓名" />
+          </view>
         </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="姓名" />
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">联系方式</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="phoneNumber" value="{{phoneNumber}}" bindblur="vPhoneNum" bindconfirm="vPhoneNum" placeholder-class="placeholder" class="weui-input" placeholder="手机号码" />
+          </view>
         </view>
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">联系方式</view>
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">城市</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view style="{{areaInfo?'':'color:#18BC9C'}}" catchtap="selectDistrict" class="weui-select weui-select_in-select-after ">{{areaInfo?areaInfo:'-- 请选择 --'}}</view>
+          </view>
         </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="手机号码" />
-        </view>
-      </view>
-
-      <view class="weui-cell weui-cell_select">
-        <view class="weui-cell__hd weui-cell__hd_in-select-after">
-          <view class="weui-label">省</view>
-        </view>
-        <view class="weui-cell__bd">
-          <picker bindchange="bindProvinceChange" value="{{provinceIndex}}" range="{{province}}">
-            <view class="weui-select weui-select_in-select-after">{{province[provinceIndex]}}</view>
-          </picker>
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_select">
-        <view class="weui-cell__hd weui-cell__hd_in-select-after">
-          <view class="weui-label">市</view>
-        </view>
-        <view class="weui-cell__bd">
-          <picker bindchange="bindProvinceChange" value="{{provinceIndex}}" range="{{province}}">
-            <view class="weui-select weui-select_in-select-after">{{province[provinceIndex]}}</view>
-          </picker>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">详细地址</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="address" value="{{address}}" bindinput="vAddress" bindblur="vAddress" bindconfirm="vAddress" placeholder-class="placeholder" class="weui-input" placeholder="街道地址" />
+          </view>
         </view>
       </view>
-      <view class="weui-cell weui-cell_select">
-        <view class="weui-cell__hd weui-cell__hd_in-select-after">
-          <view class="weui-label">区/县</view>
-        </view>
-        <view class="weui-cell__bd">
-          <picker bindchange="bindProvinceChange" value="{{provinceIndex}}" range="{{province}}">
-            <view class="weui-select weui-select_in-select-after">{{province[provinceIndex]}}</view>
-          </picker>
-        </view>
+      <view class="weui-cells__tips">详细地址需填写楼栋楼层或房间号信息</view>
+      <view class="weui-btn-area">
+        <button formType="submit" disabled="{{confirmButtonDisabled}}" style="background-color:{{confirmButtonDisabled?'#ECECEC;':'#18BC9C;'}} " class="weui-btn" type="primary">确认</button>
+        <button catchtap="defaltAddress" disabled="{{confirmButtonDisabled}}" style=" background-color:{{defaultAddress?'':(confirmButtonDisabled?'#ECECEC;':'#e33a3c;')}} " class="weui-btn" type="{{defaultAddress?'default':'primary'}}">{{defaultAddress?'解除默认地址':'设为默认地址'}}</button>
       </view>
-
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">详细地址</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="街道地址" />
-        </view>
-      </view>
-    </view>
-    <view class="weui-btn-area">
-      <button style="background-color:#18BC9C" class="weui-btn" type="primary" bindtap="showTopTips">确认</button>
-    </view>
+    </form>
   </view>
+</view>
+
+<view class="dialog-mask " style="z-index:11;visibility:{{addressMenuIsShow ? 'visible': 'hidden'}}" bindtap="hideCitySelected" />
+<!--城市三级联动-->
+<!--使用动画时不能wx:if="{{city.length>0&&isVisible}}" ，不能hidden=''属性否则无动画效果-->
+<view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <view style="height:10% ;width:95%;margin-top:10rpx">
+    <text catchtap="cityCancel">取消</text>
+    <text style="float: right" catchtap="citySure">确定</text>
+  </view>
+  <!--"可以显示默认的城市，使用后级联选择城市反应很慢就不使用了-->
+  <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+    <picker-view-column>
+      <view wx:for="{{provinces}}" class="picker-item" wx:key="*item">
+        {{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" class="picker-item" wx:key="*item">
+        {{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areas}}" class="picker-item" wx:key="*item">
+        {{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
 </view>

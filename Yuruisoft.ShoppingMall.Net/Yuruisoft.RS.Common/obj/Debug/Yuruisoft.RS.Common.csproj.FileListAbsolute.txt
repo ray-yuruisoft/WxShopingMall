@@ -16,3 +16,8 @@ C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\Yuruisoft.R
 C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\Yuruisoft.RS.Common\bin\Debug\Yuruisoft.RS.Common.pdb
 C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\Yuruisoft.RS.Common\obj\Debug\Yuruisoft.RS.Common.dll
 C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\Yuruisoft.RS.Common\obj\Debug\Yuruisoft.RS.Common.pdb
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.Common\bin\Debug\Yuruisoft.RS.Common.dll
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.Common\bin\Debug\Yuruisoft.RS.Common.pdb
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.Common\obj\Debug\Yuruisoft.RS.Common.csprojResolveAssemblyReference.cache
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.Common\obj\Debug\Yuruisoft.RS.Common.dll
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.Common\obj\Debug\Yuruisoft.RS.Common.pdb

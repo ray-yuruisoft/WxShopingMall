@@ -1,9 +1,7 @@
+var app = getApp();
 Page({
   data: {
-    checkboxItems: [
-      { name: 'standard is dealt for u.', value: '0', checked: true },
-      { name: 'standard is dealicient for u.', value: '1' }
-    ]
+    checkboxItems: []
   },
 
   checkboxChange: function (e) {
@@ -21,10 +19,39 @@ Page({
   edit: function (e) {
     var id = e.currentTarget.id;
     console.log(id);
-
-
+    if (id != undefined) {
+      wx.navigateTo({
+        url: '../chooseAddressEdit/chooseAddressEdit?id=' + id
+      })
+    }
     wx.navigateTo({
-      url: '../chooseAddressEdit/chooseAddressEdit',
+      url: '../chooseAddressEdit/chooseAddressEdit'
     })
+  },
+  onLoad: function (e) {
+  },
+  onShow: function (e) {
+    var userAddress = app.globalData.userAddress;
+    if (userAddress) {
+      var temp = userAddress.map((item, index) => {
+        if (index == 0)
+          return {
+            address: item.city + item.address,
+            name: item.name,
+            phoneNumber: item.phoneNumber,
+            value: index,
+            checked: true
+          }
+        return {
+          address: item.city + item.address,
+          name: item.name,
+          phoneNumber: item.phoneNumber,
+          value: index
+        }
+      })
+      this.setData({
+        checkboxItems: temp
+      })
+    }
   }
 });

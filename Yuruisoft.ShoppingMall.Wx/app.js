@@ -31,6 +31,7 @@ App({
     console.log('App Hide')
   },
   globalData: {
+    userAddress:undefined,
     account: undefined,
     password: undefined,
     email: undefined,
@@ -152,14 +153,17 @@ App({
     var account = wx.getStorageSync('account');
     if (account)
       that.globalData.account = account;
-    var password = wx.getStorageSync('sessionData')
+    var password = wx.getStorageSync('sessionData');
     if (password)
       that.globalData.password = password;
     var email = wx.getStorageSync('email')
     if (email)
       that.globalData.email = email;
-    var phoneNumber = wx.getStorageSync('phoneNumber')
+    var phoneNumber = wx.getStorageSync('phoneNumber');
     if (phoneNumber)
       that.globalData.phoneNumber = phoneNumber;
+    var userAddress = wx.getStorageSync('userAddress');
+    if (userAddress)
+      that.globalData.userAddress = userAddress;
   }
 });

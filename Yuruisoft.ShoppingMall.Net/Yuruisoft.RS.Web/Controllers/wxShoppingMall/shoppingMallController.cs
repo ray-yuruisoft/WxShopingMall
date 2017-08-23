@@ -537,6 +537,17 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             });
         }
 
+
+        [HttpPost]
+        public ActionResult cityGet()
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+
+            string path = System.Web.HttpContext.Current.Server.MapPath("/App_Data/Config/wxShoppingMall.Config/address.json");
+            string strjson = System.IO.File.ReadAllText(path);
+            return Content(strjson);
+        }
+
         #region 请求验证码.
         [HttpPost]
         public ActionResult validateCodeGet()
