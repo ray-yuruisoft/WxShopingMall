@@ -3,11 +3,11 @@
   <!-- 收货地址组件 开始 -->
   <view class="bannerCheck topLevel">
     <view class="widthFull weui-panel weui-panel_access">
-      <view class="fontName">王睿 15308202328</view>
+      <view class="fontName">{{(userAddress.name==undefined)?'姓名':userAddress.name}} {{(tempPhoneNumber==undefined)?'手机号码':tempPhoneNumber}}</view>
       <navigator url="../chooseAddress/chooseAddress" class="weui-panel__hd spaceBetween weui-cell_link">
         <view class="textPanelHead verticalCenter">
           <view class="display2Lines">
-            <text class="fontRed">[默认]</text> 四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省四川省 省</view>
+            <text style="{{userAddress.default?'':'display:none'}}" class="fontRed">[默认]</text>{{(userAddress.city==undefined)?'地址：':userAddress.city}}{{(userAddress.address==undefined)?'您还没有收货地址，请点击这里设置':userAddress.address}}</view>
         </view>
         <view class="icon icon-angle-right"></view>
       </navigator>

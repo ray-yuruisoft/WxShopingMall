@@ -9,7 +9,7 @@
             <view class="weui-label">收货人</view>
           </view>
           <view class="weui-cell__bd">
-            <input name="name" value="{{name}}" bindinput="vName" bindblur="vName" bindconfirm="vName" focus="true" placeholder-class="placeholder" class="weui-input" placeholder="姓名" />
+            <input name="name" value="{{name}}" bindblur="vName" bindconfirm="vName" focus="{{(isEdit==undefined)?'false':(isEdit?'false':'true')}}" placeholder-class="placeholder" class="weui-input" placeholder="姓名" />
           </view>
         </view>
         <view class="weui-cell weui-cell_input">
@@ -33,14 +33,15 @@
             <view class="weui-label">详细地址</view>
           </view>
           <view class="weui-cell__bd">
-            <input name="address" value="{{address}}" bindinput="vAddress" bindblur="vAddress" bindconfirm="vAddress" placeholder-class="placeholder" class="weui-input" placeholder="街道地址" />
+            <input name="address" value="{{address}}" bindblur="vAddress" bindconfirm="vAddress" placeholder-class="placeholder" class="weui-input" placeholder="街道地址" />
           </view>
         </view>
       </view>
       <view class="weui-cells__tips">详细地址需填写楼栋楼层或房间号信息</view>
       <view class="weui-btn-area">
-        <button formType="submit" disabled="{{confirmButtonDisabled}}" style="background-color:{{confirmButtonDisabled?'#ECECEC;':'#18BC9C;'}} " class="weui-btn" type="primary">确认</button>
-        <button catchtap="defaltAddress" disabled="{{confirmButtonDisabled}}" style=" background-color:{{defaultAddress?'':(confirmButtonDisabled?'#ECECEC;':'#e33a3c;')}} " class="weui-btn" type="{{defaultAddress?'default':'primary'}}">{{defaultAddress?'解除默认地址':'设为默认地址'}}</button>
+        <button formType="submit" style="background-color:#18BC9C" class="weui-btn" type="primary">确认</button>
+        <button catchtap="defaltAddress" style="background-color:{{defaultAddress?'':'#e33a3c;'}} " class="weui-btn" type="{{defaultAddress?'default':'primary'}}">{{defaultAddress?'解除默认地址':'设为默认地址'}}</button>
+        <button style="{{isEdit?'':'display:none'}}" catchtap="deleteAddress" class="weui-btn" type="default">删除地址</button>
       </view>
     </form>
   </view>

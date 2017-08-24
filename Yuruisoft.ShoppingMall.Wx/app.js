@@ -165,5 +165,7 @@ App({
     var userAddress = wx.getStorageSync('userAddress');
     if (userAddress)
       that.globalData.userAddress = userAddress;
+
+    console.log(that.globalData.userAddress)
   }
 });

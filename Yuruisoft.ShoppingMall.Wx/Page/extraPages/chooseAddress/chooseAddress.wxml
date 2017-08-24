@@ -15,7 +15,7 @@
               <view class="weui-panel__hd spaceBetween">
                 <view class="textPanelHead verticalCenter">
                   <view class="display2Lines">
-                    <text class="fontRed">[默认]</text>{{item.address}}</view>
+                    <text style="{{item.default?'':'display:none;'}}" class="fontRed">[默认]</text>{{item.address}}</view>
                   </view>
                 <view catchtap="edit" id="{{item.value}}" class="textPanelBodyRed displayOneLine edit">编辑</view>
               </view>

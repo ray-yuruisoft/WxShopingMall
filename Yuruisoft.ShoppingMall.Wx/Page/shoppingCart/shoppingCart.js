@@ -21,9 +21,11 @@ Page({
 
   },
   check: function () {
-    wx.navigateTo({
-      url: '../extraPages/check/check',
-    })
+    var temp = this.data.shoppingCart.chooseItemCount;
+    if (temp != undefined && temp > 0)
+      wx.navigateTo({
+        url: '../extraPages/check/check',
+      })
   },
   chooseAll: function () {
     var chooseStatue = !this.data.chooseAllOn;

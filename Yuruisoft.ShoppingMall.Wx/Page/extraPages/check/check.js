@@ -11,7 +11,7 @@ Page({
     hanSpace: '\r\n\r\n\r\n\r\n',//空格输出
     space: '\r\n',
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -30,17 +30,37 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
+    console.log(app.globalData.userAddress);
+
+    var that = this;
     if (app.globalData.shoppingCart != '') {
       var temp = app.globalData.shoppingCart;
       temp.detail.forEach(item => {
         item.produceArr.forEach(itemBottom => {
-          if (itemBottom.choosedFlag){
+          if (itemBottom.choosedFlag) {
             item.choosedFlag = true;
           }
         })
       })
-      this.setData({
+      that.setData({
         shoppingCart: temp
+      })
+    }
+
+    var tempAddress = app.globalData.userAddress;
+    if (tempAddress != [] && tempAddress != undefined) {
+      var tempData;
+      tempAddress.forEach(item => {
+        if (item.checked) {
+          tempData = item;
+        }
+      })
+      var tempPhoneNumber = tempData.phoneNumber;
+      tempPhoneNumber = tempPhoneNumber.slice(0, 3) + '****' + tempPhoneNumber.slice(7, 11);
+      that.setData({
+        tempPhoneNumber: tempPhoneNumber,
+        userAddress: tempData
       })
     }
   },

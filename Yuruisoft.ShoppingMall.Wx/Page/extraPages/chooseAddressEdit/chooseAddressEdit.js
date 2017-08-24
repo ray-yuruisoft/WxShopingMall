@@ -4,10 +4,10 @@ var address;
 var animation;
 Page({
   data: {
+    isEdit: false,
     defaultAddress: false,
     phoneNumInputSuccess: undefined,
     nameInputSuccess: undefined,
-    confirmButtonDisabled: true,
 
     animationData: {},
     animationAddressMenu: {},
@@ -19,6 +19,14 @@ Page({
     province: '',
     city: '',
     area: ''
+  },
+  deleteAddress: function () {
+    var index = this.data.indexArr;
+    var temp = app.globalData.userAddress;
+    var tempBefore = temp.slice(0, index);
+    var tempAfter = temp.slice(index + 1, temp.length);
+    app.globalData.userAddress = tempBefore.concat(tempAfter);
+    this.saveAndBack();
   },
   defaltAddress: function () {
     var temp = !this.data.defaultAddress;
@@ -33,26 +41,55 @@ Page({
     })
   },
   formSubmit: function (e) {
+    var that = this;
+    if (!that.checkForm()) {
+      return;
+    }
     var addressInfo = e.detail.value;
-    var temp = this.data.areaInfo;
+    var temp = that.data.areaInfo;
     while (temp.indexOf(',') != -1) {
       temp = temp.replace(',', '');
     }
     addressInfo["city"] = temp;
-    console.log(addressInfo);
-    if (app.globalData.userAddress) {
-      app.globalData.userAddress.push(addressInfo);
+    var indexArr = that.data.indexArr;
+    if (indexArr) {//这里是编辑内容
+      if (that.data.defaultAddress) {//修改默认属性
+        app.globalData.userAddress.forEach((item, index) => {
+          if (index != indexArr)
+            item.default = false;
+        })
+      }
+      addressInfo.checked = app.globalData.userAddress[indexArr].checked;
+      addressInfo.default = that.data.defaultAddress;
+      app.globalData.userAddress[indexArr] = addressInfo;
     }
-    else {
-      app.globalData.userAddress = [];
-      app.globalData.userAddress.push(addressInfo);
+    else {//这里是新增内容
+      if (app.globalData.userAddress) {//不是第一个
+        addressInfo["checked"] = false;
+        if (that.data.defaultAddress) {//修改默认属性
+          app.globalData.userAddress.forEach(item => {
+            item.default = false;
+          })
+        }
+        addressInfo["default"] = that.data.defaultAddress;
+        app.globalData.userAddress.push(addressInfo);
+      }
+      else {
+        app.globalData.userAddress = [];//第一个
+        addressInfo["checked"] = true;
+        addressInfo["default"] = that.data.defaultAddress;
+        app.globalData.userAddress.push(addressInfo);
+      }
     }
+    that.saveAndBack();
+  },
+  saveAndBack: function () {
     wx.setStorage({
       key: 'userAddress',
-      data: app.globalData.userAddress,
+      data: app.globalData.userAddress
     });
-    wx.navigateBack({
-    });
+    wx.navigateBack({  
+    })
   },
   vPhoneNum: function (e) {
     var input = e.detail.value;
@@ -61,7 +98,6 @@ Page({
       that.setData({
         phoneNumInputSuccess: false
       })
-      that.checkForm();
       return;
     }
 
@@ -69,7 +105,6 @@ Page({
       that.setData({
         phoneNumInputSuccess: false
       })
-      that.checkForm();
       that.showToastWrong('手机号码不正确');
       return;
     }
@@ -78,7 +113,6 @@ Page({
       phoneNumber: input,
       phoneNumInputSuccess: true
     })
-    that.checkForm();
   },
   vName: function (e) {
     var input = e.detail.value;
@@ -87,7 +121,6 @@ Page({
       that.setData({
         nameInputSuccess: false
       })
-      that.checkForm();
       return;
     }
 
@@ -95,7 +128,6 @@ Page({
       name: input,
       nameInputSuccess: true
     })
-    that.checkForm();
   },
   vAddress: function (e) {
     var input = e.detail.value;
@@ -104,7 +136,6 @@ Page({
       that.setData({
         addressInputSuccess: false
       })
-      that.checkForm();
       return;
     }
 
@@ -112,77 +143,72 @@ Page({
       address: input,
       addressInputSuccess: true
     })
-    that.checkForm();
   },
   checkForm: function (e) {
     if (!this.data.nameInputSuccess) {//1、姓名
-      this.setData({
-        confirmButtonDisabled: true
-      })
+      this.showToastWrong('收货人不正确');
       return false;
     }
     if (!this.data.phoneNumInputSuccess) {//2、手机号码
-      this.setData({
-        confirmButtonDisabled: true
-      })
+      this.showToastWrong('手机号码不正确');
       return false;
     }
     if (this.data.areaInfo == undefined) {//3、城市
-      this.setData({
-        confirmButtonDisabled: true
-      })
+      this.showToastWrong('请选择城市');
       return false;
     }
     if (!this.data.addressInputSuccess) {//4、详细地址
-      this.setData({
-        confirmButtonDisabled: true
-      })
+      this.showToastWrong('详细地址不正确');
       return false;
     }
-    this.setData({
-      confirmButtonDisabled: false
-    })
     return true;
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
+
+    if (options.id != '' && options.id != undefined) {
+      var index = options.id;
+      var userAddressArr = app.globalData.userAddress;
+      var userAddress = userAddressArr[index];
+      that.setData({
+        nameInputSuccess: true,
+        phoneNumInputSuccess: true,
+        addressInputSuccess: true,
+
+        defaultAddress: userAddress.default,
+        indexArr: index,
+        name: userAddress.name,
+        phoneNumber: userAddress.phoneNumber,
+        areaInfo: userAddress.city,
+        address: userAddress.address,
+        isEdit: true
+      })
+      that.checkForm();
+    }
+    // 初始化动画变量
+    var animation = wx.createAnimation({
+      duration: 500,
+      transformOrigin: "50% 50%",
+      timingFunction: 'ease',
+    })
+    that.animation = animation;
+
     app.ajax.reqPost('/shoppingMall/cityGet', {
     }, function (res) {
       if (!res) {//失败直接返回        
         return
       }
       address = res;
-      // 初始化动画变量
-      var animation = wx.createAnimation({
-        duration: 500,
-        transformOrigin: "50% 50%",
-        timingFunction: 'ease',
-      })
-      that.animation = animation;
       // 默认联动显示北京
-      var id = address.provinces[0].id    
+      var id = address.provinces[0].id
       that.setData({
         provinces: address.provinces,
         citys: address.citys[id],
         areas: address.areas[address.citys[id][0].id],
       })
-      
-      // if (options.id != undefined) { 
-      //   var index = options.id;
-      //   var userAddressArr = app.globalData.userAddress;
-      //   var userAddress = userAddressArr[index];
-      //   var name = userAddress.name
-      //   that.setData({
-      //     name: name,
-      //     phoneNumber: userAddress.phoneNumber,
-      //     areaInfo: userAddress.city,
-      //     address: userAddress.address
-      //   })
-      // }
     })
   },
   /**
@@ -269,7 +295,6 @@ Page({
     that.setData({
       areaInfo: areaInfo,
     })
-    that.checkForm();
   },
   hideCitySelected: function (e) {
     this.startAddressAnimation(false)
