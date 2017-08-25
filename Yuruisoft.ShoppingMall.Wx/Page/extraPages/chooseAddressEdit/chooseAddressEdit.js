@@ -23,6 +23,10 @@ Page({
   deleteAddress: function () {
     var index = this.data.indexArr;
     var temp = app.globalData.userAddress;
+
+    if (temp[index].checked && temp.length != 1) {
+      temp[0].checked = true;
+    }
     var tempBefore = temp.slice(0, index);
     var tempAfter = temp.slice(index + 1, temp.length);
     app.globalData.userAddress = tempBefore.concat(tempAfter);
@@ -88,7 +92,7 @@ Page({
       key: 'userAddress',
       data: app.globalData.userAddress
     });
-    wx.navigateBack({  
+    wx.navigateBack({
     })
   },
   vPhoneNum: function (e) {

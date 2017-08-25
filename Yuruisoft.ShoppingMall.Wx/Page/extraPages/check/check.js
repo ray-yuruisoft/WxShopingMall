@@ -16,7 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -29,24 +28,33 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-    console.log(app.globalData.userAddress);
-
+  onShow: function (e) {
     var that = this;
-    if (app.globalData.shoppingCart != '') {
-      var temp = app.globalData.shoppingCart;
-      temp.detail.forEach(item => {
-        item.produceArr.forEach(itemBottom => {
-          if (itemBottom.choosedFlag) {
-            item.choosedFlag = true;
-          }
-        })
-      })
-      that.setData({
-        shoppingCart: temp
-      })
+    var temp;
+    var shoppingCartTemp = app.globalData.shoppingCartTemp;
+    if (shoppingCartTemp != undefined && shoppingCartTemp != '') {
+      temp = shoppingCartTemp;
+      app.globalData.shoppingCartTemp = '';
     }
+    else {
+      if (app.globalData.shoppingCart != '') {
+        temp = app.globalData.shoppingCart;
+        temp.detail.forEach(item => {
+          item.produceArr.forEach(itemBottom => {
+            if (itemBottom.choosedFlag) {
+              item.choosedFlag = true;
+            }
+          })
+        })
+      }
+    }
+
+    that.setData({
+      shoppingCart: temp
+    })
+
+//这里很奇怪！估计是微信小程序的一个BUG，app.globalData.shoppingCart没有被赋值，仍然会被修改，这里只能强行改回来！
+    app.globalData.shoppingCart = app.com.checkAllFee(app.globalData.shoppingCart);
 
     var tempAddress = app.globalData.userAddress;
     if (tempAddress != [] && tempAddress != undefined) {

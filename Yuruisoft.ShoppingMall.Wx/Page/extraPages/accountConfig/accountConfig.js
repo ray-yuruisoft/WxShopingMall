@@ -44,6 +44,11 @@ Page({
       url: '../modifyPhoneNum/modifyPhoneNum',
     })
   },
+  userAddressConfig: function (e) {
+    wx.navigateTo({
+      url: '../chooseAddress/chooseAddress',
+    })
+   },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -87,7 +92,7 @@ Page({
         content: ''
       },
       {
-        tapFunction: '',
+        tapFunction: 'userAddressConfig',
         title: '收货地址管理',
         content: ''
       },

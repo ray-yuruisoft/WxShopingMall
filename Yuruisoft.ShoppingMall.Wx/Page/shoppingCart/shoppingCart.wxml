@@ -1,13 +1,14 @@
 <!--shoppingCart.wxml-->
 <view class="page">
   <view class="page__bd">
-    <view wx:for="{{shoppingCart.detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" class="weui-panel">
+    <view wx:for="{{shoppingCart.detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" wx:for-index="merchantIndex" class="weui-panel">
       <view class="weui-panel__hd textPanelHead flexDisplay">
         <view catchtap="merchantChoose" id="{{itemMerchant.merchantId}}" class="icon {{itemMerchant.choosedFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
         <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
       </view>
-      <view wx:for-items="{{itemMerchant.produceArr}}" class="weui-panel__bd" catchtap="navigation" id="{{item.id}}" wx:key="{{item.id}}">
-        <view class="weui-media-box weui-media-box_appmsg">
+      <view wx:for-items="{{itemMerchant.produceArr}}" class="flexDisplay weui-panel__bd touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" catchtap="navigation" id="{{item.id}}" wx:key="{{item.id}}" bindtouchstart="touchstart" bindtouchmove="touchmove"
+        data-index="{{index}}" data-merchantindex="{{merchantIndex}}">
+        <view class="content weui-media-box weui-media-box_appmsg">
           <view catchtap="produceChoose" id="{{item.id}}" data-merchantid="{{itemMerchant.merchantId}}" class="icon {{item.choosedFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="padding-right:10px;"></view>
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
             <image class="weui-media-box__thumb" src="{{item.listImageUrl}}" style="width: 80px; height: 80px;" />
@@ -29,6 +30,7 @@
             </view>
           </view>
         </view>
+        <view class="del" catchtap="del" data-index="{{index}}" data-merchantindex="{{merchantIndex}}">删除</view>
       </view>
     </view>
   </view>
@@ -37,7 +39,7 @@
   <!-- 去结算操作按钮组件 开始 -->
   <view class="banner topLevel borderLineTop">
     <view class="chooseAll verticalCenter boxInside" bindtap="chooseAll">
-      <view class="icon {{chooseAllOn?'icon-circle-check':'icon-circle-thin'}} iconStyle"></view>
+      <view class="icon {{shoppingCart.choosedFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle"></view>
       <view class="chooseText">全选</view>
     </view>
     <view class="shoppingTotalFee boxInside verticalCenter">

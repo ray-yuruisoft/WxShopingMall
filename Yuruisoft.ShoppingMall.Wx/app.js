@@ -17,7 +17,8 @@ App({
     regexAccount: http.regexAccount,
     regexPassword: http.regexPassword,
     regexPhoneNum: http.regexPhoneNum,
-    regexNumber: http.regexNumber
+    regexNumber: http.regexNumber,
+    checkAllFee: calculate.checkAllFee
   },
   onLaunch: function () {
     console.log('App Launch')

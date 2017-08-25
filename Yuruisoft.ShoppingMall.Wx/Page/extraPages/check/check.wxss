@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   display: flex;
-  border-bottom: 5px dashed #18bc9c;
+  border-bottom: 2px solid #d7d6dc;
 }
 
 .widthFull {

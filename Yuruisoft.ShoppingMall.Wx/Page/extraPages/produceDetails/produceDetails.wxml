@@ -139,14 +139,14 @@
     <!-- 商品详情Tab 结束 -->
     <!-- 购物操作按钮组件 开始 -->
     <view class="banner topLevel">
-      <view class="shoppingCartTap verticalCenter" bindtap="shoppingCartTap">
+      <view class="shoppingCartTap verticalCenter" catchtap="shoppingCartTap">
         <view style="{{shoppingCartItemCount==0?'opacity:0':'opacity:1'}}" class="weui-badge shoppingBadge">{{shoppingCartItemCount
           <=99?shoppingCartItemCount: '99+'}}</view>
             <view class="icon icon-shoppingCart shoppingIcon"></view>
             <text class="shoppingText">购物车</text>
         </view>
-        <view bindtap="AddshoppingCart" class="shoppingAdd verticalCenter weui-cell_link">加入购物车</view>
-        <view class="shoppingBuyNow verticalCenter weui-cell_link">立即购买</view>
+        <view catchtap="AddshoppingCart" class="shoppingAdd verticalCenter weui-cell_link">加入购物车</view>
+        <view catchtap="buyNow" class="shoppingBuyNow verticalCenter weui-cell_link">立即购买</view>
       </view>
       <!-- 购物操作按钮组件 结束 -->
     </view>

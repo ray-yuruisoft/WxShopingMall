@@ -137,7 +137,9 @@ Page({
             item.feeSum = app.com.add(parseFloat(item.feeSum), parseFloat(feeSum)).toFixed(2);
             testMerchanIdExist++;
             item.produceArr.forEach(itemBottom => {
-              if (itemBottom.id == that.data.produceDetail.id) {//有这个商品的情况和没有这个商品的情况
+              if (itemBottom.id == that.data.produceDetail.id) {//有这个商品的情况和没有这个商品的情况               
+                itemBottom.choosedFlag = true;
+
                 itemBottom.itemCount += chooseNum;//第三层级再改变
                 itemBottom.feeSum = app.com.add(parseFloat(itemBottom.feeSum), parseFloat(feeSum)).toFixed(2);
                 testExist++;
@@ -164,7 +166,9 @@ Page({
           }
           tempShoppingCart.detail.push(detailObject);
         }
-        app.globalData.shoppingCart = tempShoppingCart;
+
+        app.globalData.shoppingCart = app.com.checkAllFee(tempShoppingCart);
+
       }
       else//初始化购物车数据结构
       {//对第一次加入的购物车来说，加入的所有数量都是一样的
@@ -197,14 +201,51 @@ Page({
       this.setData({//必须要单独设置一个购物车数量显示变量，初始化才不出错
         shoppingCartItemCount: app.globalData.shoppingCart.allItemCount
       })
-      
+
       wx.setStorage({//异步缓存
         key: 'shoppingCart',
         data: app.globalData.shoppingCart
       })
     }
   },
-
+  buyNow: function (e) {
+    var that = this;
+    that.AddshoppingCart();
+    var chooseNum = that.data.chooseNum;//商品选中的数量
+    var price = that.data.produceDetail.price;//先计算出价格
+    var feeSum = app.com.mul(parseFloat(price), chooseNum);
+    var shoppingCartTemp = {
+      "allItemCount": chooseNum,
+      "chooseItemCount": chooseNum,
+      "feeSum": feeSum,
+      "choosedFlag": true,
+      "detail": [
+        {
+          "merchantId": that.data.produceDetail.merchantId,
+          "merchantName": that.data.produceDetail.merchantName,
+          "allItemCount": chooseNum,
+          "chooseItemCount": chooseNum,
+          "feeSum": feeSum,
+          "choosedFlag": true,
+          "produceArr": [
+            {
+              "id": that.data.produceDetail.id,
+              "itemCount": chooseNum,
+              "listImageUrl": that.data.produceDetail.listImageUrl,
+              "listTitle": that.data.produceDetail.title,
+              "price": price,
+              "feeSum": feeSum,
+              "choosedFlag": true
+            }
+          ]
+        }
+      ]
+    }
+    app.globalData.shoppingCartTemp = shoppingCartTemp;
+    wx.navigateTo({
+      url: '../check/check'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
