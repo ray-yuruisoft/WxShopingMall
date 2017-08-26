@@ -1,0 +1,68 @@
+<!--MerCollection.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <!-- 商品收藏Tab 开始 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <!-- 商品收藏 开始 -->
+            <view class="weui-panel">
+              <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_switch">
+                  <view class="weui-cell__bd">您收藏了<text class="fontRed">{{MerCollection.length}}</text>个商品</view>
+                  <view class="weui-cell__ft">
+                    <switch color='#18BC9C' bindchange="editChange" />
+                  </view>
+                </view>
+              </view>
+              <view wx:for-items="{{MerCollection}}" class="flexDisplay weui-panel__bd touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" catchtap="navigation" id="{{item.id}}" wx:key="{{item.id}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}">
+                <view class="content weui-media-box weui-media-box_appmsg">
+                  <view catchtap="produceChoose" data-index="{{index}}" class="chooseItem icon {{item.choosedFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="{{editState?'':'display:none;'}}"></view>
+                  <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <image class="weui-media-box__thumb" src="{{item.listImageUrl}}" style="width: 80px; height: 80px;" />
+                  </view>
+                  <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="display2Lines">{{item.listTitle}}</view>
+                    <view class="boxBlow spaceBetween">
+                      <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:red">¥{{item.price}}</view>
+                    </view>
+                  </view>
+                </view>
+                <view class="del" catchtap="del" data-index="{{index}}">取消收藏</view>
+              </view>
+            </view>
+            <!-- 商品收藏 结束 -->
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <!-- 商品搭配 开始 -->
+
+            <!-- 商品搭配 结束 -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 商品收藏Tab 结束 -->
+  </view>
+  <view class="page__ft">
+  </view>
+  <!-- 取消收藏按钮组件 开始 -->
+  <view style="{{editState?'':'display:none'}}" class="banner topLevel borderLineTop spaceBetween">
+    <view class="chooseAll verticalCenter boxInside" bindtap="chooseAll">
+      <view class="icon {{chooseAllFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle"></view>
+      <view class="chooseText">全选</view>
+    </view>
+    <view catchtap="cancleCollect" class="shoppingCheckNow verticalCenter weui-cell_link">
+      <view>取消收藏</view>
+    </view>
+  </view>
+  <!-- 取消收藏按钮组件 结束 -->
+</view>

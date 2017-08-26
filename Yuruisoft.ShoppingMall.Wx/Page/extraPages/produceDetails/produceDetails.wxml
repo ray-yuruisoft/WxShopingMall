@@ -11,12 +11,15 @@
     </swiper>
     <!-- 幻灯片 结束 -->
     <!-- 商品标题和售价 开始 -->
-    <view class="weui-panel">
+    <view class="weui-panel spaceBetween">
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_text">
           <view class="produceTitle">{{produceDetail.title}}</view>
           <view class="producePrice">¥{{produceDetail.price}}</view>
         </view>
+      </view>
+      <view catchtap="collect" class="collect">
+        <view class="icon {{collected?'icon-star-big':'icon-star-empty-big'}}"></view>
       </view>
     </view>
     <!-- 商品标题和售价 结束 -->

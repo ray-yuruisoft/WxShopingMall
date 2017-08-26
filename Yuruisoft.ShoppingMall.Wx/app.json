@@ -10,7 +10,8 @@
     "Page/extraPages/modifyPhoneNum/modifyPhoneNum",
     "Page/extraPages/check/check",
     "Page/extraPages/chooseAddress/chooseAddress",
-    "Page/extraPages/chooseAddressEdit/chooseAddressEdit"
+    "Page/extraPages/chooseAddressEdit/chooseAddressEdit",
+    "Page/extraPages/MerCollection/MerCollection"
   ],
   "window": {
     "navigationBarTextStyle": "write",

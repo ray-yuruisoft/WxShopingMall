@@ -68,20 +68,20 @@ Page({
     listTypeTwo: {
       title: "我的关注",
       listArr: [{
-        id: 1,
+        functionName: 'MerCollection',
         title: "商品收藏",
         count: 0
       }, {
-        id: 2,
+        functionName: '',
         title: "店铺收藏",
         count: 1
       },
       {
-        id: 3,
+        functionName: '',
         title: "搭配收藏",
         count: 0
       }, {
-        id: 4,
+        functionName: '',
         title: "我的足迹",
         count: 10
       }]
@@ -356,7 +356,13 @@ Page({
   /**
    * 
    */
-  listTypeTwoItemTap: function (e) { },
+
+  MerCollection: function (e) {
+    wx.navigateTo({
+      url: '../extraPages/MerCollection/MerCollection',
+    })
+  },
+
   listTypeOneTap: function (e) {
 
     console.log(e);
@@ -435,6 +441,15 @@ Page({
     } else {
       this.setData({
         account: account
+      })
+    }
+    var MerCollection = app.globalData.MerCollection;
+    if (MerCollection != '' && MerCollection.length != 0) {
+
+      var listTypeTwo = this.data.listTypeTwo;
+      listTypeTwo.listArr[0].count = MerCollection.length;
+      this.setData({
+        listTypeTwo: listTypeTwo
       })
     }
   },

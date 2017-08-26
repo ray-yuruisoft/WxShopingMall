@@ -9,6 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    collected: false,//商品收藏
+
     produceDetail: {},//商品详细对象
     tabs: ["商品介绍", "规格参数", "售后保障"],//商品详情Tab
     activeIndex: 0,//商品详情Tab
@@ -27,7 +29,6 @@ Page({
     merchantName: '',
     shoppingCartItemCount: (app.globalData.shoppingCart == '') ? 0 : app.globalData.shoppingCart.allItemCount,//购物车总数
 
-
     indicator_dots: true,//是否显示面板指示点
     indicator_color: 'rgba(0, 0, 0, .3)',
     indicator_active_color: 'red',
@@ -41,7 +42,39 @@ Page({
     hanSpace: '\r\n\r\n\r\n\r\n',//空格输出
     space: '\r\n'
   },
+  collect: function () {//商品收藏管理
+    var collected = this.data.collected;
+    this.setData({
+      collected: !collected
+    })
+    var produceDetail = this.data.produceDetail;
 
+    if (!collected) {
+      var temp = {
+        id: produceDetail.id,
+        listImageUrl: produceDetail.listImageUrl,
+        listTitle: produceDetail.title,
+        price: produceDetail.price
+      }
+      if (app.globalData.MerCollection == '') {
+        app.globalData.MerCollection = [];
+        app.globalData.MerCollection.push(temp);
+      } else {
+        app.globalData.MerCollection.push(temp);
+      }
+    } else {
+      if (app.globalData.MerCollection == '') { return };
+      var index;
+      for (var i = 0; i < app.globalData.MerCollection.length; i++) {
+        if (app.globalData.MerCollection[i].id == produceDetail.id) {
+          index = i;
+          break;
+        }
+      }
+      app.globalData.MerCollection.splice(index, 1);
+    }
+    wx.setStorageSync('MerCollection', app.globalData.MerCollection);
+  },
   /* 数量选择组件 开始*/
   plusChooseNum: function () {//商品选择加号
     if (this.data.chooseNum == 999)
@@ -251,7 +284,6 @@ Page({
    */
   onLoad: function (options) {
     var currentPrId = options.id
-
     if (app.globalData.shoppingCart != '') {//购物车数据结构初始化
       this.setData({
         shoppingCart: app.globalData.shoppingCart,
@@ -265,6 +297,17 @@ Page({
     }, function (res) {
       if (!res || res.error == true) {//失败直接返回        
         return
+      }
+      if (app.globalData.MerCollection != '' && app.globalData.MerCollection.length != 0) {
+
+        for (var i = 0; i < app.globalData.MerCollection.length; i++) {
+          if (app.globalData.MerCollection[i].id == res.id) {
+            that.setData({
+              collected: true
+            })
+            break;
+          }
+        }
       }
       that.setData({
         produceDetail: res

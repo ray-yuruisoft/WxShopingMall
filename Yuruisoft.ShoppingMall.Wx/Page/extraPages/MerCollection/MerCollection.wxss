@@ -1,0 +1,13 @@
+/* MerCollection.wxss */
+@import '../../shoppingCart/shoppingCart.wxss';
+
+.chooseItem {
+  padding-right: 10px;
+}
+
+.banner {
+  background-color: white;
+}
+.shoppingCheckNow {
+  background-color: #e33a3c;
+}

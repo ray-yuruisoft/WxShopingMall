@@ -32,6 +32,8 @@ App({
     console.log('App Hide')
   },
   globalData: {
+    MerCollection: wx.getStorageSync('MerCollection'),//全局商品收藏夹
+
     userAddress:undefined,
     account: undefined,
     password: undefined,
