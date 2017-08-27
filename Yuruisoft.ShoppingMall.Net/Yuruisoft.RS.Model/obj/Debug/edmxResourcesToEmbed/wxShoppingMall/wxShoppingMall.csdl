@@ -1,22 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="rayyewang01Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="wxShoppingMallEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
     <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
     <EntitySet Name="wxShoppingMall_userInfo" EntityType="rayyewang01Model.wxShoppingMall_userInfo" />
     <EntitySet Name="haowanFamilyAccountInfo" EntityType="rayyewang01Model.haowanFamilyAccountInfo" />
+    <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
   </EntityContainer>
-  <EntityType Name="wxShoppingMall_merchantInfo">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="merchantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="subTime" Type="DateTime" Precision="3" />
-    <Property Name="modiyTime" Type="DateTime" Precision="3" />
-    <Property Name="sort" Type="Int32" />
-    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="wxShoppingMall_produceInfo">
     <Key>
       <PropertyRef Name="id" />
@@ -67,5 +56,17 @@
     <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="sort" Type="Int32" />
+  </EntityType>
+  <EntityType Name="wxShoppingMall_merchantInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="merchantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="subTime" Type="DateTime" Precision="3" />
+    <Property Name="modiyTime" Type="DateTime" Precision="3" />
+    <Property Name="sort" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

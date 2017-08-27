@@ -16,11 +16,11 @@
   <!-- 收货地址组件 结束 -->
   <view class="page__bd">
     <!-- 商品详情 开始 -->
-    <view wx:for="{{shoppingCart.detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" class="weui-panel" wx:if="{{itemMerchant.choosedFlag}}">
+    <view wx:for="{{myOrders.detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" class="weui-panel">
       <view class="weui-panel__hd textPanelHead flexDisplay">
         <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
       </view>
-      <view wx:for-items="{{itemMerchant.produceArr}}" class="weui-panel__bd" wx:key="{{item.id}}" wx:if="{{item.choosedFlag}}">
+      <view wx:for-items="{{itemMerchant.produceArr}}" class="weui-panel__bd" wx:key="{{item.id}}">
         <view class="weui-media-box weui-media-box_appmsg">
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
             <image class="weui-media-box__thumb" src="{{item.listImageUrl}}" style="width: 80px; height: 80px;" />
@@ -61,7 +61,7 @@
         <view class="weui-media-box weui-media-box_text">
           <view class="spaceBetween">
             <view class="textPanelHead">商品金额</view>
-            <view class="textPanelHeadRed">¥ {{shoppingCart.feeSum}}</view>
+            <view class="textPanelHeadRed">¥ {{myOrders.feeSum}}</view>
           </view>
           <view class="spaceBetween">
             <view class="textPanelHead">运费</view>
@@ -75,12 +75,12 @@
       </view>
       <view class="classname">
         <view class="sumFee textPanelHead">实付金额：
-          <text class="textPanelHeadRed">¥{{shoppingCart.feeSum}}</text>
+          <text class="textPanelHeadRed">¥{{myOrders.feeSum}}</text>
         </view>
       </view>
       <view class="weui-btn-area">
-        <button style="background-color:#18BC9C" formType="submit" class="weui-btn" type="primary">微信支付</button>
-        <button formType="submit" class="weui-btn" type="default">货到付款</button>
+        <button style="background-color:#18BC9C" catchtap="weiChatPay" class="weui-btn" type="primary">微信支付</button>
+        <button catchtap="COD" class="weui-btn" type="default">货到付款</button>
       </view>
     </view>
     <!-- 结算信息 结束 -->

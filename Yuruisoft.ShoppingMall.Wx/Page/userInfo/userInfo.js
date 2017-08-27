@@ -38,7 +38,7 @@ Page({
 
     listTypeOne: {
       listArr: [{
-        id: 1,
+        functionName: "myOrders",
         title: "我的订单",
         checkName: "查看全部订单",
         listArr: [{
@@ -90,9 +90,15 @@ Page({
     hanSpace: '\r\n\r\n\r\n\r\n',//空格输出
     space: '\r\n',
   },
+
+  myOrders: function () {
+    wx.navigateTo({
+      url: '../extraPages/myOrders/myOrders'
+    })
+  },
   accountConfig: function () {
     wx.navigateTo({
-      url: '../extraPages/accountConfig/accountConfig',
+      url: '../extraPages/accountConfig/accountConfig'
     })
   },
   validateCodeGet: function () {

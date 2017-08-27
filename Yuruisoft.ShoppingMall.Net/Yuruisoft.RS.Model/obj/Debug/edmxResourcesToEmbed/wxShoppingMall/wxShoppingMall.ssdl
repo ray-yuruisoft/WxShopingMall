@@ -20,6 +20,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="merchantName" Type="nvarchar" MaxLength="50" />
+    <Property Name="companyName" Type="nvarchar" MaxLength="50" />
     <Property Name="subTime" Type="datetime" />
     <Property Name="modiyTime" Type="datetime" />
     <Property Name="sort" Type="int" />

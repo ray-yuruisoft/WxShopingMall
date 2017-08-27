@@ -169,6 +169,7 @@
     <Compile Include="Models\FindPSWCache.cs" />
     <Compile Include="Models\LogOnVcodeCache.cs" />
     <Compile Include="Models\MyExceptionAttribute.cs" />
+    <Compile Include="Models\wxShoppingMallTempModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

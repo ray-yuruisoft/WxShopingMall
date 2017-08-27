@@ -34,6 +34,27 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         //
         // GET: /shoppingMall/
 
+       
+
+        [HttpPost]
+        public ActionResult placeAnOrder(wxShoppingMallTempModel.myOrders myOrders)
+        {
+
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+
+            if (myOrders != null)
+            {
+                
+
+
+                //myOrders p = Newtonsoft.Json.JsonConvert.DeserializeObject<myOrders>(myOrders);
+                //var a = p.allItemCount;
+            }
+
+            return Content("forbid!");
+        }
+
+
         [HttpPost]
         public ActionResult recommentListsGet(int takeNum)
         {

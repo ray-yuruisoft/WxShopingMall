@@ -16,6 +16,7 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
     {
         public int id { get; set; }
         public string merchantName { get; set; }
+        public string companyName { get; set; }
         public Nullable<System.DateTime> subTime { get; set; }
         public Nullable<System.DateTime> modiyTime { get; set; }
         public Nullable<int> sort { get; set; }

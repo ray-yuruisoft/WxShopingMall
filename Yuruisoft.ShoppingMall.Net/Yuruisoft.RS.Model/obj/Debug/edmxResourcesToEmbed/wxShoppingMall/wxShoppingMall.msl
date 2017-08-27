@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="rayyewang01ModelStoreContainer" CdmEntityContainer="wxShoppingMallEntities">
-    <EntitySetMapping Name="wxShoppingMall_merchantInfo">
-      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_merchantInfo">
-        <MappingFragment StoreEntitySet="wxShoppingMall_merchantInfo">
-          <ScalarProperty Name="remark" ColumnName="remark" />
-          <ScalarProperty Name="sort" ColumnName="sort" />
-          <ScalarProperty Name="modiyTime" ColumnName="modiyTime" />
-          <ScalarProperty Name="subTime" ColumnName="subTime" />
-          <ScalarProperty Name="merchantName" ColumnName="merchantName" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="wxShoppingMall_produceInfo">
       <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
         <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
@@ -62,6 +50,19 @@
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wxShoppingMall_merchantInfo">
+      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_merchantInfo">
+        <MappingFragment StoreEntitySet="wxShoppingMall_merchantInfo">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="modiyTime" ColumnName="modiyTime" />
+          <ScalarProperty Name="subTime" ColumnName="subTime" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="merchantName" ColumnName="merchantName" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -6,11 +6,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    shoppingCart: {},
+    myOrders: {},
 
     hanSpace: '\r\n\r\n\r\n\r\n',//空格输出
     space: '\r\n',
   },
+
+  weiChatPay: function () {
+    var that = this;
+    app.ajax.reqPost('/shoppingMall/placeAnOrder', {
+      myOrders: that.data.myOrders
+    }, function (res) {
+      if (!res || res.error == true) {//失败直接返回        
+        return
+      }
+    });
+  },
+  COD: function () { },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -39,23 +52,47 @@ Page({
     else {
       if (app.globalData.shoppingCart != '') {
         temp = app.globalData.shoppingCart;
-        temp.detail.forEach(item => {
-          item.produceArr.forEach(itemBottom => {
-            if (itemBottom.choosedFlag) {
-              item.choosedFlag = true;
-            }
-          })
-        })
       }
     }
-
-    that.setData({
-      shoppingCart: temp
+    // 订单数据结构 构造开始
+    var detail = temp.detail.map(item => {
+      var tempData = item.produceArr.filter((itemBottom) => {
+        if (itemBottom.choosedFlag)
+          return {};
+      });
+      if (tempData.length != 0)
+        return {
+          allItemCount: item.chooseItemCount,
+          merchantId: item.merchantId,
+          merchantName: item.merchantName,
+          feeSum: item.feeSum,
+          produceArr: tempData
+        };
+    });
+    detail = detail.filter(item => {
+      if (item != undefined)
+        return {}
+    });
+    detail.forEach(item => {
+      item.produceArr = item.produceArr.map(itemBottom => {
+        return {
+          id: itemBottom.id,
+          itemCount: itemBottom.itemCount,
+          listTitle: itemBottom.listTitle,
+          listImageUrl: itemBottom.listImageUrl,
+          price: itemBottom.price
+        }
+      })
     })
-
-//这里很奇怪！估计是微信小程序的一个BUG，app.globalData.shoppingCart没有被赋值，仍然会被修改，这里只能强行改回来！
-    app.globalData.shoppingCart = app.com.checkAllFee(app.globalData.shoppingCart);
-
+    var myOrders = {
+      allItemCount: temp.chooseItemCount,
+      feeSum: temp.feeSum,
+      detail: detail
+    }
+    that.setData({
+      myOrders: myOrders
+    })
+    // 订单数据结构 构造结束
     var tempAddress = app.globalData.userAddress;
     if (tempAddress != [] && tempAddress != undefined) {
       var tempData;

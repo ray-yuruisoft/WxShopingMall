@@ -6,7 +6,7 @@ function reqPost(url, data, cb, sessionId) {//Post请求
     method: 'POST',
     header: {
       'haowanFamily': 'www.haowanFamily.com',
-      'content-type': 'application/x-www-form-urlencoded',
+      'content-type': 'application/json',
       'Cookie': sessionId,
     },
     success: function (res) {

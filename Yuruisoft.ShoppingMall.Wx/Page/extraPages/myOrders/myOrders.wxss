@@ -1,0 +1,5 @@
+/* myOrders.wxss */
+
+.weui-panel {
+  margin-top: 0;
+}

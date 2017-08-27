@@ -107,7 +107,7 @@
 <!-- list模板One 开始 -->
 <template name="listTypeOne">
   <view wx:for="{{listArr}}" wx:key="*item" class="weui-panel weui-panel_access">
-    <view catchtap="listTypeOneTap" id="{{item.id}}" class="weui-panel__hd spaceBetween weui-cell_link">
+    <view catchtap="{{item.functionName}}" class="weui-panel__hd spaceBetween weui-cell_link">
       <view class="textPanelHead verticalCenter flexDisplay">
         <view>{{item.title}}</view>
       </view>
