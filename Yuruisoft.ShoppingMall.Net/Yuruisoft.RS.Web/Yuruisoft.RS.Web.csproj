@@ -152,6 +152,7 @@
     <Compile Include="Controllers\EnterController.cs" />
     <Compile Include="Controllers\EnterPageConfigController.cs" />
     <Compile Include="Controllers\ExtensionAgentsController.cs" />
+    <Compile Include="Controllers\haowanFamilyWeChat\haowanFamilyWeChatController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogOnController.cs" />
@@ -167,6 +168,7 @@
     </Compile>
     <Compile Include="Models\DefaultIndexViewModel.cs" />
     <Compile Include="Models\FindPSWCache.cs" />
+    <Compile Include="Models\haowanFamilyModel.cs" />
     <Compile Include="Models\LogOnVcodeCache.cs" />
     <Compile Include="Models\MyExceptionAttribute.cs" />
     <Compile Include="Models\wxShoppingMallTempModel.cs" />
@@ -632,6 +634,11 @@
     <Content Include="Content\assets\avatars\Thumbs.db" />
     <Content Include="Content\assets\css\images\Thumbs.db" />
     <Content Include="Content\assets\font\fontawesome-webfont.woff" />
+    <Content Include="haowanFamilyContent\haowanFamilyWeChat.css" />
+    <Content Include="haowanFamilyContent\haowanFamilyWeChat.js" />
+    <Content Include="haowanFamilyContent\img\adultMechine.jpg" />
+    <Content Include="haowanFamilyContent\img\data.png" />
+    <Content Include="haowanFamilyContent\img\haowanFamilyLogo.png" />
     <Content Include="wxshoppingMallContent\Images\produce\chicken.jpg" />
     <Content Include="wxshoppingMallContent\Images\produce\ChickenWan.jpg" />
     <Content Include="wxshoppingMallContent\Images\produce\ChickenWuGu.jpg" />
@@ -687,6 +694,8 @@
     <Content Include="wxshoppingMallContent\Images\produce\wuguji3.jpg" />
     <Content Include="wxshoppingMallContent\Images\produce\zuxichiken.jpg" />
     <Content Include="App_Data\Config\wxShoppingMall.Config\address.json" />
+    <Content Include="App_Data\Config\haowanFamilyWeChat.Config\baseData.json" />
+    <Content Include="App_Data\Config\haowanFamilyWeChat.Config\CarouselData.json" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Instructions\ActionInfoInstructions.html" />
     <Content Include="Instructions\RoleInfoInstructions.html" />
@@ -810,6 +819,7 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\LogOn\Index.cshtml" />
     <Content Include="Views\UpdatePassWord\ChangePwd.cshtml" />
+    <Content Include="Views\haowanFamilyWeChat\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

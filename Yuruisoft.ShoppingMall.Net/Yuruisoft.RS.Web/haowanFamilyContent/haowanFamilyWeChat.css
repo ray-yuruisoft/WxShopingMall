@@ -1,0 +1,83 @@
+﻿.imgCss {
+    top: 20%;
+    -webkit-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    -moz-transform: translateY(-20%);
+}
+
+.cover {
+    margin:20px;
+    height: 200px;
+    overflow: hidden;
+}
+
+
+.titleImg {
+    width: 290px;
+    height: 238px;
+    overflow: hidden;
+}
+
+
+.firstP {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.borderItem {
+    border: 1px solid #f8f8f8;
+    border-radius: 5px;
+}
+
+.headTitle {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding: 20px;
+}
+
+.cardColor {
+    background-color: #f8f8f8;
+    color: black;
+}
+
+.summary {
+    padding: 20px 20px 0 20px;
+    color: gray;
+}
+
+.line {
+    margin: 0 20px 0 20px;
+    border-bottom: 0.5px solid #c0c0c0;
+}
+
+.linkToWeChat {
+    display: flex;
+    justify-content: space-between;
+}
+
+.styleIcon {
+    margin-right: 20px;
+}
+
+.oneLine {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.twoLine {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.fourLine {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
