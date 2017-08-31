@@ -50,11 +50,11 @@ Page({
       return;
     }
     var addressInfo = e.detail.value;
-    var temp = that.data.areaInfo;
-    while (temp.indexOf(',') != -1) {
-      temp = temp.replace(',', '');
-    }
-    addressInfo["city"] = temp;
+    // var temp = ;
+    // while (temp.indexOf(',') != -1) {
+    //   temp = temp.replace(',', '');
+    // }
+    addressInfo["city"] = that.data.areaInfo;
     var indexArr = that.data.indexArr;
     if (indexArr) {//这里是编辑内容
       if (that.data.defaultAddress) {//修改默认属性

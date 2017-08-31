@@ -34,26 +34,77 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         //
         // GET: /shoppingMall/
 
-       
 
-        [HttpPost]
-        public ActionResult placeAnOrder(wxShoppingMallTempModel.myOrders myOrders)
+
+        public ActionResult orderInfoGet(string thirdSessionKey)
         {
-
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-
-            if (myOrders != null)
+            if (thirdSessionKey != null)
             {
-                
-
-
-                //myOrders p = Newtonsoft.Json.JsonConvert.DeserializeObject<myOrders>(myOrders);
-                //var a = p.allItemCount;
+                DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
+                return Content(currentUser.orderInfo);
             }
-
-            return Content("forbid!");
+            return Json(new { error = true });
         }
 
+
+        [HttpPost]
+        public ActionResult placeAnOrder(wxShoppingMallTempModel.myOrders myOrders, string thirdSessionKey)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            if (myOrders != null && thirdSessionKey != null)
+            {
+                DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
+                if (currentUser == null) { return Json(new { error = true }); }
+                var findItem = Db.Set<wxShoppingMall_userInfo>().Find(currentUser.id, currentUser.openId);
+                if (currentUser.orderInfo == null)
+                {
+                    findItem.orderInfo = Newtonsoft.Json.JsonConvert.SerializeObject(new
+                    {
+                        waitForPayItemCount = 1,
+                        waitForConfirmItemCount = 0,
+                        waitForCommentItemCount = 0,
+                        waitForRepairItemCount = 0,
+                        myOrders = myOrders
+                    }, Newtonsoft.Json.Formatting.Indented);
+                }
+                else
+                {
+                    var p = Newtonsoft.Json.JsonConvert.DeserializeObject<wxShoppingMallTempModel.orderInfo>(currentUser.orderInfo);
+                    wxShoppingMallTempModel.myOrders[] arr = new wxShoppingMallTempModel.myOrders[] { myOrders };
+                    findItem.orderInfo = Newtonsoft.Json.JsonConvert.SerializeObject(new
+                    {
+                        waitForPayItemCount = p.waitForPayItemCount + 1,
+                        waitForConfirmItemCount = p.waitForConfirmItemCount,
+                        waitForCommentItemCount = p.waitForConfirmItemCount,
+                        waitForRepairItemCount = p.waitForRepairItemCount,
+                        myOrders = p.myOrders.Concat(arr).ToArray()
+                    }, Newtonsoft.Json.Formatting.Indented);
+                }
+                if (Db.SaveChanges() <= 0) { return Json(new { error = true }); }
+                wxShoppingMall_orderInfo orderInfo = new wxShoppingMall_orderInfo();
+                orderInfo.modifiedOn = DateTime.Now;
+                orderInfo.subTime = DateTime.Now;
+                orderInfo.orderDataJson = Newtonsoft.Json.JsonConvert.SerializeObject(myOrders, Newtonsoft.Json.Formatting.Indented);
+                orderInfo.orderNumber = DateTime.Now.ToString("yyyyMMddHHmmss") + WxExtensionClass.GetRandomString(10);//商户系统内部的订单号,32个字符内、可包含字母, 其他说明见商户订单号
+                orderInfo.orderStatus = (short)orderStatus.waitingForPay;
+                Db.Set<wxShoppingMall_orderInfo>().Add(orderInfo);
+
+                if (Db.SaveChanges() > 0)
+                {
+                    return Json(new
+                    {
+                        orderNumber = orderInfo.orderNumber,
+                        subTime = orderInfo.subTime.ToString("yyyy-MM-dd HH:mm:ss"),
+                        orderStatus = orderInfo.orderStatus,
+                        orderData = myOrders
+                    });
+                }
+            }
+            return Json(new { error = true });
+        }
 
         [HttpPost]
         public ActionResult recommentListsGet(int takeNum)
@@ -627,7 +678,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
 
                 /**测试***测试环境使用IP*/
 
-                //wx_spbill_create_ip = "182.149.203.40";
+                wx_spbill_create_ip = "182.149.203.40";
                 /**测试强制赋值*/
 
 

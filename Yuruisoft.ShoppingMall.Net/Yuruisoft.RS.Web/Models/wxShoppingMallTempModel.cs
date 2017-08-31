@@ -27,7 +27,21 @@ namespace Yuruisoft.RS.Web.Models
             }
             public int allItemCount { get; set; }
             public string feeSum { get; set; }
+            public string carriage { get; set; }
+            public string deliveryCity { get; set; }
+            public string deliveryAddress { get; set; }
+            public string deliveryName { get; set; }
+            public string deliveryPhoneNumber { get; set; }
             public detailModel[] detail { get; set; }
+        }
+
+        public class orderInfo
+        {
+            public int waitForPayItemCount { get; set; }
+            public int waitForConfirmItemCount { get; set; }
+            public int waitForCommentItemCount { get; set; }
+            public int waitForRepairItemCount { get; set; }
+            public myOrders[] myOrders { get; set; }
         }
     }
 }

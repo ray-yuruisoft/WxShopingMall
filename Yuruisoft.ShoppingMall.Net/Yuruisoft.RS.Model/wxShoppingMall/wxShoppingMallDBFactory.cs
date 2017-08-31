@@ -16,27 +16,30 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
             DbContext dbContext = (DbContext)CallContext.GetData("wxShoppingMall_dbContext");
             if (dbContext == null)
             {
-                dbContext = SingleDBContextCache.GetDBContextSingle();
+                //dbContext = SingleDBContextCache.GetDBContextSingle();
+                dbContext = new wxShoppingMallEntities();
                 CallContext.SetData("wxShoppingMall_dbContext", dbContext);
             }
             return dbContext;
         }
         #endregion
     }
-    public class SingleDBContextCache
-    {
-        private volatile static DbContext DBContextCache = null;
-        private static readonly object lockHelper = new object();
-        public static DbContext GetDBContextSingle()
-        {
-            if (DBContextCache == null)
-            {
-                lock (lockHelper)
-                {
-                    DBContextCache = new wxShoppingMallEntities();
-                }
-            }
-            return DBContextCache;
-        }
-    }
+    //上下文创建不能使用单例模式，会抛出如下警告：正在创建模型，此时不可使用上下文。如果在 OnModelCreating 方法内使用上下文或如果多个线程同时访问同一上下文实例，可能引发此异常。
+
+    //public class SingleDBContextCache
+    //{
+    //    private volatile static DbContext DBContextCache = null;
+    //    private static readonly object lockHelper = new object();
+    //    public static DbContext GetDBContextSingle()
+    //    {
+    //        if (DBContextCache == null)
+    //        {
+    //            lock (lockHelper)
+    //            {
+    //                DBContextCache = new wxShoppingMallEntities();
+    //            }
+    //        }
+    //        return DBContextCache;
+    //    }
+    //}
 }

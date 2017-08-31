@@ -45,18 +45,18 @@ Page({
           id: 1,
           iconName: "icon-credit-card-alt",
           icontitle: "待付款",
-          badgeNum: 10
+          badgeNum: 0
         }, {
           id: 2,
           iconName: "icon-truck",
           icontitle: "待收货",
-          badgeNum: 1
+          badgeNum: 0
         },
         {
           id: 3,
           iconName: "icon-comments-o",
           icontitle: "待评价",
-          badgeNum: 9
+          badgeNum: 0
         }, {
           id: 4,
           iconName: "icon-wrench",
@@ -439,6 +439,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (e) {
+    var that = this;
     var account = app.globalData.account
     if (account == undefined) {
       this.setData({
@@ -457,6 +458,24 @@ Page({
       this.setData({
         listTypeTwo: listTypeTwo
       })
+    }
+    var thirdSessionKey = wx.getStorageSync('thirdSessionKey');
+    if (thirdSessionKey != null) {
+      app.ajax.reqPost('/shoppingMall/orderInfoGet', {
+        "thirdSessionKey": thirdSessionKey
+      }, function (res) {
+        if (!res || res.error == true) {//失败直接返回        
+          return;
+        }
+        var temp = that.data.listTypeOne;
+        temp.listArr[0].listArr[0].badgeNum = res.waitForPayItemCount;
+        temp.listArr[0].listArr[1].badgeNum = res.waitForConfirmItemCount;
+        temp.listArr[0].listArr[2].badgeNum = res.waitForCommentItemCount;
+        temp.listArr[0].listArr[3].badgeNum = res.waitForRepairItemCount;
+        that.setData({
+          listTypeOne: temp
+        })
+      });
     }
   },
 

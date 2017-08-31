@@ -11,11 +11,32 @@ Page({
     hanSpace: '\r\n\r\n\r\n\r\n',//空格输出
     space: '\r\n',
   },
-
+  showToastWrong: function (title) {
+    wx.showToast({
+      title: title,
+      image: '../../../style/images/replaceIcon/exclamation-sign.png'
+    })
+  },
+  orderCheck: function () {
+    var myOrders = this.data.myOrders;
+    var orderAddress = this.data.userAddress;
+    myOrders['carriage'] = '15.00';
+    myOrders['deliveryCity'] = orderAddress.city;
+    myOrders['deliveryAddress'] = orderAddress.address;
+    myOrders['deliveryName'] = orderAddress.name;
+    myOrders['deliveryPhoneNumber'] = orderAddress.phoneNumber;
+    return myOrders;
+  },
   weiChatPay: function () {
-    var that = this;
+    if (this.data.userAddress == undefined) {
+      this.showToastWrong('还没有设置收货地址');
+      return;
+    }
+    var myOrders = this.orderCheck();
+    var thirdSessionKey = wx.getStorageSync('thirdSessionKey');
     app.ajax.reqPost('/shoppingMall/placeAnOrder', {
-      myOrders: that.data.myOrders
+      myOrders: myOrders,
+      thirdSessionKey: thirdSessionKey
     }, function (res) {
       if (!res || res.error == true) {//失败直接返回        
         return
@@ -94,7 +115,7 @@ Page({
     })
     // 订单数据结构 构造结束
     var tempAddress = app.globalData.userAddress;
-    if (tempAddress != [] && tempAddress != undefined) {
+    if (tempAddress != undefined && tempAddress.length != 0) {
       var tempData;
       tempAddress.forEach(item => {
         if (item.checked) {
