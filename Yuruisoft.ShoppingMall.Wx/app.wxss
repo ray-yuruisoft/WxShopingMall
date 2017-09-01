@@ -292,7 +292,13 @@ page {
   -webkit-justify-content: center;
   justify-content: center;
 }
-
+.verticalLeft {
+  display: -webkit-flex;
+  -webkit-align-items: left;
+  align-items: left;
+  -webkit-justify-content: left;
+  justify-content: left;
+}
 .spaceBetween {
   display: flex;
   justify-content: space-between;
@@ -400,7 +406,9 @@ page {
 .fontRed {
   color: #e33a3c;
 }
-
+.fontGreen{
+  color:#18BC9C;
+}
 .display2Lines {
   font-size: 15px;
   overflow: hidden;

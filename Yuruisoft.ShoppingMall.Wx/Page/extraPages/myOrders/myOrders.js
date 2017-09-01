@@ -1,12 +1,13 @@
 // myOrders.js
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabs: ["所有订单", "待付款","配送中","待评价"],//商品收藏Tab
+    tabs: ["所有订单", "待付款", "配送中", "待评价"],//商品收藏Tab
     activeIndex: 0,//商品详情Tab
     sliderOffset: 0,//商品详情Tab
     sliderLeft: 0,//商品详情Tab
@@ -47,6 +48,42 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    var thirdSessionKey = wx.getStorageSync('thirdSessionKey');
+    if (thirdSessionKey != null) {
+      app.ajax.reqPost('/shoppingMall/orderInfoGet', {
+        "thirdSessionKey": thirdSessionKey
+      }, function (res) {
+        if (!res || res.error == true) {//失败直接返回        
+          return;
+        }
+        // 格式化
+        var tempArr = res.myOrders;
+        tempArr.forEach(item => {
+          var temp;
+          if (item.orderStatus == 0) {
+            temp = '待付款';
+          }
+          else if (item.orderStatus == 1) {
+            temp = '待发货';
+          }
+          else if (item.orderStatus == 1) {
+            temp = '待确认收货';
+          }
+          else if (item.orderStatus == 1) {
+            temp = '待评价';
+          }
+          else if (item.orderStatus == 1) {
+            temp = '待再次购买';
+          }
+          item.orderStatus = temp;
+        })
+
+        that.setData({
+          myOrders: tempArr
+        })
+      });
+    }
 
   },
 

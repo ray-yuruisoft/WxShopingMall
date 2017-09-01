@@ -1,78 +1,89 @@
 <!--myOrders.wxml-->
 <view class="page">
-  <view class="page__bd">
-    <!-- 订单搜索栏 开始 -->
-    <view class="weui-search-bar">
-      <view class="weui-search-bar__form">
-        <view class="weui-search-bar__box">
-          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-          <input type="text" class="weui-search-bar__input" placeholder="搜索好万家商品" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="完成" bindconfirm="searching" />
-          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-            <icon type="clear" size="14"></icon>
-          </view>
-        </view>
-        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+    <view class="page__bd">
+        <!-- 订单搜索栏 开始 -->
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索好万家商品" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="完成" bindconfirm="searching" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
           <icon class="weui-icon-search" type="search" size="14"></icon>
           <view class="weui-search-bar__text">在此输入要搜索的商品</view>
         </label>
-      </view>
-      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
-    </view>
-    <!-- 订单搜索栏 结束 -->
-    <!-- 订单状态分类Tab 开始 -->
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-tab">
-        <view class="weui-navbar">
-          <block wx:for="{{tabs}}" wx:key="*this">
-            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-              <view class="weui-navbar__title">{{item}}</view>
             </view>
-          </block>
-          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
-        <view class="weui-tab__panel">
-          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-            <!-- 所有订单 开始 -->
-            <view class="weui-panel">
-              <view wx:for-items="{{MerCollection}}" class="flexDisplay weui-panel__bd touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" catchtap="navigation" id="{{item.id}}" wx:key="{{item.id}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}">
-                <view class="content weui-media-box weui-media-box_appmsg">
-                  <view catchtap="produceChoose" data-index="{{index}}" class="chooseItem icon {{item.choosedFlag?'icon-circle-check':'icon-circle-thin'}} iconStyle verticalCenter" style="{{editState?'':'display:none;'}}"></view>
-                  <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                    <image class="weui-media-box__thumb" src="{{item.listImageUrl}}" style="width: 80px; height: 80px;" />
-                  </view>
-                  <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="display2Lines">{{item.listTitle}}</view>
-                    <view class="boxBlow spaceBetween">
-                      <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:red">¥{{item.price}}</view>
-                    </view>
-                  </view>
+        <!-- 订单搜索栏 结束 -->
+        <!-- 订单状态分类Tab 开始 -->
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-tab">
+                <view class="weui-navbar">
+                    <block wx:for="{{tabs}}" wx:key="*this">
+                        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                            <view class="weui-navbar__title">{{item}}</view>
+                        </view>
+                    </block>
+                    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
                 </view>
-                <view class="del" catchtap="del" data-index="{{index}}">取消收藏</view>
-              </view>
+                <view class="weui-tab__panel">
+                    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                        <!-- 所有订单 开始 -->
+                        <view wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" class="weui-panel">
+                            <view style='padding:10px 10px;' class="weui-panel textPanelHead flexDisplay"> <text class="verticalCenter fontBold">订单号：{{itemOrder.orderNumber}}</text>
+                            </view>
+                            <view style='padding:10px 10px;' class="weui-panel textPanelHead">
+                                <text class="verticalLeft">状态：<text class='fontGreen'>{{itemOrder.orderStatus}}</text></text>
+                                <text class="verticalLeft">总价：<text class='fontRed'>¥{{itemOrder.feeSum}}</text></text>
+                            </view>
+                            <view wx:for="{{itemOrder.detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" wx:for-index="merchantIndex" class="weui-panel">
+                                <view class="weui-panel__hd textPanelHead flexDisplay"> <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
+                                </view>
+                                <view wx:for-items="{{itemMerchant.produceArr}}" class="flexDisplay weui-panel__bd touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" catchtap="navigation" id="{{item.id}}" wx:key="{{item.id}}" bindtouchstart="touchstart" bindtouchmove="touchmove"
+                                    data-index="{{index}}" data-merchantindex="{{merchantIndex}}">
+                                    <view class="content weui-media-box weui-media-box_appmsg">
+                                        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                                            <image class="weui-media-box__thumb" src="{{item.listImageUrl}}" style="width: 80px; height: 80px;" />
+                                        </view>
+                                        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                                            <view class="display2Lines">{{item.listTitle}}</view>
+                                            <view class="boxBlow spaceBetween">
+                                                <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:gray;">{{item.itemCount}}件</view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view class="del" catchtap="del" data-index="{{index}}" data-merchantindex="{{merchantIndex}}">删除</view>
+                                </view>
+                            </view>
+                            <view wx:if='{{orderIndex<myOrders.length-1}}' class="line"></view>
+                        </view>
+                        <!-- 所有订单 结束 -->
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                        <!-- 待付款 开始 -->
+
+                        <!-- 待付款 结束 -->
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                        <!-- 配送中 开始 -->
+
+                        <!-- 配送中 结束 -->
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                        <!-- 待评价 开始 -->
+
+                        <!-- 待评价 结束 -->
+                    </view>
+                </view>
             </view>
-            <!-- 所有订单 结束 -->
-          </view>
-          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-            <!-- 待付款 开始 -->
-
-            <!-- 待付款 结束 -->
-          </view>
-          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-            <!-- 配送中 开始 -->
-
-            <!-- 配送中 结束 -->
-          </view>
-          <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
-            <!-- 待评价 开始 -->
-
-            <!-- 待评价 结束 -->
-          </view>
         </view>
-      </view>
+        <!-- 订单状态分类Tab 结束 -->
     </view>
-    <!-- 订单状态分类Tab 结束 -->
-  </view>
-  <view class="page__ft">
-  </view>
+    <view class="page__ft">
+    </view>
 
 </view>

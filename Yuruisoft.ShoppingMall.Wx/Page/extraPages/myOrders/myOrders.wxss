@@ -1,5 +1,19 @@
 /* myOrders.wxss */
+@import '../../shoppingCart/shoppingCart.wxss';
 
 .weui-panel {
-  margin-top: 0;
+    margin-top: 0;
+}
+
+.weui-panel::before {
+    border-top: 0;
+}
+
+.left {
+    text-align: left;
+}
+
+.line {
+    height: 20px;
+    background-color: #f8f8f8;  
 }
