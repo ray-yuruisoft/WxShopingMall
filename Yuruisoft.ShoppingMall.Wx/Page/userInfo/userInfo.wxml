@@ -3,7 +3,7 @@
   <view class="page__hd">
     <view class="userTitleCard spaceBetween verticalCenter">
       <view class="flexDisplay">
-        <image class="userHeadPhoto" src="{{userInfo.avatarUrl}}"></image>
+         <image class="userHeadPhoto" src="{{userInfo.avatarUrl}}"></image> 
         <view bindtap="powerDrawer" data-statu="open" class="userName">
           <view class="nickName">{{userInfo.nickName}}</view>
           <view class="haowanFamilyName">{{account==''?'登录 / 注册？马上点我':'用户名：'+account}}</view>
