@@ -36,6 +36,25 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
 
 
         [HttpPost]
+        public ActionResult orderInfoUpdate(string thirdSessionKey, string orderInfo)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            if (thirdSessionKey != null && orderInfo != null)
+            {
+                DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
+                var findItem = Db.Set<wxShoppingMall_userInfo>().Find(currentUser.id, currentUser.openId);
+                findItem.orderInfo = orderInfo;
+                if (Db.SaveChanges() > 0)
+                {
+                    return Json(new { error = false });
+                }
+            }
+            return Json(new { error = true });
+        }
+
+
+        [HttpPost]
         public ActionResult orderInfoGet(string thirdSessionKey)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
@@ -84,7 +103,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
                 if (currentUser == null) { return Json(new { error = true }); }
                 var findItem = Db.Set<wxShoppingMall_userInfo>().Find(currentUser.id, currentUser.openId);
-                if (currentUser.orderInfo == null)
+                if (currentUser.orderInfo == null || currentUser.orderInfo == "")
                 {
                     findItem.orderInfo = Newtonsoft.Json.JsonConvert.SerializeObject(new
                     {
@@ -97,18 +116,18 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 }
                 else
                 {
-                    var p = Newtonsoft.Json.JsonConvert.DeserializeObject<wxShoppingMallTempModel.orderInfo>(currentUser.orderInfo);                   
+                    var p = Newtonsoft.Json.JsonConvert.DeserializeObject<wxShoppingMallTempModel.orderInfo>(currentUser.orderInfo);
                     findItem.orderInfo = Newtonsoft.Json.JsonConvert.SerializeObject(new
                     {
                         waitForPayItemCount = p.waitForPayItemCount + 1,
-                        waitForConfirmItemCount = p.waitForPayItemCount,
+                        waitForConfirmItemCount = p.waitForConfirmItemCount,
                         waitForCommentItemCount = p.waitForCommentItemCount,
                         waitForRepairItemCount = p.waitForRepairItemCount,
                         myOrders = p.myOrders.Concat(arr).ToArray()
                     }, Newtonsoft.Json.Formatting.Indented);
                 }
                 #endregion
-                if (Db.SaveChanges() > 0)
+                if (Db.SaveChanges() > 0)//这里需具体修改下，两个订单必须要一致；
                 {
                     return Json(order);
                 }

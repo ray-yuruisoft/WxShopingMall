@@ -117,7 +117,7 @@
     </view>
     <view class="weui-panel__bd">
       <view class="weui-media-box weui-media-box_text flexDisplay">
-        <view catchtap="listTypeOneItemTap" id="{{itemBottom.id}}" wx:for="{{item.listArr}}" wx:for-item="itemBottom" wx:key="*itemBottom" class="itemInOrder">
+        <view catchtap="orderItemTap" id="{{itemBottom.id}}" wx:for="{{item.listArr}}" wx:for-item="itemBottom" wx:key="*itemBottom" class="itemInOrder">
           <view class="weui-media-box__title weui-media-box__title_in-text">
             <view style="{{itemBottom.badgeNum==0?'opacity:0':'opacity:1'}}" class="weui-badge badgeInTypeOne">{{itemBottom.badgeNum}}</view>
             <view class="icon {{itemBottom.iconName}}"></view>

@@ -90,10 +90,28 @@ Page({
     hanSpace: '\r\n\r\n\r\n\r\n',//空格输出
     space: '\r\n',
   },
+  orderItemTap: function (e) {
+    var id = e.currentTarget.id;
+    if (id == 4 && this.data.listTypeOne.listArr[0].listArr[3].badgeNum == 0) {
+      return;
+    }
+    else if (id == 1 && this.data.listTypeOne.listArr[0].listArr[0].badgeNum == 0){
+      return;
+    }
+    else if (id == 2 && this.data.listTypeOne.listArr[0].listArr[1].badgeNum == 0) {
+      return;
+    }
+    else if (id == 3 && this.data.listTypeOne.listArr[0].listArr[2].badgeNum == 0) {
+      return;
+    }
 
+    wx.navigateTo({
+      url: '../extraPages/myOrders/myOrders?id=' + id,
+    });
+  },
   myOrders: function () {
     wx.navigateTo({
-      url: '../extraPages/myOrders/myOrders'
+      url: '../extraPages/myOrders/myOrders?id=0'
     })
   },
   accountConfig: function () {
@@ -369,25 +387,12 @@ Page({
     })
   },
 
-  listTypeOneTap: function (e) {
-
-    console.log(e);
-
-  },
-  listTypeOneItemTap: function (e) {
-
-    console.log(e);
-
-  },
   bannerItemTap: function (e) {
-
     if (e.currentTarget.id == 2) {
       wx.makePhoneCall({
         phoneNumber: '15308202328' //仅为示例
       })
     }
-
-
 
   },
   /**
@@ -464,14 +469,22 @@ Page({
       app.ajax.reqPost('/shoppingMall/orderInfoGet', {
         "thirdSessionKey": thirdSessionKey
       }, function (res) {
-        if (!res || res.error == true) {//失败直接返回        
+        if (res.error == true) {//失败直接返回        
           return;
         }
         var temp = that.data.listTypeOne;
-        temp.listArr[0].listArr[0].badgeNum = res.waitForPayItemCount;
-        temp.listArr[0].listArr[1].badgeNum = res.waitForConfirmItemCount;
-        temp.listArr[0].listArr[2].badgeNum = res.waitForCommentItemCount;
-        temp.listArr[0].listArr[3].badgeNum = res.waitForRepairItemCount;
+        if (res == "") {
+          temp.listArr[0].listArr[0].badgeNum = 0;
+          temp.listArr[0].listArr[1].badgeNum = 0;
+          temp.listArr[0].listArr[2].badgeNum = 0;
+          temp.listArr[0].listArr[3].badgeNum = 0;
+        }
+        else {
+          temp.listArr[0].listArr[0].badgeNum = res.waitForPayItemCount;
+          temp.listArr[0].listArr[1].badgeNum = res.waitForConfirmItemCount;
+          temp.listArr[0].listArr[2].badgeNum = res.waitForCommentItemCount;
+          temp.listArr[0].listArr[3].badgeNum = res.waitForRepairItemCount;
+        }
         that.setData({
           listTypeOne: temp
         })

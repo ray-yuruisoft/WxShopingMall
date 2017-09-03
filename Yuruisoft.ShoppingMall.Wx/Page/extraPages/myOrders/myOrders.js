@@ -25,7 +25,47 @@ Page({
   /*商品详情Tab 结束*/
 
 
-  //手指触摸动作开始 记录起点X坐标
+  //手指触摸动作开始 记录起点X坐标 待付款订单
+  waitingForPaytouchstart: function (e) {
+    //开始触摸时 重置所有删除
+    this.data.waitingForPay.forEach(function (v, i) {
+      if (v.isTouchMove == undefined || v.isTouchMove)//只操作为true的
+        v.isTouchMove = false;
+    })
+    this.setData({
+      startX: e.changedTouches[0].clientX,
+      startY: e.changedTouches[0].clientY,
+      waitingForPay: this.data.waitingForPay
+    })
+  },
+  //滑动事件处理
+  waitingForPaytouchmove: function (e) {
+    var that = this,
+      index = e.currentTarget.dataset.index,//当前索引
+      startX = that.data.startX,//开始X坐标
+      startY = that.data.startY,//开始Y坐标
+      touchMoveX = e.changedTouches[0].clientX,//滑动变化坐标
+      touchMoveY = e.changedTouches[0].clientY,//滑动变化坐标
+      //获取滑动角度
+      angle = that.angle({ X: startX, Y: startY }, { X: touchMoveX, Y: touchMoveY });
+    that.data.waitingForPay.forEach(function (v, i) {
+      v.isTouchMove = false
+      //滑动超过30度角 return
+      if (Math.abs(angle) > 30) return;
+      if (i == index) {
+        if (touchMoveX > startX) //右滑
+          v.isTouchMove = false
+        else //左滑
+          v.isTouchMove = true
+      }
+    })
+    //更新数据
+    that.setData({
+      waitingForPay: that.data.waitingForPay
+    })
+  },
+
+  //手指触摸动作开始 记录起点X坐标 所有订单
   touchstart: function (e) {
     //开始触摸时 重置所有删除
     this.data.myOrders.forEach(function (v, i) {
@@ -39,7 +79,7 @@ Page({
     })
   },
   //滑动事件处理
-  touchmove: function (e) {
+  touchmove: function (e, orderName) {
     var that = this,
       index = e.currentTarget.dataset.index,//当前索引
       startX = that.data.startX,//开始X坐标
@@ -77,25 +117,68 @@ Page({
   },
   //删除事件
   del: function (e) {
-    this.data.myOrders.splice(e.currentTarget.dataset.index, 1)
-    this.setData({
-      myOrders: this.data.myOrders
-    })
+    var that = this;
+    var orderStatus = that.data.myOrders[e.currentTarget.dataset.index].orderStatus;
+    if (orderStatus == '待付款') {
+      that.data.waitForPayItemCount--;
+    }
+    else if (orderStatus == '待发货' || orderStatus == '待确认收货') {
+      that.data.waitForConfirmItemCount--;
+    }
+    else if (orderStatus == '待评价') {
+      that.data.waitForCommentItemCount--;
+    }
+    else if (orderStatus == '待再次购买') {
+      that.data.waitForRepairItemCount--;
+    }
+
+    that.data.myOrders.splice(e.currentTarget.dataset.index, 1);
+    var myOrders = that.data.myOrders;
+    var thirdSessionKey = wx.getStorageSync('thirdSessionKey');
+    if (myOrders.length == 0) {
+      var orderInfo = '';
+    } else {
+      myOrders.forEach(item => {
+        delete item.isTouchMove
+      });
+      myOrders = that.orderStatusFormat(myOrders);
+      var orderInfo = JSON.stringify({
+        waitForPayItemCount: that.data.waitForPayItemCount,
+        waitForConfirmItemCount: that.data.waitForConfirmItemCount,
+        waitForCommentItemCount: that.data.waitForCommentItemCount,
+        waitForRepairItemCount: that.data.waitForRepairItemCount,
+        myOrders: myOrders
+      });
+    }
+    //JSON.parse(str); //由JSON字符串转换为JSON对象
+    app.ajax.reqPost('/shoppingMall/orderInfoUpdate', {
+      "thirdSessionKey": thirdSessionKey,
+      "orderInfo": orderInfo
+    }, function (res) {
+      if (!res || res.error == true) {//失败直接返回        
+        return;
+      }
+      if (res.error == false) {
+        that.setData({
+          myOrders: that.data.myOrders
+        });
+      }
+    });
   },
-
-
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
+    that.data.activeIndex = options.id;
     /*商品详情Tab 开始*/
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
           sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
-          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex,
+          activeIndex: that.data.activeIndex
         });
       }
     });
@@ -107,6 +190,45 @@ Page({
    */
   onReady: function () {
 
+  },
+
+
+  orderStatusFormat: function (tempArr) {
+    tempArr.forEach(item => {
+      var temp;
+      if (item.orderStatus == 0) {
+        temp = '待付款';
+      }
+      else if (item.orderStatus == 1) {
+        temp = '待发货';
+      }
+      else if (item.orderStatus == 2) {
+        temp = '待确认收货';
+      }
+      else if (item.orderStatus == 3) {
+        temp = '待评价';
+      }
+      else if (item.orderStatus == 4) {
+        temp = '待再次购买';
+      }
+      else if (item.orderStatus == '待付款') {
+        temp = 0;
+      }
+      else if (item.orderStatus == '待发货') {
+        temp = 1;
+      }
+      else if (item.orderStatus == '待确认收货') {
+        temp = 2;
+      }
+      else if (item.orderStatus == '待评价') {
+        temp = 3;
+      }
+      else if (item.orderStatus == '待再次购买') {
+        temp = 4;
+      }
+      item.orderStatus = temp;
+    });
+    return tempArr;
   },
 
   /**
@@ -123,49 +245,15 @@ Page({
           return;
         }
         // 格式化
-        var tempArr = res.myOrders;
-        tempArr.forEach(item => {
-          var temp;
-          if (item.orderStatus == 0) {
-            temp = '待付款';
-          }
-          else if (item.orderStatus == 1) {
-            temp = '待发货';
-          }
-          else if (item.orderStatus == 1) {
-            temp = '待确认收货';
-          }
-          else if (item.orderStatus == 1) {
-            temp = '待评价';
-          }
-          else if (item.orderStatus == 1) {
-            temp = '待再次购买';
-          }
-          item.orderStatus = temp;
+        that.setData({
+          myOrders: that.orderStatusFormat(res.myOrders),
+          waitForPayItemCount: res.waitForPayItemCount,
+          waitForConfirmItemCount: res.waitForConfirmItemCount,
+          waitForCommentItemCount: res.waitForCommentItemCount,
+          waitForRepairItemCount: res.waitForRepairItemCount,
         });
-        that.checkOrders(that, tempArr);
       });
     }
-  },
-  checkOrders: function (that, tempArr) {
-    var waitingForPay = tempArr.filter(item => {
-      if (item.orderStatus == '待付款')
-        return {};
-    });
-    var waitingForComfirm = tempArr.filter(item => {
-      if (item.orderStatus == '待确认收货')
-        return {};
-    });
-    var waitingForComment = tempArr.filter(item => {
-      if (item.orderStatus == '待评价')
-        return {};
-    });
-    that.setData({
-      myOrders: tempArr,
-      waitingForPay: waitingForPay,
-      waitingForComfirm: waitingForComfirm,
-      waitingForComment: waitingForComment
-    });
   },
   /**
    * 生命周期函数--监听页面隐藏

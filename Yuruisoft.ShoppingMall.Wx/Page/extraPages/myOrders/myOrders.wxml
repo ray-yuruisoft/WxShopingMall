@@ -33,7 +33,8 @@
                 <view class="weui-tab__panel">
                     <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                         <!-- 所有订单 开始 -->
-                        <view wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{orderIndex}}">
+                        <view wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" id='myOrders' class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
+                            data-index="{{orderIndex}}">
                             <view class='flexDisplay'>
                                 <view class='content'>
                                     <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
@@ -44,7 +45,7 @@
                                     <template is="orders" data="{{...itemOrder}}" />
                                     <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
                                 </view>
-                                <view class="del" catchtap="del" data-index="{{orderIndex}}">删除</view>
+                                <view class="del" catchtap="del" id='myOrders' data-index="{{orderIndex}}">删除</view>
                             </view>
                             <view wx:if="{{orderIndex<myOrders.length-1}}" class="line"></view>
                         </view>
@@ -52,7 +53,8 @@
                     </view>
                     <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                         <!-- 待付款 开始 -->
-                        <view wx:for="{{waitingForPay}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{orderIndex}}">
+                        <view wx:if="{{itemOrder.orderStatus=='待付款'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
+                            data-index="{{orderIndex}}">
                             <view class='flexDisplay'>
                                 <view class='content'>
                                     <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
@@ -71,7 +73,8 @@
                     </view>
                     <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
                         <!-- 配送中 开始 -->
-                        <view wx:for="{{waitingForComfirm}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{orderIndex}}">
+                        <view wx:if="{{itemOrder.orderStatus=='待发货'||itemOrder.orderStatus=='待确认收货'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
+                            data-index="{{orderIndex}}">
                             <view class='flexDisplay'>
                                 <view class='content'>
                                     <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
@@ -82,7 +85,7 @@
                                     <template is="orders" data="{{...itemOrder}}" />
                                     <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
                                 </view>
-                                <view class="del" catchtap="del" data-index="{{orderIndex}}">删除</view>
+                                <view class="del" catchtap="del" id='waitingForComfirm' data-index="{{orderIndex}}">删除</view>
                             </view>
                             <view wx:if="{{orderIndex<myOrders.length-1}}" class="line"></view>
                         </view>
@@ -90,7 +93,8 @@
                     </view>
                     <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
                         <!-- 待评价 开始 -->
-                        <view wx:for="{{waitingForComment}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{orderIndex}}">
+                        <view wx:if="{{itemOrder.orderStatus=='待评价'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
+                            data-index="{{orderIndex}}">
                             <view class='flexDisplay'>
                                 <view class='content'>
                                     <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
