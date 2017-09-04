@@ -20,7 +20,6 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
         public string thirdSessionKey { get; set; }
         public string encryptedData { get; set; }
         public string haoWanFamilyUserInfo { get; set; }
-        public string orderInfo { get; set; }
         public System.DateTime subTime { get; set; }
         public System.DateTime modifiedOn { get; set; }
         public string remark { get; set; }

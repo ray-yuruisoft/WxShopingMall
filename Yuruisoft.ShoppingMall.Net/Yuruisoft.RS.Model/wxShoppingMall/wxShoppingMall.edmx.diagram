@@ -7,9 +7,9 @@
       <Diagram DiagramId="ccd9a63c8b3b443996f675e930f35a78" Name="Diagram1">
         <EntityTypeShape EntityType="rayyewang01Model.haowanFamilyAccountInfo" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="rayyewang01Model.wxShoppingMall_orderInfo" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="rayyewang01Model.wxShoppingMall_produceInfo" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="rayyewang01Model.wxShoppingMall_userInfo" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="rayyewang01Model.wxShoppingMall_orderInfo" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="rayyewang01Model.wxShoppingMall_userInfo" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

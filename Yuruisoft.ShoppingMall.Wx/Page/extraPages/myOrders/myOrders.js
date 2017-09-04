@@ -1,6 +1,8 @@
 // myOrders.js
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 var app = getApp();
+//JSON.parse(str); //由JSON字符串转换为JSON对象
+//JSON.stringify(obj);//由JSON对象转换为JSON字符串
 Page({
 
   /**
@@ -23,47 +25,6 @@ Page({
     });
   },
   /*商品详情Tab 结束*/
-
-
-  //手指触摸动作开始 记录起点X坐标 待付款订单
-  waitingForPaytouchstart: function (e) {
-    //开始触摸时 重置所有删除
-    this.data.waitingForPay.forEach(function (v, i) {
-      if (v.isTouchMove == undefined || v.isTouchMove)//只操作为true的
-        v.isTouchMove = false;
-    })
-    this.setData({
-      startX: e.changedTouches[0].clientX,
-      startY: e.changedTouches[0].clientY,
-      waitingForPay: this.data.waitingForPay
-    })
-  },
-  //滑动事件处理
-  waitingForPaytouchmove: function (e) {
-    var that = this,
-      index = e.currentTarget.dataset.index,//当前索引
-      startX = that.data.startX,//开始X坐标
-      startY = that.data.startY,//开始Y坐标
-      touchMoveX = e.changedTouches[0].clientX,//滑动变化坐标
-      touchMoveY = e.changedTouches[0].clientY,//滑动变化坐标
-      //获取滑动角度
-      angle = that.angle({ X: startX, Y: startY }, { X: touchMoveX, Y: touchMoveY });
-    that.data.waitingForPay.forEach(function (v, i) {
-      v.isTouchMove = false
-      //滑动超过30度角 return
-      if (Math.abs(angle) > 30) return;
-      if (i == index) {
-        if (touchMoveX > startX) //右滑
-          v.isTouchMove = false
-        else //左滑
-          v.isTouchMove = true
-      }
-    })
-    //更新数据
-    that.setData({
-      waitingForPay: that.data.waitingForPay
-    })
-  },
 
   //手指触摸动作开始 记录起点X坐标 所有订单
   touchstart: function (e) {
@@ -118,42 +79,11 @@ Page({
   //删除事件
   del: function (e) {
     var that = this;
-    var orderStatus = that.data.myOrders[e.currentTarget.dataset.index].orderStatus;
-    if (orderStatus == '待付款') {
-      that.data.waitForPayItemCount--;
-    }
-    else if (orderStatus == '待发货' || orderStatus == '待确认收货') {
-      that.data.waitForConfirmItemCount--;
-    }
-    else if (orderStatus == '待评价') {
-      that.data.waitForCommentItemCount--;
-    }
-    else if (orderStatus == '待再次购买') {
-      that.data.waitForRepairItemCount--;
-    }
-
-    that.data.myOrders.splice(e.currentTarget.dataset.index, 1);
-    var myOrders = that.data.myOrders;
-    var thirdSessionKey = wx.getStorageSync('thirdSessionKey');
-    if (myOrders.length == 0) {
-      var orderInfo = '';
-    } else {
-      myOrders.forEach(item => {
-        delete item.isTouchMove
-      });
-      myOrders = that.orderStatusFormat(myOrders);
-      var orderInfo = JSON.stringify({
-        waitForPayItemCount: that.data.waitForPayItemCount,
-        waitForConfirmItemCount: that.data.waitForConfirmItemCount,
-        waitForCommentItemCount: that.data.waitForCommentItemCount,
-        waitForRepairItemCount: that.data.waitForRepairItemCount,
-        myOrders: myOrders
-      });
-    }
-    //JSON.parse(str); //由JSON字符串转换为JSON对象
-    app.ajax.reqPost('/shoppingMall/orderInfoUpdate', {
-      "thirdSessionKey": thirdSessionKey,
-      "orderInfo": orderInfo
+    var index = e.currentTarget.dataset.index;
+    var orderNumber = that.data.myOrders[index].orderNumber;
+    that.data.myOrders.splice(index, 1);
+    app.ajax.reqPost('/shoppingMall/orderInfoDelete', {
+      "orderNumber": orderNumber
     }, function (res) {
       if (!res || res.error == true) {//失败直接返回        
         return;
@@ -165,6 +95,15 @@ Page({
       }
     });
   },
+
+  goComment: function (e) {
+    var index = e.currentTarget.id;
+    var orderInfo = this.data.myOrders[index];
+    wx.navigateTo({
+      url: '../goComment/goComment?data=' + JSON.stringify(orderInfo)
+    });
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -191,7 +130,6 @@ Page({
   onReady: function () {
 
   },
-
 
   orderStatusFormat: function (tempArr) {
     tempArr.forEach(item => {
@@ -246,11 +184,7 @@ Page({
         }
         // 格式化
         that.setData({
-          myOrders: that.orderStatusFormat(res.myOrders),
-          waitForPayItemCount: res.waitForPayItemCount,
-          waitForConfirmItemCount: res.waitForConfirmItemCount,
-          waitForCommentItemCount: res.waitForCommentItemCount,
-          waitForRepairItemCount: res.waitForRepairItemCount,
+          myOrders: that.orderStatusFormat(res.myOrders)
         });
       });
     }

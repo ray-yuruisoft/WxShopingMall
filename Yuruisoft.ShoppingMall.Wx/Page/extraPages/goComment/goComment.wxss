@@ -1,0 +1,8 @@
+/* Page/extraPages/goComment/goComment.wxss */
+
+.startPadding{
+  padding:0 0 0 10px;
+}
+.weui-cell::before {
+  border-top:0;
+}

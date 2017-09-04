@@ -16,6 +16,7 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
     {
         public int id { get; set; }
         public string orderNumber { get; set; }
+        public int userInfoId { get; set; }
         public string orderDataJson { get; set; }
         public short orderStatus { get; set; }
         public System.DateTime subTime { get; set; }

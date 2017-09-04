@@ -35,19 +35,7 @@
                         <!-- 所有订单 开始 -->
                         <view wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" id='myOrders' class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
                             data-index="{{orderIndex}}">
-                            <view class='flexDisplay'>
-                                <view class='content'>
-                                    <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
-                                        <text class="verticalCenter fontBold">订单号：{{itemOrder.orderNumber}}</text>
-                                        <text class="verticalCenter fontBold">No.{{orderIndex+1}}</text>
-                                    </view>
-                                    <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
-                                    <template is="orders" data="{{...itemOrder}}" />
-                                    <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
-                                </view>
-                                <view class="del" catchtap="del" id='myOrders' data-index="{{orderIndex}}">删除</view>
-                            </view>
-                            <view wx:if="{{orderIndex<myOrders.length-1}}" class="line"></view>
+                            <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
                         </view>
                         <!-- 所有订单 结束 -->
                     </view>
@@ -55,19 +43,7 @@
                         <!-- 待付款 开始 -->
                         <view wx:if="{{itemOrder.orderStatus=='待付款'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
                             data-index="{{orderIndex}}">
-                            <view class='flexDisplay'>
-                                <view class='content'>
-                                    <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
-                                        <text class="verticalCenter fontBold">订单号：{{itemOrder.orderNumber}}</text>
-                                        <text class="verticalCenter fontBold">No.{{orderIndex+1}}</text>
-                                    </view>
-                                    <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
-                                    <template is="orders" data="{{...itemOrder}}" />
-                                    <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
-                                </view>
-                                <view class="del" catchtap="del" data-index="{{orderIndex}}">删除</view>
-                            </view>
-                            <view wx:if="{{orderIndex<myOrders.length-1}}" class="line"></view>
+                            <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
                         </view>
                         <!-- 待付款 结束 -->
                     </view>
@@ -75,19 +51,7 @@
                         <!-- 配送中 开始 -->
                         <view wx:if="{{itemOrder.orderStatus=='待发货'||itemOrder.orderStatus=='待确认收货'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
                             data-index="{{orderIndex}}">
-                            <view class='flexDisplay'>
-                                <view class='content'>
-                                    <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
-                                        <text class="verticalCenter fontBold">订单号：{{itemOrder.orderNumber}}</text>
-                                        <text class="verticalCenter fontBold">No.{{orderIndex+1}}</text>
-                                    </view>
-                                    <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
-                                    <template is="orders" data="{{...itemOrder}}" />
-                                    <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
-                                </view>
-                                <view class="del" catchtap="del" id='waitingForComfirm' data-index="{{orderIndex}}">删除</view>
-                            </view>
-                            <view wx:if="{{orderIndex<myOrders.length-1}}" class="line"></view>
+                            <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
                         </view>
                         <!-- 配送中 结束 -->
                     </view>
@@ -95,19 +59,7 @@
                         <!-- 待评价 开始 -->
                         <view wx:if="{{itemOrder.orderStatus=='待评价'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
                             data-index="{{orderIndex}}">
-                            <view class='flexDisplay'>
-                                <view class='content'>
-                                    <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
-                                        <text class="verticalCenter fontBold">订单号：{{itemOrder.orderNumber}}</text>
-                                        <text class="verticalCenter fontBold">No.{{orderIndex+1}}</text>
-                                    </view>
-                                    <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
-                                    <template is="orders" data="{{...itemOrder}}" />
-                                    <!-- 订单模板 注意：这里不能传入索引，故只做了部分模板 -->
-                                </view>
-                                <view class="del" catchtap="del" data-index="{{orderIndex}}">删除</view>
-                            </view>
-                            <view wx:if="{{orderIndex<myOrders.length-1}}" class="line"></view>
+                            <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
                         </view>
                         <!-- 待评价 结束 -->
                     </view>
@@ -120,28 +72,45 @@
     </view>
 
 </view>
-<!-- 订单的模板 开始 注意：此处因不能传入索引，只有部分做了模板-->
+
+<!-- 订单的模板 开始 -->
 <template name="orders">
-  <view style='padding:10px 10px;' class="weui-panel textPanelHead">
-      <text class="verticalLeft">状态：<text class='fontGreen'>{{orderStatus}}</text></text>
-      <text class="verticalLeft">总价：<text class='fontRed'>¥{{feeSum}}</text></text>
-  </view>
-  <view wx:for="{{detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" wx:for-index="merchantIndex" class="weui-panel">
-      <view class="weui-panel__hd textPanelHead flexDisplay"> <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
-      </view>
-      <view wx:for-items="{{itemMerchant.produceArr}}" class="flexDisplay weui-panel__bd" wx:key="{{itemBottom.id}}" wx:for-item="itemBottom">
-          <view class="weui-media-box weui-media-box_appmsg">
-              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                  <image class="weui-media-box__thumb" src="{{itemBottom.listImageUrl}}" style="width: 80px; height: 80px;" />
+  <view class='flexDisplay'>
+      <view class='content'>
+          <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
+              <text class="verticalCenter fontBold">订单号：{{orderNumber}}</text>
+              <text class="verticalCenter fontBold">No.{{index+1}}</text>
+          </view>
+          <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
+              <view>
+                  <text class="verticalLeft">状态：<text class='fontGreen'>{{orderStatus}}</text></text>
+                  <text class="verticalLeft">总价：<text class='fontRed'>¥{{feeSum}}</text></text>
               </view>
-              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                  <view class="display2Lines">{{itemBottom.listTitle}}</view>
-                  <view class="boxBlow spaceBetween">
-                      <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:gray;">{{itemBottom.itemCount}}件</view>
-                  </view>
+              <view class="button-sp-area">
+                  <button catchtap='goComment' id='{{index}}' style="background-color:#18BC9C;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">去评价</button>
+                  <button style="background-color:orange;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">再次购买</button>
               </view>
           </view>
+          <view wx:for="{{detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" wx:for-index="merchantIndex" class="weui-panel">
+              <view class="weui-panel__hd textPanelHead flexDisplay"> <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
+              </view>
+              <view wx:for-items="{{itemMerchant.produceArr}}" class="flexDisplay weui-panel__bd" wx:key="{{itemBottom.id}}" wx:for-item="itemBottom">
+                  <view class="weui-media-box weui-media-box_appmsg">
+                      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                          <image class="weui-media-box__thumb" src="{{itemBottom.listImageUrl}}" style="width: 80px; height: 80px;" />
+                      </view>
+                      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                          <view class="display2Lines">{{itemBottom.listTitle}}</view>
+                          <view class="boxBlow spaceBetween">
+                              <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:gray;">{{itemBottom.itemCount}}件</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>        
       </view>
+      <view class="del" catchtap="del" id='myOrders' data-index="{{index}}">删除</view>
   </view>
+  <view wx:if="{{index<arrlength-1}}" class="line"></view>
 </template>
 <!-- 订单的模板 结束 -->

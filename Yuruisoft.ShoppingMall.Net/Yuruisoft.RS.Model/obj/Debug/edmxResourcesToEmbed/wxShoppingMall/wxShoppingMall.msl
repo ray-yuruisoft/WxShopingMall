@@ -29,20 +29,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="wxShoppingMall_orderInfo">
-      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_orderInfo">
-        <MappingFragment StoreEntitySet="wxShoppingMall_orderInfo">
-          <ScalarProperty Name="sort" ColumnName="sort" />
-          <ScalarProperty Name="remark" ColumnName="remark" />
-          <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
-          <ScalarProperty Name="subTime" ColumnName="subTime" />
-          <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
-          <ScalarProperty Name="orderDataJson" ColumnName="orderDataJson" />
-          <ScalarProperty Name="orderNumber" ColumnName="orderNumber" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="wxShoppingMall_produceInfo">
       <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
         <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
@@ -65,6 +51,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="wxShoppingMall_orderInfo">
+      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_orderInfo">
+        <MappingFragment StoreEntitySet="wxShoppingMall_orderInfo">
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+          <ScalarProperty Name="subTime" ColumnName="subTime" />
+          <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
+          <ScalarProperty Name="orderDataJson" ColumnName="orderDataJson" />
+          <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
+          <ScalarProperty Name="orderNumber" ColumnName="orderNumber" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="wxShoppingMall_userInfo">
       <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_userInfo">
         <MappingFragment StoreEntitySet="wxShoppingMall_userInfo">
@@ -72,7 +73,6 @@
           <ScalarProperty Name="remark" ColumnName="remark" />
           <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
           <ScalarProperty Name="subTime" ColumnName="subTime" />
-          <ScalarProperty Name="orderInfo" ColumnName="orderInfo" />
           <ScalarProperty Name="haoWanFamilyUserInfo" ColumnName="haoWanFamilyUserInfo" />
           <ScalarProperty Name="encryptedData" ColumnName="encryptedData" />
           <ScalarProperty Name="thirdSessionKey" ColumnName="thirdSessionKey" />

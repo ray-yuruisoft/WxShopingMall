@@ -33,18 +33,22 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
     {
         //
         // GET: /shoppingMall/
-
+        private DbContext Db;
+        public shoppingMallController()
+        {
+            Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+        }
 
         [HttpPost]
-        public ActionResult orderInfoUpdate(string thirdSessionKey, string orderInfo)
+        public ActionResult orderInfoDelete(string orderNumber)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-            if (thirdSessionKey != null && orderInfo != null)
+            if (orderNumber != null)
             {
-                DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
-                var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
-                var findItem = Db.Set<wxShoppingMall_userInfo>().Find(currentUser.id, currentUser.openId);
-                findItem.orderInfo = orderInfo;
+                //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                var currentOrder = Db.Set<wxShoppingMall_orderInfo>().Where(c => c.orderNumber == orderNumber).FirstOrDefault();
+                var findItem = Db.Set<wxShoppingMall_orderInfo>().Find(currentOrder.id, orderNumber);
+                Db.Entry<wxShoppingMall_orderInfo>(findItem).State = System.Data.Entity.EntityState.Deleted;
                 if (Db.SaveChanges() > 0)
                 {
                     return Json(new { error = false });
@@ -53,20 +57,52 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             return Json(new { error = true });
         }
 
-
         [HttpPost]
         public ActionResult orderInfoGet(string thirdSessionKey)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
             if (thirdSessionKey != null)
             {
-                DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
                 var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
-                return Content(currentUser.orderInfo);
+                if (currentUser == null) { return Json(new { error = true }); }
+                var orderInfos = Db.Set<wxShoppingMall_orderInfo>().Where(c => c.userInfoId == currentUser.id);
+                if (orderInfos == null) { return Json(new { error = true }); }
+                int waitForPayItemCount = 0, waitForConfirmItemCount = 0, waitForCommentItemCount = 0, waitForRepairItemCount = 0;
+                wxShoppingMallTempModel.orderInfo.orderModel orderModel = new wxShoppingMallTempModel.orderInfo.orderModel();
+                ArrayList arr = new ArrayList();
+                foreach (var item in orderInfos)
+                {
+                    if (item.orderStatus == 0)
+                    {
+                        waitForPayItemCount++;
+                    }
+                    else if (item.orderStatus == 1)
+                    {
+                        waitForConfirmItemCount++;
+                    }
+                    else if (item.orderStatus == 2)
+                    {
+                        waitForCommentItemCount++;
+                    }
+                    else if (item.orderStatus == 3)
+                    {
+                        waitForRepairItemCount++;
+                    }
+                    orderModel = Newtonsoft.Json.JsonConvert.DeserializeObject<wxShoppingMallTempModel.orderInfo.orderModel>(item.orderDataJson);
+                    arr.Add(orderModel);
+                }
+                return Json(new
+                {
+                    waitForPayItemCount = waitForPayItemCount,
+                    waitForConfirmItemCount = waitForConfirmItemCount,
+                    waitForCommentItemCount = waitForCommentItemCount,
+                    waitForRepairItemCount = waitForRepairItemCount,
+                    myOrders = arr
+                });
             }
             return Json(new { error = true });
         }
-
 
         [HttpPost]
         public ActionResult placeAnOrder(wxShoppingMallTempModel.orderInfo.orderModel.myOrders myOrders, string thirdSessionKey)
@@ -74,17 +110,19 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
             if (myOrders != null && thirdSessionKey != null)
             {
-                DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
+                if (currentUser == null)
+                {
+                    Json(new { error = true });
+                }
                 #region 订单表-新增
                 wxShoppingMall_orderInfo orderInfo = new wxShoppingMall_orderInfo();
+                orderInfo.userInfoId = currentUser.id;
                 orderInfo.modifiedOn = DateTime.Now;
                 orderInfo.subTime = DateTime.Now;
-                orderInfo.orderDataJson = Newtonsoft.Json.JsonConvert.SerializeObject(myOrders, Newtonsoft.Json.Formatting.Indented);
                 orderInfo.orderNumber = DateTime.Now.ToString("yyyyMMddHHmmss") + WxExtensionClass.GetRandomString(10);//商户系统内部的订单号,32个字符内、可包含字母, 其他说明见商户订单号
                 orderInfo.orderStatus = (short)orderStatus.waitingForPay;
-                Db.Set<wxShoppingMall_orderInfo>().Add(orderInfo);
-                #endregion
-                #region 用户表-订单字段-更新
                 wxShoppingMallTempModel.orderInfo.orderModel order = new wxShoppingMallTempModel.orderInfo.orderModel()
                 {
                     orderNumber = orderInfo.orderNumber,
@@ -99,37 +137,12 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                     deliveryPhoneNumber = myOrders.deliveryPhoneNumber,
                     detail = myOrders.detail
                 };
-                wxShoppingMallTempModel.orderInfo.orderModel[] arr = new wxShoppingMallTempModel.orderInfo.orderModel[] { order };
-                var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
-                if (currentUser == null) { return Json(new { error = true }); }
-                var findItem = Db.Set<wxShoppingMall_userInfo>().Find(currentUser.id, currentUser.openId);
-                if (currentUser.orderInfo == null || currentUser.orderInfo == "")
-                {
-                    findItem.orderInfo = Newtonsoft.Json.JsonConvert.SerializeObject(new
-                    {
-                        waitForPayItemCount = 1,
-                        waitForConfirmItemCount = 0,
-                        waitForCommentItemCount = 0,
-                        waitForRepairItemCount = 0,
-                        myOrders = arr
-                    }, Newtonsoft.Json.Formatting.Indented);
-                }
-                else
-                {
-                    var p = Newtonsoft.Json.JsonConvert.DeserializeObject<wxShoppingMallTempModel.orderInfo>(currentUser.orderInfo);
-                    findItem.orderInfo = Newtonsoft.Json.JsonConvert.SerializeObject(new
-                    {
-                        waitForPayItemCount = p.waitForPayItemCount + 1,
-                        waitForConfirmItemCount = p.waitForConfirmItemCount,
-                        waitForCommentItemCount = p.waitForCommentItemCount,
-                        waitForRepairItemCount = p.waitForRepairItemCount,
-                        myOrders = p.myOrders.Concat(arr).ToArray()
-                    }, Newtonsoft.Json.Formatting.Indented);
-                }
+                orderInfo.orderDataJson = Newtonsoft.Json.JsonConvert.SerializeObject(order, Newtonsoft.Json.Formatting.Indented);
+                Db.Set<wxShoppingMall_orderInfo>().Add(orderInfo);
                 #endregion
                 if (Db.SaveChanges() > 0)//这里需具体修改下，两个订单必须要一致；
                 {
-                    return Json(order);
+                    return Json(new { error = false });
                 }
             }
             return Json(new { error = true });
@@ -141,7 +154,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
 
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
 
-            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             var lists = Db.Set<wxShoppingMall_produceInfo>().Where(c => true).OrderBy(c => c.sort).Take(takeNum);
             ArrayList results = new ArrayList();
             foreach (var item in lists)
@@ -168,7 +181,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
 
-            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             var lists = Db.Set<wxShoppingMall_produceInfo>().Where(c => true);
 
             ArrayList results = new ArrayList();
@@ -211,7 +224,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         public ActionResult produceDetailGet(int id)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             var finditem = Db.Set<wxShoppingMall_produceInfo>().Where(c => c.id == id).FirstOrDefault();
             var merchantName = Db.Set<wxShoppingMall_merchantInfo>().Where(c => c.id == finditem.merchantId).FirstOrDefault();
             if (finditem == null)
@@ -260,7 +273,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
 
             if (thirdSessionKey != null)
             {
-                DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
                 var result = Db.Set<wxShoppingMall_userInfo>().Any(c => c.thirdSessionKey == thirdSessionKey);
                 if (result)
                 {
@@ -310,7 +323,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             dataFromWx.modifiedOn = DateTime.Now;                                     //用户最近登陆时间
             #endregion
 
-            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
 
             var CurrentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.openId == dataFromWx.openId).FirstOrDefault();
             if (CurrentUser == null)//判断为首次登陆
@@ -358,7 +371,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         public ActionResult checkAccountRepeat(string account)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             var result = Db.Set<haowanFamilyAccountInfo>().Any(c => c.account == account);
             return Json(new { error = result });
         }
@@ -368,7 +381,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         public ActionResult checkPhoneNumRepeat(string phoneNum)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             var temp = long.Parse(phoneNum);
             var result = Db.Set<haowanFamilyAccountInfo>().Any(c => c.phoneNumber == temp);
             return Json(new { error = result });
@@ -378,7 +391,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         public ActionResult checkEmailRepeat(string email)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             var result = Db.Set<haowanFamilyAccountInfo>().Any(c => c.email == email);
             return Json(new { error = result });
         }
@@ -412,7 +425,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 current.subtime = DateTime.Now;
                 current.password = password;
                 current.phoneNumber = long.Parse(phoneNum);
-                DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+                //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
                 Db.Set<haowanFamilyAccountInfo>().Add(current);
                 if (Db.SaveChanges() > 0)
                 {
@@ -434,7 +447,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         public ActionResult login(string name, string password, bool isEmail, bool isPhoneNum, string thirdSessionKey, string vCode)
         {//验证码初次不显示功能，实现为加缓存，缓存每10分钟清空一次。如果加到数据库会增加压力
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             haowanFamilyAccountInfo result = new haowanFamilyAccountInfo();
             if (SingleLogOnVcodeCache.GetLogOnVcodeCache().LogOnCache.ContainsKey(thirdSessionKey))
             {
@@ -614,7 +627,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         public ActionResult checkVCode(string vCode)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-            DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
+            //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
             string validateCode = Session["validateCode"] == null ? string.Empty : Session["validateCode"].ToString();
             if (string.IsNullOrEmpty(validateCode))
             {

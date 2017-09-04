@@ -33,6 +33,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="orderNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="userInfoId" Type="int" Nullable="false" />
     <Property Name="orderDataJson" Type="nvarchar(max)" Nullable="false" />
     <Property Name="orderStatus" Type="smallint" Nullable="false" />
     <Property Name="subTime" Type="datetime" Nullable="false" />
@@ -72,7 +73,6 @@
     <Property Name="thirdSessionKey" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="encryptedData" Type="nvarchar(max)" Nullable="false" />
     <Property Name="haoWanFamilyUserInfo" Type="nvarchar(max)" />
-    <Property Name="orderInfo" Type="nvarchar(max)" />
     <Property Name="subTime" Type="datetime" Nullable="false" />
     <Property Name="modifiedOn" Type="datetime" Nullable="false" />
     <Property Name="remark" Type="nvarchar(max)" />
