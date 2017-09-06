@@ -28,6 +28,7 @@ Page({
 
   //手指触摸动作开始 记录起点X坐标 所有订单
   touchstart: function (e) {
+    if (e.changedTouches[0].clientX == undefined) { return; }
     //开始触摸时 重置所有删除
     this.data.myOrders.forEach(function (v, i) {
       if (v.isTouchMove == undefined || v.isTouchMove)//只操作为true的

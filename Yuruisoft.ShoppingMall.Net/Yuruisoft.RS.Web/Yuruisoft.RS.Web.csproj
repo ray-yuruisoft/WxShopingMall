@@ -867,6 +867,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\MenuIcon\" />
+    <Folder Include="wxshoppingMallContent\commentImages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

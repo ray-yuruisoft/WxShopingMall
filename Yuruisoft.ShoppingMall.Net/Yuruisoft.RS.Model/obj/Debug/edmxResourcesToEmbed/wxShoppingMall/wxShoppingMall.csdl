@@ -2,9 +2,10 @@
 <Schema Namespace="rayyewang01Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="wxShoppingMallEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="haowanFamilyAccountInfo" EntityType="rayyewang01Model.haowanFamilyAccountInfo" />
+    <EntitySet Name="wxShoppingMall_comments" EntityType="rayyewang01Model.wxShoppingMall_comments" />
     <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
-    <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
     <EntitySet Name="wxShoppingMall_orderInfo" EntityType="rayyewang01Model.wxShoppingMall_orderInfo" />
+    <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
     <EntitySet Name="wxShoppingMall_userInfo" EntityType="rayyewang01Model.wxShoppingMall_userInfo" />
   </EntityContainer>
   <EntityType Name="haowanFamilyAccountInfo">
@@ -21,6 +22,21 @@
     <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="sort" Type="Int32" />
   </EntityType>
+  <EntityType Name="wxShoppingMall_comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="produceInfoId" Type="Int32" Nullable="false" />
+    <Property Name="orderInfoId" Type="Int32" Nullable="false" />
+    <Property Name="userInfoId" Type="Int32" Nullable="false" />
+    <Property Name="merchantInfoId" Type="Int32" Nullable="false" />
+    <Property Name="contentJson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="Int32" />
+  </EntityType>
   <EntityType Name="wxShoppingMall_merchantInfo">
     <Key>
       <PropertyRef Name="id" />
@@ -32,6 +48,21 @@
     <Property Name="modiyTime" Type="DateTime" Precision="3" />
     <Property Name="sort" Type="Int32" />
     <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="wxShoppingMall_orderInfo">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="orderNumber" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userInfoId" Type="Int32" Nullable="false" />
+    <Property Name="orderDataJson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="orderStatus" Type="Int16" Nullable="false" />
+    <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="Int32" />
   </EntityType>
   <EntityType Name="wxShoppingMall_produceInfo">
     <Key>
@@ -53,21 +84,6 @@
     <Property Name="modiyTime" Type="DateTime" Precision="3" />
     <Property Name="sort" Type="Int32" />
     <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="wxShoppingMall_orderInfo">
-    <Key>
-      <PropertyRef Name="id" />
-      <PropertyRef Name="orderNumber" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="orderNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="userInfoId" Type="Int32" Nullable="false" />
-    <Property Name="orderDataJson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="orderStatus" Type="Int16" Nullable="false" />
-    <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="sort" Type="Int32" />
   </EntityType>
   <EntityType Name="wxShoppingMall_userInfo">
     <Key>

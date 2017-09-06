@@ -106,6 +106,9 @@
       <DependentUpon>wxShoppingMall.edmx</DependentUpon>
     </Compile>
     <Compile Include="wxShoppingMall\wxShoppingMallDBFactory.cs" />
+    <Compile Include="wxShoppingMall\wxShoppingMall_comments.cs">
+      <DependentUpon>wxShoppingMall.tt</DependentUpon>
+    </Compile>
     <Compile Include="wxShoppingMall\wxShoppingMall_merchantInfo.cs">
       <DependentUpon>wxShoppingMall.tt</DependentUpon>
     </Compile>

@@ -14,6 +14,21 @@
     <Property Name="remark" Type="nvarchar(max)" />
     <Property Name="sort" Type="int" />
   </EntityType>
+  <EntityType Name="wxShoppingMall_comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="produceInfoId" Type="int" Nullable="false" />
+    <Property Name="orderInfoId" Type="int" Nullable="false" />
+    <Property Name="userInfoId" Type="int" Nullable="false" />
+    <Property Name="merchantInfoId" Type="int" Nullable="false" />
+    <Property Name="contentJson" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="subTime" Type="datetime" Nullable="false" />
+    <Property Name="modifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="remark" Type="nvarchar(max)" />
+    <Property Name="sort" Type="int" />
+  </EntityType>
   <EntityType Name="wxShoppingMall_merchantInfo">
     <Key>
       <PropertyRef Name="id" />
@@ -80,6 +95,7 @@
   </EntityType>
   <EntityContainer Name="rayyewang01ModelStoreContainer">
     <EntitySet Name="haowanFamilyAccountInfo" EntityType="Self.haowanFamilyAccountInfo" Schema="rayyewang01" store:Type="Tables" />
+    <EntitySet Name="wxShoppingMall_comments" EntityType="Self.wxShoppingMall_comments" Schema="rayyewang01" Table="wxShoppingMall.comments" store:Type="Tables" />
     <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="Self.wxShoppingMall_merchantInfo" Schema="rayyewang01" Table="wxShoppingMall.merchantInfo" store:Type="Tables" />
     <EntitySet Name="wxShoppingMall_orderInfo" EntityType="Self.wxShoppingMall_orderInfo" Schema="rayyewang01" Table="wxShoppingMall.orderInfo" store:Type="Tables" />
     <EntitySet Name="wxShoppingMall_produceInfo" EntityType="Self.wxShoppingMall_produceInfo" Schema="rayyewang01" Table="wxShoppingMall.produceInfo" store:Type="Tables" />

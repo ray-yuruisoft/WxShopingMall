@@ -1,22 +1,66 @@
 // Page/extraPages/goComment/goComment.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    checkboxItems: [
-      { name: '匿名发表', value: '0', checked: true }
-    ],
 
-    files: []//上传组件
-    
+  },
+  commentNow: function (e) {
+    var x = e.currentTarget.dataset.xindex;
+    var y = e.currentTarget.dataset.yindex;
+    var that = this;
+
+    var imageFile = this.data.orderInfo.detail[x].produceArr[y].imageFile;
+    imageFile.forEach((item, index) => {
+      const uploadTask = wx.uploadFile({
+        url: app.globalData.servsers + '/shoppingMall/uploadCommentImages',
+        filePath: item.filePath,
+        name: 'file',
+        header: {
+          'haowanFamily': 'www.haowanFamily.com',
+          'content-type': 'multipart/form-data',
+        },
+        formData: {
+          "produceInfoId": 3
+        },
+        success: function (res) {
+          var data = res.data
+
+        },
+        fail: function () {
+          that.data.orderInfo.detail[x].produceArr[y].imageFile[index].uploadProgress = 0;
+          that.data.orderInfo.detail[x].produceArr[y].imageFile[index].uploadSuccess = false;
+          that.setData({
+            orderInfo: that.data.orderInfo
+          })
+        }
+      });
+      uploadTask.onProgressUpdate((res) => {//自带异步回调
+        that.data.orderInfo.detail[x].produceArr[y].imageFile[index].uploadProgress = res.progress;
+        that.setData({
+          orderInfo: that.data.orderInfo
+        });
+      });
+    });
   },
 
+  commentInput: function (e) {
+    var x = e.currentTarget.dataset.xindex;
+    var y = e.currentTarget.dataset.yindex;
+    var value = e.detail.value;
+    this.data.orderInfo.detail[x].produceArr[y].commentText = value;
+    this.setData({
+      orderInfo: this.data.orderInfo
+    })
+  },
   checkboxChange: function (e) {
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value);
+    var x = e.currentTarget.dataset.xindex;
+    var y = e.currentTarget.dataset.yindex;
 
-    var checkboxItems = this.data.checkboxItems, values = e.detail.value;
+    var checkboxItems = this.data.orderInfo.detail[x].produceArr[y].checkboxItems, values = e.detail.value;
     for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
       checkboxItems[i].checked = false;
 
@@ -27,12 +71,11 @@ Page({
         }
       }
     }
-
+    this.data.orderInfo.detail[x].produceArr[y].checkboxItems = checkboxItems;
     this.setData({
-      checkboxItems: checkboxItems
+      orderInfo: this.data.orderInfo
     });
   },
-
   angleTapChoose: function (e) {
     var x = e.currentTarget.dataset.xindex;
     var y = e.currentTarget.dataset.yindex;
@@ -46,7 +89,7 @@ Page({
     var id = e.currentTarget.id;
     var x = e.currentTarget.dataset.xindex;
     var y = e.currentTarget.dataset.yindex;
-    var orderInfo = this.data.orderInfo; 
+    var orderInfo = this.data.orderInfo;
     orderInfo.detail[x].produceArr[y].commentStarCount = id;
     this.setData({
       orderInfo: orderInfo
@@ -54,23 +97,65 @@ Page({
   },
   // 上传组件 开始
   chooseImage: function (e) {
+    var x = e.currentTarget.dataset.xindex;
+    var y = e.currentTarget.dataset.yindex;
     var that = this;
+    if (that.data.orderInfo.detail[x].produceArr[y].imageFile.length > 2) { return; }
     wx.chooseImage({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        that.data.orderInfo.detail[x].produceArr[y].imageFile = that.data.orderInfo.detail[x].produceArr[y].imageFile.concat(
+          res.tempFilePaths.map(item => {
+            return {
+              filePath: item,
+              uploadding: false,
+              uploadProgress: 0,
+              uploadSuccess: true
+            };
+          })
+        );
         that.setData({
-          files: that.data.files.concat(res.tempFilePaths)
+          orderInfo: that.data.orderInfo
         });
       }
     })
   },
   previewImage: function (e) {
+    var x = e.currentTarget.dataset.xindex;
+    var y = e.currentTarget.dataset.yindex;
+    var imageFiles = this.data.orderInfo.detail[x].produceArr[y].imageFile.map(item => { return item.filePath });
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
-      urls: this.data.files // 需要预览的图片http链接列表
+      urls: imageFiles// 需要预览的图片http链接列表
     })
+  },
+  deleteImage: function (e) {
+    var x = e.currentTarget.dataset.xindex;
+    var y = e.currentTarget.dataset.yindex;
+    var z = e.currentTarget.dataset.index;
+    var that = this;
+    var orderInfo = this.data.orderInfo
+    wx.showModal({
+      content: '确定要删除当前图片吗？',
+      confirmText: "确定",
+      cancelText: "取消",
+      confirmColor: "#18BC9C",
+      success: function (res) {
+        if (res.confirm) {
+          orderInfo.detail[x].produceArr[y].imageFile = orderInfo.detail[x].produceArr[y].imageFile.filter((item, index) => {
+            if (index != z)
+              return {};
+          });
+          that.setData({
+            orderInfo: orderInfo
+          });
+        } else {
+          return;
+        }
+      }
+    });
   },
   // 上传组件 结束
   /**
@@ -82,6 +167,9 @@ Page({
       item.produceArr.forEach(itemBottom => {
         itemBottom["icon_angleChoose"] = false;
         itemBottom["commentStarCount"] = 5;
+        itemBottom["checkboxItems"] = [{ name: '匿名发表', value: '0', checked: false }];
+        itemBottom["commentText"] = "";
+        itemBottom["imageFile"] = [];
       });
     });
     this.setData({

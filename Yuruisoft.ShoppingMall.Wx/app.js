@@ -34,12 +34,12 @@ App({
   globalData: {
     MerCollection: wx.getStorageSync('MerCollection'),//全局商品收藏夹
 
-    userAddress:undefined,
+    userAddress: undefined,
     account: undefined,
     password: undefined,
     email: undefined,
     phoneNumber: undefined,
-    servsers: 'http://www.yurusoft.net',
+    servsers: 'http://localhost:4943',
     hasLogin: false,
     userInfo: {},
     shoppingCart: wx.getStorageSync('shoppingCart'),//全局购物车

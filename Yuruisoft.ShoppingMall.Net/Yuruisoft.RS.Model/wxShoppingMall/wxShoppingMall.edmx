@@ -19,6 +19,21 @@
           <Property Name="remark" Type="nvarchar(max)" />
           <Property Name="sort" Type="int" />
         </EntityType>
+        <EntityType Name="wxShoppingMall_comments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="produceInfoId" Type="int" Nullable="false" />
+          <Property Name="orderInfoId" Type="int" Nullable="false" />
+          <Property Name="userInfoId" Type="int" Nullable="false" />
+          <Property Name="merchantInfoId" Type="int" Nullable="false" />
+          <Property Name="contentJson" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="subTime" Type="datetime" Nullable="false" />
+          <Property Name="modifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="sort" Type="int" />
+        </EntityType>
         <EntityType Name="wxShoppingMall_merchantInfo">
           <Key>
             <PropertyRef Name="id" />
@@ -85,6 +100,7 @@
         </EntityType>
         <EntityContainer Name="rayyewang01ModelStoreContainer">
           <EntitySet Name="haowanFamilyAccountInfo" EntityType="Self.haowanFamilyAccountInfo" Schema="rayyewang01" store:Type="Tables" />
+          <EntitySet Name="wxShoppingMall_comments" EntityType="Self.wxShoppingMall_comments" Schema="rayyewang01" Table="wxShoppingMall.comments" store:Type="Tables" />
           <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="Self.wxShoppingMall_merchantInfo" Schema="rayyewang01" Table="wxShoppingMall.merchantInfo" store:Type="Tables" />
           <EntitySet Name="wxShoppingMall_orderInfo" EntityType="Self.wxShoppingMall_orderInfo" Schema="rayyewang01" Table="wxShoppingMall.orderInfo" store:Type="Tables" />
           <EntitySet Name="wxShoppingMall_produceInfo" EntityType="Self.wxShoppingMall_produceInfo" Schema="rayyewang01" Table="wxShoppingMall.produceInfo" store:Type="Tables" />
@@ -96,9 +112,10 @@
       <Schema Namespace="rayyewang01Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="wxShoppingMallEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="haowanFamilyAccountInfo" EntityType="rayyewang01Model.haowanFamilyAccountInfo" />
+          <EntitySet Name="wxShoppingMall_comments" EntityType="rayyewang01Model.wxShoppingMall_comments" />
           <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
-          <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
           <EntitySet Name="wxShoppingMall_orderInfo" EntityType="rayyewang01Model.wxShoppingMall_orderInfo" />
+          <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
           <EntitySet Name="wxShoppingMall_userInfo" EntityType="rayyewang01Model.wxShoppingMall_userInfo" />
         </EntityContainer>
         <EntityType Name="haowanFamilyAccountInfo">
@@ -115,6 +132,21 @@
           <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="sort" Type="Int32" />
         </EntityType>
+        <EntityType Name="wxShoppingMall_comments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="produceInfoId" Type="Int32" Nullable="false" />
+          <Property Name="orderInfoId" Type="Int32" Nullable="false" />
+          <Property Name="userInfoId" Type="Int32" Nullable="false" />
+          <Property Name="merchantInfoId" Type="Int32" Nullable="false" />
+          <Property Name="contentJson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" />
+        </EntityType>
         <EntityType Name="wxShoppingMall_merchantInfo">
           <Key>
             <PropertyRef Name="id" />
@@ -126,6 +158,21 @@
           <Property Name="modiyTime" Type="DateTime" Precision="3" />
           <Property Name="sort" Type="Int32" />
           <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="wxShoppingMall_orderInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="orderNumber" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userInfoId" Type="Int32" Nullable="false" />
+          <Property Name="orderDataJson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="orderStatus" Type="Int16" Nullable="false" />
+          <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" />
         </EntityType>
         <EntityType Name="wxShoppingMall_produceInfo">
           <Key>
@@ -147,21 +194,6 @@
           <Property Name="modiyTime" Type="DateTime" Precision="3" />
           <Property Name="sort" Type="Int32" />
           <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="wxShoppingMall_orderInfo">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="orderNumber" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="orderNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="userInfoId" Type="Int32" Nullable="false" />
-          <Property Name="orderDataJson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="orderStatus" Type="Int16" Nullable="false" />
-          <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="sort" Type="Int32" />
         </EntityType>
         <EntityType Name="wxShoppingMall_userInfo">
           <Key>
@@ -200,6 +232,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="wxShoppingMall_comments">
+            <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_comments">
+              <MappingFragment StoreEntitySet="wxShoppingMall_comments">
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+                <ScalarProperty Name="subTime" ColumnName="subTime" />
+                <ScalarProperty Name="contentJson" ColumnName="contentJson" />
+                <ScalarProperty Name="merchantInfoId" ColumnName="merchantInfoId" />
+                <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
+                <ScalarProperty Name="orderInfoId" ColumnName="orderInfoId" />
+                <ScalarProperty Name="produceInfoId" ColumnName="produceInfoId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="wxShoppingMall_merchantInfo">
             <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_merchantInfo">
               <MappingFragment StoreEntitySet="wxShoppingMall_merchantInfo">
@@ -209,6 +257,21 @@
                 <ScalarProperty Name="subTime" ColumnName="subTime" />
                 <ScalarProperty Name="companyName" ColumnName="companyName" />
                 <ScalarProperty Name="merchantName" ColumnName="merchantName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wxShoppingMall_orderInfo">
+            <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_orderInfo">
+              <MappingFragment StoreEntitySet="wxShoppingMall_orderInfo">
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+                <ScalarProperty Name="subTime" ColumnName="subTime" />
+                <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
+                <ScalarProperty Name="orderDataJson" ColumnName="orderDataJson" />
+                <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
+                <ScalarProperty Name="orderNumber" ColumnName="orderNumber" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -231,21 +294,6 @@
                 <ScalarProperty Name="listKeys" ColumnName="listKeys" />
                 <ScalarProperty Name="listTitle" ColumnName="listTitle" />
                 <ScalarProperty Name="merchantId" ColumnName="merchantId" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="wxShoppingMall_orderInfo">
-            <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_orderInfo">
-              <MappingFragment StoreEntitySet="wxShoppingMall_orderInfo">
-                <ScalarProperty Name="sort" ColumnName="sort" />
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
-                <ScalarProperty Name="subTime" ColumnName="subTime" />
-                <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
-                <ScalarProperty Name="orderDataJson" ColumnName="orderDataJson" />
-                <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
-                <ScalarProperty Name="orderNumber" ColumnName="orderNumber" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

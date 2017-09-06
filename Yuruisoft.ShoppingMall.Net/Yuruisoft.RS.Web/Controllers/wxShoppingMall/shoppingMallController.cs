@@ -39,6 +39,17 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
         }
 
+
+        [HttpPost]
+        public ActionResult uploadCommentImages(int produceInfoId)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            HttpPostedFileBase PicContent = Request.Files["file"];
+            string path = System.Web.HttpContext.Current.Server.MapPath("/wxshoppingMallContent/commentImages/") + PicContent.FileName;
+            PicContent.SaveAs(path);
+            return Json(new { error = false });
+        }
+
         [HttpPost]
         public ActionResult orderInfoDelete(string orderNumber)
         {

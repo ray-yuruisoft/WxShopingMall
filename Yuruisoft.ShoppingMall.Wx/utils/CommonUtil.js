@@ -21,6 +21,8 @@ function reqPost(url, data, cb, sessionId) {//Post请求
   })
 }
 
+
+
 function Login(code, encryptedData, iv, rawData, signature) {
 
   reqPost('/shoppingMall/userLogin', {
@@ -79,5 +81,5 @@ module.exports = {
   regexAccount: regexAccount,//正则验证用户名
   regexPassword: regexPassword,//正则验证密码
   regexPhoneNum: regexPhoneNum,//正则验证手机号码
-  regexNumber: regexNumber,//正则验证纯数字
+  regexNumber: regexNumber//正则验证纯数字
 }
