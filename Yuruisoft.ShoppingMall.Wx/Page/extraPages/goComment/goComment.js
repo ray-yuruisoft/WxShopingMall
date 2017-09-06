@@ -5,17 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
     checkboxItems: [
-      { name: '匿名发表', value: '0', checked: true },
-      { name: '同步到我的朋友圈', value: '1' }
+      { name: '匿名发表', value: '0', checked: true }
     ],
 
-    files: [],//上传组件
-    icon_angleChoose: false,
-    commentStarList: [{ icon: 'icon-star-middle' }, { icon: 'icon-star-middle' }, { icon: 'icon-star-middle' }, { icon: 'icon-star-middle' }, { icon: 'icon-star-middle' }]
+    files: []//上传组件
+    
   },
-  
+
   checkboxChange: function (e) {
     console.log('checkbox发生change事件，携带value值为：', e.detail.value);
 
@@ -36,22 +33,23 @@ Page({
     });
   },
 
-  angleTapChoose: function () {
+  angleTapChoose: function (e) {
+    var x = e.currentTarget.dataset.xindex;
+    var y = e.currentTarget.dataset.yindex;
+    var orderInfo = this.data.orderInfo;
+    orderInfo.detail[x].produceArr[y].icon_angleChoose = !orderInfo.detail[x].produceArr[y].icon_angleChoose;
     this.setData({
-      icon_angleChoose: !this.data.icon_angleChoose
+      orderInfo: orderInfo
     });
   },
   commentStar: function (e) {
     var id = e.currentTarget.id;
-    this.data.commentStarList.forEach((item, index) => {
-      if (index <= id) {
-        item.icon = 'icon-star-middle';
-      } else {
-        item.icon = 'icon-star-empty-middle';
-      }
-    });
+    var x = e.currentTarget.dataset.xindex;
+    var y = e.currentTarget.dataset.yindex;
+    var orderInfo = this.data.orderInfo; 
+    orderInfo.detail[x].produceArr[y].commentStarCount = id;
     this.setData({
-      commentStarList: this.data.commentStarList
+      orderInfo: orderInfo
     })
   },
   // 上传组件 开始
@@ -80,6 +78,12 @@ Page({
    */
   onLoad: function (options) {
     var orderInfo = JSON.parse(options.data);
+    orderInfo.detail.forEach(item => {
+      item.produceArr.forEach(itemBottom => {
+        itemBottom["icon_angleChoose"] = false;
+        itemBottom["commentStarCount"] = 5;
+      });
+    });
     this.setData({
       orderInfo: orderInfo
     });

@@ -99,6 +99,7 @@ Page({
   goComment: function (e) {
     var index = e.currentTarget.id;
     var orderInfo = this.data.myOrders[index];
+    delete orderInfo.isTouchMove;
     wx.navigateTo({
       url: '../goComment/goComment?data=' + JSON.stringify(orderInfo)
     });

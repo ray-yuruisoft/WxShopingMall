@@ -6,7 +6,8 @@
         <view class="weui-panel">
             <view wx:for="{{orderInfo.detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" wx:for-index="merchantIndex">
                 <view wx:for="{{itemMerchant.produceArr}}" wx:for-item="itemBottom" wx:key="{{itemBottom.id}}" wx:for-index="indexBottom">
-                    <template is="produceInfo" data="{{...itemBottom,icon_angleChoose:icon_angleChoose,commentStarList:commentStarList,files:files,checkboxItems:checkboxItems}}" />
+                    <template is="produceInfo" data="{{...itemBottom,merchantIndex:merchantIndex,indexBottom:indexBottom,files:files,checkboxItems:checkboxItems}}" />
+                    <view wx:if="{{!((merchantIndex==orderInfo.detail.length-1)&&(indexBottom==itemMerchant.produceArr.length-1))}}" class="line"></view>
                 </view>
             </view>
         </view>
@@ -14,7 +15,7 @@
     </view>
 </view>
 <template name="produceInfo">
-  <view class="weui-panel__bd">
+  <view class="weui-panel">
     <navigator url="../produceDetails/produceDetails?id={{id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
       <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
         <image class="weui-media-box__thumb" src="{{listImageUrl}}" style="width: 60px; height: 60px;" />
@@ -26,17 +27,52 @@
     </navigator>
       <!-- 商品数量选择组件 开始 -->
       <view class="weui-panel">
-          <view bindtap="angleTapChoose" class="weui-panel__hd verticalCenter spaceBetween weui-cell_link">
-              <view class="textPanelHead">填写评价</view>
+          <view bindtap="angleTapChoose" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="weui-panel__hd verticalCenter spaceBetween weui-cell_link">
+              <view class="textPanelHead fontBold">填写评价</view>
               <view class="icon {{icon_angleChoose?'icon-angle-down':'icon-angle-up'}}"></view>
           </view>
           <view class="weui-panel__bd" style="{{icon_angleChoose?'display:none':'display:block'}}">
+            <!-- 评价星星 开始 -->
             <view class="weui-media-box weui-media-box_text flexDisplay verticalLeft">
               <text class="textPanelHead">评分：</text>
-              <view wx:for="{{commentStarList}}" wx:key="{{index}}">
-                <view catchtap='commentStar' id = "{{index}}" class="icon {{item.icon}} startPadding"></view>
+              <view class='flexDisplay' wx:if="{{commentStarCount==1}}">
+                <view catchtap='commentStar' id = "1" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "2" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+                <view catchtap='commentStar' id = "3" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+                <view catchtap='commentStar' id = "4" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+                <view catchtap='commentStar' id = "5" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+              </view>
+              <view class='flexDisplay' wx:if="{{commentStarCount==2}}">
+                <view catchtap='commentStar' id = "1" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "2" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "3" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+                <view catchtap='commentStar' id = "4" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+                <view catchtap='commentStar' id = "5" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+              </view>
+              <view class='flexDisplay' wx:if="{{commentStarCount==3}}">
+                <view catchtap='commentStar' id = "1" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "2" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "3" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "4" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+                <view catchtap='commentStar' id = "5" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+              </view>
+              <view class='flexDisplay' wx:if="{{commentStarCount==4}}">
+                <view catchtap='commentStar' id = "1" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "2" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "3" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "4" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "5" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-empty-middle startPadding"></view>
+              </view>
+              <view class='flexDisplay' wx:if="{{commentStarCount==5}}">
+                <view catchtap='commentStar' id = "1" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "2" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "3" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "4" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
+                <view catchtap='commentStar' id = "5" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="icon icon-star-middle startPadding"></view>
               </view>
             </view>
+            <!-- 评价星星 结束 -->
+            <!-- 评价文字 开始 -->
             <view class="weui-cells weui-cells_after-title">
                 <view class="weui-cell">
                     <view class="weui-cell__bd">
@@ -45,6 +81,8 @@
                     </view>
                 </view>
             </view>
+            <!-- 评价文字 结束 -->
+            <!-- 评价图片 开始 -->
             <view class="weui-cell">
                 <view class="weui-cell__bd">
                     <view class="weui-uploader">
@@ -88,11 +126,12 @@
                     </view>
                 </view>
             </view>
+            <!-- 评价图片 结束 -->
+            <!-- 匿名发表 开始 -->
             <view class="weui-cells weui-cells_after-title">
                 <checkbox-group bindchange="checkboxChange">
                     <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
                                 <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
-
                                 <view class="weui-cell__hd weui-check__hd_in-checkbox">
                                     <icon class="weui-icon-checkbox_circle" type="circle" size="20" wx:if="{{!item.checked}}"></icon>
                                     <icon class="weui-icon-checkbox_success" color='#18BC9C' type="success" size="20" wx:if="{{item.checked}}"></icon>
@@ -101,6 +140,7 @@
                             </label>
                 </checkbox-group>
             </view>
+            <!-- 匿名发表 结束 -->
             <view style='padding-bottom:10px;' class="weui-btn-area">
                 <button style="background-color:#18BC9C;" catchtap="commentNow" class="weui-btn" type="primary">发表评价</button>
             </view>                       

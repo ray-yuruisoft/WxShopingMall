@@ -455,3 +455,9 @@ page {
 .weui-navbar__item.weui-bar__item_on {
     color: #18bc9c;
 }
+
+.line {
+    height: 20px;
+    background-color: #f8f8f8;  
+    border: 0;
+}
