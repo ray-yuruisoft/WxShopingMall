@@ -57,6 +57,15 @@ namespace Yuruisoft.RS.Web.Models
                 }
             }
         }
+
+        public class contentJson
+        {        
+            public int produceInfoId { get; set; }
+            public int commentStarCount { get; set; }
+            public bool isAnonymous { get; set; }
+            public string commentText { get; set; }
+            public string[] imageFile { get; set; }
+        }
     }
 }
 

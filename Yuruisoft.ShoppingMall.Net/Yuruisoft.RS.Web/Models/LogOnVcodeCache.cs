@@ -11,7 +11,7 @@ namespace Yuruisoft.RS.Web.Models
         {
             LogOnCache = new Dictionary<string, short> { };
         }
-        public Dictionary<string, short> LogOnCache{ get;set;}
+        public Dictionary<string, short> LogOnCache { get; set; }
     }
 
     public class SingleLogOnVcodeCache
@@ -34,4 +34,5 @@ namespace Yuruisoft.RS.Web.Models
             return logOnVcodeCache;
         }
     }
+
 }

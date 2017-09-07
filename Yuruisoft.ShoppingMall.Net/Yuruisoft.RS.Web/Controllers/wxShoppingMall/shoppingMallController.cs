@@ -39,15 +39,59 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
         }
 
+        [HttpPost]
+        public ActionResult commentSubmit(wxShoppingMallTempModel.contentJson contentJson, string orderNumber, int merchantInfoId)
+        {
+            if (contentJson == null) { return Json(new { error = true }); }
+            if (contentJson.imageFile != null)
+            {//存数据库了
+                for (var i = 0; i < contentJson.imageFile.Length; i++)
+                {
+                    contentJson.imageFile[i] = orderNumber + "prNo" + contentJson.produceInfoId + "inNo" + i;
+                }
+            }
+            wxShoppingMall_comments current = new wxShoppingMall_comments();
+            var currentOrder = Db.Set<wxShoppingMall_orderInfo>().Where(c => c.orderNumber == orderNumber).FirstOrDefault();
+            if (currentOrder == null) { return Json(new { error = true }); }
+            current.contentJson = Newtonsoft.Json.JsonConvert.SerializeObject(contentJson, Newtonsoft.Json.Formatting.Indented);
+            current.merchantInfoId = merchantInfoId;
+            current.modifiedOn = DateTime.Now;
+            current.subTime = DateTime.Now;
+            current.userInfoId = currentOrder.userInfoId;
+            current.orderInfoId = currentOrder.id;
+            current.produceInfoId = contentJson.produceInfoId;
+            Db.Set<wxShoppingMall_comments>().Add(current);
+            if (Db.SaveChanges() > 0)
+            {
+                return Json(new { error = false });
+            }
+            return Json(new { error = true });
+        }
 
         [HttpPost]
-        public ActionResult uploadCommentImages(int produceInfoId)
-        {
+        public ActionResult uploadCommentImages(int index, string contentJson, string orderNumber, int merchantInfoId)
+        {//此处容易造成异步并发的问题，客户端是连续请求的，可能缓存还未形成，就已经请求过来了...
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            wxShoppingMallTempModel.contentJson contentJsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject<wxShoppingMallTempModel.contentJson>(contentJson);
+            string key = orderNumber + "prNo" + contentJsonObj.produceInfoId;
             HttpPostedFileBase PicContent = Request.Files["file"];
-            string path = System.Web.HttpContext.Current.Server.MapPath("/wxshoppingMallContent/commentImages/") + PicContent.FileName;
-            PicContent.SaveAs(path);
-            return Json(new { error = false });
+            if (contentJsonObj.imageFile[index] != ("wxfile://" + PicContent.FileName)) { return Json(new { error = true }); }//Json核对
+            var fileName = key + "inNo" + index + "." + PicContent.FileName.Split('.')[1];
+            string path = System.Web.HttpContext.Current.Server.MapPath("/wxshoppingMallContent/commentImages/") + fileName;
+            try
+            {
+                PicContent.SaveAs(path);//保存
+                if (index == (contentJsonObj.imageFile.Length - 1))
+                    return Json(new { error = false, updateDb = true });
+                else
+                    return Json(new { error = false, updateDb = false });
+            }
+            catch (Exception e)
+            {
+                return Json(new { error = true });
+            }
+
+
         }
 
         [HttpPost]
@@ -125,7 +169,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
                 if (currentUser == null)
                 {
-                    Json(new { error = true });
+                    return Json(new { error = true });
                 }
                 #region 订单表-新增
                 wxShoppingMall_orderInfo orderInfo = new wxShoppingMall_orderInfo();

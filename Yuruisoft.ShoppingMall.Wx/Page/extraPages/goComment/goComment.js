@@ -1,5 +1,6 @@
 // Page/extraPages/goComment/goComment.js
 var app = getApp();
+
 Page({
 
   /**
@@ -8,45 +9,120 @@ Page({
   data: {
 
   },
+  showToastWrong: function (title) {
+    wx.showToast({
+      title: title,
+      image: '../../../style/images/replaceIcon/exclamation-sign.png'
+    })
+  },
+  showToastSuccess: function (title) {
+    wx.showToast({
+      title: title,
+      icon: 'success'
+    })
+   },
+
   commentNow: function (e) {
     var x = e.currentTarget.dataset.xindex;
     var y = e.currentTarget.dataset.yindex;
     var that = this;
-
+    if (that.data.orderInfo.detail[x].produceArr[y].commentText.length < 6 || that.data.orderInfo.detail[x].produceArr[y].commentText.length > 500) {
+      that.showToastWrong("字数要在6-500之间");
+      return;
+    }
     var imageFile = this.data.orderInfo.detail[x].produceArr[y].imageFile;
-    imageFile.forEach((item, index) => {
-      const uploadTask = wx.uploadFile({
-        url: app.globalData.servsers + '/shoppingMall/uploadCommentImages',
-        filePath: item.filePath,
-        name: 'file',
-        header: {
-          'haowanFamily': 'www.haowanFamily.com',
-          'content-type': 'multipart/form-data',
-        },
-        formData: {
-          "produceInfoId": 3
-        },
-        success: function (res) {
-          var data = res.data
+    var produceInfo = that.data.orderInfo.detail[x].produceArr[y];
+    var contentJson = {
+      produceInfoId: produceInfo.id,
+      commentStarCount: produceInfo.commentStarCount,
+      isAnonymous: produceInfo.checkboxItems[0].checked,
+      commentText: produceInfo.commentText,
+      imageFile: imageFile.map(item => {
+        return item.filePath
+      })
+    };
+    var imageUpSuc = false;
+    if (imageFile.length != 0)
+      imageFile.forEach((item, index) => {
+        const uploadTask = wx.uploadFile({
+          url: app.globalData.servsers + '/shoppingMall/uploadCommentImages',
+          filePath: item.filePath,
+          name: 'file',
+          header: {
+            'haowanFamily': 'www.haowanFamily.com',
+            'content-type': 'multipart/form-data'
+          },
+          formData: {
+            index: index,
+            contentJson: JSON.stringify(contentJson),
+            orderNumber: that.data.orderInfo.orderNumber,
+            merchantInfoId: that.data.orderInfo.detail[x].merchantId
+          },
+          success: function (res) {
+            var data = JSON.parse(res.data);
+            if ((!data.error) && imageUpSuc && data.updateDb) {//服务器存储错误
 
-        },
-        fail: function () {
-          that.data.orderInfo.detail[x].produceArr[y].imageFile[index].uploadProgress = 0;
-          that.data.orderInfo.detail[x].produceArr[y].imageFile[index].uploadSuccess = false;
+              app.ajax.reqPost('/shoppingMall/commentSubmit', {//所有上传成功，准备更新数据库
+                contentJson: contentJson,
+                orderNumber: that.data.orderInfo.orderNumber,
+                merchantInfoId: that.data.orderInfo.detail[x].merchantId
+              }, function (res) {
+                if (!res || res.error == true) {//失败直接返回     
+                  that.showToastWrong("服务器更新失败，请稍后再试");
+                  return;
+                }
+                that.showToastSuccess("提交成功");
+
+                that.data.orderInfo.detail[x].produceArr.splice(y, 1);
+                that.setData({
+                  orderInfo: that.data.orderInfo
+                })
+              });
+            }
+
+          },
+          fail: function () {
+            uploadTask.abort();
+            that.data.orderInfo.detail[x].produceArr[y].imageFile[index].uploadProgress = 0;
+            that.data.orderInfo.detail[x].produceArr[y].imageFile[index].uploadSuccess = false;
+            that.setData({
+              orderInfo: that.data.orderInfo
+            })
+          }
+        });
+        uploadTask.onProgressUpdate((res) => {//自带异步回调
+          that.data.orderInfo.detail[x].produceArr[y].imageFile[index].uploadProgress = res.progress;
           that.setData({
             orderInfo: that.data.orderInfo
-          })
-        }
-      });
-      uploadTask.onProgressUpdate((res) => {//自带异步回调
-        that.data.orderInfo.detail[x].produceArr[y].imageFile[index].uploadProgress = res.progress;
-        that.setData({
-          orderInfo: that.data.orderInfo
+          });
+
+          // 所有图片上传成功后，可以更新数据库 开始
+          var successCount = 0;
+          var imageFile = that.data.orderInfo.detail[x].produceArr[y].imageFile;
+          for (var i = 0; i < imageFile.length; i++) {
+            if (imageFile[i].uploadProgress == 100)
+              successCount++;
+          }
+          if (successCount == imageFile.length) { imageUpSuc = true; }
+          // 所有图片上传成功后，可以更新数据库 结束
         });
       });
-    });
-  },
+    else {
+      app.ajax.reqPost('/shoppingMall/commentSubmit', {
+        contentJson: contentJson,
+        orderNumber: that.data.orderInfo.orderNumber,
+        merchantInfoId: that.data.orderInfo.detail[x].merchantId
+      }, function (res) {
+        if (!res || res.error == true) {//失败直接返回
+          that.showToastWrong("服务器更新失败，请稍后再试");
+          return;
+        }
 
+
+
+      });
+    }
+  },
   commentInput: function (e) {
     var x = e.currentTarget.dataset.xindex;
     var y = e.currentTarget.dataset.yindex;
