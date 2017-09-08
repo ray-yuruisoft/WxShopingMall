@@ -87,8 +87,8 @@
                   <text class="verticalLeft">总价：<text class='fontRed'>¥{{feeSum}}</text></text>
               </view>
               <view class="button-sp-area">
-                  <button catchtap='goComment' id='{{index}}' style="background-color:#18BC9C;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">去评价</button>
-                  <button style="background-color:orange;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">再次购买</button>
+                  <button wx:if="{{orderStatus=='待评价'}}" catchtap='goComment' id='{{index}}' style="background-color:#18BC9C;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">去评价</button>
+                  <button wx:if="{{orderStatus=='待再次购买'}}" style="background-color:orange;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">再次购买</button>
               </view>
           </view>
           <view wx:for="{{detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" wx:for-index="merchantIndex" class="weui-panel">

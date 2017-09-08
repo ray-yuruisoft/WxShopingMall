@@ -130,19 +130,19 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 {
                     if (item.orderStatus == 0)
                     {
-                        waitForPayItemCount++;
+                        waitForPayItemCount++;//待付款
                     }
-                    else if (item.orderStatus == 1)
+                    else if (item.orderStatus == 1 || item.orderStatus == 2)
                     {
-                        waitForConfirmItemCount++;
-                    }
-                    else if (item.orderStatus == 2)
-                    {
-                        waitForCommentItemCount++;
+                        waitForConfirmItemCount++;//待收货
                     }
                     else if (item.orderStatus == 3)
                     {
-                        waitForRepairItemCount++;
+                        waitForCommentItemCount++;//待评价
+                    }
+                    else if (item.orderStatus == 5 || item.orderStatus == 6 || item.orderStatus == 7 || item.orderStatus == 8 || item.orderStatus == 9 || item.orderStatus == 10 || item.orderStatus == 11)
+                    {
+                        waitForRepairItemCount++;//退换/售后
                     }
                     orderModel = Newtonsoft.Json.JsonConvert.DeserializeObject<wxShoppingMallTempModel.orderInfo.orderModel>(item.orderDataJson);
                     arr.Add(orderModel);

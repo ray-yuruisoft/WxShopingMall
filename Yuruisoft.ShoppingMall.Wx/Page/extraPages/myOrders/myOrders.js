@@ -28,7 +28,7 @@ Page({
 
   //手指触摸动作开始 记录起点X坐标 所有订单
   touchstart: function (e) {
-    if (e.changedTouches[0].clientX == undefined) { return; }
+    if (e.changedTouches[0] == undefined) { return; }
     //开始触摸时 重置所有删除
     this.data.myOrders.forEach(function (v, i) {
       if (v.isTouchMove == undefined || v.isTouchMove)//只操作为true的
@@ -111,7 +111,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    var that = this; 
     that.data.activeIndex = options.id;
     /*商品详情Tab 开始*/
     wx.getSystemInfo({
@@ -151,6 +151,27 @@ Page({
       else if (item.orderStatus == 4) {
         temp = '待再次购买';
       }
+      else if (item.orderStatus == 5) {
+        temp = '待审核';
+      }
+      else if (item.orderStatus == 6) {
+        temp = '审核不通过';
+      }
+      else if (item.orderStatus == 7) {
+        temp = '商家退换，待买家发货';
+      }
+      else if (item.orderStatus == 8) {
+        temp = '待商家收货';
+      }
+      else if (item.orderStatus == 9) {
+        temp = '商家退款，待买家发货';
+      }
+      else if (item.orderStatus == 10) {
+        temp = '待退款';
+      }
+      else if (item.orderStatus == 11) {
+        temp = '待好万家介入';
+      }
       else if (item.orderStatus == '待付款') {
         temp = 0;
       }
@@ -165,6 +186,27 @@ Page({
       }
       else if (item.orderStatus == '待再次购买') {
         temp = 4;
+      }
+      else if (item.orderStatus == '待审核') {
+        temp = 5;
+      }
+      else if (item.orderStatus == '审核不通过') {
+        temp = 6;
+      }
+      else if (item.orderStatus == '商家退换，待买家发货') {
+        temp = 7;
+      }
+      else if (item.orderStatus == '待商家收货') {
+        temp = 8;
+      }
+      else if (item.orderStatus == '商家退款，待买家发货') {
+        temp = 9;
+      }
+      else if (item.orderStatus == '待退款') {
+        temp = 10;
+      }
+      else if (item.orderStatus == '待好万家介入') {
+        temp = 11;
       }
       item.orderStatus = temp;
     });
