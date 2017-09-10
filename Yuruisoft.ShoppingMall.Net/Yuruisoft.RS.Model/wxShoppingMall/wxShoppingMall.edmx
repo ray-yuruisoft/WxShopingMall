@@ -60,6 +60,7 @@
           <Property Name="modifiedOn" Type="datetime" Nullable="false" />
           <Property Name="remark" Type="nvarchar(max)" />
           <Property Name="sort" Type="int" />
+          <Property Name="delFlag" Type="smallint" Nullable="false" />
         </EntityType>
         <EntityType Name="wxShoppingMall_produceInfo">
           <Key>
@@ -114,9 +115,9 @@
           <EntitySet Name="haowanFamilyAccountInfo" EntityType="rayyewang01Model.haowanFamilyAccountInfo" />
           <EntitySet Name="wxShoppingMall_comments" EntityType="rayyewang01Model.wxShoppingMall_comments" />
           <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
-          <EntitySet Name="wxShoppingMall_orderInfo" EntityType="rayyewang01Model.wxShoppingMall_orderInfo" />
           <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
           <EntitySet Name="wxShoppingMall_userInfo" EntityType="rayyewang01Model.wxShoppingMall_userInfo" />
+          <EntitySet Name="wxShoppingMall_orderInfo" EntityType="rayyewang01Model.wxShoppingMall_orderInfo" />
         </EntityContainer>
         <EntityType Name="haowanFamilyAccountInfo">
           <Key>
@@ -159,21 +160,6 @@
           <Property Name="sort" Type="Int32" />
           <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="wxShoppingMall_orderInfo">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="orderNumber" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="orderNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="userInfoId" Type="Int32" Nullable="false" />
-          <Property Name="orderDataJson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="orderStatus" Type="Int16" Nullable="false" />
-          <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="sort" Type="Int32" />
-        </EntityType>
         <EntityType Name="wxShoppingMall_produceInfo">
           <Key>
             <PropertyRef Name="id" />
@@ -210,6 +196,22 @@
           <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="sort" Type="Int32" />
+        </EntityType>
+        <EntityType Name="wxShoppingMall_orderInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="orderNumber" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userInfoId" Type="Int32" Nullable="false" />
+          <Property Name="orderDataJson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="orderStatus" Type="Int16" Nullable="false" />
+          <Property Name="subTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="delFlag" Type="Int16" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -261,21 +263,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="wxShoppingMall_orderInfo">
-            <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_orderInfo">
-              <MappingFragment StoreEntitySet="wxShoppingMall_orderInfo">
-                <ScalarProperty Name="sort" ColumnName="sort" />
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
-                <ScalarProperty Name="subTime" ColumnName="subTime" />
-                <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
-                <ScalarProperty Name="orderDataJson" ColumnName="orderDataJson" />
-                <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
-                <ScalarProperty Name="orderNumber" ColumnName="orderNumber" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="wxShoppingMall_produceInfo">
             <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
               <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
@@ -310,6 +297,22 @@
                 <ScalarProperty Name="thirdSessionKey" ColumnName="thirdSessionKey" />
                 <ScalarProperty Name="sessionKey" ColumnName="sessionKey" />
                 <ScalarProperty Name="openId" ColumnName="openId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wxShoppingMall_orderInfo">
+            <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_orderInfo">
+              <MappingFragment StoreEntitySet="wxShoppingMall_orderInfo">
+                <ScalarProperty Name="delFlag" ColumnName="delFlag" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+                <ScalarProperty Name="subTime" ColumnName="subTime" />
+                <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
+                <ScalarProperty Name="orderDataJson" ColumnName="orderDataJson" />
+                <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
+                <ScalarProperty Name="orderNumber" ColumnName="orderNumber" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

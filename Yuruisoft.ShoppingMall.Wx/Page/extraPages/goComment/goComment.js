@@ -7,7 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
   },
   showToastWrong: function (title) {
     wx.showToast({
@@ -20,17 +19,46 @@ Page({
       title: title,
       icon: 'success'
     })
-   },
-
+  },
   commentNow: function (e) {
-    var x = e.currentTarget.dataset.xindex;
-    var y = e.currentTarget.dataset.yindex;
     var that = this;
-    if (that.data.orderInfo.detail[x].produceArr[y].commentText.length < 6 || that.data.orderInfo.detail[x].produceArr[y].commentText.length > 500) {
-      that.showToastWrong("字数要在6-500之间");
-      return;
+    for (var i = 0; i < that.data.orderInfo.detail.length; i++) {
+      for (var j = 0; j < that.data.orderInfo.detail[i].produceArr.length; j++) {
+        if (that.data.orderInfo.detail[i].produceArr[j].commentText.length < 6 || that.data.orderInfo.detail[i].produceArr[j].commentText.length > 500) {
+          that.showToastWrong("字数要在6-500之间");
+          return;
+        }
+      }
     }
-    var imageFile = this.data.orderInfo.detail[x].produceArr[y].imageFile;
+    var result = undefined;
+    for (var x = 0; x < that.data.orderInfo.detail.length; x++) {
+      for (var y = 0; y < that.data.orderInfo.detail[x].produceArr.length; y++) {
+        result = that.commentServerUpdate(that, x, y);//这里只有失败才有返回值
+      }
+    }
+    if (result == undefined) {
+      wx.showModal({
+        content: '评价成功',
+        showCancel: false,
+        confirmColor: '#18BC9C',
+        success: function (res) {
+          if (res.confirm) {
+            app.ajax.reqPost('/shoppingMall/commentComplete', {//所有上传成功，准备更新数据库
+              orderNumber: that.data.orderInfo.orderNumber
+            }, function (res) {
+              if (!res || res.error == true) {//失败直接返回     
+                that.showToastWrong("服务器更新失败，请稍后再试");
+                return false;
+              }
+              wx.navigateBack({});
+            });
+          }
+        }
+      });
+    }
+  },
+  commentServerUpdate: function (that, x, y) {
+    var imageFile = that.data.orderInfo.detail[x].produceArr[y].imageFile;
     var produceInfo = that.data.orderInfo.detail[x].produceArr[y];
     var contentJson = {
       produceInfoId: produceInfo.id,
@@ -69,17 +97,10 @@ Page({
               }, function (res) {
                 if (!res || res.error == true) {//失败直接返回     
                   that.showToastWrong("服务器更新失败，请稍后再试");
-                  return;
+                  return false;
                 }
-                that.showToastSuccess("提交成功");
-
-                that.data.orderInfo.detail[x].produceArr.splice(y, 1);
-                that.setData({
-                  orderInfo: that.data.orderInfo
-                })
               });
             }
-
           },
           fail: function () {
             uploadTask.abort();
@@ -88,6 +109,8 @@ Page({
             that.setData({
               orderInfo: that.data.orderInfo
             })
+            that.showToastWrong("图片上传失败，请稍后再试");
+            return false;
           }
         });
         uploadTask.onProgressUpdate((res) => {//自带异步回调
@@ -95,7 +118,6 @@ Page({
           that.setData({
             orderInfo: that.data.orderInfo
           });
-
           // 所有图片上传成功后，可以更新数据库 开始
           var successCount = 0;
           var imageFile = that.data.orderInfo.detail[x].produceArr[y].imageFile;
@@ -115,11 +137,8 @@ Page({
       }, function (res) {
         if (!res || res.error == true) {//失败直接返回
           that.showToastWrong("服务器更新失败，请稍后再试");
-          return;
+          return false;
         }
-
-
-
       });
     }
   },
@@ -192,6 +211,9 @@ Page({
             };
           })
         );
+        if (that.data.orderInfo.detail[x].produceArr[y].imageFile.length > 3) {
+          that.data.orderInfo.detail[x].produceArr[y].imageFile = that.data.orderInfo.detail[x].produceArr[y].imageFile.slice(0, 3)
+        }
         that.setData({
           orderInfo: that.data.orderInfo
         });

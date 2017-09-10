@@ -1,116 +1,122 @@
 <!--myOrders.wxml-->
 <view class="page">
-    <view class="page__bd">
-        <!-- 订单搜索栏 开始 -->
-        <view class="weui-search-bar">
-            <view class="weui-search-bar__form">
-                <view class="weui-search-bar__box">
-                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                    <input type="text" class="weui-search-bar__input" placeholder="搜索好万家商品" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="完成" bindconfirm="searching" />
-                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-                        <icon type="clear" size="14"></icon>
-                    </view>
-                </view>
-                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+  <view class="page__bd">
+    <!-- 订单搜索栏 开始 -->
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索好万家商品" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="完成" bindconfirm="searching" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
           <icon class="weui-icon-search" type="search" size="14"></icon>
           <view class="weui-search-bar__text">在此输入要搜索的商品</view>
         </label>
-            </view>
-            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
-        </view>
-        <!-- 订单搜索栏 结束 -->
-        <!-- 订单状态分类Tab 开始 -->
-        <view class="weui-panel weui-panel_access">
-            <view class="weui-tab">
-                <view class="weui-navbar">
-                    <block wx:for="{{tabs}}" wx:key="*this">
-                        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-                            <view class="weui-navbar__title">{{item}}</view>
-                        </view>
-                    </block>
-                    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
-                </view>
-                <view class="weui-tab__panel">
-                    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-                        <!-- 所有订单 开始 -->
-                        <view wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" id='myOrders' class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
-                            data-index="{{orderIndex}}">
-                            <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
-                        </view>
-                        <!-- 所有订单 结束 -->
-                    </view>
-                    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-                        <!-- 待付款 开始 -->
-                        <view wx:if="{{itemOrder.orderStatus=='待付款'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
-                            data-index="{{orderIndex}}">
-                            <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
-                        </view>
-                        <!-- 待付款 结束 -->
-                    </view>
-                    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-                        <!-- 配送中 开始 -->
-                        <view wx:if="{{itemOrder.orderStatus=='待发货'||itemOrder.orderStatus=='待确认收货'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
-                            data-index="{{orderIndex}}">
-                            <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
-                        </view>
-                        <!-- 配送中 结束 -->
-                    </view>
-                    <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
-                        <!-- 待评价 开始 -->
-                        <view wx:if="{{itemOrder.orderStatus=='待评价'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
-                            data-index="{{orderIndex}}">
-                            <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
-                        </view>
-                        <!-- 待评价 结束 -->
-                    </view>
-                </view>
-            </view>
-        </view>
-        <!-- 订单状态分类Tab 结束 -->
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
     </view>
-    <view class="page__ft">
+    <!-- 订单搜索栏 结束 -->
+    <!-- 订单状态分类Tab 开始 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <!-- 所有订单 开始 -->
+            <view wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" id='myOrders' class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
+              data-index="{{orderIndex}}">
+              <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
+            </view>
+            <!-- 所有订单 结束 -->
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <!-- 待付款 开始 -->
+            <view wx:if="{{itemOrder.orderStatus=='待付款'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
+              data-index="{{orderIndex}}">
+              <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
+            </view>
+            <!-- 待付款 结束 -->
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <!-- 配送中 开始 -->
+            <view wx:if="{{itemOrder.orderStatus=='待发货'||itemOrder.orderStatus=='待确认收货'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
+              data-index="{{orderIndex}}">
+              <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
+            </view>
+            <!-- 配送中 结束 -->
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+            <!-- 待评价 开始 -->
+            <view wx:if="{{itemOrder.orderStatus=='待评价'}}" wx:for="{{myOrders}}" wx:for-item="itemOrder" wx:key="{{itemOrder.orderNumber}}" wx:for-index="orderIndex" bindtouchstart="touchstart" bindtouchmove="touchmove" class="weui-panel touch-item {{itemOrder.isTouchMove ? 'touch-move-active' : ''}}"
+              data-index="{{orderIndex}}">
+              <template is="orders" data="{{...itemOrder,index:orderIndex,arrlength:myOrders.length}}" />
+            </view>
+            <!-- 待评价 结束 -->
+          </view>
+        </view>
+      </view>
     </view>
-
+    <!-- 订单状态分类Tab 结束 -->
+  </view>
+  <view class="page__ft">
+  </view>
 </view>
-
 <!-- 订单的模板 开始 -->
 <template name="orders">
   <view class='flexDisplay'>
-      <view class='content'>
-          <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
-              <text class="verticalCenter fontBold">订单号：{{orderNumber}}</text>
-              <text class="verticalCenter fontBold">No.{{index+1}}</text>
-          </view>
-          <view style='padding:10px 10px;' class="weui-panel textPanelHead spaceBetween">
-              <view>
-                  <text class="verticalLeft">状态：<text class='fontGreen'>{{orderStatus}}</text></text>
-                  <text class="verticalLeft">总价：<text class='fontRed'>¥{{feeSum}}</text></text>
-              </view>
-              <view class="button-sp-area">
-                  <button wx:if="{{orderStatus=='待评价'}}" catchtap='goComment' id='{{index}}' style="background-color:#18BC9C;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">去评价</button>
-                  <button wx:if="{{orderStatus=='待再次购买'}}" style="background-color:orange;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">再次购买</button>
-              </view>
-          </view>
-          <view wx:for="{{detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" wx:for-index="merchantIndex" class="weui-panel">
-              <view class="weui-panel__hd textPanelHead flexDisplay"> <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
-              </view>
-              <view wx:for-items="{{itemMerchant.produceArr}}" class="flexDisplay weui-panel__bd" wx:key="{{itemBottom.id}}" wx:for-item="itemBottom">
-                  <view class="weui-media-box weui-media-box_appmsg">
-                      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                          <image class="weui-media-box__thumb" src="{{itemBottom.listImageUrl}}" style="width: 80px; height: 80px;" />
-                      </view>
-                      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                          <view class="display2Lines">{{itemBottom.listTitle}}</view>
-                          <view class="boxBlow spaceBetween">
-                              <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:gray;">{{itemBottom.itemCount}}件</view>
-                          </view>
-                      </view>
-                  </view>
-              </view>
-          </view>        
+    <view class='borderTop content'>
+      <view style='padding:10px 10px;' class="borderBottom textPanelHead spaceBetween">
+        <text class="verticalCenter fontBold">订单号：{{orderNumber}}</text>
+        <text class="verticalCenter fontBold">No.{{index+1}}</text>
       </view>
-      <view class="del" catchtap="del" id='myOrders' data-index="{{index}}">删除</view>
+      <view style='padding:10px 10px;' class="borderBottom textPanelHead spaceBetween">
+        <view>
+          <view class='flexDisplay'>
+            <text class="verticalLeft">状态：</text>
+            <text class='fontGreen'>{{orderStatus}}</text>
+          </view>
+          <view class='flexDisplay'>
+            <text class="verticalLeft">总价：</text>
+            <text class='fontRed'>¥{{feeSum}}</text>
+          </view>
+        </view>
+        <view class="button-sp-area">
+          <button wx:if="{{orderStatus=='待付款'}}" catchtap='goPay' id='{{index}}' style="background-color:#18BC9C;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">去付款</button>
+          <button wx:if="{{orderStatus=='待评价'}}" catchtap='goComment' id='{{index}}' style="background-color:#18BC9C;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">去评价</button>
+          <button wx:if="{{orderStatus=='待再次购买'}}" catchtap='goPay' id='{{index}}' style="background-color:orange;margin:10px;" class="weui-btn mini-btn" type="primary" size="mini">再次购买</button>
+        </view>
+      </view>
+      <view wx:for="{{detail}}" wx:for-item="itemMerchant" wx:key="{{itemMerchant.merchantId}}" wx:for-index="merchantIndex">
+        <view class="weui-panel__hd textPanelHead flexDisplay">
+          <text class="verticalCenter">{{itemMerchant.merchantName}}</text>
+        </view>
+        <view wx:for-items="{{itemMerchant.produceArr}}" class="flexDisplay weui-panel__bd" wx:key="{{itemBottom.id}}" wx:for-item="itemBottom">
+          <view class="weui-media-box weui-media-box_appmsg">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb" src="{{itemBottom.listImageUrl}}" style="width: 80px; height: 80px;" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="display2Lines">{{itemBottom.listTitle}}</view>
+              <view class="boxBlow spaceBetween">
+                <view class="weui-media-box__desc verticalCenter" style="font-size:15px; color:gray;">{{itemBottom.itemCount}}件</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="del" catchtap="del" id='myOrders' data-index="{{index}}">删除</view>
   </view>
-  <view wx:if="{{index<arrlength-1}}" class="line"></view>
+  <view class="line"></view>
 </template>
 <!-- 订单的模板 结束 -->

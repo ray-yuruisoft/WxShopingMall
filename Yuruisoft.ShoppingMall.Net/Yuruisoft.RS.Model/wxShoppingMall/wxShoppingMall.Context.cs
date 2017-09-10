@@ -28,8 +28,8 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
         public virtual DbSet<haowanFamilyAccountInfo> haowanFamilyAccountInfo { get; set; }
         public virtual DbSet<wxShoppingMall_comments> wxShoppingMall_comments { get; set; }
         public virtual DbSet<wxShoppingMall_merchantInfo> wxShoppingMall_merchantInfo { get; set; }
-        public virtual DbSet<wxShoppingMall_orderInfo> wxShoppingMall_orderInfo { get; set; }
         public virtual DbSet<wxShoppingMall_produceInfo> wxShoppingMall_produceInfo { get; set; }
         public virtual DbSet<wxShoppingMall_userInfo> wxShoppingMall_userInfo { get; set; }
+        public virtual DbSet<wxShoppingMall_orderInfo> wxShoppingMall_orderInfo { get; set; }
     }
 }

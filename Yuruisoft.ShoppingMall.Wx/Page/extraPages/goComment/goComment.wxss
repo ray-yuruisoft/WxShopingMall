@@ -6,6 +6,3 @@
 .weui-cell::before {
   border-top:0;
 }
-.line {
-    height: 40px;
-}

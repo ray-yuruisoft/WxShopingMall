@@ -35,4 +35,34 @@ namespace Yuruisoft.RS.Web.Models
         }
     }
 
+
+    public class commentImageCache
+    {
+        public commentImageCache()
+        {
+            commentCache = new Dictionary<string, string> { };
+        }
+        public Dictionary<string, string> commentCache { get; set; }
+    }
+
+    public class SingleCommentCache
+    {
+        private volatile static commentImageCache commentImageCache = null;
+        private static readonly object lockHelper = new object();
+
+        public static commentImageCache GetCommentImageCache()
+        {
+            if (commentImageCache == null)
+            {
+                lock (lockHelper)
+                {
+                    commentImageCache = new commentImageCache();
+                }
+            }
+            return commentImageCache;
+        }
+    }
+
+
+
 }

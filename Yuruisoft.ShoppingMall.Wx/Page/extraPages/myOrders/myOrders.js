@@ -28,17 +28,20 @@ Page({
 
   //手指触摸动作开始 记录起点X坐标 所有订单
   touchstart: function (e) {
-    if (e.changedTouches[0] == undefined) { return; }
     //开始触摸时 重置所有删除
     this.data.myOrders.forEach(function (v, i) {
       if (v.isTouchMove == undefined || v.isTouchMove)//只操作为true的
         v.isTouchMove = false;
     })
-    this.setData({
-      startX: e.changedTouches[0].clientX,
-      startY: e.changedTouches[0].clientY,
-      myOrders: this.data.myOrders
-    })
+    try {
+      this.setData({
+        startX: e.changedTouches[0].clientX,
+        startY: e.changedTouches[0].clientY,
+        myOrders: this.data.myOrders
+      })
+    } catch (e) {
+      return;
+    }
   },
   //滑动事件处理
   touchmove: function (e, orderName) {
@@ -81,22 +84,72 @@ Page({
   del: function (e) {
     var that = this;
     var index = e.currentTarget.dataset.index;
-    var orderNumber = that.data.myOrders[index].orderNumber;
-    that.data.myOrders.splice(index, 1);
-    app.ajax.reqPost('/shoppingMall/orderInfoDelete', {
-      "orderNumber": orderNumber
-    }, function (res) {
-      if (!res || res.error == true) {//失败直接返回        
-        return;
-      }
-      if (res.error == false) {
-        that.setData({
-          myOrders: that.data.myOrders
-        });
-      }
-    });
+    var orderStatus = that.data.myOrders[index].orderStatus;
+    if (orderStatus == '待再次购买' || orderStatus == '待付款') {
+      wx.showModal({
+        content: '确定要删除吗',
+        confirmText: "确定",
+        confirmColor: "#18BC9C",
+        cancelText: "取消",
+        success: function (res) {
+          if (res.confirm) {
+            var orderNumber = that.data.myOrders[index].orderNumber;
+            that.data.myOrders.splice(index, 1);
+            app.ajax.reqPost('/shoppingMall/orderInfoDelete', {
+              "orderNumber": orderNumber
+            }, function (res) {
+              if (!res || res.error == true) {//失败直接返回        
+                return;
+              }
+              if (res.error == false) {
+                that.setData({
+                  myOrders: that.data.myOrders
+                });
+              }
+            });
+          } else {
+            return;
+          }
+        }
+      });
+    }
+    else {
+      wx.showModal({
+        content: '该状态下订单不能被删除',
+        confirmColor: "#18BC9C",
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            return;
+          }
+        }
+      });
+    }
   },
-
+  goPay: function (e) {
+    var index = e.currentTarget.id;
+    var that = this;
+    that.data.myOrders[index].detail.forEach(item => {
+      item["choosedFlag"] = true;
+      item["feeSum"] = 0;
+      item.produceArr.forEach(itemBottom => {
+        itemBottom["choosedFlag"] = true;
+        itemBottom["feeSum"] = app.com.mul(parseFloat(itemBottom.price), itemBottom.itemCount);
+        item.feeSum = app.com.add(item.feeSum, itemBottom.feeSum);
+      })
+    })
+    var shoppingCartTemp = {
+      "allItemCount": that.data.myOrders[index].allItemCount,
+      "chooseItemCount": that.data.myOrders[index].allItemCount,
+      "feeSum": that.data.myOrders[index].feeSum,
+      "choosedFlag": true,
+      "detail": that.data.myOrders[index].detail
+    }
+    app.globalData.shoppingCartTemp = shoppingCartTemp;
+    wx.navigateTo({
+      url: '../check/check'
+    })
+  },
   goComment: function (e) {
     var index = e.currentTarget.id;
     var orderInfo = this.data.myOrders[index];
@@ -105,13 +158,11 @@ Page({
       url: '../goComment/goComment?data=' + JSON.stringify(orderInfo)
     });
   },
-
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this; 
+    var that = this;
     that.data.activeIndex = options.id;
     /*商品详情Tab 开始*/
     wx.getSystemInfo({

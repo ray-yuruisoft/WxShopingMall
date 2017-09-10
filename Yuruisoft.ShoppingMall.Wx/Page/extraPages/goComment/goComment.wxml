@@ -10,6 +10,9 @@
                     <view wx:if="{{!((merchantIndex==orderInfo.detail.length-1)&&(indexBottom==itemMerchant.produceArr.length-1))}}" class="line"></view>
                 </view>
             </view>
+            <view style='padding-bottom:10px;' class="weui-btn-area">
+                <button style="background-color:#18BC9C;" catchtap="commentNow" class="weui-btn" type="primary">发表评价</button>
+            </view>
         </view>
         <!-- 商品详情 结束 -->
     </view>
@@ -128,9 +131,7 @@
                 </checkbox-group>
             </view>
             <!-- 匿名发表 结束 -->
-            <view style='padding-bottom:10px;' class="weui-btn-area">
-                <button style="background-color:#18BC9C;" catchtap="commentNow" data-xindex ='{{merchantIndex}}' data-yindex='{{indexBottom}}' class="weui-btn" type="primary">发表评价</button>
-            </view>                       
+                                   
           </view>   
       </view>
       <!-- 商品数量选择组件 结束 -->

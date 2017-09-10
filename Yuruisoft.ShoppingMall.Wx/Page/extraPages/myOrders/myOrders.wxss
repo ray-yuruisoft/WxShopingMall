@@ -2,18 +2,29 @@
 @import '../../shoppingCart/shoppingCart.wxss';
 
 .weui-panel {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .weui-panel::before {
-    border-top: 0;
+  border-top: 0;
+}
+
+.weui-panel::after {
+  border-bottom: 0;
 }
 
 .left {
-    text-align: left;
+  text-align: left;
 }
 
-
-.content{
+.content {
   padding: 0;
+}
+
+.borderBottom {
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.borderTop {
+  border-top: 1rpx solid #e5e5e5;
 }

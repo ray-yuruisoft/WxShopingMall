@@ -47,7 +47,10 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             {//存数据库了
                 for (var i = 0; i < contentJson.imageFile.Length; i++)
                 {
-                    contentJson.imageFile[i] = orderNumber + "prNo" + contentJson.produceInfoId + "inNo" + i;
+                    var imageFileName = orderNumber + "prNo" + contentJson.produceInfoId + "inNo" + i;
+                    if (!SingleCommentCache.GetCommentImageCache().commentCache.ContainsKey(imageFileName)) { return Json(new { error = true }); }
+                    imageFileName = SingleCommentCache.GetCommentImageCache().commentCache[imageFileName];
+                    contentJson.imageFile[i] = imageFileName;
                 }
             }
             wxShoppingMall_comments current = new wxShoppingMall_comments();
@@ -69,14 +72,31 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         }
 
         [HttpPost]
+        public ActionResult commentComplete(string orderNumber)
+        {
+            var currentOrder = Db.Set<wxShoppingMall_orderInfo>().Where(c => c.orderNumber == orderNumber).FirstOrDefault();
+            var findItem = Db.Set<wxShoppingMall_orderInfo>().Find(currentOrder.id, orderNumber);
+            findItem.orderStatus = (short)orderStatus.waitingForReBuy;
+            var orderObj = Newtonsoft.Json.JsonConvert.DeserializeObject<wxShoppingMallTempModel.orderInfo.orderModel>(findItem.orderDataJson);
+            orderObj.orderStatus = (short)orderStatus.waitingForReBuy;
+            findItem.orderDataJson = Newtonsoft.Json.JsonConvert.SerializeObject(orderObj, Newtonsoft.Json.Formatting.Indented);
+            if (Db.SaveChanges() > 0)
+            {
+                return Json(new { error = false });
+            }
+            return Json(new { error = true });
+        }
+
+        [HttpPost]
         public ActionResult uploadCommentImages(int index, string contentJson, string orderNumber, int merchantInfoId)
-        {//此处容易造成异步并发的问题，客户端是连续请求的，可能缓存还未形成，就已经请求过来了...
+        {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
             wxShoppingMallTempModel.contentJson contentJsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject<wxShoppingMallTempModel.contentJson>(contentJson);
             string key = orderNumber + "prNo" + contentJsonObj.produceInfoId;
             HttpPostedFileBase PicContent = Request.Files["file"];
             if (contentJsonObj.imageFile[index] != ("wxfile://" + PicContent.FileName)) { return Json(new { error = true }); }//Json核对
             var fileName = key + "inNo" + index + "." + PicContent.FileName.Split('.')[1];
+            SingleCommentCache.GetCommentImageCache().commentCache[key + "inNo" + index] = fileName;
             string path = System.Web.HttpContext.Current.Server.MapPath("/wxshoppingMallContent/commentImages/") + fileName;
             try
             {
@@ -103,7 +123,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
                 var currentOrder = Db.Set<wxShoppingMall_orderInfo>().Where(c => c.orderNumber == orderNumber).FirstOrDefault();
                 var findItem = Db.Set<wxShoppingMall_orderInfo>().Find(currentOrder.id, orderNumber);
-                Db.Entry<wxShoppingMall_orderInfo>(findItem).State = System.Data.Entity.EntityState.Deleted;
+                findItem.delFlag = (short)DeleteEnumType.LogicDelete;
                 if (Db.SaveChanges() > 0)
                 {
                     return Json(new { error = false });
@@ -121,7 +141,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 //DbContext Db = Yuruisoft.RS.Model.wxShoppingMall.wxShoppingMallDBFactory.CreateDbContext();
                 var currentUser = Db.Set<wxShoppingMall_userInfo>().Where(c => c.thirdSessionKey == thirdSessionKey).FirstOrDefault();
                 if (currentUser == null) { return Json(new { error = true }); }
-                var orderInfos = Db.Set<wxShoppingMall_orderInfo>().Where(c => c.userInfoId == currentUser.id);
+                var orderInfos = Db.Set<wxShoppingMall_orderInfo>().Where(c => c.userInfoId == currentUser.id && c.delFlag == (short)DeleteEnumType.Normal);
                 if (orderInfos == null) { return Json(new { error = true }); }
                 int waitForPayItemCount = 0, waitForConfirmItemCount = 0, waitForCommentItemCount = 0, waitForRepairItemCount = 0;
                 wxShoppingMallTempModel.orderInfo.orderModel orderModel = new wxShoppingMallTempModel.orderInfo.orderModel();
@@ -173,6 +193,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 }
                 #region 订单表-新增
                 wxShoppingMall_orderInfo orderInfo = new wxShoppingMall_orderInfo();
+                orderInfo.delFlag = (short)DeleteEnumType.Normal;
                 orderInfo.userInfoId = currentUser.id;
                 orderInfo.modifiedOn = DateTime.Now;
                 orderInfo.subTime = DateTime.Now;

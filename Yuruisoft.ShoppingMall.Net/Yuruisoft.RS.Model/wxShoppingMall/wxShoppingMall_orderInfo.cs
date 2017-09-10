@@ -23,5 +23,6 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
         public System.DateTime modifiedOn { get; set; }
         public string remark { get; set; }
         public Nullable<int> sort { get; set; }
+        public short delFlag { get; set; }
     }
 }

@@ -55,6 +55,7 @@
     <Property Name="modifiedOn" Type="datetime" Nullable="false" />
     <Property Name="remark" Type="nvarchar(max)" />
     <Property Name="sort" Type="int" />
+    <Property Name="delFlag" Type="smallint" Nullable="false" />
   </EntityType>
   <EntityType Name="wxShoppingMall_produceInfo">
     <Key>
