@@ -22,7 +22,10 @@
     <Property Name="produceInfoId" Type="int" Nullable="false" />
     <Property Name="orderInfoId" Type="int" Nullable="false" />
     <Property Name="userInfoId" Type="int" Nullable="false" />
+    <Property Name="userName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="merchantInfoId" Type="int" Nullable="false" />
+    <Property Name="commentStarCount" Type="int" Nullable="false" />
+    <Property Name="imageGet" Type="bit" Nullable="false" />
     <Property Name="contentJson" Type="nvarchar(max)" Nullable="false" />
     <Property Name="subTime" Type="datetime" Nullable="false" />
     <Property Name="modifiedOn" Type="datetime" Nullable="false" />
@@ -49,6 +52,7 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="orderNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="userInfoId" Type="int" Nullable="false" />
+    <Property Name="userName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="orderDataJson" Type="nvarchar(max)" Nullable="false" />
     <Property Name="orderStatus" Type="smallint" Nullable="false" />
     <Property Name="subTime" Type="datetime" Nullable="false" />
@@ -71,6 +75,7 @@
     <Property Name="detailTabInstructionImageUrl" Type="nvarchar(max)" />
     <Property Name="evaluationCount" Type="int" />
     <Property Name="evaluationPercent" Type="float" />
+    <Property Name="evaluationJson" Type="nvarchar(max)" />
     <Property Name="price" Type="float" />
     <Property Name="unit" Type="nvarchar" MaxLength="50" />
     <Property Name="subTime" Type="datetime" />

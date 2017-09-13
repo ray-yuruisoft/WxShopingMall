@@ -1,0 +1,107 @@
+<!--Page/extraPages/produceComments/produceComments.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <!-- 评价详情分类Tab 开始 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-tab">
+        <view style='position:fixed; background-color:#ffffff' class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="displayColumn weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item.title}}</view>
+              <view style="{{activeIndex == index ? 'color:#18BC9C;' : ''}}" class="commentTab">{{item.content}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel" style='padding-top:70px;'>
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <!-- 全部 开始 -->
+            <view wx:for="{{evaluationObjs.commentDetail}}" wx:for-item="itemObjs" wx:key="{{itemObjs*this}}" wx:for-index="objsIndex" class='commentList'>
+              <template is="comment" data="{{...itemObjs,objsIndex:objsIndex}}" />
+            </view>
+            <!-- 全部 结束 -->
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <!-- 好评 开始 -->
+
+            <!-- 好评 结束 -->
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <!-- 中评 开始 -->
+
+            <!-- 中评 结束 -->
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+            <!-- 差评 开始 -->
+
+            <!-- 差评 结束 -->
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 4}}">
+            <!-- 晒单 开始 -->
+
+            <!-- 晒单 结束 -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 评价详情分类Tab 结束 -->
+  </view>
+  <view class="page__ft">
+  </view>
+</view>
+<!-- 订单的模板 开始 -->
+<template name="comment">
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text flexDisplay">
+        <view class="textPanelBodyBlack">{{evaluationUserName}}</view>
+        <view class="textPanelBodyGray">\r\n(银牌会员)\r\n\r\n\r\n\r\n</view>
+        <!-- 星星 开始 -->
+        <view class='flexDisplay' wx:if="{{evaluationCount==5}}">
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+        </view>
+        <view class='flexDisplay' wx:if="{{evaluationCount==4}}">
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star-empty"></view>
+        </view>
+        <view class='flexDisplay' wx:if="{{evaluationCount==3}}">
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star-empty"></view>
+          <view class="icon icon-star-empty"></view>
+        </view>
+        <view class='flexDisplay' wx:if="{{evaluationCount==2}}">
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star-empty"></view>
+          <view class="icon icon-star-empty"></view>
+          <view class="icon icon-star-empty"></view>
+        </view>
+        <view class='flexDisplay' wx:if="{{evaluationCount==1}}">
+          <view class="icon icon-star"></view>
+          <view class="icon icon-star-empty"></view>
+          <view class="icon icon-star-empty"></view>
+          <view class="icon icon-star-empty"></view>
+          <view class="icon icon-star-empty"></view>
+        </view>
+        <!-- 星星 结束 -->
+      </view>
+      <view class="weui-media-box__title weui-media-box__title_in-text textPanelBodyBlack">{{evaluationContent}}</view>
+      <view class='flexDisplay'>
+        <view catchtap='previewImage' id="{{index}}" data-objsindex='{{objsIndex}}' wx:for="{{evaluationImages}}" wx:key="item*this">
+          <image class="weui-media-box__thumb" src="{{item}}" style="margin:0 5px 10px 0;width: 80px; height: 80px;" />
+        </view>
+      </view>
+      <view class="weui-media-box__desc textPanelBodyGray">{{evaluationSubTime}}</view>
+    </view>
+  </view>
+</template>
+<!-- 订单的模板 结束 -->

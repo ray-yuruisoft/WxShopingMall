@@ -18,7 +18,10 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
         public int produceInfoId { get; set; }
         public int orderInfoId { get; set; }
         public int userInfoId { get; set; }
+        public string userName { get; set; }
         public int merchantInfoId { get; set; }
+        public int commentStarCount { get; set; }
+        public bool imageGet { get; set; }
         public string contentJson { get; set; }
         public System.DateTime subTime { get; set; }
         public System.DateTime modifiedOn { get; set; }

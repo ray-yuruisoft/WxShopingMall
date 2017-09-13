@@ -37,23 +37,23 @@ Page({
       }
     }
     if (result == undefined) {
-      wx.showModal({
-        content: '评价成功',
-        showCancel: false,
-        confirmColor: '#18BC9C',
-        success: function (res) {
-          if (res.confirm) {
-            app.ajax.reqPost('/shoppingMall/commentComplete', {//所有上传成功，准备更新数据库
-              orderNumber: that.data.orderInfo.orderNumber
-            }, function (res) {
-              if (!res || res.error == true) {//失败直接返回     
-                that.showToastWrong("服务器更新失败，请稍后再试");
-                return false;
-              }
-              wx.navigateBack({});
-            });
-          }
+      app.ajax.reqPost('/shoppingMall/commentComplete', {//所有上传成功，准备更新数据库
+        orderNumber: that.data.orderInfo.orderNumber
+      }, function (res) {
+        if (!res || res.error == true) {//失败直接返回     
+          that.showToastWrong("错误代码101");
+          return false;
         }
+        wx.showModal({
+          content: '评价成功',
+          showCancel: false,
+          confirmColor: '#18BC9C',
+          success: function (res) {
+            if (res.confirm) {
+              wx.navigateBack({});
+            }
+          }
+        });
       });
     }
   },
@@ -96,7 +96,7 @@ Page({
                 merchantInfoId: that.data.orderInfo.detail[x].merchantId
               }, function (res) {
                 if (!res || res.error == true) {//失败直接返回     
-                  that.showToastWrong("服务器更新失败，请稍后再试");
+                  that.showToastWrong("错误代码102");
                   return false;
                 }
               });
@@ -109,7 +109,7 @@ Page({
             that.setData({
               orderInfo: that.data.orderInfo
             })
-            that.showToastWrong("图片上传失败，请稍后再试");
+            that.showToastWrong("图片上传失败");
             return false;
           }
         });
@@ -136,7 +136,7 @@ Page({
         merchantInfoId: that.data.orderInfo.detail[x].merchantId
       }, function (res) {
         if (!res || res.error == true) {//失败直接返回
-          that.showToastWrong("服务器更新失败，请稍后再试");
+          that.showToastWrong("错误代码103");
           return false;
         }
       });

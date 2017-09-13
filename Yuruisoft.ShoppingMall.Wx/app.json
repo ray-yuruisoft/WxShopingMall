@@ -13,7 +13,8 @@
     "Page/extraPages/chooseAddressEdit/chooseAddressEdit",
     "Page/extraPages/MerCollection/MerCollection",
     "Page/extraPages/myOrders/myOrders",
-    "Page/extraPages/goComment/goComment"
+    "Page/extraPages/goComment/goComment",
+    "Page/extraPages/produceComments/produceComments"
   ],
   "window": {
     "navigationBarTextStyle": "write",

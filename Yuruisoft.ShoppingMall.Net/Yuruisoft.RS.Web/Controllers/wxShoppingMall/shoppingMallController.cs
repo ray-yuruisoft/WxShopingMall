@@ -56,17 +56,51 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             wxShoppingMall_comments current = new wxShoppingMall_comments();
             var currentOrder = Db.Set<wxShoppingMall_orderInfo>().Where(c => c.orderNumber == orderNumber).FirstOrDefault();
             if (currentOrder == null) { return Json(new { error = true }); }
+            current.commentStarCount = contentJson.commentStarCount;
             current.contentJson = Newtonsoft.Json.JsonConvert.SerializeObject(contentJson, Newtonsoft.Json.Formatting.Indented);
             current.merchantInfoId = merchantInfoId;
             current.modifiedOn = DateTime.Now;
             current.subTime = DateTime.Now;
             current.userInfoId = currentOrder.userInfoId;
+            current.userName = currentOrder.userName;
             current.orderInfoId = currentOrder.id;
             current.produceInfoId = contentJson.produceInfoId;
+            if (contentJson.imageFile != null && contentJson.imageFile.Length != 0)
+                current.imageGet = true;
+            else
+                current.imageGet = false;
             Db.Set<wxShoppingMall_comments>().Add(current);
             if (Db.SaveChanges() > 0)
             {
-                return Json(new { error = false });
+                var currents = Db.Set<wxShoppingMall_comments>().Where(c => c.produceInfoId == contentJson.produceInfoId);
+                if (currents == null) { return Json(new { error = true }); }
+                var count = 0;
+                var commentStarSum = 0;
+                foreach (var item in currents)
+                {
+                    count++;
+                    commentStarSum = commentStarSum + item.commentStarCount;
+                }
+                var currentPro = Db.Set<wxShoppingMall_produceInfo>().Where(c => c.id == contentJson.produceInfoId).FirstOrDefault();
+                var evaluationJson = new
+                {
+                    evaluationUserName = current.userName,
+                    evaluationCount = current.commentStarCount,
+                    evaluationContent = contentJson.commentText,
+                    evaluationSubTime = DateTime.Now.ToString("yyyy-MM-dd"),
+                    evaluationImages = contentJson.imageFile
+                };
+                if (currentPro == null) { return Json(new { error = true }); }
+                var findItem = Db.Set<wxShoppingMall_produceInfo>().Find(currentPro.id);
+                findItem.evaluationCount = count;
+                double temp = (Convert.ToDouble(commentStarSum) / (Convert.ToDouble(count) * 5)) * 100;
+                findItem.evaluationPercent = Math.Round(temp, 2);
+                findItem.modiyTime = DateTime.Now;
+                findItem.evaluationJson = Newtonsoft.Json.JsonConvert.SerializeObject(evaluationJson, Newtonsoft.Json.Formatting.Indented);
+                if (Db.SaveChanges() > 0)
+                {
+                    return Json(new { error = false });
+                }
             }
             return Json(new { error = true });
         }
@@ -96,7 +130,8 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             HttpPostedFileBase PicContent = Request.Files["file"];
             if (contentJsonObj.imageFile[index] != ("wxfile://" + PicContent.FileName)) { return Json(new { error = true }); }//Json核对
             var fileName = key + "inNo" + index + "." + PicContent.FileName.Split('.')[1];
-            SingleCommentCache.GetCommentImageCache().commentCache[key + "inNo" + index] = fileName;
+            var temp = domainGet() + "/wxshoppingMallContent/commentImages/" + fileName;
+            SingleCommentCache.GetCommentImageCache().commentCache[key + "inNo" + index] = temp;
             string path = System.Web.HttpContext.Current.Server.MapPath("/wxshoppingMallContent/commentImages/") + fileName;
             try
             {
@@ -191,8 +226,10 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 {
                     return Json(new { error = true });
                 }
+                JObject jo = JObject.Parse(currentUser.encryptedData);
                 #region 订单表-新增
                 wxShoppingMall_orderInfo orderInfo = new wxShoppingMall_orderInfo();
+                orderInfo.userName = jo["nickName"].ToString();
                 orderInfo.delFlag = (short)DeleteEnumType.Normal;
                 orderInfo.userInfoId = currentUser.id;
                 orderInfo.modifiedOn = DateTime.Now;
@@ -318,14 +355,11 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             {
                 tempBannerImages[i] = domain + detailBannerImageDic + tempBannerImages[i].ToString();
             }
-
             ArrayList tempDetailTabInstructionImageUrl = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(finditem.detailTabInstructionImageUrl);
             for (var j = 0; j < tempDetailTabInstructionImageUrl.Count; j++)
             {
                 tempDetailTabInstructionImageUrl[j] = domain + detailBannerImageDic + tempDetailTabInstructionImageUrl[j].ToString();
             }
-
-
             return Json(new
             {
                 id = finditem.id,
@@ -337,10 +371,65 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 price = String.Format("{0:N2}", finditem.price),
                 title = finditem.listTitle,
                 unit = finditem.unit,
+                evaluationCount = finditem.evaluationCount,
+                evaluationPercent = finditem.evaluationPercent,
+                evaluationJson = finditem.evaluationJson,
                 error = false
             });
         }
 
+        [HttpPost]
+        public ActionResult commentsGet(int produceId)
+        {
+            if (!checkRequestHeader(Request)) { return Content("forbid!"); }
+            var comments = Db.Set<wxShoppingMall_comments>().Where(c => c.produceInfoId == produceId).OrderByDescending(c => c.subTime);
+            if (comments == null) return Json(new { error = true });
+            ArrayList results = new ArrayList();
+            int good = 0, normal = 0, bad = 0, imageShow = 0;
+            foreach (var item in comments)
+            {
+                JObject jo = JObject.Parse(item.contentJson);
+                ArrayList arr = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(jo["imageFile"].ToString());
+                var starCount = Convert.ToInt32(jo["commentStarCount"].ToString());
+                if (starCount >= 4)
+                {
+                    good++;
+                }
+                else if (starCount <= 1)
+                {
+                    bad++;
+                }
+                else
+                {
+                    normal++;
+                }
+                if (arr != null &&　arr.Count != 0)
+                {
+                    imageShow++;
+                }
+                var userName = item.userName;
+                if (Convert.ToBoolean(jo["isAnonymous"].ToString()))
+                {
+                    userName = "匿名发表";
+                }
+                results.Add(new
+                {
+                    evaluationUserName = userName,
+                    evaluationCount = item.commentStarCount,
+                    evaluationContent = jo["commentText"].ToString(),
+                    evaluationSubTime = item.subTime.ToString("yyyy-MM-dd"),
+                    evaluationImages = arr
+                });
+            }
+            return Json(new
+            {
+                goodCommentCount = good,
+                normalCommentCount = normal,
+                badCommentCount = bad,
+                imageShowCount = imageShow,
+                commentDetail = results
+            });
+        }
 
         [HttpPost]
         public ActionResult sessionCheck(string thirdSessionKey)
@@ -362,7 +451,6 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             }
             return Json(new { error = true });
         }
-
 
         [HttpPost]
         public ActionResult userLogin(string code, string encryptedData, string iv, string raw, string signature)
@@ -442,7 +530,6 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             #endregion
         }
 
-
         [HttpPost]
         public ActionResult checkAccountRepeat(string account)
         {
@@ -453,7 +540,6 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
         }
 
         [HttpPost]
-
         public ActionResult checkPhoneNumRepeat(string phoneNum)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
@@ -698,7 +784,6 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             }
         }
 
-
         [HttpPost]
         public ActionResult checkVCode(string vCode)
         {
@@ -726,7 +811,6 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 error = true
             });
         }
-
 
         [HttpPost]
         public ActionResult cityGet()

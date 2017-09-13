@@ -16,22 +16,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="wxShoppingMall_comments">
-      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_comments">
-        <MappingFragment StoreEntitySet="wxShoppingMall_comments">
-          <ScalarProperty Name="sort" ColumnName="sort" />
-          <ScalarProperty Name="remark" ColumnName="remark" />
-          <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
-          <ScalarProperty Name="subTime" ColumnName="subTime" />
-          <ScalarProperty Name="contentJson" ColumnName="contentJson" />
-          <ScalarProperty Name="merchantInfoId" ColumnName="merchantInfoId" />
-          <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
-          <ScalarProperty Name="orderInfoId" ColumnName="orderInfoId" />
-          <ScalarProperty Name="produceInfoId" ColumnName="produceInfoId" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="wxShoppingMall_merchantInfo">
       <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_merchantInfo">
         <MappingFragment StoreEntitySet="wxShoppingMall_merchantInfo">
@@ -41,28 +25,6 @@
           <ScalarProperty Name="subTime" ColumnName="subTime" />
           <ScalarProperty Name="companyName" ColumnName="companyName" />
           <ScalarProperty Name="merchantName" ColumnName="merchantName" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="wxShoppingMall_produceInfo">
-      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
-        <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
-          <ScalarProperty Name="remark" ColumnName="remark" />
-          <ScalarProperty Name="sort" ColumnName="sort" />
-          <ScalarProperty Name="modiyTime" ColumnName="modiyTime" />
-          <ScalarProperty Name="subTime" ColumnName="subTime" />
-          <ScalarProperty Name="unit" ColumnName="unit" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="evaluationPercent" ColumnName="evaluationPercent" />
-          <ScalarProperty Name="evaluationCount" ColumnName="evaluationCount" />
-          <ScalarProperty Name="detailTabInstructionImageUrl" ColumnName="detailTabInstructionImageUrl" />
-          <ScalarProperty Name="detailBannerImageUrl" ColumnName="detailBannerImageUrl" />
-          <ScalarProperty Name="detailBannerImageDic" ColumnName="detailBannerImageDic" />
-          <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
-          <ScalarProperty Name="listKeys" ColumnName="listKeys" />
-          <ScalarProperty Name="listTitle" ColumnName="listTitle" />
-          <ScalarProperty Name="merchantId" ColumnName="merchantId" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -93,8 +55,51 @@
           <ScalarProperty Name="subTime" ColumnName="subTime" />
           <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
           <ScalarProperty Name="orderDataJson" ColumnName="orderDataJson" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
           <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
           <ScalarProperty Name="orderNumber" ColumnName="orderNumber" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wxShoppingMall_produceInfo">
+      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
+        <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="modiyTime" ColumnName="modiyTime" />
+          <ScalarProperty Name="subTime" ColumnName="subTime" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="evaluationJson" ColumnName="evaluationJson" />
+          <ScalarProperty Name="evaluationPercent" ColumnName="evaluationPercent" />
+          <ScalarProperty Name="evaluationCount" ColumnName="evaluationCount" />
+          <ScalarProperty Name="detailTabInstructionImageUrl" ColumnName="detailTabInstructionImageUrl" />
+          <ScalarProperty Name="detailBannerImageUrl" ColumnName="detailBannerImageUrl" />
+          <ScalarProperty Name="detailBannerImageDic" ColumnName="detailBannerImageDic" />
+          <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
+          <ScalarProperty Name="listKeys" ColumnName="listKeys" />
+          <ScalarProperty Name="listTitle" ColumnName="listTitle" />
+          <ScalarProperty Name="merchantId" ColumnName="merchantId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wxShoppingMall_comments">
+      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_comments">
+        <MappingFragment StoreEntitySet="wxShoppingMall_comments">
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="modifiedOn" ColumnName="modifiedOn" />
+          <ScalarProperty Name="subTime" ColumnName="subTime" />
+          <ScalarProperty Name="contentJson" ColumnName="contentJson" />
+          <ScalarProperty Name="imageGet" ColumnName="imageGet" />
+          <ScalarProperty Name="commentStarCount" ColumnName="commentStarCount" />
+          <ScalarProperty Name="merchantInfoId" ColumnName="merchantInfoId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
+          <ScalarProperty Name="orderInfoId" ColumnName="orderInfoId" />
+          <ScalarProperty Name="produceInfoId" ColumnName="produceInfoId" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

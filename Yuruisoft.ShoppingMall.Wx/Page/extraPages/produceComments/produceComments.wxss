@@ -1,0 +1,16 @@
+/* Page/extraPages/produceComments/produceComments.wxss */
+
+.commentList {
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.commentTab {
+  display: inline-block;
+  font-size: 12px;
+  max-width: 8em;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  color: gray;
+}

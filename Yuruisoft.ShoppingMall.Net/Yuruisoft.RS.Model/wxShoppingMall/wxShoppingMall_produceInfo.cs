@@ -24,6 +24,7 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
         public string detailTabInstructionImageUrl { get; set; }
         public Nullable<int> evaluationCount { get; set; }
         public Nullable<double> evaluationPercent { get; set; }
+        public string evaluationJson { get; set; }
         public Nullable<double> price { get; set; }
         public string unit { get; set; }
         public Nullable<System.DateTime> subTime { get; set; }

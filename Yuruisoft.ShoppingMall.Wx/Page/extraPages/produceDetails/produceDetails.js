@@ -42,6 +42,24 @@ Page({
     hanSpace: '\r\n\r\n\r\n\r\n',//空格输出
     space: '\r\n'
   },
+
+  previewImage: function (e) {
+    var index = e.currentTarget.id;
+    wx.previewImage({
+      current: this.data.evaluationObj.evaluationImages[index], // 当前显示图片的http链接
+      urls: this.data.evaluationObj.evaluationImages// 需要预览的图片http链接列表
+    })
+  },
+  CheckMoreComments: function () {
+    wx.navigateTo({
+      url: '../produceComments/produceComments?proId=' + this.data.produceDetail.id
+    })
+  },
+  angleTapChooseAddress: function () {
+    wx.navigateTo({
+      url: '../chooseAddress/chooseAddress'
+    })
+  },
   collect: function () {//商品收藏管理
     var collected = this.data.collected;
     this.setData({
@@ -283,6 +301,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+
     var currentPrId = options.id
     if (app.globalData.shoppingCart != '') {//购物车数据结构初始化
       this.setData({
@@ -290,8 +310,6 @@ Page({
         shoppingCartItemCount: app.globalData.shoppingCart.allItemCount
       })
     }
-
-    var that = this;
     app.ajax.reqPost('/shoppingMall/produceDetailGet', {//TODO:这里可以做大数据扩展
       "id": currentPrId,//TODO:用户信息,调整推荐策略
     }, function (res) {
@@ -299,7 +317,6 @@ Page({
         return
       }
       if (app.globalData.MerCollection != '' && app.globalData.MerCollection.length != 0) {
-
         for (var i = 0; i < app.globalData.MerCollection.length; i++) {
           if (app.globalData.MerCollection[i].id == res.id) {
             that.setData({
@@ -310,7 +327,8 @@ Page({
         }
       }
       that.setData({
-        produceDetail: res
+        produceDetail: res,
+        evaluationObj: JSON.parse(res.evaluationJson)
       })
     });
     /*商品详情Tab 开始*/
@@ -336,7 +354,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    var userAddress = app.globalData.userAddress;//收货地址
+    if (userAddress != undefined && userAddress.length != 0) {
+      for (var i = 0; i < userAddress.length; i++) {
+        if (userAddress[i].checked) {
+          var address = userAddress[i].city.replace(/,/g, ' ');
+          that.setData({
+            userAddress: address
+          })
+          break;
+        }
+      }
+    } else {
+      that.setData({
+        userAddress: undefined
+      })
+    }
   },
 
   /**
