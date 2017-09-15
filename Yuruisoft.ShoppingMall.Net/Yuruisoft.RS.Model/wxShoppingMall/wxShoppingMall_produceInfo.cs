@@ -24,6 +24,10 @@ namespace Yuruisoft.RS.Model.wxShoppingMall
         public string detailTabInstructionImageUrl { get; set; }
         public Nullable<int> evaluationCount { get; set; }
         public Nullable<double> evaluationPercent { get; set; }
+        public Nullable<int> goodCommentCount { get; set; }
+        public Nullable<int> normalCommentCount { get; set; }
+        public Nullable<int> badCommentCount { get; set; }
+        public Nullable<int> commentWithImgCount { get; set; }
         public string evaluationJson { get; set; }
         public Nullable<double> price { get; set; }
         public string unit { get; set; }

@@ -16,29 +16,37 @@
         <view class="weui-tab__panel" style='padding-top:70px;'>
           <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
             <!-- 全部 开始 -->
-            <view wx:for="{{evaluationObjs.commentDetail}}" wx:for-item="itemObjs" wx:key="{{itemObjs*this}}" wx:for-index="objsIndex" class='commentList'>
+            <view wx:for="{{allComments}}" wx:for-item="itemObjs" wx:key="{{itemObjs*this}}" wx:for-index="objsIndex" class='commentList'>
               <template is="comment" data="{{...itemObjs,objsIndex:objsIndex}}" />
             </view>
             <!-- 全部 结束 -->
           </view>
           <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
             <!-- 好评 开始 -->
-
+            <view wx:for="{{goodComments}}" wx:for-item="itemObjs" wx:key="{{itemObjs*this}}" wx:for-index="objsIndex" class='commentList'>
+              <template is="comment" data="{{...itemObjs,objsIndex:objsIndex}}" />
+            </view>
             <!-- 好评 结束 -->
           </view>
           <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
             <!-- 中评 开始 -->
-
+            <view wx:for="{{normalComments}}" wx:for-item="itemObjs" wx:key="{{itemObjs*this}}" wx:for-index="objsIndex" class='commentList'>
+              <template is="comment" data="{{...itemObjs,objsIndex:objsIndex}}" />
+            </view>
             <!-- 中评 结束 -->
           </view>
           <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
             <!-- 差评 开始 -->
-
+            <view wx:for="{{badComments}}" wx:for-item="itemObjs" wx:key="{{itemObjs*this}}" wx:for-index="objsIndex" class='commentList'>
+              <template is="comment" data="{{...itemObjs,objsIndex:objsIndex}}" />
+            </view>
             <!-- 差评 结束 -->
           </view>
           <view class="weui-tab__content" hidden="{{activeIndex != 4}}">
             <!-- 晒单 开始 -->
-
+            <view wx:for="{{imgComments}}" wx:for-item="itemObjs" wx:key="{{itemObjs*this}}" wx:for-index="objsIndex" class='commentList'>
+              <template is="comment" data="{{...itemObjs,objsIndex:objsIndex}}" />
+            </view>
             <!-- 晒单 结束 -->
           </view>
         </view>

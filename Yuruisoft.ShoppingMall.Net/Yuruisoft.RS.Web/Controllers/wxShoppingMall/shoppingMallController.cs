@@ -74,12 +74,28 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
             {
                 var currents = Db.Set<wxShoppingMall_comments>().Where(c => c.produceInfoId == contentJson.produceInfoId);
                 if (currents == null) { return Json(new { error = true }); }
-                var count = 0;
-                var commentStarSum = 0;
+
+                int good = 0, normal = 0, bad = 0, imageShow = 0, count = 0, commentStarSum = 0;
                 foreach (var item in currents)
                 {
                     count++;
                     commentStarSum = commentStarSum + item.commentStarCount;
+                    if (item.commentStarCount >= 4)
+                    {
+                        good++;
+                    }
+                    else if (item.commentStarCount <= 1)
+                    {
+                        bad++;
+                    }
+                    else
+                    {
+                        normal++;
+                    }
+                    if (item.imageGet)
+                    {
+                        imageShow++;
+                    }
                 }
                 var currentPro = Db.Set<wxShoppingMall_produceInfo>().Where(c => c.id == contentJson.produceInfoId).FirstOrDefault();
                 var evaluationJson = new
@@ -97,6 +113,10 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 findItem.evaluationPercent = Math.Round(temp, 2);
                 findItem.modiyTime = DateTime.Now;
                 findItem.evaluationJson = Newtonsoft.Json.JsonConvert.SerializeObject(evaluationJson, Newtonsoft.Json.Formatting.Indented);
+                findItem.goodCommentCount = good;
+                findItem.normalCommentCount = normal;
+                findItem.badCommentCount = bad;
+                findItem.commentWithImgCount = imageShow;
                 if (Db.SaveChanges() > 0)
                 {
                     return Json(new { error = false });
@@ -373,40 +393,47 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                 unit = finditem.unit,
                 evaluationCount = finditem.evaluationCount,
                 evaluationPercent = finditem.evaluationPercent,
+                goodCommentCount = finditem.goodCommentCount,
+                normalCommentCount = finditem.normalCommentCount,
+                badCommentCount = finditem.badCommentCount,
+                commentWithImgCount = finditem.commentWithImgCount,
                 evaluationJson = finditem.evaluationJson,
                 error = false
             });
         }
 
+
         [HttpPost]
-        public ActionResult commentsGet(int produceId)
+        public ActionResult commentsGet(int produceId, int pageIndex, int pageSize, int kindOfComments)
         {
             if (!checkRequestHeader(Request)) { return Content("forbid!"); }
-            var comments = Db.Set<wxShoppingMall_comments>().Where(c => c.produceInfoId == produceId).OrderByDescending(c => c.subTime);
+            dynamic comments;
+            if (kindOfComments == 0)//所有
+            {
+                comments = Db.Set<wxShoppingMall_comments>().Where(c => c.produceInfoId == produceId).OrderByDescending(c => c.subTime).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            }
+            else if (kindOfComments == 1)//好评
+            {
+                comments = Db.Set<wxShoppingMall_comments>().Where(c => (c.produceInfoId == produceId) && (c.commentStarCount >= 4)).OrderByDescending(c => c.subTime).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            }
+            else if (kindOfComments == 2)//中评
+            {
+                comments = Db.Set<wxShoppingMall_comments>().Where(c => (c.produceInfoId == produceId) && ((c.commentStarCount < 4) && (c.commentStarCount > 1))).OrderByDescending(c => c.subTime).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            }
+            else if (kindOfComments == 3)//差评
+            {
+                comments = Db.Set<wxShoppingMall_comments>().Where(c => (c.produceInfoId == produceId) && (c.commentStarCount <= 1)).OrderByDescending(c => c.subTime).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            }
+            else
+            {
+                comments = Db.Set<wxShoppingMall_comments>().Where(c => (c.produceInfoId == produceId) && c.imageGet).OrderByDescending(c => c.subTime).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            }
             if (comments == null) return Json(new { error = true });
             ArrayList results = new ArrayList();
-            int good = 0, normal = 0, bad = 0, imageShow = 0;
             foreach (var item in comments)
             {
                 JObject jo = JObject.Parse(item.contentJson);
                 ArrayList arr = Newtonsoft.Json.JsonConvert.DeserializeObject<ArrayList>(jo["imageFile"].ToString());
-                var starCount = Convert.ToInt32(jo["commentStarCount"].ToString());
-                if (starCount >= 4)
-                {
-                    good++;
-                }
-                else if (starCount <= 1)
-                {
-                    bad++;
-                }
-                else
-                {
-                    normal++;
-                }
-                if (arr != null &&　arr.Count != 0)
-                {
-                    imageShow++;
-                }
                 var userName = item.userName;
                 if (Convert.ToBoolean(jo["isAnonymous"].ToString()))
                 {
@@ -421,14 +448,7 @@ namespace Yuruisoft.RS.Web.Controllers.wxShoppingMall
                     evaluationImages = arr
                 });
             }
-            return Json(new
-            {
-                goodCommentCount = good,
-                normalCommentCount = normal,
-                badCommentCount = bad,
-                imageShowCount = imageShow,
-                commentDetail = results
-            });
+            return Json(results);
         }
 
         [HttpPost]

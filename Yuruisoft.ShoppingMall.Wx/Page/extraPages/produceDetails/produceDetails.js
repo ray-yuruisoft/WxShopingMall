@@ -51,8 +51,14 @@ Page({
     })
   },
   CheckMoreComments: function () {
+    var evaluationCount = this.data.produceDetail.evaluationCount;
+    var goodCommentCount = this.data.produceDetail.goodCommentCount;
+    var normalCommentCount = this.data.produceDetail.normalCommentCount;
+    var badCommentCount = this.data.produceDetail.badCommentCount;
+    var commentWithImgCount = this.data.produceDetail.commentWithImgCount;
+    var temp = '&evaluationCount=' + evaluationCount + '&goodCommentCount=' + goodCommentCount + '&normalCommentCount=' + normalCommentCount + '&badCommentCount=' + badCommentCount + '&commentWithImgCount=' + commentWithImgCount;
     wx.navigateTo({
-      url: '../produceComments/produceComments?proId=' + this.data.produceDetail.id
+      url: '../produceComments/produceComments?proId=' + this.data.produceDetail.id + temp
     })
   },
   angleTapChooseAddress: function () {

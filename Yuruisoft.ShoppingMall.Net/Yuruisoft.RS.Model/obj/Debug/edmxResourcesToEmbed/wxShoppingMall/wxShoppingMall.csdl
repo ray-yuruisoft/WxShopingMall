@@ -5,8 +5,8 @@
     <EntitySet Name="wxShoppingMall_merchantInfo" EntityType="rayyewang01Model.wxShoppingMall_merchantInfo" />
     <EntitySet Name="wxShoppingMall_userInfo" EntityType="rayyewang01Model.wxShoppingMall_userInfo" />
     <EntitySet Name="wxShoppingMall_orderInfo" EntityType="rayyewang01Model.wxShoppingMall_orderInfo" />
-    <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
     <EntitySet Name="wxShoppingMall_comments" EntityType="rayyewang01Model.wxShoppingMall_comments" />
+    <EntitySet Name="wxShoppingMall_produceInfo" EntityType="rayyewang01Model.wxShoppingMall_produceInfo" />
   </EntityContainer>
   <EntityType Name="haowanFamilyAccountInfo">
     <Key>
@@ -67,28 +67,6 @@
     <Property Name="sort" Type="Int32" />
     <Property Name="delFlag" Type="Int16" Nullable="false" />
   </EntityType>
-  <EntityType Name="wxShoppingMall_produceInfo">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="merchantId" Type="Int32" />
-    <Property Name="listTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="listKeys" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="listImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="detailBannerImageDic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="detailBannerImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="detailTabInstructionImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="evaluationCount" Type="Int32" />
-    <Property Name="evaluationPercent" Type="Double" />
-    <Property Name="evaluationJson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="price" Type="Double" />
-    <Property Name="unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="subTime" Type="DateTime" Precision="3" />
-    <Property Name="modiyTime" Type="DateTime" Precision="3" />
-    <Property Name="sort" Type="Int32" />
-    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="wxShoppingMall_comments">
     <Key>
       <PropertyRef Name="id" />
@@ -106,5 +84,31 @@
     <Property Name="modifiedOn" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="sort" Type="Int32" />
+  </EntityType>
+  <EntityType Name="wxShoppingMall_produceInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="merchantId" Type="Int32" />
+    <Property Name="listTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="listKeys" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="listImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="detailBannerImageDic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="detailBannerImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="detailTabInstructionImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="evaluationCount" Type="Int32" />
+    <Property Name="evaluationPercent" Type="Double" />
+    <Property Name="goodCommentCount" Type="Int32" />
+    <Property Name="normalCommentCount" Type="Int32" />
+    <Property Name="badCommentCount" Type="Int32" />
+    <Property Name="commentWithImgCount" Type="Int32" />
+    <Property Name="evaluationJson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Double" />
+    <Property Name="unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="subTime" Type="DateTime" Precision="3" />
+    <Property Name="modiyTime" Type="DateTime" Precision="3" />
+    <Property Name="sort" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

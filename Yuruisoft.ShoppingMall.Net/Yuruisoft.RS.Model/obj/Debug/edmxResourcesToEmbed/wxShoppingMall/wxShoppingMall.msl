@@ -62,29 +62,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="wxShoppingMall_produceInfo">
-      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
-        <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
-          <ScalarProperty Name="remark" ColumnName="remark" />
-          <ScalarProperty Name="sort" ColumnName="sort" />
-          <ScalarProperty Name="modiyTime" ColumnName="modiyTime" />
-          <ScalarProperty Name="subTime" ColumnName="subTime" />
-          <ScalarProperty Name="unit" ColumnName="unit" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="evaluationJson" ColumnName="evaluationJson" />
-          <ScalarProperty Name="evaluationPercent" ColumnName="evaluationPercent" />
-          <ScalarProperty Name="evaluationCount" ColumnName="evaluationCount" />
-          <ScalarProperty Name="detailTabInstructionImageUrl" ColumnName="detailTabInstructionImageUrl" />
-          <ScalarProperty Name="detailBannerImageUrl" ColumnName="detailBannerImageUrl" />
-          <ScalarProperty Name="detailBannerImageDic" ColumnName="detailBannerImageDic" />
-          <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
-          <ScalarProperty Name="listKeys" ColumnName="listKeys" />
-          <ScalarProperty Name="listTitle" ColumnName="listTitle" />
-          <ScalarProperty Name="merchantId" ColumnName="merchantId" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="wxShoppingMall_comments">
       <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_comments">
         <MappingFragment StoreEntitySet="wxShoppingMall_comments">
@@ -100,6 +77,33 @@
           <ScalarProperty Name="userInfoId" ColumnName="userInfoId" />
           <ScalarProperty Name="orderInfoId" ColumnName="orderInfoId" />
           <ScalarProperty Name="produceInfoId" ColumnName="produceInfoId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wxShoppingMall_produceInfo">
+      <EntityTypeMapping TypeName="rayyewang01Model.wxShoppingMall_produceInfo">
+        <MappingFragment StoreEntitySet="wxShoppingMall_produceInfo">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="modiyTime" ColumnName="modiyTime" />
+          <ScalarProperty Name="subTime" ColumnName="subTime" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="evaluationJson" ColumnName="evaluationJson" />
+          <ScalarProperty Name="commentWithImgCount" ColumnName="commentWithImgCount" />
+          <ScalarProperty Name="badCommentCount" ColumnName="badCommentCount" />
+          <ScalarProperty Name="normalCommentCount" ColumnName="normalCommentCount" />
+          <ScalarProperty Name="goodCommentCount" ColumnName="goodCommentCount" />
+          <ScalarProperty Name="evaluationPercent" ColumnName="evaluationPercent" />
+          <ScalarProperty Name="evaluationCount" ColumnName="evaluationCount" />
+          <ScalarProperty Name="detailTabInstructionImageUrl" ColumnName="detailTabInstructionImageUrl" />
+          <ScalarProperty Name="detailBannerImageUrl" ColumnName="detailBannerImageUrl" />
+          <ScalarProperty Name="detailBannerImageDic" ColumnName="detailBannerImageDic" />
+          <ScalarProperty Name="listImageUrl" ColumnName="listImageUrl" />
+          <ScalarProperty Name="listKeys" ColumnName="listKeys" />
+          <ScalarProperty Name="listTitle" ColumnName="listTitle" />
+          <ScalarProperty Name="merchantId" ColumnName="merchantId" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
