@@ -97,7 +97,6 @@ G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.IDAL\bin\Debug\Y
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.IDAL\bin\Debug\EntityFramework.xml
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.IDAL\bin\Debug\Yuruisoft.RS.Common.pdb
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.IDAL\bin\Debug\DynamicModel.pdb
-G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.IDAL\bin\Debug\Newtonsoft.Json.xml
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.IDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.IDAL\obj\Debug\Yuruisoft.RS.IDAL.csprojResolveAssemblyReference.cache
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.IDAL\obj\Debug\Yuruisoft.RS.IDAL.dll

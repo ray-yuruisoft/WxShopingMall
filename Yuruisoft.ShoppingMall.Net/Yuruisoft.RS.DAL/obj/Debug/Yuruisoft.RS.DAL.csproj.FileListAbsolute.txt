@@ -138,7 +138,6 @@ G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.DAL\bin\Debug\En
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.DAL\bin\Debug\EntityFramework.SqlServer.xml
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.DAL\bin\Debug\Yuruisoft.RS.Common.pdb
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.DAL\bin\Debug\DynamicModel.pdb
-G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.DAL\bin\Debug\Newtonsoft.Json.xml
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.DAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.DAL\obj\Debug\Yuruisoft.RS.DAL.csprojResolveAssemblyReference.cache

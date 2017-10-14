@@ -70,7 +70,7 @@ namespace Yuruisoft.RS.Web.Controllers
             }
             if (!isExt)//用户没有登录
             {
-                filterContext.HttpContext.Response.Redirect("/Login/Index");
+                filterContext.HttpContext.Response.Redirect("/LogOn/Index");
             }
             base.OnActionExecuting(filterContext);
         }

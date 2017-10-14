@@ -11,3 +11,9 @@ C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\DynamicMode
 C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\DynamicModel\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\DynamicModel\obj\Debug\DynamicModel.dll
 C:\Users\Administrator\Desktop\网站流量来路统计\Yuruisoft.RS\DynamicModel\obj\Debug\DynamicModel.pdb
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\DynamicModel\bin\Debug\DynamicModel.dll
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\DynamicModel\bin\Debug\DynamicModel.pdb
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\DynamicModel\bin\Debug\Newtonsoft.Json.dll
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\DynamicModel\obj\Debug\DynamicModel.csprojResolveAssemblyReference.cache
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\DynamicModel\obj\Debug\DynamicModel.dll
+G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\DynamicModel\obj\Debug\DynamicModel.pdb

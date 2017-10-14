@@ -49,11 +49,6 @@
     @*CDN加速，后来引入*@
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" />
 
-
-
-
-
-
     <script type="text/javascript">
         function changeCheckCode() {
             $("#img").attr("src", $("#img").data("src") + "?" + Math.random());
@@ -61,7 +56,7 @@
         function afterLogin(data) {
             var serverData = data.split(':');
             if (serverData[0] == "ok") {
-                window.location.href = "/Home/HomePage"
+                window.location.href = "/wxShoppingMall/backgroundPage"
             } else if (serverData[0] == "no") {
                 bootbox.hideAll();
                 if (TimeOutHandler != undefined) {

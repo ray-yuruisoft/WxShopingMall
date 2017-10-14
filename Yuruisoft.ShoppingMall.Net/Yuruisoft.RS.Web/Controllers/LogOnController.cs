@@ -27,6 +27,7 @@ namespace Yuruisoft.RS.Web.Controllers
             CheckCookieInfo();//校验Cookie的信息
             return View();
         }
+
         #region 用户登录
         public ActionResult CheckLogin()
         {//验证码初次不显示功能，实现为加缓存，缓存每10分钟清空一次。如果加到数据库会增加压力

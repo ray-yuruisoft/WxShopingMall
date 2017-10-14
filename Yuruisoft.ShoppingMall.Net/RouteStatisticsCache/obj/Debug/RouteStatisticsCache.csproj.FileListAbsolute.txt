@@ -112,7 +112,6 @@ G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\RouteStatisticsCache\bin\Debu
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\RouteStatisticsCache\bin\Debug\Yuruisoft.RS.DALfactory.pdb
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\RouteStatisticsCache\bin\Debug\Yuruisoft.RS.Common.pdb
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\RouteStatisticsCache\bin\Debug\DynamicModel.pdb
-G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\RouteStatisticsCache\bin\Debug\Newtonsoft.Json.xml
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\RouteStatisticsCache\bin\Debug\zh-Hans\EntityFramework.resources.dll
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\RouteStatisticsCache\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\RouteStatisticsCache\obj\Debug\RouteStatisticsCache.csprojResolveAssemblyReference.cache

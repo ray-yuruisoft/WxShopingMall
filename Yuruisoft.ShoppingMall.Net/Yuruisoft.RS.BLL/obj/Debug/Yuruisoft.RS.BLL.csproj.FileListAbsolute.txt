@@ -181,7 +181,6 @@ G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.BLL\bin\Debug\Yu
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.BLL\bin\Debug\EntityFramework.xml
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.BLL\bin\Debug\Yuruisoft.RS.Common.pdb
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.BLL\bin\Debug\DynamicModel.pdb
-G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.BLL\bin\Debug\Newtonsoft.Json.xml
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.BLL\obj\Debug\Yuruisoft.RS.BLL.csprojResolveAssemblyReference.cache
 G:\Github\WxShopingMall\Yuruisoft.ShoppingMall.Net\Yuruisoft.RS.BLL\obj\Debug\Yuruisoft.RS.BLL.dll
