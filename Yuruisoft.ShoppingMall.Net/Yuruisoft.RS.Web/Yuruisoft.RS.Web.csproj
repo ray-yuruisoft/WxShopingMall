@@ -946,6 +946,7 @@
     <Content Include="Views\UpdatePassWord\ChangePwd.cshtml" />
     <Content Include="Views\haowanFamilyWeChat\Index.cshtml" />
     <Content Include="Views\wxShoppingMall\backgroundPage.cshtml" />
+    <Content Include="Views\wxShoppingMall\CommodityCtrl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

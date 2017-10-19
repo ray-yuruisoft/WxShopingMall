@@ -42,6 +42,7 @@
 </head>
 
 <body>
+    @*导航开始*@
     <div class="navbar navbar-default" id="navbar">
         <script type="text/javascript">
             try { ace.settings.check('navbar', 'fixed') } catch (e) { }
@@ -59,6 +60,7 @@
 
             <div class="navbar-header pull-right" role="navigation">
                 <ul class="nav ace-nav">
+                    @*任务表开始*@
                     <li class="grey">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="icon-tasks"></i>
@@ -131,7 +133,8 @@
                             </li>
                         </ul>
                     </li>
-
+                    @*任务表结束*@
+                    @*通知开始*@
                     <li class="purple">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="icon-bell-alt icon-animated-bell"></i>
@@ -195,7 +198,8 @@
                             </li>
                         </ul>
                     </li>
-
+                    @*通知结束*@
+                    @*消息开始*@
                     <li class="green">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="icon-envelope icon-animated-vertical"></i>
@@ -267,7 +271,8 @@
                             </li>
                         </ul>
                     </li>
-
+                    @*消息结束*@
+                    @*用户管理开始*@
                     <li class="light-blue">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                             <img class="nav-user-photo" src="~/Content/AceAdmin/assets/avatars/user.jpg" alt="Jason's Photo" />
@@ -304,11 +309,12 @@
                             </li>
                         </ul>
                     </li>
+                    @*用户管理结束*@
                 </ul><!-- /.ace-nav -->
             </div><!-- /.navbar-header -->
         </div><!-- /.container -->
     </div>
-
+    @*导航结束*@
     <div class="main-container" id="main-container">
         <script type="text/javascript">
             try { ace.settings.check('main-container', 'fixed') } catch (e) { }
@@ -325,6 +331,7 @@
                 </script>
 
                 <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                    @*快捷键开始*@
                     <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
                         <button class="btn btn-success">
                             <i class="icon-signal"></i>
@@ -342,7 +349,7 @@
                             <i class="icon-cogs"></i>
                         </button>
                     </div>
-
+                    @*快捷键结束*@
                     <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
                         <span class="btn btn-success"></span>
 
@@ -353,17 +360,24 @@
                         <span class="btn btn-danger"></span>
                     </div>
                 </div><!-- #sidebar-shortcuts -->
-
+                @*控制台菜单开始*@
                 <ul class="nav nav-list">
                     <li class="active">
-                        <a href="~/Content/AceAdmin/index.html">
+                        <a href="/wxShoppingMall/backgroundPage">
                             <i class="icon-dashboard"></i>
                             <span class="menu-text"> 控制台 </span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="typography.html">
+                        <a href="/wxShoppingMall/CommodityCtrl">
+                            <i class="icon-bar-chart"></i>
+                            <span class="menu-text"> 商品管理 </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/Content/AceAdmin/typography.html">
                             <i class="icon-text-width"></i>
                             <span class="menu-text"> 文字排版 </span>
                         </a>
@@ -652,7 +666,7 @@
                         </ul>
                     </li>
                 </ul><!-- /.nav-list -->
-
+                @*控制台菜单结束*@
                 <div class="sidebar-collapse" id="sidebar-collapse">
                     <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
                 </div>
@@ -661,13 +675,13 @@
                     try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
                 </script>
             </div>
-
+            @*控制台内容开始*@
             <div class="main-content">
                 <div class="breadcrumbs" id="breadcrumbs">
                     <script type="text/javascript">
                         try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
                     </script>
-
+                    @*面包屑开始*@
                     <ul class="breadcrumb">
                         <li>
                             <i class="icon-home home-icon"></i>
@@ -675,7 +689,7 @@
                         </li>
                         <li class="active">控制台</li>
                     </ul><!-- .breadcrumb -->
-
+                    @*面包屑结束*@
                     <div class="nav-search" id="nav-search">
                         <form class="form-search">
                             <span class="input-icon">
@@ -685,7 +699,7 @@
                         </form>
                     </div><!-- #nav-search -->
                 </div>
-
+                @*页面内容开始*@
                 <div class="page-content">
                     <div class="page-header">
                         <h1>
@@ -1827,8 +1841,10 @@
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.page-content -->
+                @*页面内容结束*@
             </div><!-- /.main-content -->
-
+            @*控制台内容结束*@
+            @*右侧设置开始*@
             <div class="ace-settings-container" id="ace-settings-container">
                 <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
                     <i class="icon-cog bigger-150"></i>
@@ -1876,6 +1892,7 @@
                     </div>
                 </div>
             </div><!-- /#ace-settings-container -->
+            @*右侧设置结束*@
         </div><!-- /.main-container-inner -->
 
         <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">

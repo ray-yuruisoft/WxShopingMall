@@ -16,7 +16,7 @@ namespace Yuruisoft.RS.Web.Controllers
         {
             userInfoService = _userInfoService;
         }
-       
+
         public ActionResult backgroundPage()
         {
             if (LoginUser != null)
@@ -24,7 +24,21 @@ namespace Yuruisoft.RS.Web.Controllers
                 ViewBag.userName = LoginUser.UName;
             }
             return View();
+
+            
         }
+
+
+        public ActionResult CommodityCtrl()
+        {
+            if (LoginUser != null)
+            {
+                ViewBag.userName = LoginUser.UName;
+            }
+            return View();
+        }
+
+
 
         #region 找出用户对应的菜单
         public ActionResult GetMenuItems()
